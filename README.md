@@ -1,2 +1,2 @@
-# rigel
+# Rigel
 Workflow model and editors
