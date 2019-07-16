@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.nasdanika.rigel.feature"
-      label="Visual workflow modeling"
+      label="Nasdanika Rigel"
       version="0.1.0.qualifier"
       provider-name="Nasdanika LLC">
 
@@ -103,7 +103,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <url>
-      <update label="Nasdanika Codegen" url="https://www.nasdanika.org/products/codegen/repository"/>
+      <update label="Nasdanika Rigel" url="https://www.nasdanika.org/products/rigel/repository"/>
       <discovery label="Nasdanika Config" url="https://www.nasdanika.org/products/config/repository"/>
    </url>
 
