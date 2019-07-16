@@ -26,7 +26,7 @@
 			    <version>3.7.1</version>
 			    <configuration>
 			        <chmod>false</chmod>			        
-			        <locales>en</locales>			        
+			        <locales>en,ru</locales>			        
 			    </configuration>
 			</plugin>			
 			<plugin>
@@ -46,32 +46,13 @@
 									<directory>${basedir}/target</directory>
 									<includes>
 										<include>repository/**</include>
-										<include>org.nasdanika.codegen.repository-*.zip</include>
+										<include>org.nasdanika.rigel.repository-*.zip</include>
 									</includes>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
 						</configuration>
 					</execution>
-					<!-- 
-					<execution>
-						<id>copy-sample-model</id>
-						<phase>pre-site</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/site</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/../org.nasdanika.cv</directory>
-									<include>sample.nsdcv</include>
-									<filtering>false</filtering>
-								</resource>								
-							</resources>
-						</configuration>
-					</execution>
-					 -->
 					<execution>
 						<id>copy-model-javadoc</id>
 						<phase>pre-site</phase>
@@ -79,7 +60,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.codegen</outputDirectory>
+							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.rigel</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/../model/target/site/apidocs</directory>
@@ -95,7 +76,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.codegen.edit</outputDirectory>
+							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.rigel.edit</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/../edit/target/site/apidocs</directory>
@@ -127,7 +108,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.codegen.editor</outputDirectory>
+							<outputDirectory>${basedir}/target/site/apidocs/org.nasdanika.rigel.editor</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${basedir}/../editor/target/site/apidocs</directory>
@@ -146,7 +127,7 @@
 							<outputDirectory>${basedir}/target/site/model-doc</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/target/products/org.nasdanika.codegen.tests.product/linux/gtk/x86_64/target/model-doc</directory>
+									<directory>${basedir}/target/products/org.nasdanika.rigel.tests.product/linux/gtk/x86_64/target/model-doc</directory>
 									<filtering>false</filtering>
 								</resource>								
 							</resources>
@@ -161,7 +142,7 @@
 					<skipAssembly>false</skipAssembly>
 					<outputDirectory>${project.build.directory}/site</outputDirectory>
 					<formats>zip</formats>
-					<finalName>codegen</finalName>
+					<finalName>rigel</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptors>
 						<descriptor>src/assembly/workspace.xml</descriptor>

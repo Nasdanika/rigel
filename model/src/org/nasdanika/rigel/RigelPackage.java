@@ -225,13 +225,13 @@ public interface RigelPackage extends EPackage {
 	int PACKAGE__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Element</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ELEMENT = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
+	int PACKAGE__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Package</em>' class.
@@ -1202,15 +1202,15 @@ public interface RigelPackage extends EPackage {
 	EClass getPackage();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Package#getElement <em>Element</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Package#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Element</em>'.
-	 * @see org.nasdanika.rigel.Package#getElement()
+	 * @return the meta object for the containment reference list '<em>Elements</em>'.
+	 * @see org.nasdanika.rigel.Package#getElements()
 	 * @see #getPackage()
 	 * @generated
 	 */
-	EReference getPackage_Element();
+	EReference getPackage_Elements();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Actor <em>Actor</em>}'.
@@ -1606,12 +1606,12 @@ public interface RigelPackage extends EPackage {
 		EClass PACKAGE = eINSTANCE.getPackage();
 
 		/**
-		 * The meta object literal for the '<em><b>Element</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PACKAGE__ELEMENT = eINSTANCE.getPackage_Element();
+		EReference PACKAGE__ELEMENTS = eINSTANCE.getPackage_Elements();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ActorImpl <em>Actor</em>}' class.

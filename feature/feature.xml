@@ -109,31 +109,39 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <requires>
       <import feature="org.eclipse.emf.ecp.emfforms.runtime.feature" version="1.21.0.20190603-0953"/>
+      <import feature="org.eclipse.sirius.runtime" version="6.2.1.201906121145"/>
    </requires>
 
    <plugin
-         id="org.nasdanika.codegen"
+         id="org.nasdanika.rigel"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.nasdanika.codegen.edit"
+         id="org.nasdanika.rigel.edit"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.nasdanika.codegen.editor"
+         id="org.nasdanika.rigel.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.nasdanika.codegen.html"
+         id="org.nasdanika.rigel.html"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.nasdanika.rigel.design"
          download-size="0"
          install-size="0"
          version="0.0.0"

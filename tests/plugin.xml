@@ -9,7 +9,7 @@
             thread="main"
             visible="true">
          <run
-               class="org.nasdanika.codegen.tests.TestRunner">
+               class="org.nasdanika.rigel.tests.TestRunner">
          </run>
       </application>
    </extension>

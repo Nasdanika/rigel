@@ -16,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//PackageElement/associations"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Package">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Package/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Package/elements"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Actor">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Actor/activities"/>

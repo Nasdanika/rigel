@@ -61,7 +61,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RigelPackage.Literals.PACKAGE__ELEMENT);
+			childrenFeatures.add(RigelPackage.Literals.PACKAGE__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -117,7 +117,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(org.nasdanika.rigel.Package.class)) {
-			case RigelPackage.PACKAGE__ELEMENT:
+			case RigelPackage.PACKAGE__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -137,27 +137,27 @@ public class PackageItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENT,
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENT,
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENT,
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivity()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENT,
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createArtifact()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENT,
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createResource()));
 	}
 

@@ -1,7 +1,7 @@
-# Nasdanika Code Generation
+# Nasdanika Rigel
 
 * [Online documentation](https://github.com/Nasdanika/codegen/blob/master/org.nasdanika.codegen.editor/doc/codegen.md).
-* [Model documentation](modeldoc/index.html)
+* [Model documentation](model-doc/index.html)
 * JavaDoc
     * [Model](apidocs/model)
     * [Edit](apidocs/edit)
@@ -9,8 +9,8 @@
 
 ## P2 Repository
 
-* ``https://www.nasdanika.org/products/codegen/repository``
-* [Archived](https://www.nasdanika.org/products/codegen/org.nasdanika.codegen.repository-0.1.0-SNAPSHOT.zip)
+* ``https://www.nasdanika.org/home/products/rigel/repository``
+* [Archived](org.nasdanika.rigel.repository-0.1.0-SNAPSHOT.zip)
 
 ## How to contribute
 

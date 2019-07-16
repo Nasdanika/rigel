@@ -24,7 +24,7 @@ import org.nasdanika.rigel.RigelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getElements <em>Elements</em>}</li>
  * </ul>
  *
  * @generated
@@ -56,8 +56,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<PackageElement> getElement() {
-		return (EList<PackageElement>)eDynamicGet(RigelPackage.PACKAGE__ELEMENT, RigelPackage.Literals.PACKAGE__ELEMENT, true, true);
+	public EList<PackageElement> getElements() {
+		return (EList<PackageElement>)eDynamicGet(RigelPackage.PACKAGE__ELEMENTS, RigelPackage.Literals.PACKAGE__ELEMENTS, true, true);
 	}
 
 	/**
@@ -68,8 +68,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__ELEMENT:
-				return ((InternalEList<?>)getElement()).basicRemove(otherEnd, msgs);
+			case RigelPackage.PACKAGE__ELEMENTS:
+				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -82,8 +82,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__ELEMENT:
-				return getElement();
+			case RigelPackage.PACKAGE__ELEMENTS:
+				return getElements();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -97,9 +97,9 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__ELEMENT:
-				getElement().clear();
-				getElement().addAll((Collection<? extends PackageElement>)newValue);
+			case RigelPackage.PACKAGE__ELEMENTS:
+				getElements().clear();
+				getElements().addAll((Collection<? extends PackageElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -113,8 +113,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__ELEMENT:
-				getElement().clear();
+			case RigelPackage.PACKAGE__ELEMENTS:
+				getElements().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -128,8 +128,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__ELEMENT:
-				return !getElement().isEmpty();
+			case RigelPackage.PACKAGE__ELEMENTS:
+				return !getElements().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

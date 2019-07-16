@@ -267,7 +267,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getPackage_Element() {
+	public EReference getPackage_Elements() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -599,7 +599,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(packageElementEClass, PACKAGE_ELEMENT__ASSOCIATIONS);
 
 		packageEClass = createEClass(PACKAGE);
-		createEReference(packageEClass, PACKAGE__ELEMENT);
+		createEReference(packageEClass, PACKAGE__ELEMENTS);
 
 		actorEClass = createEClass(ACTOR);
 		createEReference(actorEClass, ACTOR__ACTIVITIES);
@@ -696,7 +696,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getPackageElement_Associations(), this.getAssociation(), null, "associations", null, 0, -1, PackageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageEClass, org.nasdanika.rigel.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackage_Element(), this.getPackageElement(), null, "element", null, 0, -1, org.nasdanika.rigel.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Elements(), this.getPackageElement(), null, "elements", null, 0, -1, org.nasdanika.rigel.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActor_Activities(), this.getActivity(), this.getActivity_Paricipants(), "activities", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

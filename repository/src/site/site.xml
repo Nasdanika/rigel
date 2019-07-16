@@ -7,7 +7,7 @@
  
     <breadcrumbs>
       <item name="Nasdanika" href="../../index.html"/>
-      <item name="Codegen" href="index.html"/>
+      <item name="Rigel" href="index.html"/>
     </breadcrumbs>
  
    <menu name="Main">
@@ -26,15 +26,15 @@
    -->  
 
    <menu name="Java API">
-      <item name="Model" href="apidocs/org.nasdanika.codegen/index.html" />
-      <item name="Edit" href="apidocs/org.nasdanika.codegen.edit/index.html" />
-      <item name="Editor" href="apidocs/org.nasdanika.codegen.editor/index.html" />
+      <item name="Model" href="apidocs/org.nasdanika.rigel/index.html" />
+      <item name="Edit" href="apidocs/org.nasdanika.rigel.edit/index.html" />
+      <item name="Editor" href="apidocs/org.nasdanika.rigel.editor/index.html" />
    </menu>
 
    <menu name="Issues">
-      <item name="Roadmap" href="../../../mantis/roadmap_page.php?project_id=4" />
-      <item name="All" href="../../../mantis/view_all_bug_page.php?project_id=4" />
-      <item name="Change Log" href="../../../mantis/changelog_page.php?project_id=4" />
+      <item name="Roadmap" href="../../../mantis/roadmap_page.php?project_id=24" />
+      <item name="All" href="../../../mantis/view_all_bug_page.php?project_id=24" />
+      <item name="Change Log" href="../../../mantis/changelog_page.php?project_id=24" />
    </menu>
  
    <footer>
@@ -54,12 +54,12 @@
   <custom>
     <fluidoSkin>
       <gitHub>
-        <projectId>nasdanika/codegen</projectId>
+        <projectId>nasdanika/rigel</projectId>
         <ribbonOrientation>right</ribbonOrientation>
         <ribbonColor>gray</ribbonColor>
       </gitHub>
       <googleSearch>
-        <sitesearch>https://www.nasdanika.org/home/products/codegen</sitesearch>
+        <sitesearch>https://www.nasdanika.org/home/products/rigel</sitesearch>
       </googleSearch>      
     </fluidoSkin>
   </custom>

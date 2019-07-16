@@ -1,4 +1,4 @@
-package org.nasdanika.codegen.html;
+package org.nasdanika.rigel.html;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.json.JSONObject;
-import org.nasdanika.codegen.CodegenPackage;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.MutableContext;
 import org.nasdanika.common.ProgressMonitor;
@@ -39,6 +38,7 @@ import org.nasdanika.html.emf.EObjectAdaptable;
 import org.nasdanika.html.emf.ViewAction;
 import org.nasdanika.html.fontawesome.FontAwesomeFactory;
 import org.nasdanika.html.jstree.JsTreeFactory;
+import org.nasdanika.rigel.RigelPackage;
 
 public class CodegenDocumentationGenerator {
 
@@ -97,14 +97,14 @@ public class CodegenDocumentationGenerator {
 		rootAction.getChildren().add(principalAction);
 		
 		resourceSet = new ResourceSetImpl();		
-		resourceSet.getAdapterFactories().add(new CodegenViewActionAdapterFactory(principalAction));
+		resourceSet.getAdapterFactories().add(new RigelViewActionAdapterFactory(principalAction));
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 		
-		resourceSet.getPackageRegistry().put(CodegenPackage.eNS_URI, CodegenPackage.eINSTANCE);
+		resourceSet.getPackageRegistry().put(RigelPackage.eNS_URI, RigelPackage.eINSTANCE);
 	}
 		
 	public void generate(org.nasdanika.common.resources.Container<Object> resourceConsumer, ProgressMonitor progressMonitor) {		
-		Application app = new CodegenDocumentationApplication(Theme.Litera, true);
+		Application app = new RigelDocumentationApplication(Theme.Litera, true);
 
 		JsTreeFactory.INSTANCE.cdn(app.getHTMLPage());
 		FontAwesomeFactory.INSTANCE.cdn(app.getHTMLPage());

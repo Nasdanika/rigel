@@ -1,4 +1,4 @@
-package org.nasdanika.codegen.tests;
+package org.nasdanika.rigel.tests;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -7,9 +7,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
 	GenerateModelDocumentation.class,
-	TextFileTests.class,
-	StaticTextTests.class
+	ActivityTests.class
 })
-public class CodegenTests {
+public class RigelTests {
 	
 }

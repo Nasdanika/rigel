@@ -1,4 +1,4 @@
-package org.nasdanika.codegen.tests;
+package org.nasdanika.rigel.tests;
 
 import java.io.InputStream;
 import java.util.function.BiFunction;
@@ -16,6 +16,6 @@ public class TestsBase {
 		return ret;
 	};	
 	
-	public static final String TEST_MODELS_BASE_URI = "org.nasdanika.codegen.tests.models/models/";
+	public static final String DEMO_MODELS_BASE_URI = "org.nasdanika.rigel.demo/models/";
 
 }

@@ -1,4 +1,4 @@
-package org.nasdanika.codegen.tests;
+package org.nasdanika.rigel.tests;
 
 import java.io.File;
 import java.io.InputStream;
@@ -14,7 +14,7 @@ import org.nasdanika.html.ecore.EcoreDocumentationGenerator;
 
 public class GenerateModelDocumentation extends TestsBase {
 
-	private static final String MODEL_URI = "urn:org.nasdanika.codegen";
+	private static final String MODEL_URI = "urn:org.nasdanika.rigel";
 	
 	/**
 	 * Generates Ecore model documentation.
@@ -22,11 +22,11 @@ public class GenerateModelDocumentation extends TestsBase {
 	 */
 	@Test
 	public void testEcoreDocumentation() {		
-		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Codegen Model", null, null);
+		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Rigel Model", null, null);
 		generator.loadGenModel(MODEL_URI);
 		Container<InputStream> fsc = new FileSystemContainer(new File("target/model-doc"));
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
-		ProgressEntry pe = new ProgressEntry("Generating Codegen Model Documentation", 0);
+		ProgressEntry pe = new ProgressEntry("Generating Rigel Model Documentation", 0);
 		Container<Object> container = fsc.adapt(null, encoder, null);
 		generator.generate(container, progressMonitor.compose(pe));
 		org.nasdanika.common.resources.File<Object> progressFile = container.getFile("progress-report.json");
