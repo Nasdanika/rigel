@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rigel Demo Models
+Bundle-SymbolicName: org.nasdanika.rigel.demo;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Nasdanika LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.nasdanika.rigel;bundle-version="0.1.0"
+Automatic-Module-Name: org.nasdanika.rigel.tests

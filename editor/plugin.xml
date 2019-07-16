@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated rigel -->
+      <category
+            id="org.nasdanika"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.nasdanika.rigel.presentation.RigelModelWizardID"
+            name="%_UI_RigelModelWizard_label"
+            class="org.nasdanika.rigel.presentation.RigelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RigelModelFile.gif">
+         <description>%_UI_RigelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.nasdanika.rigel.presentation.RigelFormsEditorID"
+            name="%_UI_RigelFormsEditor_label"
+            icon="icons/full/obj16/RigelModelFile.gif"
+            extensions="rigel"
+            default="true"
+            class="org.nasdanika.codegen.presentation.RigelFormsEditor">
+      </editor>
+      
+      <!-- @generated rigel -->
+      <editor
+            id="org.nasdanika.rigel.presentation.RigelEditorID"
+            name="%_UI_RigelEditor_label"
+            icon="icons/full/obj16/RigelModelFile.gif"
+            extensions="rigel"
+            class="org.nasdanika.rigel.presentation.RigelEditor"
+            contributorClass="org.nasdanika.rigel.presentation.RigelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
