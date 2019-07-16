@@ -184,14 +184,14 @@
 
 	</modules>
 
-	<name>Nasdanika Code Generation</name>
+	<name>Nasdanika Rigel</name>
 	<!-- For resolution of JavaDoc between modules -->
-	<url>http://www.nasdanika.org/products/codegen/apidocs/</url>
+	<url>http://www.nasdanika.org/products/rigelt/apidocs/</url>
 	<organization>
 		<name>Nasdanika LLC</name>
 		<url>http://www.nasdanika.org</url>
 	</organization>
 	<scm>
-		<url>https://github.com/Nasdanika/codegen</url>
+		<url>https://github.com/Nasdanika/rigel</url>
 	</scm>
 </project>

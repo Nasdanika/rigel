@@ -1,6 +1,5 @@
 # Nasdanika Rigel
 
-* [Online documentation](https://github.com/Nasdanika/codegen/blob/master/org.nasdanika.codegen.editor/doc/codegen.md).
 * [Model documentation](model-doc/index.html)
 * JavaDoc
     * [Model](apidocs/model)

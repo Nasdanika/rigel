@@ -31,7 +31,7 @@ import org.nasdanika.html.bootstrap.BootstrapFactory;
 import org.nasdanika.html.bootstrap.Container;
 import org.nasdanika.html.bootstrap.Table;
 import org.nasdanika.html.bootstrap.Table.TableBody;
-import org.nasdanika.html.bootstrap.Table.TableHeader;
+//import org.nasdanika.html.bootstrap.Table.TableHeader;
 import org.nasdanika.html.bootstrap.Text.Alignment;
 import org.nasdanika.html.bootstrap.Theme;
 import org.nasdanika.html.emf.EObjectAdaptable;
@@ -40,7 +40,7 @@ import org.nasdanika.html.fontawesome.FontAwesomeFactory;
 import org.nasdanika.html.jstree.JsTreeFactory;
 import org.nasdanika.rigel.RigelPackage;
 
-public class CodegenDocumentationGenerator {
+public class RigelDocumentationGenerator {
 
 	class ViewActionImpl extends ActionImpl implements ViewAction, Adapter {
 
@@ -79,7 +79,7 @@ public class CodegenDocumentationGenerator {
 	 * @param description
 	 * @param resourceLocator Locator of localized resources for "Package" and "Summary" strings.
 	 */
-	public CodegenDocumentationGenerator(String title, String description) {
+	public RigelDocumentationGenerator(String title, String description) {
 		rootAction = new ActionImpl();
 		rootAction.setText(title);
 		rootAction.setDescription(description);
@@ -181,7 +181,7 @@ public class CodegenDocumentationGenerator {
 		}
 				
 		Table table = bootstrapFactory.table().bordered();
-		TableHeader header = table.header();
+//		TableHeader header = table.header();
 //		// TODO - localization.
 //		String pkg = "Package";
 //		String summary = "Summary";
