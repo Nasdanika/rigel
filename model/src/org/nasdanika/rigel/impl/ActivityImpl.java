@@ -89,9 +89,10 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Transition getInboundTransitions() {
-		return (Transition)eDynamicGet(RigelPackage.ACTIVITY__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, true, true);
+	public EList<Transition> getInboundTransitions() {
+		return (EList<Transition>)eDynamicGet(RigelPackage.ACTIVITY__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, true, true);
 	}
 
 	/**
@@ -99,67 +100,10 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition basicGetInboundTransitions() {
-		return (Transition)eDynamicGet(RigelPackage.ACTIVITY__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInboundTransitions(Transition newInboundTransitions, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newInboundTransitions, RigelPackage.ACTIVITY__INBOUND_TRANSITIONS, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public void setInboundTransitions(Transition newInboundTransitions) {
-		eDynamicSet(RigelPackage.ACTIVITY__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, newInboundTransitions);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Artifact getInputs() {
-		return (Artifact)eDynamicGet(RigelPackage.ACTIVITY__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Artifact basicGetInputs() {
-		return (Artifact)eDynamicGet(RigelPackage.ACTIVITY__INPUTS, RigelPackage.Literals.TARGET__INPUTS, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInputs(Artifact newInputs, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newInputs, RigelPackage.ACTIVITY__INPUTS, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInputs(Artifact newInputs) {
-		eDynamicSet(RigelPackage.ACTIVITY__INPUTS, RigelPackage.Literals.TARGET__INPUTS, newInputs);
+	public EList<Artifact> getInputs() {
+		return (EList<Artifact>)eDynamicGet(RigelPackage.ACTIVITY__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
 	}
 
 	/**
@@ -207,15 +151,9 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 			case RigelPackage.ACTIVITY__OUTPUTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				Transition inboundTransitions = basicGetInboundTransitions();
-				if (inboundTransitions != null)
-					msgs = ((InternalEObject)inboundTransitions).eInverseRemove(this, RigelPackage.TRANSITION__TARGET, Transition.class, msgs);
-				return basicSetInboundTransitions((Transition)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundTransitions()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__INPUTS:
-				Artifact inputs = basicGetInputs();
-				if (inputs != null)
-					msgs = ((InternalEObject)inputs).eInverseRemove(this, RigelPackage.ARTIFACT__CONSUMERS, Artifact.class, msgs);
-				return basicSetInputs((Artifact)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__PARICIPANTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParicipants()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__RESOURCES:
@@ -237,9 +175,9 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 			case RigelPackage.ACTIVITY__OUTPUTS:
 				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				return basicSetInboundTransitions(null, msgs);
+				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__INPUTS:
-				return basicSetInputs(null, msgs);
+				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__PARICIPANTS:
@@ -263,11 +201,9 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 			case RigelPackage.ACTIVITY__OUTPUTS:
 				return getOutputs();
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				if (resolve) return getInboundTransitions();
-				return basicGetInboundTransitions();
+				return getInboundTransitions();
 			case RigelPackage.ACTIVITY__INPUTS:
-				if (resolve) return getInputs();
-				return basicGetInputs();
+				return getInputs();
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				return getElements();
 			case RigelPackage.ACTIVITY__PARICIPANTS:
@@ -296,10 +232,12 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 				getOutputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				setInboundTransitions((Transition)newValue);
+				getInboundTransitions().clear();
+				getInboundTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case RigelPackage.ACTIVITY__INPUTS:
-				setInputs((Artifact)newValue);
+				getInputs().clear();
+				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				getElements().clear();
@@ -332,10 +270,10 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 				getOutputs().clear();
 				return;
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				setInboundTransitions((Transition)null);
+				getInboundTransitions().clear();
 				return;
 			case RigelPackage.ACTIVITY__INPUTS:
-				setInputs((Artifact)null);
+				getInputs().clear();
 				return;
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				getElements().clear();
@@ -363,9 +301,9 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 			case RigelPackage.ACTIVITY__OUTPUTS:
 				return !getOutputs().isEmpty();
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
-				return basicGetInboundTransitions() != null;
+				return !getInboundTransitions().isEmpty();
 			case RigelPackage.ACTIVITY__INPUTS:
-				return basicGetInputs() != null;
+				return !getInputs().isEmpty();
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				return !getElements().isEmpty();
 			case RigelPackage.ACTIVITY__PARICIPANTS:

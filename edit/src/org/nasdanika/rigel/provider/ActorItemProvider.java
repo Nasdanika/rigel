@@ -74,25 +74,23 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	 * This returns Actor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Actor"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/user.png"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Actor)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Actor_type") :
-			getString("_UI_Actor_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Actor_type") :	label;
 	}
 
 

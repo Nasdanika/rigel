@@ -2,7 +2,17 @@ package org.nasdanika.rigel.tests;
 
 import java.io.File;
 import java.io.InputStream;
-
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.sirius.business.api.query.DViewQuery;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.factory.SessionFactory;
+import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
+import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
+import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
+import org.eclipse.sirius.ui.business.api.dialect.ExportFormat.ExportDocumentFormat;
+import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.junit.Test;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressEntry;
@@ -39,6 +49,20 @@ public class GenerateModelDocumentation extends TestsBase {
 		// HTML report
 		ProgressReportGenerator prg = new ProgressReportGenerator("Documentation generation", pe);
 		prg.generate(container.getContainer("progress-report"), progressMonitor);		
+	}
+	
+	@Test
+	public void testHeadlessDiagramGeneration() throws Exception {
+//		// Get session from an absolute path (not in a workspace)
+//        URI sessionResourceURI = URI.createFileURI("C:\\Users\\Pavel\\git\\rigel\\demo\\representations.aird");
+//        Session session = SessionFactory.INSTANCE.createSession(sessionResourceURI, new NullProgressMonitor());
+//        session.open(new NullProgressMonitor());
+//        // Get the expected representation (here the first of the first DView)
+//        DViewQuery query = new DViewQuery(session.getOwnedViews().iterator().next());
+//        DRepresentation representation = query.getLoadedRepresentations().get(0);
+//        // Export it as SVG image
+//        ExportFormat exportFormat = new ExportFormat(ExportDocumentFormat.NONE, ImageFileFormat.PNG);
+//        DialectUIManager.INSTANCE.export(representation, session, new Path("C:\\_tmp\\diagram.png"), exportFormat, new NullProgressMonitor());		
 	}
 	
 }

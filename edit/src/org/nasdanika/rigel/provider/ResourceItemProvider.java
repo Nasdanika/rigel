@@ -109,25 +109,23 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	 * This returns Resource.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Resource"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/wrench.png"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Resource)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Resource_type") :
-			getString("_UI_Resource_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Resource_type") : label;
 	}
 
 

@@ -2,11 +2,14 @@
  */
 package org.nasdanika.rigel.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Target;
@@ -51,9 +54,10 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Transition getInboundTransitions() {
-		return (Transition)eDynamicGet(RigelPackage.TARGET__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, true, true);
+	public EList<Transition> getInboundTransitions() {
+		return (EList<Transition>)eDynamicGet(RigelPackage.TARGET__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, true, true);
 	}
 
 	/**
@@ -61,28 +65,10 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Transition basicGetInboundTransitions() {
-		return (Transition)eDynamicGet(RigelPackage.TARGET__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInboundTransitions(Transition newInboundTransitions, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newInboundTransitions, RigelPackage.TARGET__INBOUND_TRANSITIONS, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public void setInboundTransitions(Transition newInboundTransitions) {
-		eDynamicSet(RigelPackage.TARGET__INBOUND_TRANSITIONS, RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS, newInboundTransitions);
+	public EList<Artifact> getInputs() {
+		return (EList<Artifact>)eDynamicGet(RigelPackage.TARGET__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
 	}
 
 	/**
@@ -90,58 +76,14 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Artifact getInputs() {
-		return (Artifact)eDynamicGet(RigelPackage.TARGET__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Artifact basicGetInputs() {
-		return (Artifact)eDynamicGet(RigelPackage.TARGET__INPUTS, RigelPackage.Literals.TARGET__INPUTS, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInputs(Artifact newInputs, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newInputs, RigelPackage.TARGET__INPUTS, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInputs(Artifact newInputs) {
-		eDynamicSet(RigelPackage.TARGET__INPUTS, RigelPackage.Literals.TARGET__INPUTS, newInputs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				Transition inboundTransitions = basicGetInboundTransitions();
-				if (inboundTransitions != null)
-					msgs = ((InternalEObject)inboundTransitions).eInverseRemove(this, RigelPackage.TRANSITION__TARGET, Transition.class, msgs);
-				return basicSetInboundTransitions((Transition)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundTransitions()).basicAdd(otherEnd, msgs);
 			case RigelPackage.TARGET__INPUTS:
-				Artifact inputs = basicGetInputs();
-				if (inputs != null)
-					msgs = ((InternalEObject)inputs).eInverseRemove(this, RigelPackage.ARTIFACT__CONSUMERS, Artifact.class, msgs);
-				return basicSetInputs((Artifact)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -155,9 +97,9 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				return basicSetInboundTransitions(null, msgs);
+				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.TARGET__INPUTS:
-				return basicSetInputs(null, msgs);
+				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -171,11 +113,9 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				if (resolve) return getInboundTransitions();
-				return basicGetInboundTransitions();
+				return getInboundTransitions();
 			case RigelPackage.TARGET__INPUTS:
-				if (resolve) return getInputs();
-				return basicGetInputs();
+				return getInputs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,14 +125,17 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				setInboundTransitions((Transition)newValue);
+				getInboundTransitions().clear();
+				getInboundTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
 			case RigelPackage.TARGET__INPUTS:
-				setInputs((Artifact)newValue);
+				getInputs().clear();
+				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -207,10 +150,10 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				setInboundTransitions((Transition)null);
+				getInboundTransitions().clear();
 				return;
 			case RigelPackage.TARGET__INPUTS:
-				setInputs((Artifact)null);
+				getInputs().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -225,9 +168,9 @@ public abstract class TargetImpl extends ActivityElementImpl implements Target {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
-				return basicGetInboundTransitions() != null;
+				return !getInboundTransitions().isEmpty();
 			case RigelPackage.TARGET__INPUTS:
-				return basicGetInputs() != null;
+				return !getInputs().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

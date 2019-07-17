@@ -13,6 +13,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 import org.nasdanika.rigel.RigelPackage;
+import org.nasdanika.rigel.Target;
 import org.nasdanika.rigel.Transition;
 
 /**
@@ -120,25 +121,37 @@ public class TransitionItemProvider extends ModelElementItemProvider {
 	 * This returns Transition.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transition"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/arrow_right.png"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Transition)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Transition_type") :
-			getString("_UI_Transition_type") + " " + label;
+		StringBuilder label = new StringBuilder();
+		String name = ((Transition) object).getName();
+		if (name != null) {
+			label.append(name);
+		}
+		Target t = ((Transition) object).getTarget();
+		if (t != null) {
+			String tName = t.getName();
+			if (tName != null && tName.length() > 0) {
+				if (name != null) {
+					label.append(" ");
+				}
+			}
+			label.append("(").append(tName).append(")");
+		}
+		return label == null || label.length() == 0 ? getString("_UI_Transition_type") : label.toString();
 	}
 
 

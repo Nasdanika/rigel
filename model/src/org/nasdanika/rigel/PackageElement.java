@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Model element which is not part of other model elements, except the package.
+ * Model element which can be contained by a package.
  * <!-- end-model-doc -->
  *
  * <p>

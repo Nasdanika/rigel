@@ -563,7 +563,7 @@ public interface RigelPackage extends EPackage {
 	int TARGET__CONFIGURATION = ACTIVITY_ELEMENT__CONFIGURATION;
 
 	/**
-	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference.
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -572,7 +572,7 @@ public interface RigelPackage extends EPackage {
 	int TARGET__INBOUND_TRANSITIONS = ACTIVITY_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference.
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -636,7 +636,7 @@ public interface RigelPackage extends EPackage {
 	int END__CONFIGURATION = TARGET__CONFIGURATION;
 
 	/**
-	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference.
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -645,7 +645,7 @@ public interface RigelPackage extends EPackage {
 	int END__INBOUND_TRANSITIONS = TARGET__INBOUND_TRANSITIONS;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference.
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -736,7 +736,7 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__OUTPUTS = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference.
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -745,7 +745,7 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__INBOUND_TRANSITIONS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference.
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1296,10 +1296,10 @@ public interface RigelPackage extends EPackage {
 	EClass getTarget();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.rigel.Target#getInboundTransitions <em>Inbound Transitions</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Target#getInboundTransitions <em>Inbound Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Inbound Transitions</em>'.
+	 * @return the meta object for the reference list '<em>Inbound Transitions</em>'.
 	 * @see org.nasdanika.rigel.Target#getInboundTransitions()
 	 * @see #getTarget()
 	 * @generated
@@ -1307,10 +1307,10 @@ public interface RigelPackage extends EPackage {
 	EReference getTarget_InboundTransitions();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.rigel.Target#getInputs <em>Inputs</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Target#getInputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Inputs</em>'.
+	 * @return the meta object for the reference list '<em>Inputs</em>'.
 	 * @see org.nasdanika.rigel.Target#getInputs()
 	 * @see #getTarget()
 	 * @generated
@@ -1688,7 +1688,7 @@ public interface RigelPackage extends EPackage {
 		EClass TARGET = eINSTANCE.getTarget();
 
 		/**
-		 * The meta object literal for the '<em><b>Inbound Transitions</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Inbound Transitions</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1696,7 +1696,7 @@ public interface RigelPackage extends EPackage {
 		EReference TARGET__INBOUND_TRANSITIONS = eINSTANCE.getTarget_InboundTransitions();
 
 		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
