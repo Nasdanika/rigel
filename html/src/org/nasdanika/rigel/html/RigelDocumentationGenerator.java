@@ -1,5 +1,9 @@
 package org.nasdanika.rigel.html;
 
+/*
+ * Diagram generation part is inspired by https://github.com/gemoc/org.eclipse.sirius/blob/master/plugins/org.eclipse.sirius.diagram.ui/src-diag/org/eclipse/sirius/diagram/ui/business/internal/dialect/DiagramDialectUIServices.java
+ */
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
