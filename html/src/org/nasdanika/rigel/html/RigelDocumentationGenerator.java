@@ -1,5 +1,13 @@
 package org.nasdanika.rigel.html;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,6 +17,16 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+import org.eclipse.gmf.runtime.diagram.ui.image.PartPositionInfo;
+import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.sirius.business.api.session.CustomDataConstants;
+import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.business.api.session.factory.SessionFactory;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
+import org.eclipse.sirius.diagram.ui.tools.api.part.DiagramEditPartService;
+import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.json.JSONObject;
 import org.nasdanika.common.Context;
 import org.nasdanika.common.MutableContext;
@@ -39,6 +57,31 @@ import org.nasdanika.html.emf.ViewAction;
 import org.nasdanika.html.fontawesome.FontAwesomeFactory;
 import org.nasdanika.html.jstree.JsTreeFactory;
 import org.nasdanika.rigel.RigelPackage;
+
+//import java.util.Collection;
+//import java.util.Collections;
+//import java.util.List;
+//
+//import org.eclipse.core.runtime.IPath;
+//import org.eclipse.core.runtime.IProgressMonitor;
+//import org.eclipse.core.runtime.NullProgressMonitor;
+//import org.eclipse.core.runtime.Path;
+//import org.eclipse.emf.common.util.URI;
+//import org.eclipse.emf.ecore.EObject;
+//import org.eclipse.equinox.app.IApplication;
+//import org.eclipse.equinox.app.IApplicationContext;
+//import org.eclipse.gmf.runtime.diagram.core.preferences.PreferencesHint;
+//import org.eclipse.gmf.runtime.diagram.ui.image.PartPositionInfo;
+//import org.eclipse.gmf.runtime.notation.Diagram;
+//import org.eclipse.sirius.business.api.query.DViewQuery;
+//import org.eclipse.sirius.business.api.session.CustomDataConstants;
+//import org.eclipse.sirius.business.api.session.Session;
+//import org.eclipse.sirius.business.api.session.factory.SessionFactory;
+//import org.eclipse.sirius.diagram.DNode;
+//import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizer;
+//import org.eclipse.sirius.diagram.business.api.refresh.CanonicalSynchronizerFactory;
+//import org.eclipse.sirius.diagram.ui.tools.api.part.DiagramEditPartService;
+//import org.eclipse.sirius.viewpoint.DRepresentation;
 
 public class RigelDocumentationGenerator {
 
@@ -103,45 +146,78 @@ public class RigelDocumentationGenerator {
 		resourceSet.getPackageRegistry().put(RigelPackage.eNS_URI, RigelPackage.eINSTANCE);
 	}
 		
-	public void generate(org.nasdanika.common.resources.Container<Object> resourceConsumer, ProgressMonitor progressMonitor) {		
-		Application app = new RigelDocumentationApplication(Theme.Litera, true);
-
-		JsTreeFactory.INSTANCE.cdn(app.getHTMLPage());
-		FontAwesomeFactory.INSTANCE.cdn(app.getHTMLPage());
-		
-		MutableContext context = new SimpleMutableContext();
-		context.register(org.nasdanika.common.resources.Container.class, resourceConsumer);
-		
-		MutableContext docContext = new SimpleMutableContext();
-		docContext.register(org.nasdanika.common.resources.Container.class, resourceConsumer.getContainer("doc"));
-		docContext.put("image-path", "doc/");
-		
-		ApplicationBuilder  applicationBuilder = new ActionApplicationBuilder(principalAction.getChildren().get(0)) {
-			
-			@Override
-			protected ViewPart getNavigationPanelViewPart() {
-				return new JsTreeNavigationPanelViewPart(getNavigationPanelActions(), getActiveAction()) {
-					@Override
-					protected void configureJsTree(JSONObject jsTree) {
-						// TODO State and search plug-ins.
-						super.configureJsTree(jsTree);
-					}
-				};
+	/**
+	 * Generates documentation.
+	 * @param resourceConsumer Consumes generated documentation.
+	 * @param progressMonitor Progress monitor.
+	 * @param representationURIs URI's of representation files ``.aird`` to generate diagrams.
+	 */
+	public void generate(org.nasdanika.common.resources.Container<Object> resourceConsumer, ProgressMonitor progressMonitor, URI... representationURIs) throws Exception {	
+		List<Session> sessions = new ArrayList<>();
+		for (URI rUri: representationURIs) {			
+			Session session;
+			try (ProgressMonitor createMonitor = progressMonitor.split("Creating session for "+rUri, 100, rUri)) {
+				session = SessionFactory.INSTANCE.createSession(rUri, wrap(createMonitor));
 			}
+			try (ProgressMonitor openMonitor = progressMonitor.split("Opening session for "+rUri, 100, rUri)) {
+				session.open(wrap(openMonitor));
+			}			
+			sessions.add(session);
+		}
+
+		try {
+			Application app = new RigelDocumentationApplication(Theme.Litera, true);
+	
+			JsTreeFactory.INSTANCE.cdn(app.getHTMLPage());
+			FontAwesomeFactory.INSTANCE.cdn(app.getHTMLPage());
 			
-		}; 
-		
-		applicationBuilder.build(app, progressMonitor);
-		
-		try (ProgressMonitor im = progressMonitor.split("Generating index.html", 100)) {
-			resourceConsumer.getFile("index.html").setContents(app, im);			
+			MutableContext context = new SimpleMutableContext();
+			context.register(org.nasdanika.common.resources.Container.class, resourceConsumer);
+			
+			MutableContext docContext = new SimpleMutableContext();
+			docContext.register(org.nasdanika.common.resources.Container.class, resourceConsumer.getContainer("doc"));
+			docContext.put("image-path", "doc/");
+			
+			ApplicationBuilder  applicationBuilder = new ActionApplicationBuilder(principalAction.getChildren().get(0)) {
+				
+				@Override
+				protected ViewPart getNavigationPanelViewPart() {
+					return new JsTreeNavigationPanelViewPart(getNavigationPanelActions(), getActiveAction()) {
+						@Override
+						protected void configureJsTree(JSONObject jsTree) {
+							// TODO State and search plug-ins.
+							super.configureJsTree(jsTree);
+						}
+					};
+				}
+				
+			}; 
+			
+			applicationBuilder.build(app, progressMonitor);
+			
+			try (ProgressMonitor im = progressMonitor.split("Generating index.html", 100)) {
+				resourceConsumer.getFile("index.html").setContents(app, im);			
+			}
+			try (ProgressMonitor sm = progressMonitor.split("Generating summary", 100)) {
+				resourceConsumer.getFile("doc/doc-summary").setContents(summary(docContext), sm);			
+			}
+			for (Action action: principalAction.getChildren()) {
+				generateActionContent(action, docContext, progressMonitor);
+			}
+		} finally {
+			for (Session session: sessions) {
+				try (ProgressMonitor closeMonitor = progressMonitor.split("Closing session "+session.getID(), 100, session)) {
+					session.close(wrap(closeMonitor));
+				}
+			}
 		}
-		try (ProgressMonitor sm = progressMonitor.split("Generating summary", 100)) {
-			resourceConsumer.getFile("doc/doc-summary").setContents(summary(docContext), sm);			
-		}
-		for (Action action: principalAction.getChildren()) {
-			generateActionContent(action, docContext, progressMonitor);
-		}
+	}
+	
+	private IProgressMonitor wrap(ProgressMonitor progressMonitor) {
+		// TODO 
+		return new NullProgressMonitor() {
+			
+		};
 		
 	}
 	
@@ -152,6 +228,8 @@ public class RigelDocumentationGenerator {
 	public void loadModel(String platformPluginUri) {
 		loadModel(URI.createPlatformPluginURI(platformPluginUri, false));		
 	}
+	
+//	public void load
 	
 	/**
 	 * Loads a model to generate documentation from.
@@ -212,6 +290,49 @@ public class RigelDocumentationGenerator {
 			}
 		}
 	}
+	
+//	{
+//		DViewQuery query = new DViewQuery(session.getOwnedViews().iterator().next());
+//		DRepresentation representation = query.getLoadedRepresentations().get(0); // Iterate over all.
+//		List<PartPositionInfo> ppil = exportDiagram(representation, session, new Path("...diagram-5.svg"), new NullProgressMonitor());
+//		      
+//		for (PartPositionInfo ppi : ppil) {
+//			EObject semanticElement = ppi.getSemanticElement();
+//			System.out.println("---");
+//			if (semanticElement instanceof DNode) {
+//				DNode dNode = (DNode) semanticElement;
+//				System.out.println(semanticElement.getClass());
+//				EObject target = dNode.getTarget();
+//				System.out.println(target);
+//				if (target instanceof Activity) {
+//					String name = ((Activity) target).getName();
+//					System.out.println(name);
+//					int x = ppi.getPartX();
+//					int y = ppi.getPartY();
+//					int width = ppi.getPartWidth();
+//					int height = ppi.getPartHeight();
+//					System.out.println("<area shape=\"rect\" coords=\"" + x + "," + y + "," + (x + width) + ","
+//							+ (y + height) + "\" href=\"sun.htm\" alt=\"" + name + "\">");
+//				}
+//			}
+//		}
+//	}
+	
+	private List<PartPositionInfo> exportDiagram(DRepresentation representation, Session session, IPath path, IProgressMonitor monitor) throws Exception {
+        final Collection<EObject> data = session.getServices().getCustomData(CustomDataConstants.GMF_DIAGRAMS, representation);
+        for (final EObject dataElement : data) {
+            if (dataElement instanceof Diagram) {
+                final Diagram diagram = (Diagram) dataElement;
+                
+                CanonicalSynchronizer canonicalSynchronizer = CanonicalSynchronizerFactory.INSTANCE.createCanonicalSynchronizer(diagram);
+                canonicalSynchronizer.storeViewsToArrange(false);
+                canonicalSynchronizer.synchronize();	
+                
+                return new DiagramEditPartService().copyToImage(diagram, path, org.eclipse.gmf.runtime.diagram.ui.image.ImageFileFormat.SVG, monitor, PreferencesHint.USE_DEFAULTS); // Iterate over all
+            }
+        }	
+	    return Collections.emptyList();
+	}	
 		
 }
 
