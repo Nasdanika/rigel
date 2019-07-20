@@ -20,6 +20,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.rigel.Activity#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Activity#getParicipants <em>Paricipants</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Activity#getResources <em>Resources</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Activity#getSize <em>Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Activity#getProgress <em>Progress</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Activity#getTotalSize <em>Total Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Activity#getTotalProgress <em>Total Progress</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getActivity()
@@ -75,5 +79,83 @@ public interface Activity extends PackageElement, Source, Target {
 	 * @generated
 	 */
 	EList<Resource> getResources();
+
+	/**
+	 * Returns the value of the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Activity size in some unit used by all activities. For example - hours, points, dollars.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Size</em>' attribute.
+	 * @see #setSize(double)
+	 * @see org.nasdanika.rigel.RigelPackage#getActivity_Size()
+	 * @model
+	 * @generated
+	 */
+	double getSize();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.rigel.Activity#getSize <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Size</em>' attribute.
+	 * @see #getSize()
+	 * @generated
+	 */
+	void setSize(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Activity progress in percent. Value between 0 and 100. Progress can be used in "instance" models which are used to model and track execution of an actual effort as opposed to "template" models which explain steps to complete an effort.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Progress</em>' attribute.
+	 * @see #setProgress(int)
+	 * @see org.nasdanika.rigel.RigelPackage#getActivity_Progress()
+	 * @model
+	 * @generated
+	 */
+	int getProgress();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.rigel.Activity#getProgress <em>Progress</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Progress</em>' attribute.
+	 * @see #getProgress()
+	 * @generated
+	 */
+	void setProgress(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Total Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The sum of sizes of this activity and its children.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Total Size</em>' attribute.
+	 * @see org.nasdanika.rigel.RigelPackage#getActivity_TotalSize()
+	 * @model transient="true" changeable="false" derived="true"
+	 * @generated
+	 */
+	double getTotalSize();
+
+	/**
+	 * Returns the value of the '<em><b>Total Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Calculated total activity progress in percent. 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Total Progress</em>' attribute.
+	 * @see org.nasdanika.rigel.RigelPackage#getActivity_TotalProgress()
+	 * @model transient="true" changeable="false" derived="true"
+	 * @generated
+	 */
+	int getTotalProgress();
 
 } // Activity

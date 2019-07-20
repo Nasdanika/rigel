@@ -782,13 +782,49 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__RESOURCES = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__TOTAL_SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__TOTAL_PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 7;
+	int ACTIVITY_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of operations of the '<em>Activity</em>' class.
@@ -1372,6 +1408,50 @@ public interface RigelPackage extends EPackage {
 	EReference getActivity_Resources();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see org.nasdanika.rigel.Activity#getSize()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getProgress <em>Progress</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Progress</em>'.
+	 * @see org.nasdanika.rigel.Activity#getProgress()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_Progress();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getTotalSize <em>Total Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Size</em>'.
+	 * @see org.nasdanika.rigel.Activity#getTotalSize()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_TotalSize();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getTotalProgress <em>Total Progress</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Progress</em>'.
+	 * @see org.nasdanika.rigel.Activity#getTotalProgress()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EAttribute getActivity_TotalProgress();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Artifact <em>Artifact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1747,6 +1827,38 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTIVITY__RESOURCES = eINSTANCE.getActivity_Resources();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__SIZE = eINSTANCE.getActivity_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Progress</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__PROGRESS = eINSTANCE.getActivity_Progress();
+
+		/**
+		 * The meta object literal for the '<em><b>Total Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__TOTAL_SIZE = eINSTANCE.getActivity_TotalSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Total Progress</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTIVITY__TOTAL_PROGRESS = eINSTANCE.getActivity_TotalProgress();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.

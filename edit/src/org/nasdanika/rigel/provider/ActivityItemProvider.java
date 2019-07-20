@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.nasdanika.rigel.Activity;
@@ -52,6 +53,10 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			addInputsPropertyDescriptor(object);
 			addParicipantsPropertyDescriptor(object);
 			addResourcesPropertyDescriptor(object);
+			addSizePropertyDescriptor(object);
+			addProgressPropertyDescriptor(object);
+			addTotalSizePropertyDescriptor(object);
+			addTotalProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -167,6 +172,94 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Activity_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_size_feature", "_UI_Activity_type"),
+				 RigelPackage.Literals.ACTIVITY__SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Progress feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProgressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Activity_progress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_progress_feature", "_UI_Activity_type"),
+				 RigelPackage.Literals.ACTIVITY__PROGRESS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Activity_totalSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_totalSize_feature", "_UI_Activity_type"),
+				 RigelPackage.Literals.ACTIVITY__TOTAL_SIZE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Progress feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalProgressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Activity_totalProgress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_totalProgress_feature", "_UI_Activity_type"),
+				 RigelPackage.Literals.ACTIVITY__TOTAL_PROGRESS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -243,6 +336,12 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Activity.class)) {
+			case RigelPackage.ACTIVITY__SIZE:
+			case RigelPackage.ACTIVITY__PROGRESS:
+			case RigelPackage.ACTIVITY__TOTAL_SIZE:
+			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

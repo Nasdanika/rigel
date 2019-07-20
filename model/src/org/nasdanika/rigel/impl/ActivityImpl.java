@@ -38,11 +38,52 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getParicipants <em>Paricipants</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getResources <em>Resources</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getProgress <em>Progress</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getTotalSize <em>Total Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getTotalProgress <em>Total Progress</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActivityImpl extends PackageElementImpl implements Activity {
+	/**
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SIZE_EDEFAULT = 0.0;
+	/**
+	 * The default value of the '{@link #getProgress() <em>Progress</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PROGRESS_EDEFAULT = 0;
+	/**
+	 * The default value of the '{@link #getTotalSize() <em>Total Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double TOTAL_SIZE_EDEFAULT = 0.0;
+	/**
+	 * The default value of the '{@link #getTotalProgress() <em>Total Progress</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalProgress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TOTAL_PROGRESS_EDEFAULT = 0;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -144,6 +185,74 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public double getSize() {
+		return (Double)eDynamicGet(RigelPackage.ACTIVITY__SIZE, RigelPackage.Literals.ACTIVITY__SIZE, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSize(double newSize) {
+		eDynamicSet(RigelPackage.ACTIVITY__SIZE, RigelPackage.Literals.ACTIVITY__SIZE, newSize);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getProgress() {
+		return (Integer)eDynamicGet(RigelPackage.ACTIVITY__PROGRESS, RigelPackage.Literals.ACTIVITY__PROGRESS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProgress(int newProgress) {
+		eDynamicSet(RigelPackage.ACTIVITY__PROGRESS, RigelPackage.Literals.ACTIVITY__PROGRESS, newProgress);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public double getTotalSize() {
+		return getSize() + getElements().stream().filter(e -> e instanceof Activity).mapToDouble(e -> ((Activity) e).getTotalSize()).sum();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int getTotalProgress() {
+		boolean hasChildActivities = getElements().stream().filter(e -> e instanceof Activity).count() > 0;
+		if (!hasChildActivities) {
+			return getProgress();
+		}
+		
+		// Worked = size * progress
+		double totalWorked = getSize()*getProgress() + getElements().stream().filter(e -> e instanceof Activity).mapToDouble(e -> ((Activity) e).getTotalSize() * ((Activity) e).getTotalProgress()).sum();
+		double totalSize = getTotalSize();		
+		return totalSize == 0 ? 0 : (int) Math.round(totalWorked/totalSize);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -210,6 +319,14 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 				return getParicipants();
 			case RigelPackage.ACTIVITY__RESOURCES:
 				return getResources();
+			case RigelPackage.ACTIVITY__SIZE:
+				return getSize();
+			case RigelPackage.ACTIVITY__PROGRESS:
+				return getProgress();
+			case RigelPackage.ACTIVITY__TOTAL_SIZE:
+				return getTotalSize();
+			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
+				return getTotalProgress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,6 +368,12 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 				getResources().clear();
 				getResources().addAll((Collection<? extends Resource>)newValue);
 				return;
+			case RigelPackage.ACTIVITY__SIZE:
+				setSize((Double)newValue);
+				return;
+			case RigelPackage.ACTIVITY__PROGRESS:
+				setProgress((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -284,6 +407,12 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 			case RigelPackage.ACTIVITY__RESOURCES:
 				getResources().clear();
 				return;
+			case RigelPackage.ACTIVITY__SIZE:
+				setSize(SIZE_EDEFAULT);
+				return;
+			case RigelPackage.ACTIVITY__PROGRESS:
+				setProgress(PROGRESS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,6 +439,14 @@ public class ActivityImpl extends PackageElementImpl implements Activity {
 				return !getParicipants().isEmpty();
 			case RigelPackage.ACTIVITY__RESOURCES:
 				return !getResources().isEmpty();
+			case RigelPackage.ACTIVITY__SIZE:
+				return getSize() != SIZE_EDEFAULT;
+			case RigelPackage.ACTIVITY__PROGRESS:
+				return getProgress() != PROGRESS_EDEFAULT;
+			case RigelPackage.ACTIVITY__TOTAL_SIZE:
+				return getTotalSize() != TOTAL_SIZE_EDEFAULT;
+			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
+				return getTotalProgress() != TOTAL_PROGRESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
