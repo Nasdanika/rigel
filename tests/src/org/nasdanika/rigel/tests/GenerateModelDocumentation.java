@@ -5,6 +5,8 @@ import java.io.InputStream;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EModelElement;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.sirius.business.api.query.DViewQuery;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.factory.SessionFactory;
@@ -17,10 +19,16 @@ import org.junit.Test;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressEntry;
 import org.nasdanika.common.ProgressMonitor;
+import org.nasdanika.common.ResourceLocator;
 import org.nasdanika.common.resources.Container;
 import org.nasdanika.common.resources.FileSystemContainer;
+import org.nasdanika.emf.EModelElementAnnotationResourceLocator;
+import org.nasdanika.emf.FunctionAdapterFactory;
 import org.nasdanika.html.app.impl.ProgressReportGenerator;
 import org.nasdanika.html.ecore.EcoreDocumentationGenerator;
+import org.nasdanika.html.ecore.EcoreViewActionAdapterFactory;
+import org.nasdanika.html.ecore.localization.RussianResourceLocator;
+import org.nasdanika.html.ecore.localization.UI;
 
 public class GenerateModelDocumentation extends TestsBase {
 
@@ -50,6 +58,38 @@ public class GenerateModelDocumentation extends TestsBase {
 		ProgressReportGenerator prg = new ProgressReportGenerator("Documentation generation", pe);
 		prg.generate(container.getContainer("progress-report"), progressMonitor);		
 	}
+
+	/**
+	 * Generates Ecore model documentation for ``ru`` locale by utilizing {@link EModelElementAnnotationResourceLocator}.
+	 * @throws Exception
+	 */
+	@Test
+	public void testRussianEcoreDocumentation() {		
+		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator(
+				"Модель Ригеля", 
+				"",
+				UI.RU) {
+						
+			@Override
+			protected EcoreViewActionAdapterFactory createAdapterFactory() {
+				EcoreViewActionAdapterFactory adapterFactory = super.createAdapterFactory();
+				
+				adapterFactory.registerAdapterFactory(
+						new FunctionAdapterFactory<ResourceLocator, EModelElement>(
+								EcorePackage.Literals.EMODEL_ELEMENT, 
+								ResourceLocator.class, 
+								this.getClass().getClassLoader(), 
+								RussianResourceLocator::new));
+				
+				return adapterFactory;
+			}
+			
+		};
+		generator.loadGenModel(MODEL_URI);
+		Container<InputStream> fsc = new FileSystemContainer(new File("target/ru/model-doc"));
+		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
+		generator.generate(fsc.adapt(null, encoder, null), progressMonitor);		
+	}	
 	
 	@Test
 	public void testHeadlessDiagramGeneration() throws Exception {
