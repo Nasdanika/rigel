@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * Container of top level model elements.
+ * Container of package elements.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getPackage()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u041f\u0430\u043a\u0435\u0442' documentation_ru='\u041f\u0430\u043a\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430.'"
  * @generated
  */
 public interface Package extends PackageElement {

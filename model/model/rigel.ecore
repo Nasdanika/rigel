@@ -4,6 +4,9 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="Workflow model."/>
   </eAnnotations>
+  <eAnnotations source="urn:org.nasdanika">
+    <details key="label_ru" value="Ригель"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for other model elements."/>
@@ -33,7 +36,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Container of top level model elements."/>
+      <details key="documentation" value="Container of package elements."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Пакет"/>
+      <details key="documentation_ru" value="Пакет содержит элементы пакета."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//PackageElement" containment="true">

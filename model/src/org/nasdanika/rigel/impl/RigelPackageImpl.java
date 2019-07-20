@@ -740,6 +740,33 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// urn:org.nasdanika
+		createUrnorgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>urn:org.nasdanika</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUrnorgAnnotations() {
+		String source = "urn:org.nasdanika";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "label_ru", "\u0420\u0438\u0433\u0435\u043b\u044c"
+		   });
+		addAnnotation
+		  (packageEClass,
+		   source,
+		   new String[] {
+			   "label_ru", "\u041f\u0430\u043a\u0435\u0442",
+			   "documentation_ru", "\u041f\u0430\u043a\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430."
+		   });
 	}
 
 } //RigelPackageImpl

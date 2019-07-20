@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-model-doc -->
  * @see org.nasdanika.rigel.RigelFactory
  * @model kind="package"
+ *        annotation="urn:org.nasdanika label_ru='\u0420\u0438\u0433\u0435\u043b\u044c'"
  * @generated
  */
 public interface RigelPackage extends EPackage {
