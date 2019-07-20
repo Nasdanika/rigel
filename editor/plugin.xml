@@ -16,7 +16,7 @@
             name="%_UI_RigelModelWizard_label"
             class="org.nasdanika.rigel.presentation.RigelModelWizard"
             category="org.nasdanika"
-            icon="icons/full/obj16/RigelModelFile.gif">
+            icon="icons/full/obj16/RigelModelFile.png">
          <description>%_UI_RigelModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
@@ -26,7 +26,7 @@
       <editor
             id="org.nasdanika.rigel.presentation.RigelFormsEditorID"
             name="%_UI_RigelFormsEditor_label"
-            icon="icons/full/obj16/RigelModelFile.gif"
+            icon="icons/full/obj16/RigelModelFile.png"
             extensions="rigel"
             default="true"
             class="org.nasdanika.rigel.presentation.RigelFormsEditor">
@@ -36,7 +36,7 @@
       <editor
             id="org.nasdanika.rigel.presentation.RigelEditorID"
             name="%_UI_RigelEditor_label"
-            icon="icons/full/obj16/RigelModelFile.gif"
+            icon="icons/full/obj16/RigelModelFile.png"
             extensions="rigel"
             class="org.nasdanika.rigel.presentation.RigelEditor"
             contributorClass="org.nasdanika.rigel.presentation.RigelActionBarContributor">

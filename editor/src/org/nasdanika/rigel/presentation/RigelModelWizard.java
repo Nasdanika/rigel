@@ -177,7 +177,7 @@ public class RigelModelWizard extends Wizard implements INewWizard {
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(RigelEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RigelEditorPlugin.INSTANCE.getImage("full/wizban/NewRigel")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(RigelEditorPlugin.INSTANCE.getImage("full/wizban/NewRigel.png")));
 	}
 
 	/**
