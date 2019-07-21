@@ -7,4 +7,11 @@
 	       name="rigel">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="org.nasdanika.rigel.design.ReconnectTransitionSourceJavaAction"
+           id="org.nasdanika.rigel.design.reconnectTransitionSource">
+     </javaActions>
+  </extension>
 </plugin>

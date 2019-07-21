@@ -37,8 +37,10 @@
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="rigel::Transition" referenceName="outboundTransitions">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rigel::Transition" referenceName="outboundTransitions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -66,9 +68,7 @@
             <targetView name="targetView"/>
             <element name="element"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="outboundTransitions" valueExpression="var:element"/>
-              </firstModelOperations>
+              <firstModelOperations xsi:type="tool_1:MoveElement" newContainerExpression="var:target" featureName="outboundTransitions"/>
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
@@ -78,6 +78,9 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='ActivityDiagram']"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="ReconnectTransitionSourceJavaAction" label="Reconnect Transition Source Java Action" id="org.nasdanika.rigel.design.reconnectTransitionSource">
+            <parameters name="target" value="var:target"/>
           </ownedTools>
         </toolSections>
         <customization>
