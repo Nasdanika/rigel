@@ -5,13 +5,13 @@
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 2" inboundTransitions="//@elements.0/@outboundTransitions.0" progress="20">
     <outboundTransitions target="//@elements.2"/>
+    <outboundTransitions target="//@elements.4"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Final activity" inboundTransitions="//@elements.1/@outboundTransitions.0 //@elements.3/@outboundTransitions.0"/>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 3" description="# Details&#xD;&#xA;&#xD;&#xA;* Do A&#xD;&#xA;* Do B" size="1.0" progress="100">
     <outboundTransitions target="//@elements.2"/>
-    <outboundTransitions target="//@elements.4"/>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-5" inboundTransitions="//@elements.3/@outboundTransitions.1">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-5" inboundTransitions="//@elements.1/@outboundTransitions.1">
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-1">
       <outboundTransitions target="//@elements.4/@elements.1"/>
       <outboundTransitions target="//@elements.4/@elements.2"/>

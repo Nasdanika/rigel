@@ -1,8 +1,6 @@
 package org.nasdanika.rigel.design;
 
 import org.eclipse.emf.ecore.EObject;
-import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.Transition;
 
 /**
  * The services class used by VSM.

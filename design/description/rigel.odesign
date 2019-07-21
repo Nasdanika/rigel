@@ -79,9 +79,6 @@
               <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='ActivityDiagram']"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="ReconnectTransitionSourceJavaAction" label="Reconnect Transition Source Java Action" id="org.nasdanika.rigel.design.reconnectTransitionSource">
-            <parameters name="target" value="var:target"/>
-          </ownedTools>
         </toolSections>
         <customization>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.oclAsType(rigel::Activity).totalProgress > 0">
