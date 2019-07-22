@@ -5,7 +5,7 @@
       <metamodel href="urn:org.nasdanika.rigel#/"/>
       <defaultLayer name="Default">
         <nodeMappings name="ActivityNode" label="Activity" labelDirectEdit="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="feature:elements" doubleClickDescription="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToActivityDiagram']" domainClass="rigel::Activity">
-          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="12" height="4">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW" width="9" height="4">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
@@ -14,7 +14,7 @@
         <edgeMappings name="TransitionEdge" label="Transition Edge" labelDirectEdit="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" sourceMapping="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']" targetMapping="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:eContainer" domainClass="rigel::Transition" useDomainElement="true" reconnections="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectTransitionTarget'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Transition%20Source']">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="feature:name">
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>

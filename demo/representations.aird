@@ -24,12 +24,12 @@
   <diagram:DSemanticDiagram uid="_SZmswKgNEemlU5nTB2J-fA" name="new Package Diagram">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_SZpwEKgNEemlU5nTB2J-fA" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_SZpwEagNEemlU5nTB2J-fA">
-        <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_blh-1qtEEemWTdcyrsqE7Q" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="12" height="4">
+        <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_--SYoKyjEemnp4xHxNwdXQ" showIcon="false" labelPosition="node" resizeKind="NSEW" width="9" height="4">
           <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
         </computedStyleDescriptions>
-        <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_w6rq9qumEemDl-AqEhwFbQ" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="12" height="4">
+        <computedStyleDescriptions xmi:type="style:SquareDescription" xmi:id="_--Vb8KyjEemnp4xHxNwdXQ" showIcon="false" labelPosition="node" resizeKind="NSEW" width="9" height="4">
           <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
@@ -47,18 +47,18 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YrTpYqtEEemWTdcyrsqE7Q"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gy01EagNEemlU5nTB2J-fA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy01EqgNEemlU5nTB2J-fA" x="204" y="48" width="157" height="40"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy01EqgNEemlU5nTB2J-fA" x="204" y="48" width="90" height="40"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_gy5tkKgNEemlU5nTB2J-fA" type="2001" element="_gyVF0KgNEemlU5nTB2J-fA">
           <children xmi:type="notation:Node" xmi:id="_gy6UoKgNEemlU5nTB2J-fA" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_gy6UoagNEemlU5nTB2J-fA" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_hToKHqtEEemWTdcyrsqE7Q" type="3003" element="_hTeZE6tEEemWTdcyrsqE7Q">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_hToKH6tEEemWTdcyrsqE7Q" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hToKIKtEEemWTdcyrsqE7Q"/>
+          <children xmi:type="notation:Node" xmi:id="_--qMEKyjEemnp4xHxNwdXQ" type="3003" element="_--SYoqyjEemnp4xHxNwdXQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_--qMEayjEemnp4xHxNwdXQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--qMEqyjEemnp4xHxNwdXQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gy5tkagNEemlU5nTB2J-fA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy5tkqgNEemlU5nTB2J-fA" x="216" y="180" width="157" height="61"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy5tkqgNEemlU5nTB2J-fA" x="216" y="180" width="90" height="40"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_gy6UoqgNEemlU5nTB2J-fA" type="2001" element="_gyVs4qgNEemlU5nTB2J-fA">
           <children xmi:type="notation:Node" xmi:id="_gy6UpagNEemlU5nTB2J-fA" type="5002">
@@ -69,18 +69,18 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YrTpaKtEEemWTdcyrsqE7Q"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_gy6Uo6gNEemlU5nTB2J-fA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy6UpKgNEemlU5nTB2J-fA" x="252" y="324" width="217" height="40"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gy6UpKgNEemlU5nTB2J-fA" x="252" y="324" width="90" height="40"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_WyFsY6iDEemBNPZyAOrTqA" type="2001" element="_WyFsUKiDEemBNPZyAOrTqA">
           <children xmi:type="notation:Node" xmi:id="_WyFsZqiDEemBNPZyAOrTqA" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_WyFsZ6iDEemBNPZyAOrTqA" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_w6xxnKumEemDl-AqEhwFbQ" type="3003" element="_w6rq-KumEemDl-AqEhwFbQ">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_w6xxnaumEemDl-AqEhwFbQ" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w6xxnqumEemDl-AqEhwFbQ"/>
+          <children xmi:type="notation:Node" xmi:id="_--vEkKyjEemnp4xHxNwdXQ" type="3003" element="_--Vb8qyjEemnp4xHxNwdXQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_--vEkayjEemnp4xHxNwdXQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_--vEkqyjEemnp4xHxNwdXQ"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_WyFsZKiDEemBNPZyAOrTqA" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WyFsZaiDEemBNPZyAOrTqA" x="420" y="172" width="147" height="77"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WyFsZaiDEemBNPZyAOrTqA" x="420" y="172" width="90" height="40"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_WSVZxauuEemx3PaOTDJjFw" type="2001" element="_WSMPwKuuEemx3PaOTDJjFw">
           <children xmi:type="notation:Node" xmi:id="_WSfKsKuuEemx3PaOTDJjFw" type="5002">
@@ -91,7 +91,18 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WSfKtKuuEemx3PaOTDJjFw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_WSVZxquuEemx3PaOTDJjFw" fontName="Segoe UI" fontHeight="12"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WSVZx6uuEemx3PaOTDJjFw" x="649" y="366" width="120" height="40"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WSVZx6uuEemx3PaOTDJjFw" x="649" y="366" width="90" height="40"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_BRfxYKykEemnp4xHxNwdXQ" type="2001" element="_BRUyQKykEemnp4xHxNwdXQ">
+          <children xmi:type="notation:Node" xmi:id="_BRkp4KykEemnp4xHxNwdXQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_BRkp4aykEemnp4xHxNwdXQ" x="8" y="41"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BRmfEKykEemnp4xHxNwdXQ" type="3003" element="_BRUyQaykEemnp4xHxNwdXQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_BRmfEaykEemnp4xHxNwdXQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BRmfEqykEemnp4xHxNwdXQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BRgYcKykEemnp4xHxNwdXQ" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BRgYcaykEemnp4xHxNwdXQ" x="100" y="175" width="90" height="40"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_SZq-MqgNEemlU5nTB2J-fA"/>
         <edges xmi:type="notation:Edge" xmi:id="_mgHsFKguEemBNPZyAOrTqA" type="4001" element="_mf97EKguEemBNPZyAOrTqA" source="_gy01EKgNEemlU5nTB2J-fA" target="_gy5tkKgNEemlU5nTB2J-fA">
@@ -157,52 +168,77 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z9UjqvLEemR0MVtmTTIqA" id="(0.8343949044585988,0.9508196721311475)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4z9Uj6vLEemR0MVtmTTIqA" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_EjcqUKykEemnp4xHxNwdXQ" type="4001" element="_EjS5YKykEemnp4xHxNwdXQ" source="_BRfxYKykEemnp4xHxNwdXQ" target="_gy6UoqgNEemlU5nTB2J-fA">
+          <children xmi:type="notation:Node" xmi:id="_Ejd4cKykEemnp4xHxNwdXQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ejd4caykEemnp4xHxNwdXQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EjefgKykEemnp4xHxNwdXQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EjefgaykEemnp4xHxNwdXQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EjefgqykEemnp4xHxNwdXQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ejefg6ykEemnp4xHxNwdXQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_EjcqUaykEemnp4xHxNwdXQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_EjcqUqykEemnp4xHxNwdXQ" fontName="Segoe UI" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_EjcqU6ykEemnp4xHxNwdXQ" points="[0, 0, -120, -109]$[120, 109, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ejg7wKykEemnp4xHxNwdXQ" id="(0.6222222222222222,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Ejg7waykEemnp4xHxNwdXQ" id="(0.26666666666666666,0.0)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyKtwKgNEemlU5nTB2J-fA" name="Activity 1" outgoingEdges="_mf97EKguEemBNPZyAOrTqA" width="12" height="4" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyKtwKgNEemlU5nTB2J-fA" name="Activity 1" outgoingEdges="_mf97EKguEemBNPZyAOrTqA" width="9" height="4" resizeKind="NSEW">
       <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.0"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_YphgsatEEemWTdcyrsqE7Q" labelSize="12" showIcon="false" labelPosition="node" width="12" height="4" color="255,245,181">
+      <ownedStyle xmi:type="diagram:Square" uid="_YphgsatEEemWTdcyrsqE7Q" showIcon="false" labelPosition="node" width="9" height="4" color="255,245,181">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyVF0KgNEemlU5nTB2J-fA" name="Activity 2" outgoingEdges="_ocA6_KiEEemPqcaDxJDhUg _bsK7hqvKEemL773zrYzrwg" incomingEdges="_mf97EKguEemBNPZyAOrTqA" width="12" height="4" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyVF0KgNEemlU5nTB2J-fA" name="Activity 2" outgoingEdges="_ocA6_KiEEemPqcaDxJDhUg _bsK7hqvKEemL773zrYzrwg" incomingEdges="_mf97EKguEemBNPZyAOrTqA" width="9" height="4" resizeKind="NSEW">
       <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.1"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_hTeZE6tEEemWTdcyrsqE7Q" labelSize="12" showIcon="false" description="_blh-1qtEEemWTdcyrsqE7Q" labelPosition="node" width="12" height="4" color="238,201,142"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_--SYoqyjEemnp4xHxNwdXQ" showIcon="false" description="_--SYoKyjEemnp4xHxNwdXQ" labelPosition="node" width="9" height="4" color="238,201,142"/>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyVs4qgNEemlU5nTB2J-fA" name="Final activity" incomingEdges="_ocA6_KiEEemPqcaDxJDhUg _zZbEsquuEemx3PaOTDJjFw" width="12" height="4" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_gyVs4qgNEemlU5nTB2J-fA" name="Final activity" incomingEdges="_ocA6_KiEEemPqcaDxJDhUg _zZbEsquuEemx3PaOTDJjFw _EjS5YKykEemnp4xHxNwdXQ" width="9" height="4" resizeKind="NSEW">
       <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.2"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_Yphgt6tEEemWTdcyrsqE7Q" labelSize="12" showIcon="false" labelPosition="node" width="12" height="4" color="255,245,181">
+      <ownedStyle xmi:type="diagram:Square" uid="_Yphgt6tEEemWTdcyrsqE7Q" showIcon="false" labelPosition="node" width="9" height="4" color="255,245,181">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_WyFsUKiDEemBNPZyAOrTqA" name="Activity 3" outgoingEdges="_zZbEsquuEemx3PaOTDJjFw" width="12" height="4" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_WyFsUKiDEemBNPZyAOrTqA" name="Activity 3" outgoingEdges="_zZbEsquuEemx3PaOTDJjFw" width="9" height="4" resizeKind="NSEW">
       <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.3"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.3"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Square" uid="_w6rq-KumEemDl-AqEhwFbQ" labelSize="12" showIcon="false" description="_w6rq9qumEemDl-AqEhwFbQ" labelPosition="node" width="12" height="4" color="204,242,166"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_--Vb8qyjEemnp4xHxNwdXQ" showIcon="false" description="_--Vb8KyjEemnp4xHxNwdXQ" labelPosition="node" width="9" height="4" color="204,242,166"/>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_WSMPwKuuEemx3PaOTDJjFw" name="Activity-5" incomingEdges="_bsK7hqvKEemL773zrYzrwg" width="12" height="4" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_WSMPwKuuEemx3PaOTDJjFw" name="Activity-5" incomingEdges="_bsK7hqvKEemL773zrYzrwg" width="9" height="4" resizeKind="NSEW">
       <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4"/>
-      <ownedStyle xmi:type="diagram:Square" uid="_WSMPwauuEemx3PaOTDJjFw" labelSize="12" showIcon="false" labelPosition="node" width="12" height="4" color="255,245,181">
+      <ownedStyle xmi:type="diagram:Square" uid="_WSMPwauuEemx3PaOTDJjFw" showIcon="false" labelPosition="node" width="9" height="4" color="255,245,181">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BRUyQKykEemnp4xHxNwdXQ" name="Do that!" outgoingEdges="_EjS5YKykEemnp4xHxNwdXQ" width="9" height="4" resizeKind="NSEW">
+      <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.5"/>
+      <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.5"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_BRUyQaykEemnp4xHxNwdXQ" showIcon="false" width="9" height="4" color="255,245,181">
+        <customFeatures>labelPosition</customFeatures>
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
@@ -212,7 +248,7 @@
       <semanticElements xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.0/@outboundTransitions.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_mf97EaguEemBNPZyAOrTqA" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mf97EqguEemBNPZyAOrTqA" labelSize="12" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_mf97EqguEemBNPZyAOrTqA" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
     </ownedDiagramElements>
@@ -221,7 +257,7 @@
       <semanticElements xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.1/@outboundTransitions.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ocA6_aiEEemPqcaDxJDhUg" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ocA6_qiEEemPqcaDxJDhUg" labelSize="12" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ocA6_qiEEemPqcaDxJDhUg" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
     </ownedDiagramElements>
@@ -230,7 +266,7 @@
       <semanticElements xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.3/@outboundTransitions.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_zZbEs6uuEemx3PaOTDJjFw" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zZbEtKuuEemx3PaOTDJjFw" labelSize="12" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_zZbEtKuuEemx3PaOTDJjFw" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
     </ownedDiagramElements>
@@ -239,7 +275,16 @@
       <semanticElements xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.1/@outboundTransitions.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_bsK7h6vKEemL773zrYzrwg" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_bsK7iKvKEemL773zrYzrwg" labelSize="12" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_bsK7iKvKEemL773zrYzrwg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_EjS5YKykEemnp4xHxNwdXQ" name="yeah!" sourceNode="_BRUyQKykEemnp4xHxNwdXQ" targetNode="_gyVs4qgNEemlU5nTB2J-fA">
+      <target xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.5/@outboundTransitions.0"/>
+      <semanticElements xmi:type="org.nasdanika.rigel:Transition" href="models/basic.rigel#//@elements.5/@outboundTransitions.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EjTgYKykEemnp4xHxNwdXQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EjTgYaykEemnp4xHxNwdXQ" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']"/>
     </ownedDiagramElements>
