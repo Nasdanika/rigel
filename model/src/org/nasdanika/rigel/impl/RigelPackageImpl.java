@@ -948,6 +948,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityEClass.getESuperTypes().add(this.getTarget());
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
+		activityReferenceEClass.getESuperTypes().add(this.getPackageElement());
 		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
 		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
 		transitionEClass.getESuperTypes().add(this.getModelElement());

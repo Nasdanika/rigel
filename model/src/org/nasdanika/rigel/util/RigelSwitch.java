@@ -180,6 +180,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				T result = caseActivityReference(activityReference);
 				if (result == null) result = caseSource(activityReference);
 				if (result == null) result = caseTarget(activityReference);
+				if (result == null) result = casePackageElement(activityReference);
 				if (result == null) result = caseActivityElement(activityReference);
 				if (result == null) result = caseModelElement(activityReference);
 				if (result == null) result = defaultCase(theEObject);

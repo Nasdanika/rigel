@@ -1046,13 +1046,22 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_REFERENCE__INPUTS = SOURCE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__ASSOCIATIONS = SOURCE_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__ACTIVITY = SOURCE_FEATURE_COUNT + 2;
+	int ACTIVITY_REFERENCE__ACTIVITY = SOURCE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Activity Reference</em>' class.
@@ -1061,7 +1070,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE_FEATURE_COUNT = SOURCE_FEATURE_COUNT + 3;
+	int ACTIVITY_REFERENCE_FEATURE_COUNT = SOURCE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Activity Reference</em>' class.

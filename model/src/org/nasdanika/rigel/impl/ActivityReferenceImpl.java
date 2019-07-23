@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Association;
+import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Target;
 import org.nasdanika.rigel.Transition;
@@ -30,6 +32,7 @@ import org.nasdanika.rigel.Transition;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityReferenceImpl#getInboundTransitions <em>Inbound Transitions</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityReferenceImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityReferenceImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityReferenceImpl#getActivity <em>Activity</em>}</li>
  * </ul>
  *
@@ -75,6 +78,17 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 	@Override
 	public EList<Artifact> getInputs() {
 		return (EList<Artifact>)eDynamicGet(RigelPackage.ACTIVITY_REFERENCE__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Association> getAssociations() {
+		return (EList<Association>)eDynamicGet(RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS, RigelPackage.Literals.PACKAGE_ELEMENT__ASSOCIATIONS, true, true);
 	}
 
 	/**
@@ -135,6 +149,8 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
+			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+				return ((InternalEList<?>)getAssociations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -151,6 +167,8 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 				return getInboundTransitions();
 			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
 				return getInputs();
+			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+				return getAssociations();
 			case RigelPackage.ACTIVITY_REFERENCE__ACTIVITY:
 				if (resolve) return getActivity();
 				return basicGetActivity();
@@ -175,6 +193,10 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+				getAssociations().clear();
+				getAssociations().addAll((Collection<? extends Association>)newValue);
+				return;
 			case RigelPackage.ACTIVITY_REFERENCE__ACTIVITY:
 				setActivity((Activity)newValue);
 				return;
@@ -196,6 +218,9 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
 				getInputs().clear();
 				return;
+			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+				getAssociations().clear();
+				return;
 			case RigelPackage.ACTIVITY_REFERENCE__ACTIVITY:
 				setActivity((Activity)null);
 				return;
@@ -215,6 +240,8 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 				return !getInboundTransitions().isEmpty();
 			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
 				return !getInputs().isEmpty();
+			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+				return !getAssociations().isEmpty();
 			case RigelPackage.ACTIVITY_REFERENCE__ACTIVITY:
 				return basicGetActivity() != null;
 		}
@@ -235,6 +262,12 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 				default: return -1;
 			}
 		}
+		if (baseClass == PackageElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS: return RigelPackage.PACKAGE_ELEMENT__ASSOCIATIONS;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -249,6 +282,12 @@ public class ActivityReferenceImpl extends SourceImpl implements ActivityReferen
 			switch (baseFeatureID) {
 				case RigelPackage.TARGET__INBOUND_TRANSITIONS: return RigelPackage.ACTIVITY_REFERENCE__INBOUND_TRANSITIONS;
 				case RigelPackage.TARGET__INPUTS: return RigelPackage.ACTIVITY_REFERENCE__INPUTS;
+				default: return -1;
+			}
+		}
+		if (baseClass == PackageElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.PACKAGE_ELEMENT__ASSOCIATIONS: return RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS;
 				default: return -1;
 			}
 		}
