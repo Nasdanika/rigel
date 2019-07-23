@@ -8,15 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
-import org.nasdanika.rigel.Target;
-import org.nasdanika.rigel.Transition;
 
 /**
  * This is the item provider adapter for a {@link org.nasdanika.rigel.Association} object.
