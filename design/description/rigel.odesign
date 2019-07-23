@@ -97,7 +97,27 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ActivityDiagram" label="Activity Diagram" domainClass="rigel::Activity" enablePopupBars="true">
       <metamodel href="urn:org.nasdanika.rigel#/"/>
       <defaultLayer name="Default" reusedMappings="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@edgeMappings[name='TransitionEdge']" reusedTools="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityCreation'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='TransitionCreation'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Transition%20Source'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectTransitionTarget'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToActivityDiagram']">
-        <toolSections name="ActivityDiagramTools" label="Activity Diagram Tools" reusedTools="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityCreation'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToActivityDiagram'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Transition%20Source'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectTransitionTarget'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='TransitionCreation']"/>
+        <nodeMappings name="ActivityReference" label="Activity Reference" labelDirectEdit="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName']" semanticCandidatesExpression="feature:elements" domainClass="rigel::ActivityReference">
+          <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW" width="9" height="4">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            <labelFormat>italic</labelFormat>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <toolSections name="ActivityDiagramTools" label="Activity Diagram Tools" reusedTools="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ActivityCreation'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='editName'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToActivityDiagram'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Reconnect%20Transition%20Source'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectTransitionTarget'] //@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='TransitionCreation']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ActivityReferenceCreation" label="Activity Reference" nodeMappings="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer/@nodeMappings[name='ActivityReference']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="rigel::ActivityReference" referenceName="elements">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Activity-Reference-'+container.elements->filter(rigel::ActivityReference)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.nasdanika.rigel.design.Services"/>

@@ -18,6 +18,9 @@
     </elements>
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-2" inboundTransitions="//@elements.4/@elements.0/@outboundTransitions.0"/>
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-3" inboundTransitions="//@elements.4/@elements.0/@outboundTransitions.1"/>
+    <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-4"/>
+    <elements xsi:type="org.nasdanika.rigel:ActivityReference" name="Hmm" activity="//@elements.5"/>
+    <elements xsi:type="org.nasdanika.rigel:ActivityReference" name="Activity-Reference-2"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Do that!" owner="//@elements.6">
     <issues name="Fix it all" assignedTo="//@elements.6"/>
