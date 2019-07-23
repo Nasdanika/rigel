@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Resource extends PackageElement {
+public interface Resource extends EngineeredElement {
 	/**
 	 * Returns the value of the '<em><b>Users</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Activity}.

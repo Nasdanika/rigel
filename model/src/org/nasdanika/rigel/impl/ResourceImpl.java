@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -26,6 +28,8 @@ import org.nasdanika.rigel.RigelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getUsers <em>Users</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getArtifacts <em>Artifacts</em>}</li>
@@ -51,6 +55,56 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	protected EClass eStaticClass() {
 		return RigelPackage.Literals.RESOURCE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Engineer getOwner() {
+		return (Engineer)eDynamicGet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Engineer basicGetOwner() {
+		return (Engineer)eDynamicGet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.RESOURCE__OWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwner(Engineer newOwner) {
+		eDynamicSet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Issue> getIssues() {
+		return (EList<Issue>)eDynamicGet(RigelPackage.RESOURCE__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -95,6 +149,11 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				Engineer owner = basicGetOwner();
+				if (owner != null)
+					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
+				return basicSetOwner((Engineer)otherEnd, msgs);
 			case RigelPackage.RESOURCE__USERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsers()).basicAdd(otherEnd, msgs);
 		}
@@ -109,6 +168,10 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				return basicSetOwner(null, msgs);
+			case RigelPackage.RESOURCE__ISSUES:
+				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.RESOURCE__USERS:
 				return ((InternalEList<?>)getUsers()).basicRemove(otherEnd, msgs);
 			case RigelPackage.RESOURCE__CHILDREN:
@@ -127,6 +190,11 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				if (resolve) return getOwner();
+				return basicGetOwner();
+			case RigelPackage.RESOURCE__ISSUES:
+				return getIssues();
 			case RigelPackage.RESOURCE__USERS:
 				return getUsers();
 			case RigelPackage.RESOURCE__CHILDREN:
@@ -146,6 +214,13 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				setOwner((Engineer)newValue);
+				return;
+			case RigelPackage.RESOURCE__ISSUES:
+				getIssues().clear();
+				getIssues().addAll((Collection<? extends Issue>)newValue);
+				return;
 			case RigelPackage.RESOURCE__USERS:
 				getUsers().clear();
 				getUsers().addAll((Collection<? extends Activity>)newValue);
@@ -170,6 +245,12 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				setOwner((Engineer)null);
+				return;
+			case RigelPackage.RESOURCE__ISSUES:
+				getIssues().clear();
+				return;
 			case RigelPackage.RESOURCE__USERS:
 				getUsers().clear();
 				return;
@@ -191,6 +272,10 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case RigelPackage.RESOURCE__OWNER:
+				return basicGetOwner() != null;
+			case RigelPackage.RESOURCE__ISSUES:
+				return !getIssues().isEmpty();
 			case RigelPackage.RESOURCE__USERS:
 				return !getUsers().isEmpty();
 			case RigelPackage.RESOURCE__CHILDREN:

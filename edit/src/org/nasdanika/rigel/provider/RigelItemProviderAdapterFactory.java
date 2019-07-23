@@ -279,6 +279,52 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Engineer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EngineerItemProvider engineerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.Engineer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEngineerAdapter() {
+		if (engineerItemProvider == null) {
+			engineerItemProvider = new EngineerItemProvider(this);
+		}
+
+		return engineerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Issue} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IssueItemProvider issueItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.Issue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIssueAdapter() {
+		if (issueItemProvider == null) {
+			issueItemProvider = new IssueItemProvider(this);
+		}
+
+		return issueItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,6 +438,8 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (associationItemProvider != null) associationItemProvider.dispose();
+		if (engineerItemProvider != null) engineerItemProvider.dispose();
+		if (issueItemProvider != null) issueItemProvider.dispose();
 	}
 
 }

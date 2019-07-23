@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -45,8 +46,31 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EngineeredElement_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature", "_UI_EngineeredElement_type"),
+				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -61,6 +85,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.PACKAGE__ELEMENTS);
 		}
 		return childrenFeatures;
@@ -83,11 +108,11 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 * This returns Package.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package.png"));
 	}
 
 	/**
@@ -104,14 +129,12 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((org.nasdanika.rigel.Package)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Package_type") :
-			getString("_UI_Package_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Package_type") : label;
 	}
 
 
@@ -127,6 +150,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(org.nasdanika.rigel.Package.class)) {
+			case RigelPackage.PACKAGE__ISSUES:
 			case RigelPackage.PACKAGE__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -144,6 +168,11 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 RigelFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -169,6 +198,11 @@ public class PackageItemProvider extends PackageElementItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.PACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createEngineer()));
 	}
 
 }

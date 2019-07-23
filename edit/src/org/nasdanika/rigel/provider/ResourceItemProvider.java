@@ -47,9 +47,32 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnerPropertyDescriptor(object);
 			addUsersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EngineeredElement_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature", "_UI_EngineeredElement_type"),
+				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -86,6 +109,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__CHILDREN);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__ARTIFACTS);
 		}
@@ -113,7 +137,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/wrench.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Resource.png"));
 	}
 
 	/**
@@ -151,6 +175,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Resource.class)) {
+			case RigelPackage.RESOURCE__ISSUES:
 			case RigelPackage.RESOURCE__CHILDREN:
 			case RigelPackage.RESOURCE__ARTIFACTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -169,6 +194,11 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 RigelFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

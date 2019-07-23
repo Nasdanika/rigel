@@ -4,6 +4,7 @@ package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,6 +16,11 @@ import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
+import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.IssueImportance;
+import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Resource;
@@ -45,6 +51,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass packageElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass engineeredElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,6 +142,34 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass associationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass engineerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass issueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum issueStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum issueImportanceEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -249,6 +290,36 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	@Override
 	public EReference getPackageElement_Associations() {
 		return (EReference)packageElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEngineeredElement() {
+		return engineeredElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEngineeredElement_Owner() {
+		return (EReference)engineeredElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEngineeredElement_Issues() {
+		return (EReference)engineeredElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -607,6 +678,106 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getEngineer() {
+		return engineerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEngineer_Owns() {
+		return (EReference)engineerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEngineer_Assignments() {
+		return (EReference)engineerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getIssue() {
+		return issueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIssue_Importance() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIssue_Status() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getIssue_AssignedTo() {
+		return (EReference)issueEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIssue_Size() {
+		return (EAttribute)issueEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getIssueStatus() {
+		return issueStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getIssueImportance() {
+		return issueImportanceEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RigelFactory getRigelFactory() {
 		return (RigelFactory)getEFactoryInstance();
 	}
@@ -637,6 +808,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		packageElementEClass = createEClass(PACKAGE_ELEMENT);
 		createEReference(packageElementEClass, PACKAGE_ELEMENT__ASSOCIATIONS);
+
+		engineeredElementEClass = createEClass(ENGINEERED_ELEMENT);
+		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__OWNER);
+		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__ISSUES);
 
 		packageEClass = createEClass(PACKAGE);
 		createEReference(packageEClass, PACKAGE__ELEMENTS);
@@ -684,6 +859,20 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		associationEClass = createEClass(ASSOCIATION);
 		createEReference(associationEClass, ASSOCIATION__TARGET);
+
+		engineerEClass = createEClass(ENGINEER);
+		createEReference(engineerEClass, ENGINEER__OWNS);
+		createEReference(engineerEClass, ENGINEER__ASSIGNMENTS);
+
+		issueEClass = createEClass(ISSUE);
+		createEAttribute(issueEClass, ISSUE__IMPORTANCE);
+		createEAttribute(issueEClass, ISSUE__STATUS);
+		createEReference(issueEClass, ISSUE__ASSIGNED_TO);
+		createEAttribute(issueEClass, ISSUE__SIZE);
+
+		// Create enums
+		issueStatusEEnum = createEEnum(ISSUE_STATUS);
+		issueImportanceEEnum = createEEnum(ISSUE_IMPORTANCE);
 	}
 
 	/**
@@ -715,20 +904,23 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		// Add supertypes to classes
 		packageElementEClass.getESuperTypes().add(this.getModelElement());
-		packageEClass.getESuperTypes().add(this.getPackageElement());
-		actorEClass.getESuperTypes().add(this.getPackageElement());
+		engineeredElementEClass.getESuperTypes().add(this.getPackageElement());
+		packageEClass.getESuperTypes().add(this.getEngineeredElement());
+		actorEClass.getESuperTypes().add(this.getEngineeredElement());
 		activityElementEClass.getESuperTypes().add(this.getModelElement());
 		sourceEClass.getESuperTypes().add(this.getActivityElement());
 		startEClass.getESuperTypes().add(this.getSource());
 		targetEClass.getESuperTypes().add(this.getActivityElement());
 		endEClass.getESuperTypes().add(this.getTarget());
-		activityEClass.getESuperTypes().add(this.getPackageElement());
+		activityEClass.getESuperTypes().add(this.getEngineeredElement());
 		activityEClass.getESuperTypes().add(this.getSource());
 		activityEClass.getESuperTypes().add(this.getTarget());
-		artifactEClass.getESuperTypes().add(this.getPackageElement());
-		resourceEClass.getESuperTypes().add(this.getPackageElement());
+		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
+		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
 		transitionEClass.getESuperTypes().add(this.getModelElement());
 		associationEClass.getESuperTypes().add(this.getModelElement());
+		engineerEClass.getESuperTypes().add(this.getPackageElement());
+		issueEClass.getESuperTypes().add(this.getModelElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -738,6 +930,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		initEClass(packageElementEClass, PackageElement.class, "PackageElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageElement_Associations(), this.getAssociation(), null, "associations", null, 0, -1, PackageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(engineeredElementEClass, EngineeredElement.class, "EngineeredElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEngineeredElement_Owner(), this.getEngineer(), this.getEngineer_Owns(), "owner", null, 0, 1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEngineeredElement_Issues(), this.getIssue(), null, "issues", null, 0, -1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageEClass, org.nasdanika.rigel.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackage_Elements(), this.getPackageElement(), null, "elements", null, 0, -1, org.nasdanika.rigel.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -785,6 +981,28 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssociation_Target(), this.getPackageElement(), null, "target", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(engineerEClass, Engineer.class, "Engineer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEngineer_Owns(), this.getEngineeredElement(), this.getEngineeredElement_Owner(), "owns", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEngineer_Assignments(), this.getIssue(), this.getIssue_AssignedTo(), "assignments", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(issueEClass, Issue.class, "Issue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIssue_Importance(), this.getIssueImportance(), "importance", "Medium", 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIssue_Status(), this.getIssueStatus(), "status", "Open", 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIssue_AssignedTo(), this.getEngineer(), this.getEngineer_Assignments(), "assignedTo", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIssue_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(issueStatusEEnum, IssueStatus.class, "IssueStatus");
+		addEEnumLiteral(issueStatusEEnum, IssueStatus.OPEN);
+		addEEnumLiteral(issueStatusEEnum, IssueStatus.IN_PROGRESS);
+		addEEnumLiteral(issueStatusEEnum, IssueStatus.DONE);
+		addEEnumLiteral(issueStatusEEnum, IssueStatus.CANCELLED);
+
+		initEEnum(issueImportanceEEnum, IssueImportance.class, "IssueImportance");
+		addEEnumLiteral(issueImportanceEEnum, IssueImportance.LOW);
+		addEEnumLiteral(issueImportanceEEnum, IssueImportance.MEDIUM);
+		addEEnumLiteral(issueImportanceEEnum, IssueImportance.HIGH);
 
 		// Create resource
 		createResource(eNS_URI);

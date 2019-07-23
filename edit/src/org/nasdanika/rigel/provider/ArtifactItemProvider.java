@@ -47,10 +47,33 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnerPropertyDescriptor(object);
 			addConsumersPropertyDescriptor(object);
 			addProducersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EngineeredElement_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature", "_UI_EngineeredElement_type"),
+				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -109,6 +132,7 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.ARTIFACT__CHILDREN);
 		}
 		return childrenFeatures;
@@ -131,11 +155,11 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 	 * This returns Artifact.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Artifact"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Artifact.png"));
 	}
 
 	/**
@@ -152,14 +176,12 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Artifact)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Artifact_type") :
-			getString("_UI_Artifact_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Artifact_type") : label;
 	}
 
 
@@ -175,6 +197,7 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Artifact.class)) {
+			case RigelPackage.ARTIFACT__ISSUES:
 			case RigelPackage.ARTIFACT__CHILDREN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -192,6 +215,11 @@ public class ArtifactItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 RigelFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

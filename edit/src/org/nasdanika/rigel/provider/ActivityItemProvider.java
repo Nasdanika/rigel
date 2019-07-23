@@ -48,6 +48,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnerPropertyDescriptor(object);
 			addOutputsPropertyDescriptor(object);
 			addInboundTransitionsPropertyDescriptor(object);
 			addInputsPropertyDescriptor(object);
@@ -59,6 +60,28 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			addTotalProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Owner feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnerPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EngineeredElement_owner_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature", "_UI_EngineeredElement_type"),
+				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -271,6 +294,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
 			childrenFeatures.add(RigelPackage.Literals.ACTIVITY__ELEMENTS);
 		}
@@ -298,7 +322,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/cog.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Activity.png"));
 	}
 
 	/**
@@ -342,6 +366,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+			case RigelPackage.ACTIVITY__ISSUES:
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
 			case RigelPackage.ACTIVITY__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -360,6 +385,11 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 RigelFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -30,7 +30,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Activity extends PackageElement, Source, Target {
+public interface Activity extends EngineeredElement, Source, Target {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.ActivityElement}.

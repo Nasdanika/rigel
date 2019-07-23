@@ -34,7 +34,25 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="associations" upperBound="-1"
         eType="#//Association" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EngineeredElement" abstract="true" interface="true"
+      eSuperTypes="#//PackageElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Base class for elements which have an owning engineer and may contain issues."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Engineer"
+        eOpposite="#//Engineer/owns">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Engineer responsible for this element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
+        eType="#//Issue" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Issues associated with the element - problems/pain points, improvement opportunities/enhancements."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Container of package elements."/>
     </eAnnotations>
@@ -49,7 +67,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Actors perform activities using resources consuming and producing artifacts."/>
     </eAnnotations>
@@ -109,7 +127,7 @@
       <details key="documentation" value="End pseudo-activity."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//PackageElement #//Source #//Target">
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//EngineeredElement #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
     </eAnnotations>
@@ -154,7 +172,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//PackageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. Artifacts are passed between activities over transitions."/>
     </eAnnotations>
@@ -177,7 +195,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Something leveraged by an actor to perform an activity. For example - a tool."/>
     </eAnnotations>
@@ -229,5 +247,95 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//PackageElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Engineer" eSuperTypes="#//PackageElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Engineers own engineered elements and are assigned issues associated with these elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owns" upperBound="-1" eType="#//EngineeredElement"
+        eOpposite="#//EngineeredElement/owner">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Elements which this engineer owns. Ownership is propagated down to child elements recursively, unless these elements have an explicitly assigned owner. Also issues associated with owned elements and not having an engineer explicitly assigned to them are implicitly assigned to the element owner."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignments" upperBound="-1"
+        eType="#//Issue" eOpposite="#//Issue/assignedTo">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Engineer's assigned issues."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Issue" eSuperTypes="#//ModelElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importance" eType="#//IssueImportance"
+        defaultValueLiteral="Medium">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Issue importance."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="#//IssueStatus"
+        defaultValueLiteral="Open">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Issue status."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedTo" eType="#//Engineer"
+        eOpposite="#//Engineer/assignments">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Engineer this issue is assigned to. If this attribute is null the issue is assumed to be assigned to the owner of the containing element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An estimation of effort required to complete this issue in some units used consistently throughout the model - points, person hours, dollars."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IssueStatus">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Issue status."/>
+    </eAnnotations>
+    <eLiterals name="Open" literal="Open">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An issue which hasn't been worked on."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="InProgress" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Work in progress."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Done" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Work completed."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Cancelled">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The issue is not going to be worked on for some reason."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IssueImportance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Importance of the issue."/>
+    </eAnnotations>
+    <eLiterals name="Low">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Low importance."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Medium" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Medium importance."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="High" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="High importance."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
 </ecore:EPackage>

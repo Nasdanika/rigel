@@ -11,25 +11,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.RigelPackage;
-import org.nasdanika.rigel.Target;
-import org.nasdanika.rigel.Transition;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.rigel.Transition} object.
+ * This is the item provider adapter for a {@link org.nasdanika.rigel.Issue} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends ModelElementItemProvider {
+public class IssueItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TransitionItemProvider(AdapterFactory adapterFactory) {
+	public IssueItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,27 +45,72 @@ public class TransitionItemProvider extends ModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTargetPropertyDescriptor(object);
-			addInputsPropertyDescriptor(object);
-			addResultsPropertyDescriptor(object);
+			addImportancePropertyDescriptor(object);
+			addStatusPropertyDescriptor(object);
+			addAssignedToPropertyDescriptor(object);
+			addSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Target feature.
+	 * This adds a property descriptor for the Importance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetPropertyDescriptor(Object object) {
+	protected void addImportancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_target_feature", "_UI_Transition_type"),
-				 RigelPackage.Literals.TRANSITION__TARGET,
+				 getString("_UI_Issue_importance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Issue_importance_feature", "_UI_Issue_type"),
+				 RigelPackage.Literals.ISSUE__IMPORTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Status feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatusPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Issue_status_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Issue_status_feature", "_UI_Issue_type"),
+				 RigelPackage.Literals.ISSUE__STATUS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Assigned To feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssignedToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Issue_assignedTo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Issue_assignedTo_feature", "_UI_Issue_type"),
+				 RigelPackage.Literals.ISSUE__ASSIGNED_TO,
 				 true,
 				 false,
 				 true,
@@ -74,58 +120,36 @@ public class TransitionItemProvider extends ModelElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Inputs feature.
+	 * This adds a property descriptor for the Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInputsPropertyDescriptor(Object object) {
+	protected void addSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Transition_inputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_inputs_feature", "_UI_Transition_type"),
-				 RigelPackage.Literals.TRANSITION__INPUTS,
+				 getString("_UI_Issue_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Issue_size_feature", "_UI_Issue_type"),
+				 RigelPackage.Literals.ISSUE__SIZE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Results feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addResultsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Transition_results_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Transition_results_feature", "_UI_Transition_type"),
-				 RigelPackage.Literals.TRANSITION__RESULTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Transition.gif.
+	 * This returns Issue.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Transition.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Issue.png"));
 	}
 
 	/**
@@ -146,22 +170,8 @@ public class TransitionItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		StringBuilder label = new StringBuilder();
-		String name = ((Transition) object).getName();
-		if (name != null) {
-			label.append(name);
-		}
-		Target t = ((Transition) object).getTarget();
-		if (t != null) {
-			String tName = t.getName();
-			if (tName != null && tName.length() > 0) {
-				if (name != null) {
-					label.append(" ");
-				}
-			}
-			label.append("(").append(tName).append(")");
-		}
-		return label == null || label.length() == 0 ? getString("_UI_Transition_type") : label.toString();
+		String label = ((Issue)object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Issue_type") : label;
 	}
 
 
@@ -175,6 +185,15 @@ public class TransitionItemProvider extends ModelElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Issue.class)) {
+			case RigelPackage.ISSUE__IMPORTANCE:
+			case RigelPackage.ISSUE__STATUS:
+			case RigelPackage.ISSUE__SIZE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
+		super.notifyChanged(notification);
 	}
 
 	/**

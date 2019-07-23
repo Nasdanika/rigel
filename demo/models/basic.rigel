@@ -19,7 +19,9 @@
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-2" inboundTransitions="//@elements.4/@elements.0/@outboundTransitions.0"/>
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-3" inboundTransitions="//@elements.4/@elements.0/@outboundTransitions.1"/>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Do that!">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Do that!" owner="//@elements.6">
+    <issues name="Fix it all" assignedTo="//@elements.6"/>
     <outboundTransitions name="yeah!" target="//@elements.2"/>
   </elements>
+  <elements xsi:type="org.nasdanika.rigel:Engineer" name="John Smith" owns="//@elements.5" assignments="//@elements.5/@issues.0"/>
 </org.nasdanika.rigel:Package>

@@ -14,6 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
 import org.nasdanika.rigel.Target;
@@ -26,6 +28,8 @@ import org.nasdanika.rigel.Target;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getConsumers <em>Consumers</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getProducers <em>Producers</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getChildren <em>Children</em>}</li>
@@ -51,6 +55,56 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	protected EClass eStaticClass() {
 		return RigelPackage.Literals.ARTIFACT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Engineer getOwner() {
+		return (Engineer)eDynamicGet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Engineer basicGetOwner() {
+		return (Engineer)eDynamicGet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
+		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.ARTIFACT__OWNER, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwner(Engineer newOwner) {
+		eDynamicSet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Issue> getIssues() {
+		return (EList<Issue>)eDynamicGet(RigelPackage.ARTIFACT__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -95,6 +149,11 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				Engineer owner = basicGetOwner();
+				if (owner != null)
+					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
+				return basicSetOwner((Engineer)otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConsumers()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__PRODUCERS:
@@ -111,6 +170,10 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				return basicSetOwner(null, msgs);
+			case RigelPackage.ARTIFACT__ISSUES:
+				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return ((InternalEList<?>)getConsumers()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__PRODUCERS:
@@ -129,6 +192,11 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				if (resolve) return getOwner();
+				return basicGetOwner();
+			case RigelPackage.ARTIFACT__ISSUES:
+				return getIssues();
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return getConsumers();
 			case RigelPackage.ARTIFACT__PRODUCERS:
@@ -148,6 +216,13 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				setOwner((Engineer)newValue);
+				return;
+			case RigelPackage.ARTIFACT__ISSUES:
+				getIssues().clear();
+				getIssues().addAll((Collection<? extends Issue>)newValue);
+				return;
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				getConsumers().clear();
 				getConsumers().addAll((Collection<? extends Target>)newValue);
@@ -172,6 +247,12 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				setOwner((Engineer)null);
+				return;
+			case RigelPackage.ARTIFACT__ISSUES:
+				getIssues().clear();
+				return;
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				getConsumers().clear();
 				return;
@@ -193,6 +274,10 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case RigelPackage.ARTIFACT__OWNER:
+				return basicGetOwner() != null;
+			case RigelPackage.ARTIFACT__ISSUES:
+				return !getIssues().isEmpty();
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return !getConsumers().isEmpty();
 			case RigelPackage.ARTIFACT__PRODUCERS:

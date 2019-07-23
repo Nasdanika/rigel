@@ -7,6 +7,17 @@
   <foreignModel>rigel.ecore</foreignModel>
   <genPackages prefix="Rigel" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="rigel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rigel.ecore#//IssueStatus">
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueStatus/Open"/>
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueStatus/InProgress"/>
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueStatus/Done"/>
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueStatus/Cancelled"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="rigel.ecore#//IssueImportance">
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueImportance/Low"/>
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueImportance/Medium"/>
+      <genEnumLiterals ecoreEnumLiteral="rigel.ecore#//IssueImportance/High"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="rigel.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/name"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/description"/>
@@ -14,6 +25,10 @@
     </genClasses>
     <genClasses image="false" ecoreClass="rigel.ecore#//PackageElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//PackageElement/associations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rigel.ecore#//EngineeredElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//EngineeredElement/owner"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//EngineeredElement/issues"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Package">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Package/elements"/>
@@ -58,6 +73,16 @@
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Association">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Association/target"/>
+    </genClasses>
+    <genClasses ecoreClass="rigel.ecore#//Engineer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Engineer/owns"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Engineer/assignments"/>
+    </genClasses>
+    <genClasses ecoreClass="rigel.ecore#//Issue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/importance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/assignedTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/size"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

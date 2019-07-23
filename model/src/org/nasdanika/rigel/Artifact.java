@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Artifact extends PackageElement {
+public interface Artifact extends EngineeredElement {
 	/**
 	 * Returns the value of the '<em><b>Consumers</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Target}.

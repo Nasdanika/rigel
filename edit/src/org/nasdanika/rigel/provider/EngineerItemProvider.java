@@ -12,26 +12,23 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.nasdanika.rigel.Association;
-import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.RigelPackage;
-import org.nasdanika.rigel.Target;
-import org.nasdanika.rigel.Transition;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.rigel.Association} object.
+ * This is the item provider adapter for a {@link org.nasdanika.rigel.Engineer} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssociationItemProvider extends ModelElementItemProvider {
+public class EngineerItemProvider extends PackageElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AssociationItemProvider(AdapterFactory adapterFactory) {
+	public EngineerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -46,25 +43,26 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTargetPropertyDescriptor(object);
+			addOwnsPropertyDescriptor(object);
+			addAssignmentsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Target feature.
+	 * This adds a property descriptor for the Owns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTargetPropertyDescriptor(Object object) {
+	protected void addOwnsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Association_target_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Association_target_feature", "_UI_Association_type"),
-				 RigelPackage.Literals.ASSOCIATION__TARGET,
+				 getString("_UI_Engineer_owns_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Engineer_owns_feature", "_UI_Engineer_type"),
+				 RigelPackage.Literals.ENGINEER__OWNS,
 				 true,
 				 false,
 				 true,
@@ -74,14 +72,36 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 	}
 
 	/**
-	 * This returns Association.gif.
+	 * This adds a property descriptor for the Assignments feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssignmentsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Engineer_assignments_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Engineer_assignments_feature", "_UI_Engineer_type"),
+				 RigelPackage.Literals.ENGINEER__ASSIGNMENTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Engineer.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Association.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Engineer.png"));
 	}
 
 	/**
@@ -102,22 +122,8 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		StringBuilder label = new StringBuilder();
-		String name = ((Association) object).getName();
-		if (name != null) {
-			label.append(name);
-		}
-		PackageElement t = ((Association) object).getTarget();
-		if (t != null) {
-			String tName = t.getName();
-			if (tName != null && tName.length() > 0) {
-				if (name != null) {
-					label.append(" ");
-				}
-			}
-			label.append("(").append(tName).append(")");
-		}
-		return label == null || label.length() == 0 ? getString("_UI_Association_type") : label.toString();
+		String label = ((Engineer)object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Engineer_type") : label;
 	}
 
 
@@ -126,11 +132,11 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

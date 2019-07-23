@@ -15,6 +15,9 @@ import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
+import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Resource;
@@ -89,6 +92,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createPackageElementAdapter();
 			}
 			@Override
+			public Adapter caseEngineeredElement(EngineeredElement object) {
+				return createEngineeredElementAdapter();
+			}
+			@Override
 			public Adapter casePackage(org.nasdanika.rigel.Package object) {
 				return createPackageAdapter();
 			}
@@ -137,6 +144,14 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationAdapter();
 			}
 			@Override
+			public Adapter caseEngineer(Engineer object) {
+				return createEngineerAdapter();
+			}
+			@Override
+			public Adapter caseIssue(Issue object) {
+				return createIssueAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -181,6 +196,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPackageElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.EngineeredElement <em>Engineered Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.EngineeredElement
+	 * @generated
+	 */
+	public Adapter createEngineeredElementAdapter() {
 		return null;
 	}
 
@@ -349,6 +378,34 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Engineer <em>Engineer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Engineer
+	 * @generated
+	 */
+	public Adapter createEngineerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Issue <em>Issue</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Issue
+	 * @generated
+	 */
+	public Adapter createIssueAdapter() {
 		return null;
 	}
 
