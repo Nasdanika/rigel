@@ -172,6 +172,16 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityReference" eSuperTypes="#//Source #//Target">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="References a shared activity defined elsewhere."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. Artifacts are passed between activities over transitions."/>

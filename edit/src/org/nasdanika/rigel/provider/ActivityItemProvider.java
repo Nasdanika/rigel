@@ -410,6 +410,11 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
+				 RigelFactory.eINSTANCE.createActivityReference()));
 	}
 
 }

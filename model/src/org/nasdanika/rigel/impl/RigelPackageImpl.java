@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
@@ -114,6 +115,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass activityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass activityReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -538,6 +546,26 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getActivityReference() {
+		return activityReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActivityReference_Activity() {
+		return (EReference)activityReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getArtifact() {
 		return artifactEClass;
 	}
@@ -842,6 +870,9 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEAttribute(activityEClass, ACTIVITY__TOTAL_SIZE);
 		createEAttribute(activityEClass, ACTIVITY__TOTAL_PROGRESS);
 
+		activityReferenceEClass = createEClass(ACTIVITY_REFERENCE);
+		createEReference(activityReferenceEClass, ACTIVITY_REFERENCE__ACTIVITY);
+
 		artifactEClass = createEClass(ARTIFACT);
 		createEReference(artifactEClass, ARTIFACT__CONSUMERS);
 		createEReference(artifactEClass, ARTIFACT__PRODUCERS);
@@ -915,6 +946,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityEClass.getESuperTypes().add(this.getEngineeredElement());
 		activityEClass.getESuperTypes().add(this.getSource());
 		activityEClass.getESuperTypes().add(this.getTarget());
+		activityReferenceEClass.getESuperTypes().add(this.getSource());
+		activityReferenceEClass.getESuperTypes().add(this.getTarget());
 		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
 		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
 		transitionEClass.getESuperTypes().add(this.getModelElement());
@@ -963,6 +996,9 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEAttribute(getActivity_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_TotalSize(), ecorePackage.getEDouble(), "totalSize", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_TotalProgress(), ecorePackage.getEInt(), "totalProgress", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(activityReferenceEClass, ActivityReference.class, "ActivityReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActivityReference_Activity(), this.getActivity(), null, "activity", null, 0, 1, ActivityReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArtifact_Consumers(), this.getTarget(), this.getTarget_Inputs(), "consumers", null, 0, -1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

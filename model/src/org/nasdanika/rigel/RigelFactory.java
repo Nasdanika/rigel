@@ -67,6 +67,15 @@ public interface RigelFactory extends EFactory {
 	Activity createActivity();
 
 	/**
+	 * Returns a new object of class '<em>Activity Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Activity Reference</em>'.
+	 * @generated
+	 */
+	ActivityReference createActivityReference();
+
+	/**
 	 * Returns a new object of class '<em>Artifact</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
@@ -171,6 +172,16 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = casePackageElement(activity);
 				if (result == null) result = caseActivityElement(activity);
 				if (result == null) result = caseModelElement(activity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.ACTIVITY_REFERENCE: {
+				ActivityReference activityReference = (ActivityReference)theEObject;
+				T result = caseActivityReference(activityReference);
+				if (result == null) result = caseSource(activityReference);
+				if (result == null) result = caseTarget(activityReference);
+				if (result == null) result = caseActivityElement(activityReference);
+				if (result == null) result = caseModelElement(activityReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -387,6 +398,21 @@ public class RigelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActivity(Activity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Activity Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Activity Reference</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActivityReference(ActivityReference object) {
 		return null;
 	}
 

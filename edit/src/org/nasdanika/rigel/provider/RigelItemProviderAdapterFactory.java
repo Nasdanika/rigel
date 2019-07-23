@@ -187,6 +187,29 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.ActivityReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActivityReferenceItemProvider activityReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.ActivityReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActivityReferenceAdapter() {
+		if (activityReferenceItemProvider == null) {
+			activityReferenceItemProvider = new ActivityReferenceItemProvider(this);
+		}
+
+		return activityReferenceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Artifact} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +457,7 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (startItemProvider != null) startItemProvider.dispose();
 		if (endItemProvider != null) endItemProvider.dispose();
 		if (activityItemProvider != null) activityItemProvider.dispose();
+		if (activityReferenceItemProvider != null) activityReferenceItemProvider.dispose();
 		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();

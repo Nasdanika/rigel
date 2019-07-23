@@ -56,6 +56,9 @@
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Activity/totalSize"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Activity/totalProgress"/>
     </genClasses>
+    <genClasses ecoreClass="rigel.ecore#//ActivityReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//ActivityReference/activity"/>
+    </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Artifact">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Artifact/consumers"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Artifact/producers"/>

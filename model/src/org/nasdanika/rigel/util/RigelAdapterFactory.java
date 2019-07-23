@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
@@ -126,6 +127,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActivity(Activity object) {
 				return createActivityAdapter();
+			}
+			@Override
+			public Adapter caseActivityReference(ActivityReference object) {
+				return createActivityReferenceAdapter();
 			}
 			@Override
 			public Adapter caseArtifact(Artifact object) {
@@ -322,6 +327,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActivityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.ActivityReference <em>Activity Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.ActivityReference
+	 * @generated
+	 */
+	public Adapter createActivityReferenceAdapter() {
 		return null;
 	}
 

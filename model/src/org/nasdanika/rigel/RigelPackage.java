@@ -973,6 +973,106 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.ActivityReferenceImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivityReference()
+	 * @generated
+	 */
+	int ACTIVITY_REFERENCE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__NAME = SOURCE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__DESCRIPTION = SOURCE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__CONFIGURATION = SOURCE__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__OUTBOUND_TRANSITIONS = SOURCE__OUTBOUND_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__OUTPUTS = SOURCE__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__INBOUND_TRANSITIONS = SOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__INPUTS = SOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Activity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__ACTIVITY = SOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Activity Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE_FEATURE_COUNT = SOURCE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Activity Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE_OPERATION_COUNT = SOURCE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -980,7 +1080,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getArtifact()
 	 * @generated
 	 */
-	int ARTIFACT = 11;
+	int ARTIFACT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1089,7 +1189,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getResource()
 	 * @generated
 	 */
-	int RESOURCE = 12;
+	int RESOURCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1198,7 +1298,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 13;
+	int TRANSITION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1280,7 +1380,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getAssociation()
 	 * @generated
 	 */
-	int ASSOCIATION = 14;
+	int ASSOCIATION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1345,7 +1445,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getEngineer()
 	 * @generated
 	 */
-	int ENGINEER = 15;
+	int ENGINEER = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1427,7 +1527,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssue()
 	 * @generated
 	 */
-	int ISSUE = 16;
+	int ISSUE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1518,7 +1618,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueStatus()
 	 * @generated
 	 */
-	int ISSUE_STATUS = 17;
+	int ISSUE_STATUS = 18;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IssueImportance <em>Issue Importance</em>}' enum.
@@ -1528,7 +1628,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueImportance()
 	 * @generated
 	 */
-	int ISSUE_IMPORTANCE = 18;
+	int ISSUE_IMPORTANCE = 19;
 
 
 	/**
@@ -1849,6 +1949,27 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActivity_TotalProgress();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.rigel.ActivityReference <em>Activity Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Activity Reference</em>'.
+	 * @see org.nasdanika.rigel.ActivityReference
+	 * @generated
+	 */
+	EClass getActivityReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.rigel.ActivityReference#getActivity <em>Activity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Activity</em>'.
+	 * @see org.nasdanika.rigel.ActivityReference#getActivity()
+	 * @see #getActivityReference()
+	 * @generated
+	 */
+	EReference getActivityReference_Activity();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Artifact <em>Artifact</em>}'.
@@ -2390,6 +2511,24 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTIVITY__TOTAL_PROGRESS = eINSTANCE.getActivity_TotalProgress();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.rigel.impl.ActivityReferenceImpl
+		 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivityReference()
+		 * @generated
+		 */
+		EClass ACTIVITY_REFERENCE = eINSTANCE.getActivityReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY_REFERENCE__ACTIVITY = eINSTANCE.getActivityReference_Activity();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.

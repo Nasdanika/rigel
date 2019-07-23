@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.nasdanika.rigel.Activity;
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
@@ -75,6 +76,7 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.START: return createStart();
 			case RigelPackage.END: return createEnd();
 			case RigelPackage.ACTIVITY: return createActivity();
+			case RigelPackage.ACTIVITY_REFERENCE: return createActivityReference();
 			case RigelPackage.ARTIFACT: return createArtifact();
 			case RigelPackage.RESOURCE: return createResource();
 			case RigelPackage.TRANSITION: return createTransition();
@@ -173,6 +175,17 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 	public Activity createActivity() {
 		ActivityImpl activity = new ActivityImpl();
 		return activity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ActivityReference createActivityReference() {
+		ActivityReferenceImpl activityReference = new ActivityReferenceImpl();
+		return activityReference;
 	}
 
 	/**
