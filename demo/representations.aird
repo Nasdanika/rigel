@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.nasdanika.rigel="urn:org.nasdanika.rigel" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:org.nasdanika.rigel="urn:org.nasdanika.rigel" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tree="http://www.eclipse.org/sirius/tree/1.0.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/tree/description/1.0.0 http://www.eclipse.org/sirius/tree/1.0.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis uid="_BjEmwKgIEemUALojhoKwlQ" selectedViews="_znm0oKgLEemlU5nTB2J-fA" version="14.1.0.201810161215">
     <semanticResources>models/basic.rigel</semanticResources>
     <semanticResources>platform:/resource/org.nasdanika.rigel/model/rigel.genmodel</semanticResources>
@@ -18,6 +18,10 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_0-YTdauyEemx3PaOTDJjFw" name="Activity Diagram" repPath="#_0-YTcKuyEemx3PaOTDJjFw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='ActivityDiagram']"/>
         <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.1"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_tP3pEbBnEemUU6VhOeX_ow" name="Package Tree" repPath="#_tPgcsLBnEemUU6VhOeX_ow">
+        <description xmi:type="description_2:TreeDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']"/>
+        <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -493,4 +497,140 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='ActivityDiagram']/@defaultLayer"/>
     <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.1"/>
   </diagram:DSemanticDiagram>
+  <tree:DTree uid="_tPgcsLBnEemUU6VhOeX_ow" name="Package Tree">
+    <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#/"/>
+    <ownedTreeItems xmi:type="tree:DTreeItem" uid="_o6-voLBrEemjuIEMfaV-Pw" name="Test" expanded="true">
+      <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#/"/>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_o7GEYLBrEemjuIEMfaV-Pw" name="Activity 1">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.0"/>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.0"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_o7GEYbBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQSRQLBrEemjuIEMfaV-Pw" name="Activity 2">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.1"/>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.1"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQSRQbBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQS4ULBrEemjuIEMfaV-Pw" name="Final activity">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.2"/>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.2"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQS4UbBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQS4U7BrEemjuIEMfaV-Pw" name="Activity 3">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.3"/>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.3"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQS4VLBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQS4VrBrEemjuIEMfaV-Pw" name="Activity-5" expanded="true">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQTfYLBrEemjuIEMfaV-Pw" name="Activity-1">
+          <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.0"/>
+          <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQTfYbBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_3Q1a4LBrEemjuIEMfaV-Pw" name="Activity-2">
+          <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.1"/>
+          <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_3Q1a4bBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_3Q1a47BrEemjuIEMfaV-Pw" name="Activity-3">
+          <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.2"/>
+          <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.2"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_3Q1a5LBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_3Q1a5rBrEemjuIEMfaV-Pw" name="Activity-4">
+          <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.3"/>
+          <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4/@elements.3"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_3Q1a57BrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.4"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQS4V7BrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQS4WbBrEemjuIEMfaV-Pw" name="Do that!">
+        <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.5"/>
+        <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.5"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQS4WrBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+      </ownedTreeItems>
+      <ownedTreeItems xmi:type="tree:DTreeItem" uid="_pQS4X7BrEemjuIEMfaV-Pw" name="Sp 1">
+        <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_vAiYoLBrEemjuIEMfaV-Pw" name="SP2">
+          <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.0"/>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_zQsmQLBrEemjuIEMfaV-Pw">
+            <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.0"/>
+            <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.0"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_zQsmQbBrEemjuIEMfaV-Pw" labelColor="209,209,209" backgroundColor="209,209,209"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']"/>
+          </ownedTreeItems>
+          <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.0"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_vAiYobBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='PackageTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_woQkYLBrEemjuIEMfaV-Pw" name="SP3" expanded="true">
+          <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1"/>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_woQkY7BrEemjuIEMfaV-Pw" name="SP4">
+            <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1/@elements.0"/>
+            <ownedTreeItems xmi:type="tree:DTreeItem" uid="_wzY2ULBrEemjuIEMfaV-Pw">
+              <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1/@elements.0/@elements.0"/>
+              <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1/@elements.0/@elements.0"/>
+              <ownedStyle xmi:type="tree:TreeItemStyle" uid="_wzY2UbBrEemjuIEMfaV-Pw" labelColor="209,209,209" backgroundColor="209,209,209"/>
+              <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='PackageTreeNode']"/>
+            </ownedTreeItems>
+            <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1/@elements.0"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_woQkZLBrEemjuIEMfaV-Pw"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='PackageTreeNode']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_wzYPQLBrEemjuIEMfaV-Pw" name="y">
+            <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.7/@elements.1/@elements.1"/>
+            <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.7/@elements.1/@elements.1"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_wzYPQbBrEemjuIEMfaV-Pw"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+          </ownedTreeItems>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_zQsmQrBrEemjuIEMfaV-Pw" name="SP3">
+            <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1"/>
+            <ownedTreeItems xmi:type="tree:DTreeItem" uid="_zQtNULBrEemjuIEMfaV-Pw">
+              <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.7/@elements.1/@elements.1"/>
+              <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.7/@elements.1/@elements.1"/>
+              <ownedStyle xmi:type="tree:TreeItemStyle" uid="_zQtNUbBrEemjuIEMfaV-Pw" labelColor="209,209,209" backgroundColor="209,209,209"/>
+              <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='ActivityTreeNode']"/>
+            </ownedTreeItems>
+            <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_zQsmQ7BrEemjuIEMfaV-Pw"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']"/>
+          </ownedTreeItems>
+          <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7/@elements.1"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_woQkYbBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='PackageTreeNode']"/>
+        </ownedTreeItems>
+        <ownedTreeItems xmi:type="tree:DTreeItem" uid="_zQr_MLBrEemjuIEMfaV-Pw" name="Sp 1">
+          <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+          <ownedTreeItems xmi:type="tree:DTreeItem" uid="_zQt0YLBrEemjuIEMfaV-Pw">
+            <target xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+            <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+            <ownedStyle xmi:type="tree:TreeItemStyle" uid="_zQt0YbBrEemjuIEMfaV-Pw" labelColor="209,209,209" backgroundColor="209,209,209"/>
+            <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']"/>
+          </ownedTreeItems>
+          <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+          <ownedStyle xmi:type="tree:TreeItemStyle" uid="_zQr_MbBrEemjuIEMfaV-Pw"/>
+          <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']"/>
+        </ownedTreeItems>
+        <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#//@elements.7"/>
+        <ownedStyle xmi:type="tree:TreeItemStyle" uid="_pQS4YLBrEemjuIEMfaV-Pw"/>
+        <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']/@subItemMappings[name='PackageTreeNode']"/>
+      </ownedTreeItems>
+      <semanticElements xmi:type="org.nasdanika.rigel:Package" href="models/basic.rigel#/"/>
+      <ownedStyle xmi:type="tree:TreeItemStyle" uid="_o6-vobBrEemjuIEMfaV-Pw"/>
+      <actualMapping xmi:type="description_2:TreeItemMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']/@subItemMappings[name='RootPackage']"/>
+    </ownedTreeItems>
+    <description xmi:type="description_2:TreeDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageTree']"/>
+  </tree:DTree>
 </xmi:XMI>
