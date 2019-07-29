@@ -195,10 +195,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="End pseudo-activity."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Конец"/>
+      <details key="documentation_ru" value="Элемент завершающий псевдо-активность"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//EngineeredElement #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Действие"/>
+      <details key="documentation_ru" value="Выполняя действие исполнитель использует ресурсы и получает некий результат"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActivityElement" containment="true">

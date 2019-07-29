@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getActivity()
- * @model
+ * @model annotation="urn:org.nasdanika label_ru='\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435' documentation_ru='\u0412\u044b\u043f\u043e\u043b\u043d\u044f\u044f \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 \u043d\u0435\u043a\u0438\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442'"
  * @generated
  */
 public interface Activity extends EngineeredElement, Source, Target {
