@@ -61,6 +61,7 @@ public class ModelElementItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addUrlPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addConfigurationPropertyDescriptor(object);
 		}
@@ -81,6 +82,28 @@ public class ModelElementItemProvider
 				 getString("_UI_ModelElement_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElement_name_feature", "_UI_ModelElement_type"),
 				 RigelPackage.Literals.MODEL_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Url feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addUrlPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ModelElement_url_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElement_url_feature", "_UI_ModelElement_type"),
+				 RigelPackage.Literals.MODEL_ELEMENT__URL,
 				 true,
 				 false,
 				 false,
@@ -171,6 +194,7 @@ public class ModelElementItemProvider
 
 		switch (notification.getFeatureID(ModelElement.class)) {
 			case RigelPackage.MODEL_ELEMENT__NAME:
+			case RigelPackage.MODEL_ELEMENT__URL:
 			case RigelPackage.MODEL_ELEMENT__DESCRIPTION:
 			case RigelPackage.MODEL_ELEMENT__CONFIGURATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

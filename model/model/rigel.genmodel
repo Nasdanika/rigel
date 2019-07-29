@@ -20,6 +20,7 @@
     </genEnums>
     <genClasses image="false" ecoreClass="rigel.ecore#//ModelElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/url"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/description"/>
       <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute rigel.ecore#//ModelElement/configuration"/>
     </genClasses>

@@ -81,13 +81,22 @@ public interface RigelPackage extends EPackage {
 	int MODEL_ELEMENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_ELEMENT__URL = 1;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__DESCRIPTION = 1;
+	int MODEL_ELEMENT__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -96,7 +105,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__CONFIGURATION = 2;
+	int MODEL_ELEMENT__CONFIGURATION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Model Element</em>' class.
@@ -105,7 +114,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT_FEATURE_COUNT = 3;
+	int MODEL_ELEMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Model Element</em>' class.
@@ -134,6 +143,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE_ELEMENT__NAME = MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_ELEMENT__URL = MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -198,6 +216,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENGINEERED_ELEMENT__NAME = PACKAGE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENGINEERED_ELEMENT__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -280,6 +307,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE__NAME = ENGINEERED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__URL = ENGINEERED_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -373,6 +409,15 @@ public interface RigelPackage extends EPackage {
 	int ACTOR__NAME = ENGINEERED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__URL = ENGINEERED_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,6 +509,15 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_ELEMENT__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_ELEMENT__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -517,6 +571,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int SOURCE__NAME = ACTIVITY_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__URL = ACTIVITY_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -592,6 +655,15 @@ public interface RigelPackage extends EPackage {
 	int START__NAME = SOURCE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START__URL = SOURCE__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +735,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int TARGET__NAME = ACTIVITY_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TARGET__URL = ACTIVITY_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -738,6 +819,15 @@ public interface RigelPackage extends EPackage {
 	int END__NAME = TARGET__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END__URL = TARGET__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -809,6 +899,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTIVITY__NAME = ENGINEERED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__URL = ENGINEERED_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -992,6 +1091,15 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_REFERENCE__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__URL = PACKAGE_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1099,6 +1207,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARTIFACT__NAME = ENGINEERED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__URL = ENGINEERED_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1210,6 +1327,15 @@ public interface RigelPackage extends EPackage {
 	int RESOURCE__NAME = ENGINEERED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__URL = ENGINEERED_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1319,6 +1445,15 @@ public interface RigelPackage extends EPackage {
 	int TRANSITION__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1401,6 +1536,15 @@ public interface RigelPackage extends EPackage {
 	int ASSOCIATION__NAME = MODEL_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION__URL = MODEL_ELEMENT__URL;
+
+	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1464,6 +1608,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ENGINEER__NAME = PACKAGE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENGINEER__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1546,6 +1699,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ISSUE__NAME = MODEL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__URL = MODEL_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1660,6 +1822,17 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getModelElement_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.ModelElement#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see org.nasdanika.rigel.ModelElement#getUrl()
+	 * @see #getModelElement()
+	 * @generated
+	 */
+	EAttribute getModelElement_Url();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.ModelElement#getDescription <em>Description</em>}'.
@@ -2276,6 +2449,14 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT__NAME = eINSTANCE.getModelElement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODEL_ELEMENT__URL = eINSTANCE.getModelElement_Url();
 
 		/**
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.

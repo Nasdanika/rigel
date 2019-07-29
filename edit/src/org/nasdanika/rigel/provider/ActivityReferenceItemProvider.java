@@ -24,7 +24,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityReferenceItemProvider extends SourceItemProvider {
+public class ActivityReferenceItemProvider extends PackageElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -46,11 +46,34 @@ public class ActivityReferenceItemProvider extends SourceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOutputsPropertyDescriptor(object);
 			addInboundTransitionsPropertyDescriptor(object);
 			addInputsPropertyDescriptor(object);
 			addActivityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Outputs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutputsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_outputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_outputs_feature", "_UI_Source_type"),
+				 RigelPackage.Literals.SOURCE__OUTPUTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -131,7 +154,7 @@ public class ActivityReferenceItemProvider extends SourceItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RigelPackage.Literals.PACKAGE_ELEMENT__ASSOCIATIONS);
+			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
 		}
 		return childrenFeatures;
 	}
@@ -199,7 +222,7 @@ public class ActivityReferenceItemProvider extends SourceItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ActivityReference.class)) {
-			case RigelPackage.ACTIVITY_REFERENCE__ASSOCIATIONS:
+			case RigelPackage.ACTIVITY_REFERENCE__OUTBOUND_TRANSITIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -219,8 +242,8 @@ public class ActivityReferenceItemProvider extends SourceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE_ELEMENT__ASSOCIATIONS,
-				 RigelFactory.eINSTANCE.createAssociation()));
+				(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS,
+				 RigelFactory.eINSTANCE.createTransition()));
 	}
 
 }
