@@ -1,10 +1,13 @@
 # Nasdanika Ригель
 
-!!! Перевести на русский !!!
 
-Nasdanika CV provides a model and an editor for creating cross-referenced [Curricula vitae](https://en.wikipedia.org/wiki/Curriculum_vitae) and publishing them as wed sites. 
+Nasdanika Ригель - инструмент для описания рабочих потоков, позволяющий легко и непринужденно создавать диаграммы рабочих потоков, генерировать отдельные инструкции для каждого участника рабочего процесса и публиковать описание как веб-страницу.
+   
 
 ## Concepts 
+
+*Что предполагается писать в данном разделе?*
+
 
 TODO - author, capbability tree, activity, organizations, ...
 
@@ -20,20 +23,20 @@ TODO - author, capbability tree, activity, organizations, ...
 
 ## P2 Repository
 
-* ``https://www.nasdanika.org/home/products/cv/repository``
+* ``https://www.nasdanika.org/home/products/rigel/repository``
 * [Archived](org.nasdanika.cv.repository-0.1.0-SNAPSHOT.zip)
 
 ## How to use
 
 ### Eclipse editor
 
-Install Nasdanika CV feature. 
+Install Nasdanika Rigel feature. 
 
 #### New model
 
-* Select to New > Other > Nasdanika > Nasdanika CV Model.
-* Select Author as the root object.
-* Right-click on the model elements to add sub-elements.
+//* Select to New > Other > Nasdanika > Nasdanika CV Model.
+//* Select Author as the root object.
+//* Right-click on the model elements to add sub-elements.
 
 #### Sample model
 

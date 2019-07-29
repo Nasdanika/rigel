@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.nasdanika.rigel.RigelPackage#getTarget()
  * @model abstract="true"
+ *        annotation="urn:org.nasdanika label_ru='\u0426\u0435\u043b\u044c' documentation_ru='\u0426\u0435\u043b\u044c \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u0430'"
  * @generated
  */
 public interface Target extends ActivityElement {

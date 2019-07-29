@@ -23,7 +23,7 @@ package org.nasdanika.rigel;
  * @model
  * @generated
  */
-public interface ActivityReference extends Source, Target, PackageElement {
+public interface ActivityReference extends PackageElement, Source, Target {
 	/**
 	 * Returns the value of the '<em><b>Activity</b></em>' reference.
 	 * <!-- begin-user-doc -->

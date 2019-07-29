@@ -5,31 +5,52 @@
     <details key="documentation" value="Workflow model."/>
   </eAnnotations>
   <eAnnotations source="urn:org.nasdanika">
-    <details key="label_ru" value="Ригель"/>
+    <details key="label_ru" value="Nasdanika.Ригель"/>
+    <details key="Documentation_ru" value="Модель рабочего потока"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for other model elements."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Элемент модели"/>
+      <details key="Documentation_ru" value="Базовый класс для других элементов модели"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element name. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Наименование"/>
+        <details key="Documentation_ru" value="Наименование элемента модели"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element description in [markdown](https://en.wikipedia.org/wiki/Markdown)."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Описание"/>
+        <details key="Documentation_ru" value="Описание элемента модели с использованием синтаксиса [markdown](https://en.wikipedia.org/wiki/Markdown)."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Element configuration in [YAML](https://en.wikipedia.org/wiki/YAML). Configuration is element-specific and it can be used for, say, analysis or runtime configuration. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Конфигурация"/>
+        <details key="Documentation_ru" value="*Конфигурация* элемента в [YAML] (https://en.wikipedia.org/wiki/YAML). Конфигурация зависит от элемента и может использоваться, например, для анализа или конфигурации во время выполнения."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Model element which can be contained by a package."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Упакованный элемент"/>
+      <details key="Documentation_ru" value="Элемент модели, котрый может быть включен в пакет"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associations" upperBound="-1"
         eType="#//Association" containment="true"/>
@@ -39,16 +60,28 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for elements which have an owning engineer and may contain issues."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="?Управляемый элемент"/>
+      <details key="Documentation_ru" value="Базовый класс для элемента модели, владельцем которого является инженер. Может содержать проблеммы/задачи."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Engineer"
         eOpposite="#//Engineer/owns">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Engineer responsible for this element."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Инженер"/>
+        <details key="Documentation_ru" value="Инженер, владелец этого элемента."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="issues" upperBound="-1"
         eType="#//Issue" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Issues associated with the element - problems/pain points, improvement opportunities/enhancements."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Проблемы"/>
+        <details key="Documentation_ru" value="Проблемы, связанные с элементом - проблемы / болевые точки, возможности улучшения / улучшения."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -58,12 +91,16 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Пакет"/>
-      <details key="documentation_ru" value="Пакет содержит элементы пакета."/>
+      <details key="documentation_ru" value="Пакет содержит элементы модели."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//PackageElement" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Container elements."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Элементы пакета"/>
+        <details key="documentation_ru" value="Элементы пакета"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -71,10 +108,18 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Actors perform activities using resources consuming and producing artifacts."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Исполнитель"/>
+      <details key="documentation_ru" value="Лицо, осуществляющее действия, используя ресурсы и производя артефакты"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
         eType="#//Activity" eOpposite="#//Activity/paricipants">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activities in which this actor participates."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Действия"/>
+        <details key="documentation_ru" value="Действия в которых участвует исполнитель"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -82,15 +127,27 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Element of a (composite) activity."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Элемент действия"/>
+      <details key="documentation_ru" value="Элемент сложного (составного) действия"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source" abstract="true" eSuperTypes="#//ActivityElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Source of transitions."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Источник"/>
+      <details key="documentation_ru" value="Источник (чего?) Точка входа?"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outboundTransitions" upperBound="-1"
         eType="#//Transition" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Outbound transitions."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Исходящие"/>
+        <details key="documentation_ru" value="Исходящие (что?) Точки выхода?"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
@@ -98,16 +155,28 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Artifacts output/produced by this source."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Артефакт"/>
+        <details key="documentation_ru" value="Артефакты производимые этим источником"/>
+      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Start" eSuperTypes="#//Source">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Start pseudo-activity."/>
     </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Старт"/>
+      <details key="documentation_ru" value="Старт псевдо- активности"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true" eSuperTypes="#//ActivityElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Target of transitions."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Цель"/>
+      <details key="documentation_ru" value="Цель перехода"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inboundTransitions" upperBound="-1"
         eType="#//Transition" eOpposite="#//Transition/target">

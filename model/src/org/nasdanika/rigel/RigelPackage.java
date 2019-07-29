@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-model-doc -->
  * @see org.nasdanika.rigel.RigelFactory
  * @model kind="package"
- *        annotation="urn:org.nasdanika label_ru='\u0420\u0438\u0433\u0435\u043b\u044c'"
+ *        annotation="urn:org.nasdanika label_ru='Nasdanika.\u0420\u0438\u0433\u0435\u043b\u044c' Documentation_ru='\u041c\u043e\u0434\u0435\u043b\u044c \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430'"
  * @generated
  */
 public interface RigelPackage extends EPackage {
@@ -989,7 +989,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__NAME = SOURCE__NAME;
+	int ACTIVITY_REFERENCE__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -998,7 +998,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__DESCRIPTION = SOURCE__DESCRIPTION;
+	int ACTIVITY_REFERENCE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -1007,43 +1007,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__CONFIGURATION = SOURCE__CONFIGURATION;
-
-	/**
-	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_REFERENCE__OUTBOUND_TRANSITIONS = SOURCE__OUTBOUND_TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_REFERENCE__OUTPUTS = SOURCE__OUTPUTS;
-
-	/**
-	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_REFERENCE__INBOUND_TRANSITIONS = SOURCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY_REFERENCE__INPUTS = SOURCE_FEATURE_COUNT + 1;
+	int ACTIVITY_REFERENCE__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -1052,7 +1016,43 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__ASSOCIATIONS = SOURCE_FEATURE_COUNT + 2;
+	int ACTIVITY_REFERENCE__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__OUTBOUND_TRANSITIONS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__OUTPUTS = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__INBOUND_TRANSITIONS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__INPUTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Activity</b></em>' reference.
@@ -1061,7 +1061,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE__ACTIVITY = SOURCE_FEATURE_COUNT + 3;
+	int ACTIVITY_REFERENCE__ACTIVITY = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Activity Reference</em>' class.
@@ -1070,7 +1070,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE_FEATURE_COUNT = SOURCE_FEATURE_COUNT + 4;
+	int ACTIVITY_REFERENCE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Activity Reference</em>' class.
@@ -1079,7 +1079,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_REFERENCE_OPERATION_COUNT = SOURCE_OPERATION_COUNT + 0;
+	int ACTIVITY_REFERENCE_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.
