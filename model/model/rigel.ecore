@@ -471,7 +471,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Issue" eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement."/>
+      <details key="documentation" value="Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement.&#xA;&#xA;Example:&#xA;&#xA;* Containing activity - &quot;Initial setup of a software project&quot;, &#xA;* Size - 4.0 (hours) - copy an existing project and modify its sources.&#xA;* Issue - &quot;Create a code generator&quot; (enhancement),&#xA;    * Size - 40.0 (hours).&#xA;    * Benefit - 3.5 (hours).&#xA;    * Implementation - an activity providing a detailed explanation how code generator shall be implemented."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Задача"/>
@@ -498,6 +498,22 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="An estimation of effort required to complete this issue in some units used consistently throughout the model - points, person hours, dollars."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="benefit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An estimation of reduction of the containing activity effort caused by completion of this issue. It can be used for cost/benefit analysis in order to prioritize issues."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Issue" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Issues may be organized into a hierarchy."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//Activity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Activity providing details about how to implement this issue.&#xA;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

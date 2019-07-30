@@ -2,6 +2,8 @@
  */
 package org.nasdanika.rigel;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -10,6 +12,15 @@ package org.nasdanika.rigel;
  *
  * <!-- begin-model-doc -->
  * Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement.
+ * 
+ * Example:
+ * 
+ * * Containing activity - "Initial setup of a software project", 
+ * * Size - 4.0 (hours) - copy an existing project and modify its sources.
+ * * Issue - "Create a code generator" (enhancement),
+ *     * Size - 40.0 (hours).
+ *     * Benefit - 3.5 (hours).
+ *     * Implementation - an activity providing a detailed explanation how code generator shall be implemented.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -20,6 +31,9 @@ package org.nasdanika.rigel;
  *   <li>{@link org.nasdanika.rigel.Issue#getStatus <em>Status</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getAssignedTo <em>Assigned To</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getSize <em>Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Issue#getBenefit <em>Benefit</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Issue#getChildren <em>Children</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Issue#getImplementation <em>Implementation</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getIssue()
@@ -136,5 +150,72 @@ public interface Issue extends ModelElement {
 	 * @generated
 	 */
 	void setSize(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Benefit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * An estimation of reduction of the containing activity effort caused by completion of this issue. It can be used for cost/benefit analysis in order to prioritize issues.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Benefit</em>' attribute.
+	 * @see #setBenefit(double)
+	 * @see org.nasdanika.rigel.RigelPackage#getIssue_Benefit()
+	 * @model
+	 * @generated
+	 */
+	double getBenefit();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.rigel.Issue#getBenefit <em>Benefit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Benefit</em>' attribute.
+	 * @see #getBenefit()
+	 * @generated
+	 */
+	void setBenefit(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.rigel.Issue}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Issues may be organized into a hierarchy.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Children</em>' containment reference list.
+	 * @see org.nasdanika.rigel.RigelPackage#getIssue_Children()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Issue> getChildren();
+
+	/**
+	 * Returns the value of the '<em><b>Implementation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Activity providing details about how to implement this issue.
+	 * 
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Implementation</em>' reference.
+	 * @see #setImplementation(Activity)
+	 * @see org.nasdanika.rigel.RigelPackage#getIssue_Implementation()
+	 * @model
+	 * @generated
+	 */
+	Activity getImplementation();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.rigel.Issue#getImplementation <em>Implementation</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementation</em>' reference.
+	 * @see #getImplementation()
+	 * @generated
+	 */
+	void setImplementation(Activity value);
 
 } // Issue

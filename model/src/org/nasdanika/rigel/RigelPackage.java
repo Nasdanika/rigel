@@ -1764,13 +1764,40 @@ public interface RigelPackage extends EPackage {
 	int ISSUE__SIZE = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Benefit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__BENEFIT = MODEL_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__CHILDREN = MODEL_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Implementation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__IMPLEMENTATION = MODEL_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Issue</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int ISSUE_FEATURE_COUNT = MODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Issue</em>' class.
@@ -2390,6 +2417,39 @@ public interface RigelPackage extends EPackage {
 	EAttribute getIssue_Size();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Issue#getBenefit <em>Benefit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Benefit</em>'.
+	 * @see org.nasdanika.rigel.Issue#getBenefit()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EAttribute getIssue_Benefit();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Issue#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
+	 * @see org.nasdanika.rigel.Issue#getChildren()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EReference getIssue_Children();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.rigel.Issue#getImplementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Implementation</em>'.
+	 * @see org.nasdanika.rigel.Issue#getImplementation()
+	 * @see #getIssue()
+	 * @generated
+	 */
+	EReference getIssue_Implementation();
+
+	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2907,6 +2967,30 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ISSUE__SIZE = eINSTANCE.getIssue_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Benefit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ISSUE__BENEFIT = eINSTANCE.getIssue_Benefit();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ISSUE__CHILDREN = eINSTANCE.getIssue_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ISSUE__IMPLEMENTATION = eINSTANCE.getIssue_Implementation();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}' enum.

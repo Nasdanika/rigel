@@ -87,6 +87,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/status"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/assignedTo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Issue/benefit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/children"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/implementation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
