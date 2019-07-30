@@ -23,15 +23,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <editor
-            id="org.nasdanika.rigel.presentation.RigelFormsEditorID"
-            name="%_UI_RigelFormsEditor_label"
-            icon="icons/full/obj16/RigelModelFile.png"
-            extensions="rigel"
-            default="true"
-            class="org.nasdanika.rigel.presentation.RigelFormsEditor">
-      </editor>
-      
       <!-- @generated rigel -->
       <editor
             id="org.nasdanika.rigel.presentation.RigelEditorID"

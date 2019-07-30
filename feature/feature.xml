@@ -6,11 +6,11 @@
       provider-name="Nasdanika LLC">
 
    <description>
-      Models and editors for code generation.
+      Nasdanika Rigel.
    </description>
 
    <copyright>
-      (c) 2016-2017 Nasdanika LLC, All rights reserved.
+      (c) 2019 Nasdanika LLC, All rights reserved.
    </copyright>
 
    <license url="">
@@ -108,7 +108,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </url>
 
    <requires>
-      <import feature="org.eclipse.emf.ecp.emfforms.runtime.feature" version="1.21.0.20190603-0953"/>
       <import feature="org.eclipse.sirius.runtime" version="6.2.1.201906121145"/>
    </requires>
 
