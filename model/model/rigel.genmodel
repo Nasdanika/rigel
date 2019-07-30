@@ -3,7 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.rigel/src" creationIcons="false"
     editorDirectory="" modelPluginID="org.nasdanika.rigel" modelName="Rigel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="8.0"
-    copyrightFields="false" operationReflection="true" importOrganizing="true">
+    copyrightFields="false" providerRootExtendsClass="org.nasdanika.emf.edit.NasdanikaItemProviderAdapter"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>rigel.ecore</foreignModel>
   <genPackages prefix="Rigel" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="rigel.ecore#/">

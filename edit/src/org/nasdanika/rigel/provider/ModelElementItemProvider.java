@@ -19,9 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.emf.edit.NasdanikaItemProviderAdapter;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -32,7 +32,7 @@ import org.nasdanika.rigel.RigelPackage;
  * @generated
  */
 public class ModelElementItemProvider 
-	extends ItemProviderAdapter
+	extends NasdanikaItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

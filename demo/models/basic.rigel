@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <org.nasdanika.rigel:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.nasdanika.rigel="urn:org.nasdanika.rigel" name="Test">
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 1" owner="//@elements.6">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 1" owner="//@elements.6" paricipants="//@elements.8">
     <outboundTransitions target="//@elements.1"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 2" inboundTransitions="//@elements.0/@outboundTransitions.0" progress="20">
@@ -8,7 +8,7 @@
     <outboundTransitions target="//@elements.4"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Final activity" inboundTransitions="//@elements.1/@outboundTransitions.0 //@elements.3/@outboundTransitions.0 //@elements.5/@outboundTransitions.0"/>
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 3" description="# Details&#xD;&#xA;&#xD;&#xA;* Do A&#xD;&#xA;* Do B" owner="//@elements.6" size="1.0" progress="100">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 3" description="# Details&#xD;&#xA;&#xD;&#xA;* Do A&#xD;&#xA;* Do B" owner="//@elements.6" paricipants="//@elements.8" size="1.0" progress="100">
     <outboundTransitions target="//@elements.2"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-5" owner="//@elements.6" inboundTransitions="//@elements.1/@outboundTransitions.1">
@@ -38,6 +38,6 @@
       <elements xsi:type="org.nasdanika.rigel:Activity" name="y"/>
     </elements>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Actor" name="Actor 1" activities="//@elements.5"/>
+  <elements xsi:type="org.nasdanika.rigel:Actor" name="Actor 1" activities="//@elements.5 //@elements.3 //@elements.0"/>
   <elements xsi:type="org.nasdanika.rigel:Actor" name="Actor 2"/>
 </org.nasdanika.rigel:Package>
