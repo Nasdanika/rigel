@@ -1093,8 +1093,416 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 		// urn:org.nasdanika
 		createUrnorgAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "documentation", "Workflow model."
+		   });
+		addAnnotation
+		  (modelElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Base class for other model elements."
+		   });
+		addAnnotation
+		  (getModelElement_Name(),
+		   source,
+		   new String[] {
+			   "documentation", "Element name. "
+		   });
+		addAnnotation
+		  (getModelElement_Url(),
+		   source,
+		   new String[] {
+			   "documentation", "Optional element URL. Resolved relative to the containing element URL. "
+		   });
+		addAnnotation
+		  (getModelElement_Description(),
+		   source,
+		   new String[] {
+			   "documentation", "Element description in [markdown](https://en.wikipedia.org/wiki/Markdown)."
+		   });
+		addAnnotation
+		  (getModelElement_Configuration(),
+		   source,
+		   new String[] {
+			   "documentation", "Element configuration in [YAML](https://en.wikipedia.org/wiki/YAML). Configuration is element-specific and it can be used for, say, analysis or runtime configuration. "
+		   });
+		addAnnotation
+		  (packageElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Model element which can be contained by a package."
+		   });
+		addAnnotation
+		  (engineeredElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Base class for elements which have an owning engineer and may contain issues."
+		   });
+		addAnnotation
+		  (getEngineeredElement_Owner(),
+		   source,
+		   new String[] {
+			   "documentation", "Engineer responsible for this element."
+		   });
+		addAnnotation
+		  (getEngineeredElement_Issues(),
+		   source,
+		   new String[] {
+			   "documentation", "Issues associated with the element - problems/pain points, improvement opportunities/enhancements."
+		   });
+		addAnnotation
+		  (packageEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Container of package elements."
+		   });
+		addAnnotation
+		  (getPackage_Elements(),
+		   source,
+		   new String[] {
+			   "documentation", "Container elements."
+		   });
+		addAnnotation
+		  (actorEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Actors perform activities using resources consuming and producing artifacts."
+		   });
+		addAnnotation
+		  (getActor_Activities(),
+		   source,
+		   new String[] {
+			   "documentation", "Activities in which this actor participates."
+		   });
+		addAnnotation
+		  (activityElementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Element of a (composite) activity."
+		   });
+		addAnnotation
+		  (sourceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Source of transitions."
+		   });
+		addAnnotation
+		  (getSource_OutboundTransitions(),
+		   source,
+		   new String[] {
+			   "documentation", "Outbound transitions."
+		   });
+		addAnnotation
+		  (getSource_Outputs(),
+		   source,
+		   new String[] {
+			   "documentation", "Artifacts output/produced by this source."
+		   });
+		addAnnotation
+		  (startEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Start pseudo-activity."
+		   });
+		addAnnotation
+		  (targetEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Target of transitions."
+		   });
+		addAnnotation
+		  (getTarget_InboundTransitions(),
+		   source,
+		   new String[] {
+			   "documentation", "Inbound transitions."
+		   });
+		addAnnotation
+		  (getTarget_Inputs(),
+		   source,
+		   new String[] {
+			   "documentation", "Input artifacts consumed by this target."
+		   });
+		addAnnotation
+		  (endEClass,
+		   source,
+		   new String[] {
+			   "documentation", "End pseudo-activity."
+		   });
+		addAnnotation
+		  (activityEClass,
+		   source,
+		   new String[] {
+			   "documentation", "By performing an activity participants produce outputs from inputs using resources."
+		   });
+		addAnnotation
+		  (getActivity_Elements(),
+		   source,
+		   new String[] {
+			   "documentation", "Activities can be composed from activity elements."
+		   });
+		addAnnotation
+		  (getActivity_Paricipants(),
+		   source,
+		   new String[] {
+			   "documentation", "One or more actors participate in completion of an activity."
+		   });
+		addAnnotation
+		  (getActivity_Resources(),
+		   source,
+		   new String[] {
+			   "documentation", "Participants may use resources such as tools to complete an activity."
+		   });
+		addAnnotation
+		  (getActivity_Size(),
+		   source,
+		   new String[] {
+			   "documentation", "Activity size in some unit used by all activities. For example - hours, points, dollars."
+		   });
+		addAnnotation
+		  (getActivity_Progress(),
+		   source,
+		   new String[] {
+			   "documentation", "Activity progress in percent. Value between 0 and 100. Progress can be used in \"instance\" models which are used to model and track execution of an actual effort as opposed to \"template\" models which explain steps to complete an effort."
+		   });
+		addAnnotation
+		  (getActivity_TotalSize(),
+		   source,
+		   new String[] {
+			   "documentation", "The sum of sizes of this activity and its children."
+		   });
+		addAnnotation
+		  (getActivity_TotalProgress(),
+		   source,
+		   new String[] {
+			   "documentation", "Calculated total activity progress in percent. "
+		   });
+		addAnnotation
+		  (activityReferenceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "References a shared activity defined elsewhere."
+		   });
+		addAnnotation
+		  (getActivityReference_Activity(),
+		   source,
+		   new String[] {
+			   "documentation", "By performing an activity participants produce outputs from inputs using resources."
+		   });
+		addAnnotation
+		  (artifactEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. Artifacts are passed between activities over transitions."
+		   });
+		addAnnotation
+		  (getArtifact_Consumers(),
+		   source,
+		   new String[] {
+			   "documentation", "Targets consuming this artifact as their input."
+		   });
+		addAnnotation
+		  (getArtifact_Producers(),
+		   source,
+		   new String[] {
+			   "documentation", "Sources emitting this artifact as their output."
+		   });
+		addAnnotation
+		  (getArtifact_Children(),
+		   source,
+		   new String[] {
+			   "documentation", "Artifacts can be nested. E.g. a zip archive contains directories which contain files."
+		   });
+		addAnnotation
+		  (resourceEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Something leveraged by an actor to perform an activity. For example - a tool."
+		   });
+		addAnnotation
+		  (getResource_Users(),
+		   source,
+		   new String[] {
+			   "documentation", "Activities using/leveraging this resource."
+		   });
+		addAnnotation
+		  (getResource_Children(),
+		   source,
+		   new String[] {
+			   "documentation", "Resource can be nested. E.g. a virtual machine may host a web server."
+		   });
+		addAnnotation
+		  (getResource_Artifacts(),
+		   source,
+		   new String[] {
+			   "documentation", "Resources may host artifacts."
+		   });
+		addAnnotation
+		  (transitionEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Transition from its containing source element to a target element. May pass artifacts in both directions. E.g. a transition to \"Commit code\" may take \"Source code\" as input and return \"Commit ID\" as a result."
+		   });
+		addAnnotation
+		  (getTransition_Target(),
+		   source,
+		   new String[] {
+			   "documentation", "Transition target."
+		   });
+		addAnnotation
+		  (getTransition_Inputs(),
+		   source,
+		   new String[] {
+			   "documentation", "Artifacts passed by the source to the transition and delivered to the target."
+		   });
+		addAnnotation
+		  (getTransition_Results(),
+		   source,
+		   new String[] {
+			   "documentation", "Artifacts returned by the target to be delivered to the source."
+		   });
+		addAnnotation
+		  (associationEClass,
+		   source,
+		   new String[] {
+			   "documentation", "A generic relationship between model elements."
+		   });
+		addAnnotation
+		  (engineerEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Engineers own engineered elements and are assigned issues associated with these elements."
+		   });
+		addAnnotation
+		  (getEngineer_Owns(),
+		   source,
+		   new String[] {
+			   "documentation", "Elements which this engineer owns. Ownership is propagated down to child elements recursively, unless these elements have an explicitly assigned owner. Also issues associated with owned elements and not having an engineer explicitly assigned to them are implicitly assigned to the element owner."
+		   });
+		addAnnotation
+		  (getEngineer_Assignments(),
+		   source,
+		   new String[] {
+			   "documentation", "Engineer\'s assigned issues."
+		   });
+		addAnnotation
+		  (issueEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement.\n\nExample:\n\n* Containing activity - \"Initial setup of a software project\", \n* Size - 4.0 (hours) - copy an existing project and modify its sources.\n* Issue - \"Create a code generator\" (enhancement),\n    * Size - 40.0 (hours).\n    * Benefit - 3.5 (hours).\n    * Implementation - an activity providing a detailed explanation how code generator shall be implemented."
+		   });
+		addAnnotation
+		  (getIssue_Importance(),
+		   source,
+		   new String[] {
+			   "documentation", "Issue importance."
+		   });
+		addAnnotation
+		  (getIssue_Status(),
+		   source,
+		   new String[] {
+			   "documentation", "Issue status."
+		   });
+		addAnnotation
+		  (getIssue_AssignedTo(),
+		   source,
+		   new String[] {
+			   "documentation", "Engineer this issue is assigned to. If this attribute is null the issue is assumed to be assigned to the owner of the containing element."
+		   });
+		addAnnotation
+		  (getIssue_Size(),
+		   source,
+		   new String[] {
+			   "documentation", "An estimation of effort required to complete this issue in some units used consistently throughout the model - points, person hours, dollars."
+		   });
+		addAnnotation
+		  (getIssue_Benefit(),
+		   source,
+		   new String[] {
+			   "documentation", "An estimation of reduction of the containing activity effort caused by completion of this issue. It can be used for cost/benefit analysis in order to prioritize issues."
+		   });
+		addAnnotation
+		  (getIssue_Children(),
+		   source,
+		   new String[] {
+			   "documentation", "Issues may be organized into a hierarchy."
+		   });
+		addAnnotation
+		  (getIssue_Implementation(),
+		   source,
+		   new String[] {
+			   "documentation", "Activity providing details about how to implement this issue.\n\n"
+		   });
+		addAnnotation
+		  (issueStatusEEnum,
+		   source,
+		   new String[] {
+			   "documentation", "Issue status."
+		   });
+		addAnnotation
+		  (issueStatusEEnum.getELiterals().get(0),
+		   source,
+		   new String[] {
+			   "documentation", "An issue which hasn\'t been worked on."
+		   });
+		addAnnotation
+		  (issueStatusEEnum.getELiterals().get(1),
+		   source,
+		   new String[] {
+			   "documentation", "Work in progress."
+		   });
+		addAnnotation
+		  (issueStatusEEnum.getELiterals().get(2),
+		   source,
+		   new String[] {
+			   "documentation", "Work completed."
+		   });
+		addAnnotation
+		  (issueStatusEEnum.getELiterals().get(3),
+		   source,
+		   new String[] {
+			   "documentation", "The issue is not going to be worked on for some reason."
+		   });
+		addAnnotation
+		  (issueImportanceEEnum,
+		   source,
+		   new String[] {
+			   "documentation", "Importance of the issue."
+		   });
+		addAnnotation
+		  (issueImportanceEEnum.getELiterals().get(0),
+		   source,
+		   new String[] {
+			   "documentation", "Low importance."
+		   });
+		addAnnotation
+		  (issueImportanceEEnum.getELiterals().get(1),
+		   source,
+		   new String[] {
+			   "documentation", "Medium importance."
+		   });
+		addAnnotation
+		  (issueImportanceEEnum.getELiterals().get(2),
+		   source,
+		   new String[] {
+			   "documentation", "High importance."
+		   });
 	}
 
 	/**

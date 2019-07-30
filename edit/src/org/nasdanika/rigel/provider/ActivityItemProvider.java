@@ -8,14 +8,11 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -66,22 +63,23 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Owner feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOwnerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_EngineeredElement_owner_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owner_feature", "_UI_EngineeredElement_type"),
-				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+			  (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			   getResourceLocator(),
+			   getLabel(RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, getString("_UI_EngineeredElement_owner_feature")),
+			   getTooltip(RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER),
+			   RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+			   true,
+			   false,
+			   true,
+			   null,
+			   null,
+			   null,
+			   createSingleReferenceDialogCellEditorFactory()));
 	}
 
 	/**
@@ -154,22 +152,23 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Paricipants feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addParicipantsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Activity_paricipants_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_paricipants_feature", "_UI_Activity_type"),
-				 RigelPackage.Literals.ACTIVITY__PARICIPANTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+			  (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			   getResourceLocator(),
+			   getLabel(RigelPackage.Literals.ACTIVITY__PARICIPANTS, getString("_UI_Activity_paricipants_feature")),
+			   getTooltip(RigelPackage.Literals.ACTIVITY__PARICIPANTS),
+			   RigelPackage.Literals.ACTIVITY__PARICIPANTS,
+			   true,
+			   false,
+			   true,
+			   null,
+			   null,
+			   null,
+			   createMultiReferenceDialogCellEditorFactory()));
 	}
 
 	/**
