@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-model-doc -->
  * @see org.nasdanika.rigel.RigelFactory
  * @model kind="package"
- *        annotation="urn:org.nasdanika label_ru='Nasdanika.\u0420\u0438\u0433\u0435\u043b\u044c' Documentation_ru='\u041c\u043e\u0434\u0435\u043b\u044c \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430'"
+ *        annotation="urn:org.nasdanika label_ru='Nasdanika.\u0420\u0438\u0433\u0435\u043b\u044c' Documentation_ru='Nasdanika Rigel -  \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u0438 \u043a\u043e\u043d\u0442\u0440\u0430\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u043f\u043e\u0442\u043e\u043a\u043e\u0432 \u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432. '"
  * @generated
  */
 public interface RigelPackage extends EPackage {
