@@ -133,8 +133,8 @@
       <details key="documentation" value="Element of a (composite) activity."/>
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Элемент действия"/>
-      <details key="documentation_ru" value="Элемент сложного (составного) действия"/>
+      <details key="label_ru" value="Операция"/>
+      <details key="documentation_ru" value="Операция - это элемент сложного (составного) действия"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Source" abstract="true" eSuperTypes="#//ActivityElement">
@@ -211,12 +211,16 @@
     </eAnnotations>
     <eAnnotations source="urn:org.nasdanika">
       <details key="label_ru" value="Действие"/>
-      <details key="documentation_ru" value="Выполняя действие исполнитель использует ресурсы и получает некий результат"/>
+      <details key="documentation_ru" value="Действие - это то, что необходимо для получения желаемого результата. Выполняя действие исполнитель использует ресурсы и создает артефакты, являющиеся промежуточными или конечными результатами процесса.&#xA;&#xA;Варианты перевода:&#xA;&#xA;&#xA;* Действие / Элементарное действие&#xA;* Процесс/Операция&#xA;* Работа / Операция "/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//ActivityElement" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activities can be composed from activity elements."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Операция"/>
+        <details key="documentation_ru" value="Действие может быть декомпозировано до составляющих его операций."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="paricipants" upperBound="-1"
@@ -224,21 +228,37 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="One or more actors participate in completion of an activity."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Участники"/>
+        <details key="documentation_ru" value="One or more actors participate in completion of an activity."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
         eType="#//Resource" eOpposite="#//Resource/users">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Participants may use resources such as tools to complete an activity."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Ресурсы"/>
+        <details key="documentation_ru" value="Объекты и инструменты, используемые участниками для совершения действия "/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activity size in some unit used by all activities. For example - hours, points, dollars."/>
       </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Размер"/>
+        <details key="documentation_ru" value="Оценка деятельности (работы) в каких-либо единицах: трудо-часах, присестах, деньгах."/>
+      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="progress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activity progress in percent. Value between 0 and 100. Progress can be used in &quot;instance&quot; models which are used to model and track execution of an actual effort as opposed to &quot;template&quot; models which explain steps to complete an effort."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Прогресс"/>
+        <details key="documentation_ru" value="Оценка степени выполнения деятельности (работы) в процентах. Значение между 0 и 100. &#xA;&#xA;Progress can be used in &quot;instance&quot; models which are used to model and track execution of an actual effort as opposed to &quot;template&quot; models which explain steps to complete an effort.&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
