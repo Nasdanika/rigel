@@ -68,10 +68,8 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	protected void addOwnerPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-			  (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			   getResourceLocator(),
-			   getLabel(RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, getString("_UI_EngineeredElement_owner_feature")),
-			   getTooltip(RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER),
+			  (getResourceLocator(),
+			   getString("_UI_EngineeredElement_owner_feature"),
 			   RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
 			   true,
 			   false,
@@ -79,26 +77,25 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			   null,
 			   null,
 			   null,
-			   createSingleReferenceDialogCellEditorFactory()));
+			   null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Outputs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOutputsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Source_outputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_outputs_feature", "_UI_Source_type"),
+				(getResourceLocator(),
+				 getString("_UI_Source_outputs_feature"),				 
 				 RigelPackage.Literals.SOURCE__OUTPUTS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -108,19 +105,18 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Inbound Transitions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addInboundTransitionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
+				(getResourceLocator(),
 				 getString("_UI_Target_inboundTransitions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inboundTransitions_feature", "_UI_Target_type"),
 				 RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -130,19 +126,18 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Inputs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addInputsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
+				(getResourceLocator(),
 				 getString("_UI_Target_inputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inputs_feature", "_UI_Target_type"),
 				 RigelPackage.Literals.TARGET__INPUTS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -157,10 +152,8 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	protected void addParicipantsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-			  (((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-			   getResourceLocator(),
-			   getLabel(RigelPackage.Literals.ACTIVITY__PARICIPANTS, getString("_UI_Activity_paricipants_feature")),
-			   getTooltip(RigelPackage.Literals.ACTIVITY__PARICIPANTS),
+			  (getResourceLocator(),
+			   getString("_UI_Activity_paricipants_feature"),
 			   RigelPackage.Literals.ACTIVITY__PARICIPANTS,
 			   true,
 			   false,
@@ -168,26 +161,25 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			   null,
 			   null,
 			   null,
-			   createMultiReferenceDialogCellEditorFactory()));
+			   null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Resources feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addResourcesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
+				(getResourceLocator(),
 				 getString("_UI_Activity_resources_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_resources_feature", "_UI_Activity_type"),
 				 RigelPackage.Literals.ACTIVITY__RESOURCES,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
