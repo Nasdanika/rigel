@@ -23,7 +23,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityItemProvider extends PackageElementItemProvider {
+public class ActivityItemProvider extends FlowItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,12 +45,9 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOwnerPropertyDescriptor(object);
 			addOutputsPropertyDescriptor(object);
 			addInboundTransitionsPropertyDescriptor(object);
 			addInputsPropertyDescriptor(object);
-			addParicipantsPropertyDescriptor(object);
-			addResourcesPropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 			addProgressPropertyDescriptor(object);
 			addTotalSizePropertyDescriptor(object);
@@ -134,48 +131,6 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 				(getResourceLocator(),
 				 getString("_UI_Target_inputs_feature"),
 				 RigelPackage.Literals.TARGET__INPUTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Paricipants feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addParicipantsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-			  (getResourceLocator(),
-			   getString("_UI_Activity_paricipants_feature"),
-			   RigelPackage.Literals.ACTIVITY__PARICIPANTS,
-			   true,
-			   false,
-			   true,
-			   null,
-			   null,
-			   null,
-			   null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Resources feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addResourcesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(getResourceLocator(),
-				 getString("_UI_Activity_resources_feature"),
-				 RigelPackage.Literals.ACTIVITY__RESOURCES,
 				 true,
 				 false,
 				 true,
@@ -285,9 +240,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
-			childrenFeatures.add(RigelPackage.Literals.ACTIVITY__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -357,9 +310,7 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RigelPackage.ACTIVITY__ISSUES:
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
-			case RigelPackage.ACTIVITY__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -379,33 +330,8 @@ public class ActivityItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
-				 RigelFactory.eINSTANCE.createIssue()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS,
 				 RigelFactory.eINSTANCE.createTransition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
-				 RigelFactory.eINSTANCE.createStart()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
-				 RigelFactory.eINSTANCE.createEnd()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
-				 RigelFactory.eINSTANCE.createActivity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__ELEMENTS,
-				 RigelFactory.eINSTANCE.createActivityReference()));
 	}
 
 }

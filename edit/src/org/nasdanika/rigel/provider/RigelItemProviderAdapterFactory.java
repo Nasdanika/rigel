@@ -164,6 +164,29 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Partition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PartitionItemProvider partitionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.Partition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPartitionAdapter() {
+		if (partitionItemProvider == null) {
+			partitionItemProvider = new PartitionItemProvider(this);
+		}
+
+		return partitionItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Activity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -456,6 +479,7 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (actorItemProvider != null) actorItemProvider.dispose();
 		if (startItemProvider != null) startItemProvider.dispose();
 		if (endItemProvider != null) endItemProvider.dispose();
+		if (partitionItemProvider != null) partitionItemProvider.dispose();
 		if (activityItemProvider != null) activityItemProvider.dispose();
 		if (activityReferenceItemProvider != null) activityReferenceItemProvider.dispose();
 		if (artifactItemProvider != null) artifactItemProvider.dispose();

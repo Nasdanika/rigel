@@ -15,23 +15,24 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.rigel.Package} object.
+ * This is the item provider adapter for a {@link org.nasdanika.rigel.Flow} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageItemProvider extends PackageElementItemProvider {
+public class FlowItemProvider extends PackageElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PackageItemProvider(AdapterFactory adapterFactory) {
+	public FlowItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,6 +48,8 @@ public class PackageItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnerPropertyDescriptor(object);
+			addParicipantsPropertyDescriptor(object);
+			addResourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,6 +77,48 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Paricipants feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addParicipantsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+		(createItemPropertyDescriptor
+		  (getResourceLocator(),
+		   getString("_UI_Flow_paricipants_feature"),
+		   RigelPackage.Literals.FLOW__PARICIPANTS,
+		   true,
+		   false,
+		   true,
+		   null,
+		   null,
+		   null,
+		   null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Resources feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addResourcesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+		(createItemPropertyDescriptor
+			(getResourceLocator(),
+			 getString("_UI_Flow_resources_feature"),
+			 RigelPackage.Literals.FLOW__RESOURCES,
+			 true,
+			 false,
+			 true,
+			 null,
+			 null,
+			 null,
+			 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -86,7 +131,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
-			childrenFeatures.add(RigelPackage.Literals.PACKAGE__ELEMENTS);
+			childrenFeatures.add(RigelPackage.Literals.FLOW__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -105,17 +150,6 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
-	 * This returns Package.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Package.png"));
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -129,12 +163,14 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((org.nasdanika.rigel.Package)object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Package_type") : label;
+		String label = ((Flow)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Flow_type") :
+			getString("_UI_Flow_type") + " " + label;
 	}
 
 
@@ -149,9 +185,9 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(org.nasdanika.rigel.Package.class)) {
-			case RigelPackage.PACKAGE__ISSUES:
-			case RigelPackage.PACKAGE__ELEMENTS:
+		switch (notification.getFeatureID(Flow.class)) {
+			case RigelPackage.FLOW__ISSUES:
+			case RigelPackage.FLOW__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -176,43 +212,28 @@ public class PackageItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createPackage()));
+				(RigelPackage.Literals.FLOW__ELEMENTS,
+				 RigelFactory.eINSTANCE.createStart()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createActor()));
+				(RigelPackage.Literals.FLOW__ELEMENTS,
+				 RigelFactory.eINSTANCE.createEnd()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.FLOW__ELEMENTS,
 				 RigelFactory.eINSTANCE.createPartition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.FLOW__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivity()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.FLOW__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivityReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createArtifact()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createEngineer()));
 	}
 
 }

@@ -21,6 +21,7 @@ import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.IssueImportance;
 import org.nasdanika.rigel.IssueStatus;
+import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -75,6 +76,7 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.ACTOR: return createActor();
 			case RigelPackage.START: return createStart();
 			case RigelPackage.END: return createEnd();
+			case RigelPackage.PARTITION: return createPartition();
 			case RigelPackage.ACTIVITY: return createActivity();
 			case RigelPackage.ACTIVITY_REFERENCE: return createActivityReference();
 			case RigelPackage.ARTIFACT: return createArtifact();
@@ -164,6 +166,17 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 	public End createEnd() {
 		EndImpl end = new EndImpl();
 		return end;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Partition createPartition() {
+		PartitionImpl partition = new PartitionImpl();
+		return partition;
 	}
 
 	/**

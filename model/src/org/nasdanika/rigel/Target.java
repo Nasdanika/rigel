@@ -27,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *        annotation="urn:org.nasdanika label_ru='\u0426\u0435\u043b\u044c' documentation_ru='\u0426\u0435\u043b\u044c \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u043f\u043e\u0442\u043e\u043a\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438  \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u043e\u0432'"
  * @generated
  */
-public interface Target extends ActivityElement {
+public interface Target extends FlowElement {
 	/**
 	 * Returns the value of the '<em><b>Inbound Transitions</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Transition}.

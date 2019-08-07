@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.RigelPackage;
@@ -282,7 +282,7 @@ public class ActivityReferenceImpl extends PackageElementImpl implements Activit
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == ActivityElement.class) {
+		if (baseClass == FlowElement.class) {
 			switch (derivedFeatureID) {
 				default: return -1;
 			}
@@ -311,7 +311,7 @@ public class ActivityReferenceImpl extends PackageElementImpl implements Activit
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == ActivityElement.class) {
+		if (baseClass == FlowElement.class) {
 			switch (baseFeatureID) {
 				default: return -1;
 			}

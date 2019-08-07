@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
@@ -16,9 +16,11 @@ import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -122,17 +124,26 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RigelPackage.ACTIVITY_ELEMENT: {
-				ActivityElement activityElement = (ActivityElement)theEObject;
-				T result = caseActivityElement(activityElement);
-				if (result == null) result = caseModelElement(activityElement);
+			case RigelPackage.FLOW: {
+				Flow flow = (Flow)theEObject;
+				T result = caseFlow(flow);
+				if (result == null) result = caseEngineeredElement(flow);
+				if (result == null) result = casePackageElement(flow);
+				if (result == null) result = caseModelElement(flow);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.FLOW_ELEMENT: {
+				FlowElement flowElement = (FlowElement)theEObject;
+				T result = caseFlowElement(flowElement);
+				if (result == null) result = caseModelElement(flowElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RigelPackage.SOURCE: {
 				Source source = (Source)theEObject;
 				T result = caseSource(source);
-				if (result == null) result = caseActivityElement(source);
+				if (result == null) result = caseFlowElement(source);
 				if (result == null) result = caseModelElement(source);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -141,7 +152,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				Start start = (Start)theEObject;
 				T result = caseStart(start);
 				if (result == null) result = caseSource(start);
-				if (result == null) result = caseActivityElement(start);
+				if (result == null) result = caseFlowElement(start);
 				if (result == null) result = caseModelElement(start);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -149,7 +160,7 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.TARGET: {
 				Target target = (Target)theEObject;
 				T result = caseTarget(target);
-				if (result == null) result = caseActivityElement(target);
+				if (result == null) result = caseFlowElement(target);
 				if (result == null) result = caseModelElement(target);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -158,19 +169,31 @@ public class RigelSwitch<T> extends Switch<T> {
 				End end = (End)theEObject;
 				T result = caseEnd(end);
 				if (result == null) result = caseTarget(end);
-				if (result == null) result = caseActivityElement(end);
+				if (result == null) result = caseFlowElement(end);
 				if (result == null) result = caseModelElement(end);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.PARTITION: {
+				Partition partition = (Partition)theEObject;
+				T result = casePartition(partition);
+				if (result == null) result = caseFlow(partition);
+				if (result == null) result = caseFlowElement(partition);
+				if (result == null) result = caseEngineeredElement(partition);
+				if (result == null) result = casePackageElement(partition);
+				if (result == null) result = caseModelElement(partition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case RigelPackage.ACTIVITY: {
 				Activity activity = (Activity)theEObject;
 				T result = caseActivity(activity);
-				if (result == null) result = caseEngineeredElement(activity);
+				if (result == null) result = caseFlow(activity);
 				if (result == null) result = caseSource(activity);
 				if (result == null) result = caseTarget(activity);
+				if (result == null) result = caseEngineeredElement(activity);
+				if (result == null) result = caseFlowElement(activity);
 				if (result == null) result = casePackageElement(activity);
-				if (result == null) result = caseActivityElement(activity);
 				if (result == null) result = caseModelElement(activity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -181,7 +204,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = casePackageElement(activityReference);
 				if (result == null) result = caseSource(activityReference);
 				if (result == null) result = caseTarget(activityReference);
-				if (result == null) result = caseActivityElement(activityReference);
+				if (result == null) result = caseFlowElement(activityReference);
 				if (result == null) result = caseModelElement(activityReference);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -313,17 +336,32 @@ public class RigelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Activity Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Flow</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Activity Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Flow</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseActivityElement(ActivityElement object) {
+	public T caseFlow(Flow object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Flow Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Flow Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFlowElement(FlowElement object) {
 		return null;
 	}
 
@@ -384,6 +422,21 @@ public class RigelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEnd(End object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Partition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Partition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePartition(Partition object) {
 		return null;
 	}
 

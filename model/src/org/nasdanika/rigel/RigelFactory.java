@@ -58,6 +58,15 @@ public interface RigelFactory extends EFactory {
 	End createEnd();
 
 	/**
+	 * Returns a new object of class '<em>Partition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Partition</em>'.
+	 * @generated
+	 */
+	Partition createPartition();
+
+	/**
 	 * Returns a new object of class '<em>Activity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

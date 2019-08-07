@@ -12,10 +12,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -29,7 +28,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.impl.ActorImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActorImpl#getIssues <em>Issues</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ActorImpl#getActivities <em>Activities</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActorImpl#getFlows <em>Flows</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,8 +110,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Activity> getActivities() {
-		return (EList<Activity>)eDynamicGet(RigelPackage.ACTOR__ACTIVITIES, RigelPackage.Literals.ACTOR__ACTIVITIES, true, true);
+	public EList<Flow> getFlows() {
+		return (EList<Flow>)eDynamicGet(RigelPackage.ACTOR__FLOWS, RigelPackage.Literals.ACTOR__FLOWS, true, true);
 	}
 
 	/**
@@ -129,8 +128,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				if (owner != null)
 					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
 				return basicSetOwner((Engineer)otherEnd, msgs);
-			case RigelPackage.ACTOR__ACTIVITIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getActivities()).basicAdd(otherEnd, msgs);
+			case RigelPackage.ACTOR__FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFlows()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -147,8 +146,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				return basicSetOwner(null, msgs);
 			case RigelPackage.ACTOR__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
-			case RigelPackage.ACTOR__ACTIVITIES:
-				return ((InternalEList<?>)getActivities()).basicRemove(otherEnd, msgs);
+			case RigelPackage.ACTOR__FLOWS:
+				return ((InternalEList<?>)getFlows()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -166,8 +165,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				return basicGetOwner();
 			case RigelPackage.ACTOR__ISSUES:
 				return getIssues();
-			case RigelPackage.ACTOR__ACTIVITIES:
-				return getActivities();
+			case RigelPackage.ACTOR__FLOWS:
+				return getFlows();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,9 +187,9 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				getIssues().clear();
 				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
-			case RigelPackage.ACTOR__ACTIVITIES:
-				getActivities().clear();
-				getActivities().addAll((Collection<? extends Activity>)newValue);
+			case RigelPackage.ACTOR__FLOWS:
+				getFlows().clear();
+				getFlows().addAll((Collection<? extends Flow>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,8 +209,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 			case RigelPackage.ACTOR__ISSUES:
 				getIssues().clear();
 				return;
-			case RigelPackage.ACTOR__ACTIVITIES:
-				getActivities().clear();
+			case RigelPackage.ACTOR__FLOWS:
+				getFlows().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -229,8 +228,8 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				return basicGetOwner() != null;
 			case RigelPackage.ACTOR__ISSUES:
 				return !getIssues().isEmpty();
-			case RigelPackage.ACTOR__ACTIVITIES:
-				return !getActivities().isEmpty();
+			case RigelPackage.ACTOR__FLOWS:
+				return !getFlows().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

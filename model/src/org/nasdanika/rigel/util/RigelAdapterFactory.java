@@ -10,7 +10,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
@@ -18,9 +18,11 @@ import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -105,8 +107,12 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createActorAdapter();
 			}
 			@Override
-			public Adapter caseActivityElement(ActivityElement object) {
-				return createActivityElementAdapter();
+			public Adapter caseFlow(Flow object) {
+				return createFlowAdapter();
+			}
+			@Override
+			public Adapter caseFlowElement(FlowElement object) {
+				return createFlowElementAdapter();
 			}
 			@Override
 			public Adapter caseSource(Source object) {
@@ -123,6 +129,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEnd(End object) {
 				return createEndAdapter();
+			}
+			@Override
+			public Adapter casePartition(Partition object) {
+				return createPartitionAdapter();
 			}
 			@Override
 			public Adapter caseActivity(Activity object) {
@@ -247,16 +257,30 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.ActivityElement <em>Activity Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Flow <em>Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.ActivityElement
+	 * @see org.nasdanika.rigel.Flow
 	 * @generated
 	 */
-	public Adapter createActivityElementAdapter() {
+	public Adapter createFlowAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.FlowElement <em>Flow Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.FlowElement
+	 * @generated
+	 */
+	public Adapter createFlowElementAdapter() {
 		return null;
 	}
 
@@ -313,6 +337,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Partition <em>Partition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Partition
+	 * @generated
+	 */
+	public Adapter createPartitionAdapter() {
 		return null;
 	}
 

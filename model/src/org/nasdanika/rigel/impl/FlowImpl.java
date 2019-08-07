@@ -12,37 +12,39 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.nasdanika.rigel.Artifact;
+
+import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Flow;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource</b></em>'.
+ * An implementation of the model object '<em><b>Flow</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getOwner <em>Owner</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getIssues <em>Issues</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getUsers <em>Users</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getArtifacts <em>Artifacts</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getIssues <em>Issues</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getParicipants <em>Paricipants</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ResourceImpl extends PackageElementImpl implements Resource {
+public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ResourceImpl() {
+	protected FlowImpl() {
 		super();
 	}
 
@@ -53,7 +55,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RigelPackage.Literals.RESOURCE;
+		return RigelPackage.Literals.FLOW;
 	}
 
 	/**
@@ -63,7 +65,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public Engineer getOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
+		return (Engineer)eDynamicGet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
 	}
 
 	/**
@@ -72,7 +74,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 * @generated
 	 */
 	public Engineer basicGetOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
+		return (Engineer)eDynamicGet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
 	}
 
 	/**
@@ -81,7 +83,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 * @generated
 	 */
 	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.RESOURCE__OWNER, msgs);
+		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.FLOW__OWNER, msgs);
 		return msgs;
 	}
 
@@ -92,7 +94,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public void setOwner(Engineer newOwner) {
-		eDynamicSet(RigelPackage.RESOURCE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+		eDynamicSet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
 	}
 
 	/**
@@ -103,7 +105,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.RESOURCE__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+		return (EList<Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -113,8 +115,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Flow> getUsers() {
-		return (EList<Flow>)eDynamicGet(RigelPackage.RESOURCE__USERS, RigelPackage.Literals.RESOURCE__USERS, true, true);
+	public EList<FlowElement> getElements() {
+		return (EList<FlowElement>)eDynamicGet(RigelPackage.FLOW__ELEMENTS, RigelPackage.Literals.FLOW__ELEMENTS, true, true);
 	}
 
 	/**
@@ -124,8 +126,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Resource> getChildren() {
-		return (EList<Resource>)eDynamicGet(RigelPackage.RESOURCE__CHILDREN, RigelPackage.Literals.RESOURCE__CHILDREN, true, true);
+	public EList<Actor> getParicipants() {
+		return (EList<Actor>)eDynamicGet(RigelPackage.FLOW__PARICIPANTS, RigelPackage.Literals.FLOW__PARICIPANTS, true, true);
 	}
 
 	/**
@@ -135,8 +137,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Artifact> getArtifacts() {
-		return (EList<Artifact>)eDynamicGet(RigelPackage.RESOURCE__ARTIFACTS, RigelPackage.Literals.RESOURCE__ARTIFACTS, true, true);
+	public EList<Resource> getResources() {
+		return (EList<Resource>)eDynamicGet(RigelPackage.FLOW__RESOURCES, RigelPackage.Literals.FLOW__RESOURCES, true, true);
 	}
 
 	/**
@@ -148,13 +150,15 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				Engineer owner = basicGetOwner();
 				if (owner != null)
 					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
 				return basicSetOwner((Engineer)otherEnd, msgs);
-			case RigelPackage.RESOURCE__USERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsers()).basicAdd(otherEnd, msgs);
+			case RigelPackage.FLOW__PARICIPANTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParicipants()).basicAdd(otherEnd, msgs);
+			case RigelPackage.FLOW__RESOURCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getResources()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -167,16 +171,16 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				return basicSetOwner(null, msgs);
-			case RigelPackage.RESOURCE__ISSUES:
+			case RigelPackage.FLOW__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
-			case RigelPackage.RESOURCE__USERS:
-				return ((InternalEList<?>)getUsers()).basicRemove(otherEnd, msgs);
-			case RigelPackage.RESOURCE__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
-			case RigelPackage.RESOURCE__ARTIFACTS:
-				return ((InternalEList<?>)getArtifacts()).basicRemove(otherEnd, msgs);
+			case RigelPackage.FLOW__ELEMENTS:
+				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+			case RigelPackage.FLOW__PARICIPANTS:
+				return ((InternalEList<?>)getParicipants()).basicRemove(otherEnd, msgs);
+			case RigelPackage.FLOW__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -189,17 +193,17 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				if (resolve) return getOwner();
 				return basicGetOwner();
-			case RigelPackage.RESOURCE__ISSUES:
+			case RigelPackage.FLOW__ISSUES:
 				return getIssues();
-			case RigelPackage.RESOURCE__USERS:
-				return getUsers();
-			case RigelPackage.RESOURCE__CHILDREN:
-				return getChildren();
-			case RigelPackage.RESOURCE__ARTIFACTS:
-				return getArtifacts();
+			case RigelPackage.FLOW__ELEMENTS:
+				return getElements();
+			case RigelPackage.FLOW__PARICIPANTS:
+				return getParicipants();
+			case RigelPackage.FLOW__RESOURCES:
+				return getResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,24 +217,24 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				setOwner((Engineer)newValue);
 				return;
-			case RigelPackage.RESOURCE__ISSUES:
+			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
 				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
-			case RigelPackage.RESOURCE__USERS:
-				getUsers().clear();
-				getUsers().addAll((Collection<? extends Flow>)newValue);
+			case RigelPackage.FLOW__ELEMENTS:
+				getElements().clear();
+				getElements().addAll((Collection<? extends FlowElement>)newValue);
 				return;
-			case RigelPackage.RESOURCE__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends Resource>)newValue);
+			case RigelPackage.FLOW__PARICIPANTS:
+				getParicipants().clear();
+				getParicipants().addAll((Collection<? extends Actor>)newValue);
 				return;
-			case RigelPackage.RESOURCE__ARTIFACTS:
-				getArtifacts().clear();
-				getArtifacts().addAll((Collection<? extends Artifact>)newValue);
+			case RigelPackage.FLOW__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends Resource>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,20 +248,20 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				setOwner((Engineer)null);
 				return;
-			case RigelPackage.RESOURCE__ISSUES:
+			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
 				return;
-			case RigelPackage.RESOURCE__USERS:
-				getUsers().clear();
+			case RigelPackage.FLOW__ELEMENTS:
+				getElements().clear();
 				return;
-			case RigelPackage.RESOURCE__CHILDREN:
-				getChildren().clear();
+			case RigelPackage.FLOW__PARICIPANTS:
+				getParicipants().clear();
 				return;
-			case RigelPackage.RESOURCE__ARTIFACTS:
-				getArtifacts().clear();
+			case RigelPackage.FLOW__RESOURCES:
+				getResources().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -271,18 +275,18 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RigelPackage.RESOURCE__OWNER:
+			case RigelPackage.FLOW__OWNER:
 				return basicGetOwner() != null;
-			case RigelPackage.RESOURCE__ISSUES:
+			case RigelPackage.FLOW__ISSUES:
 				return !getIssues().isEmpty();
-			case RigelPackage.RESOURCE__USERS:
-				return !getUsers().isEmpty();
-			case RigelPackage.RESOURCE__CHILDREN:
-				return !getChildren().isEmpty();
-			case RigelPackage.RESOURCE__ARTIFACTS:
-				return !getArtifacts().isEmpty();
+			case RigelPackage.FLOW__ELEMENTS:
+				return !getElements().isEmpty();
+			case RigelPackage.FLOW__PARICIPANTS:
+				return !getParicipants().isEmpty();
+			case RigelPackage.FLOW__RESOURCES:
+				return !getResources().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ResourceImpl
+} //FlowImpl

@@ -29,7 +29,7 @@ import org.nasdanika.rigel.Transition;
  *
  * @generated
  */
-public abstract class TargetImpl extends ActivityElementImpl implements Target {
+public abstract class TargetImpl extends FlowElementImpl implements Target {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

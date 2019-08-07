@@ -47,7 +47,7 @@ public class ActorItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnerPropertyDescriptor(object);
-			addActivitiesPropertyDescriptor(object);
+			addFlowsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,19 +75,19 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Activities feature.
+	 * This adds a property descriptor for the Flows feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addActivitiesPropertyDescriptor(Object object) {
+	protected void addFlowsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Actor_activities_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Actor_activities_feature", "_UI_Actor_type"),
-				 RigelPackage.Literals.ACTOR__ACTIVITIES,
+				 getString("_UI_Actor_flows_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Actor_flows_feature", "_UI_Actor_type"),
+				 RigelPackage.Literals.ACTOR__FLOWS,
 				 true,
 				 false,
 				 true,

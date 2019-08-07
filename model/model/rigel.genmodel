@@ -36,9 +36,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Package/elements"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Actor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Actor/activities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Actor/flows"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="rigel.ecore#//ActivityElement"/>
+    <genClasses image="false" ecoreClass="rigel.ecore#//Flow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Flow/elements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Flow/paricipants"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Flow/resources"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="rigel.ecore#//FlowElement"/>
     <genClasses image="false" ecoreClass="rigel.ecore#//Source">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Source/outboundTransitions"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Source/outputs"/>
@@ -49,10 +54,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Target/inputs"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//End"/>
+    <genClasses ecoreClass="rigel.ecore#//Partition"/>
     <genClasses ecoreClass="rigel.ecore#//Activity">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Activity/elements"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Activity/paricipants"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Activity/resources"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Activity/size"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Activity/progress"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute rigel.ecore#//Activity/totalSize"/>

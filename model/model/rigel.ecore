@@ -117,8 +117,8 @@
       <details key="label_ru" value="Исполнитель"/>
       <details key="documentation_ru" value="Лицо, осуществляющее действия, используя ресурсы и производя артефакты"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
-        eType="#//Activity" eOpposite="#//Activity/paricipants">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flows" upperBound="-1"
+        eType="#//Flow" eOpposite="#//Flow/paricipants">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activities in which this actor participates."/>
       </eAnnotations>
@@ -128,7 +128,42 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ActivityElement" abstract="true" eSuperTypes="#//ModelElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//EngineeredElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Flow is an abstract container of flow elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//FlowElement" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Flows are composed from flow elements."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Операция"/>
+        <details key="documentation_ru" value="Работа может быть разделена на составляющие её операции."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paricipants" upperBound="-1"
+        eType="#//Actor" eOpposite="#//Actor/flows">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="One or more actors participate in completion of a flow."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Участники"/>
+        <details key="documentation_ru" value="Один или более исполнителей, участвующих в выполнении работы."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" eOpposite="#//Resource/users">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Participants may use resources such as tools to complete a flow."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Ресурсы"/>
+        <details key="documentation_ru" value="Объекты и инструменты, используемые участниками для выполнения работы"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Element of a (composite) activity."/>
     </eAnnotations>
@@ -137,7 +172,7 @@
       <details key="documentation_ru" value="Операция - это элемент сложного (составного) действия"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Source" abstract="true" eSuperTypes="#//ActivityElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Source" abstract="true" eSuperTypes="#//FlowElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Source of transitions."/>
     </eAnnotations>
@@ -175,7 +210,7 @@
       <details key="documentation_ru" value="Старт псевдо- активности"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true" eSuperTypes="#//ActivityElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Target" abstract="true" eSuperTypes="#//FlowElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Target of transitions."/>
     </eAnnotations>
@@ -213,7 +248,12 @@
       <details key="documentation_ru" value="Элемент завершающий псевдо-активность"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//EngineeredElement #//Source #//Target">
+  <eClassifiers xsi:type="ecore:EClass" name="Partition" eSuperTypes="#//Flow #//FlowElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Partition is a grouping of flow elements associating participants and resources with the contained elements. "/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Flow #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
     </eAnnotations>
@@ -221,36 +261,6 @@
       <details key="label_ru" value="Работа"/>
       <details key="documentation_ru" value="Работа - это то, что необходимо для получения желаемого результата. &#xA;&#xA;Выполняя действие исполнитель получает входящие артефакты, использует ресурсы и создаёт исходящие артефакты, являющиеся промежуточными или конечными результатами процесса.&#xA;&#xA;Варианты перевода:&#xA;&#xA;&#xA;* Действие / Элементарное действие&#xA;* Процесс/Операция&#xA;* Работа / Операция "/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//ActivityElement" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Activities can be composed from activity elements."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Операция"/>
-        <details key="documentation_ru" value="Работа может быть разделена на составляющие её операции."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="paricipants" upperBound="-1"
-        eType="#//Actor" eOpposite="#//Actor/activities">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="One or more actors participate in completion of an activity."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Участники"/>
-        <details key="documentation_ru" value="Один или более исполнителей, участвующих в выполнении работы."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
-        eType="#//Resource" eOpposite="#//Resource/users">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Participants may use resources such as tools to complete an activity."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Ресурсы"/>
-        <details key="documentation_ru" value="Объекты и инструменты, используемые участниками для выполнения работы"/>
-      </eAnnotations>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activity size in some unit used by all activities. For example - hours, points, dollars."/>
@@ -356,7 +366,7 @@
       <details key="documentation_ru" value="Ресурс - объект, позволяющий исполнителю выполнять работу. Например, какой либо инструмент"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
-        eType="#//Activity" eOpposite="#//Activity/resources">
+        eType="#//Flow" eOpposite="#//Flow/resources">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activities using/leveraging this resource."/>
       </eAnnotations>

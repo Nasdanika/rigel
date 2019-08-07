@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
@@ -19,11 +19,13 @@ import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.IssueImportance;
 import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -79,7 +81,14 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass activityElementEClass = null;
+	private EClass flowEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass flowElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +117,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass endEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partitionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -376,7 +392,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getActor_Activities() {
+	public EReference getActor_Flows() {
 		return (EReference)actorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -386,8 +402,48 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getActivityElement() {
-		return activityElementEClass;
+	public EClass getFlow() {
+		return flowEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFlow_Elements() {
+		return (EReference)flowEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFlow_Paricipants() {
+		return (EReference)flowEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFlow_Resources() {
+		return (EReference)flowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFlowElement() {
+		return flowElementEClass;
 	}
 
 	/**
@@ -476,6 +532,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getPartition() {
+		return partitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getActivity() {
 		return activityEClass;
 	}
@@ -486,38 +552,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getActivity_Elements() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getActivity_Paricipants() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getActivity_Resources() {
-		return (EReference)activityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getActivity_Size() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -527,7 +563,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 */
 	@Override
 	public EAttribute getActivity_Progress() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -537,7 +573,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 */
 	@Override
 	public EAttribute getActivity_TotalSize() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -547,7 +583,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 */
 	@Override
 	public EAttribute getActivity_TotalProgress() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -886,9 +922,14 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(packageEClass, PACKAGE__ELEMENTS);
 
 		actorEClass = createEClass(ACTOR);
-		createEReference(actorEClass, ACTOR__ACTIVITIES);
+		createEReference(actorEClass, ACTOR__FLOWS);
 
-		activityElementEClass = createEClass(ACTIVITY_ELEMENT);
+		flowEClass = createEClass(FLOW);
+		createEReference(flowEClass, FLOW__ELEMENTS);
+		createEReference(flowEClass, FLOW__PARICIPANTS);
+		createEReference(flowEClass, FLOW__RESOURCES);
+
+		flowElementEClass = createEClass(FLOW_ELEMENT);
 
 		sourceEClass = createEClass(SOURCE);
 		createEReference(sourceEClass, SOURCE__OUTBOUND_TRANSITIONS);
@@ -902,10 +943,9 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		endEClass = createEClass(END);
 
+		partitionEClass = createEClass(PARTITION);
+
 		activityEClass = createEClass(ACTIVITY);
-		createEReference(activityEClass, ACTIVITY__ELEMENTS);
-		createEReference(activityEClass, ACTIVITY__PARICIPANTS);
-		createEReference(activityEClass, ACTIVITY__RESOURCES);
 		createEAttribute(activityEClass, ACTIVITY__SIZE);
 		createEAttribute(activityEClass, ACTIVITY__PROGRESS);
 		createEAttribute(activityEClass, ACTIVITY__TOTAL_SIZE);
@@ -982,12 +1022,15 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		engineeredElementEClass.getESuperTypes().add(this.getPackageElement());
 		packageEClass.getESuperTypes().add(this.getEngineeredElement());
 		actorEClass.getESuperTypes().add(this.getEngineeredElement());
-		activityElementEClass.getESuperTypes().add(this.getModelElement());
-		sourceEClass.getESuperTypes().add(this.getActivityElement());
+		flowEClass.getESuperTypes().add(this.getEngineeredElement());
+		flowElementEClass.getESuperTypes().add(this.getModelElement());
+		sourceEClass.getESuperTypes().add(this.getFlowElement());
 		startEClass.getESuperTypes().add(this.getSource());
-		targetEClass.getESuperTypes().add(this.getActivityElement());
+		targetEClass.getESuperTypes().add(this.getFlowElement());
 		endEClass.getESuperTypes().add(this.getTarget());
-		activityEClass.getESuperTypes().add(this.getEngineeredElement());
+		partitionEClass.getESuperTypes().add(this.getFlow());
+		partitionEClass.getESuperTypes().add(this.getFlowElement());
+		activityEClass.getESuperTypes().add(this.getFlow());
 		activityEClass.getESuperTypes().add(this.getSource());
 		activityEClass.getESuperTypes().add(this.getTarget());
 		activityReferenceEClass.getESuperTypes().add(this.getPackageElement());
@@ -1018,9 +1061,14 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getPackage_Elements(), this.getPackageElement(), null, "elements", null, 0, -1, org.nasdanika.rigel.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActor_Activities(), this.getActivity(), this.getActivity_Paricipants(), "activities", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActor_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(activityElementEClass, ActivityElement.class, "ActivityElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFlow_Paricipants(), this.getActor(), this.getActor_Flows(), "paricipants", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFlow_Resources(), this.getResource(), this.getResource_Users(), "resources", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(flowElementEClass, FlowElement.class, "FlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(sourceEClass, Source.class, "Source", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSource_OutboundTransitions(), this.getTransition(), null, "outboundTransitions", null, 0, -1, Source.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1034,10 +1082,9 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		initEClass(endEClass, End.class, "End", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(partitionEClass, Partition.class, "Partition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActivity_Elements(), this.getActivityElement(), null, "elements", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Paricipants(), this.getActor(), this.getActor_Activities(), "paricipants", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getActivity_Resources(), this.getResource(), this.getResource_Users(), "resources", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_TotalSize(), ecorePackage.getEDouble(), "totalSize", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1052,7 +1099,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getArtifact_Children(), this.getArtifact(), null, "children", null, 0, -1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResource_Users(), this.getActivity(), this.getActivity_Resources(), "users", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_Users(), this.getFlow(), this.getFlow_Resources(), "users", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Children(), this.getResource(), null, "children", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1186,13 +1233,37 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Actors perform activities using resources consuming and producing artifacts."
 		   });
 		addAnnotation
-		  (getActor_Activities(),
+		  (getActor_Flows(),
 		   source,
 		   new String[] {
 			   "documentation", "Activities in which this actor participates."
 		   });
 		addAnnotation
-		  (activityElementEClass,
+		  (flowEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Flow is an abstract container of flow elements."
+		   });
+		addAnnotation
+		  (getFlow_Elements(),
+		   source,
+		   new String[] {
+			   "documentation", "Flows are composed from flow elements."
+		   });
+		addAnnotation
+		  (getFlow_Paricipants(),
+		   source,
+		   new String[] {
+			   "documentation", "One or more actors participate in completion of a flow."
+		   });
+		addAnnotation
+		  (getFlow_Resources(),
+		   source,
+		   new String[] {
+			   "documentation", "Participants may use resources such as tools to complete a flow."
+		   });
+		addAnnotation
+		  (flowElementEClass,
 		   source,
 		   new String[] {
 			   "documentation", "Element of a (composite) activity."
@@ -1246,28 +1317,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "End pseudo-activity."
 		   });
 		addAnnotation
+		  (partitionEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Partition is a grouping of flow elements associating participants and resources with the contained elements. "
+		   });
+		addAnnotation
 		  (activityEClass,
 		   source,
 		   new String[] {
 			   "documentation", "By performing an activity participants produce outputs from inputs using resources."
-		   });
-		addAnnotation
-		  (getActivity_Elements(),
-		   source,
-		   new String[] {
-			   "documentation", "Activities can be composed from activity elements."
-		   });
-		addAnnotation
-		  (getActivity_Paricipants(),
-		   source,
-		   new String[] {
-			   "documentation", "One or more actors participate in completion of an activity."
-		   });
-		addAnnotation
-		  (getActivity_Resources(),
-		   source,
-		   new String[] {
-			   "documentation", "Participants may use resources such as tools to complete an activity."
 		   });
 		addAnnotation
 		  (getActivity_Size(),
@@ -1598,14 +1657,35 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u041b\u0438\u0446\u043e, \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u044e\u0449\u0435\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b"
 		   });
 		addAnnotation
-		  (getActor_Activities(),
+		  (getActor_Flows(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f",
 			   "documentation_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c"
 		   });
 		addAnnotation
-		  (activityElementEClass,
+		  (getFlow_Elements(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f",
+			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u0430 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0430 \u043d\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0449\u0438\u0435 \u0435\u0451 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438."
+		   });
+		addAnnotation
+		  (getFlow_Paricipants(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438",
+			   "documentation_ru", "\u041e\u0434\u0438\u043d \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u0439, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0432 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b."
+		   });
+		addAnnotation
+		  (getFlow_Resources(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0420\u0435\u0441\u0443\u0440\u0441\u044b",
+			   "documentation_ru", "\u041e\u0431\u044a\u0435\u043a\u0442\u044b \u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0435 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b"
+		   });
+		addAnnotation
+		  (flowElementEClass,
 		   source,
 		   new String[] {
 			   "label_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f",
@@ -1673,27 +1753,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "label_ru", "\u0420\u0430\u0431\u043e\u0442\u0430",
 			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u0430 - \u044d\u0442\u043e \u0442\u043e, \u0447\u0442\u043e \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0436\u0435\u043b\u0430\u0435\u043c\u043e\u0433\u043e \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430. \n\n\u0412\u044b\u043f\u043e\u043b\u043d\u044f\u044f \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u0441\u043e\u0437\u0434\u0430\u0451\u0442 \u0438\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b, \u044f\u0432\u043b\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u0447\u043d\u044b\u043c\u0438 \u0438\u043b\u0438 \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u043c\u0438 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430\u043c\u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430.\n\n\u0412\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430:\n\n\n* \u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435 / \u042d\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u0440\u043d\u043e\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435\n* \u041f\u0440\u043e\u0446\u0435\u0441\u0441/\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f\n* \u0420\u0430\u0431\u043e\u0442\u0430 / \u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f "
-		   });
-		addAnnotation
-		  (getActivity_Elements(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f",
-			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u0430 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0430 \u043d\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0449\u0438\u0435 \u0435\u0451 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438."
-		   });
-		addAnnotation
-		  (getActivity_Paricipants(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438",
-			   "documentation_ru", "\u041e\u0434\u0438\u043d \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u0439, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0432 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b."
-		   });
-		addAnnotation
-		  (getActivity_Resources(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0420\u0435\u0441\u0443\u0440\u0441\u044b",
-			   "documentation_ru", "\u041e\u0431\u044a\u0435\u043a\u0442\u044b \u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0435 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b"
 		   });
 		addAnnotation
 		  (getActivity_Size(),

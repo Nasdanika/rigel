@@ -11,22 +11,22 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.rigel.ActivityElement} object.
+ * This is the item provider adapter for a {@link org.nasdanika.rigel.FlowElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActivityElementItemProvider extends ModelElementItemProvider {
+public class FlowElementItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActivityElementItemProvider(AdapterFactory adapterFactory) {
+	public FlowElementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,10 +63,10 @@ public class ActivityElementItemProvider extends ModelElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ActivityElement)object).getName();
+		String label = ((FlowElement)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ActivityElement_type") :
-			getString("_UI_ActivityElement_type") + " " + label;
+			getString("_UI_FlowElement_type") :
+			getString("_UI_FlowElement_type") + " " + label;
 	}
 
 

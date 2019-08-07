@@ -25,7 +25,7 @@ import org.nasdanika.rigel.Source;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SourceItemProvider extends ActivityElementItemProvider {
+public class SourceItemProvider extends FlowElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

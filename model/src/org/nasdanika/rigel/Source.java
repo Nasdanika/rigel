@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  *        annotation="urn:org.nasdanika label_ru='\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a' documentation_ru='\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a (\u0447\u0435\u0433\u043e?) \u0422\u043e\u0447\u043a\u0430 \u0432\u0445\u043e\u0434\u0430?'"
  * @generated
  */
-public interface Source extends ActivityElement {
+public interface Source extends FlowElement {
 	/**
 	 * Returns the value of the '<em><b>Outbound Transitions</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Transition}.

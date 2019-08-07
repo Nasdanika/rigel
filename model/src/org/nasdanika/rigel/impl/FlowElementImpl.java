@@ -4,7 +4,7 @@ package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.nasdanika.rigel.ActivityElement;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
@@ -14,13 +14,13 @@ import org.nasdanika.rigel.RigelPackage;
  *
  * @generated
  */
-public abstract class ActivityElementImpl extends ModelElementImpl implements ActivityElement {
+public abstract class FlowElementImpl extends ModelElementImpl implements FlowElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ActivityElementImpl() {
+	protected FlowElementImpl() {
 		super();
 	}
 
@@ -31,7 +31,7 @@ public abstract class ActivityElementImpl extends ModelElementImpl implements Ac
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RigelPackage.Literals.ACTIVITY_ELEMENT;
+		return RigelPackage.Literals.FLOW_ELEMENT;
 	}
 
 } //ActivityElementImpl
