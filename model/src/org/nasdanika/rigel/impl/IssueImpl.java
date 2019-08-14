@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Activity;
+import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.IssueImportance;
@@ -32,6 +33,7 @@ import org.nasdanika.rigel.RigelPackage;
  *   <li>{@link org.nasdanika.rigel.impl.IssueImpl#getBenefit <em>Benefit</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.IssueImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.IssueImpl#getImplementation <em>Implementation</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.IssueImpl#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  * </ul>
  *
  * @generated
@@ -260,6 +262,17 @@ public class IssueImpl extends ModelElementImpl implements Issue {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Capability> getRequiredCapabilities() {
+		return (EList<Capability>)eDynamicGet(RigelPackage.ISSUE__REQUIRED_CAPABILITIES, RigelPackage.Literals.ISSUE__REQUIRED_CAPABILITIES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -312,6 +325,8 @@ public class IssueImpl extends ModelElementImpl implements Issue {
 			case RigelPackage.ISSUE__IMPLEMENTATION:
 				if (resolve) return getImplementation();
 				return basicGetImplementation();
+			case RigelPackage.ISSUE__REQUIRED_CAPABILITIES:
+				return getRequiredCapabilities();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -347,6 +362,10 @@ public class IssueImpl extends ModelElementImpl implements Issue {
 			case RigelPackage.ISSUE__IMPLEMENTATION:
 				setImplementation((Activity)newValue);
 				return;
+			case RigelPackage.ISSUE__REQUIRED_CAPABILITIES:
+				getRequiredCapabilities().clear();
+				getRequiredCapabilities().addAll((Collection<? extends Capability>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -380,6 +399,9 @@ public class IssueImpl extends ModelElementImpl implements Issue {
 			case RigelPackage.ISSUE__IMPLEMENTATION:
 				setImplementation((Activity)null);
 				return;
+			case RigelPackage.ISSUE__REQUIRED_CAPABILITIES:
+				getRequiredCapabilities().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -406,6 +428,8 @@ public class IssueImpl extends ModelElementImpl implements Issue {
 				return !getChildren().isEmpty();
 			case RigelPackage.ISSUE__IMPLEMENTATION:
 				return basicGetImplementation() != null;
+			case RigelPackage.ISSUE__REQUIRED_CAPABILITIES:
+				return !getRequiredCapabilities().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

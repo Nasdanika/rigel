@@ -90,13 +90,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//EngineeredElement">
+  <eClassifiers xsi:type="ecore:EClass" name="IPackage" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Container of package elements."/>
-    </eAnnotations>
-    <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Пакет"/>
-      <details key="documentation_ru" value="Пакет содержит элементы модели."/>
+      <details key="documentation" value="Abstract container of package elements."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//PackageElement" containment="true">
@@ -108,6 +104,15 @@
         <details key="documentation_ru" value="Элементы пакета"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//EngineeredElement #//IPackage">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Container of package elements."/>
+    </eAnnotations>
+    <eAnnotations source="urn:org.nasdanika">
+      <details key="label_ru" value="Пакет"/>
+      <details key="documentation_ru" value="Пакет содержит элементы модели."/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -526,6 +531,12 @@
         <details key="documentation" value="Activity providing details about how to implement this issue.&#xA;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCapabilities" upperBound="-1"
+        eType="#//Capability">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Capabilities required to close this issue."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="IssueStatus">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -571,5 +582,10 @@
         <details key="documentation" value="High importance."/>
       </eAnnotations>
     </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capability" abstract="true" interface="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Capability is something required by an issue."/>
+    </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

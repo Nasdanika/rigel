@@ -86,7 +86,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
-			childrenFeatures.add(RigelPackage.Literals.PACKAGE__ELEMENTS);
+			childrenFeatures.add(RigelPackage.Literals.IPACKAGE__ELEMENTS);
 		}
 		return childrenFeatures;
 	}
@@ -176,42 +176,42 @@ public class PackageItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActor()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createPartition()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivity()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivityReference()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createArtifact()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createResource()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__ELEMENTS,
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createEngineer()));
 	}
 

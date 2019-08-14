@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -111,7 +112,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<PackageElement> getElements() {
-		return (EList<PackageElement>)eDynamicGet(RigelPackage.PACKAGE__ELEMENTS, RigelPackage.Literals.PACKAGE__ELEMENTS, true, true);
+		return (EList<PackageElement>)eDynamicGet(RigelPackage.PACKAGE__ELEMENTS, RigelPackage.Literals.IPACKAGE__ELEMENTS, true, true);
 	}
 
 	/**
@@ -229,6 +230,38 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return !getElements().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == IPackage.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.PACKAGE__ELEMENTS: return RigelPackage.IPACKAGE__ELEMENTS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == IPackage.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.IPACKAGE__ELEMENTS: return RigelPackage.PACKAGE__ELEMENTS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //PackageImpl

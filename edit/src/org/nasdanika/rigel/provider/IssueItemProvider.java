@@ -53,6 +53,7 @@ public class IssueItemProvider extends ModelElementItemProvider {
 			addSizePropertyDescriptor(object);
 			addBenefitPropertyDescriptor(object);
 			addImplementationPropertyDescriptor(object);
+			addRequiredCapabilitiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -190,6 +191,26 @@ public class IssueItemProvider extends ModelElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Required Capabilities feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addRequiredCapabilitiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				 getResourceLocator(),
+				 getString("_UI_Issue_requiredCapabilities_feature"),
+				 RigelPackage.Literals.ISSUE__REQUIRED_CAPABILITIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -283,12 +304,14 @@ public class IssueItemProvider extends ModelElementItemProvider {
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
+		collectEReferenceChildDescriptors(newChildDescriptors, RigelPackage.Literals.ISSUE__REQUIRED_CAPABILITIES);
+		
 		newChildDescriptors.add
 			(createChildParameter
 				(RigelPackage.Literals.ISSUE__CHILDREN,

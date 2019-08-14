@@ -11,10 +11,12 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.FlowElement;
+import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
+import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.End;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
@@ -99,6 +101,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createEngineeredElementAdapter();
 			}
 			@Override
+			public Adapter caseIPackage(IPackage object) {
+				return createIPackageAdapter();
+			}
+			@Override
 			public Adapter casePackage(org.nasdanika.rigel.Package object) {
 				return createPackageAdapter();
 			}
@@ -167,6 +173,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createIssueAdapter();
 			}
 			@Override
+			public Adapter caseCapability(Capability object) {
+				return createCapabilityAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -225,6 +235,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEngineeredElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.IPackage <em>IPackage</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.IPackage
+	 * @generated
+	 */
+	public Adapter createIPackageAdapter() {
 		return null;
 	}
 
@@ -463,6 +487,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIssueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Capability
+	 * @generated
+	 */
+	public Adapter createCapabilityAdapter() {
 		return null;
 	}
 

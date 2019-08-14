@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.rigel.Issue#getBenefit <em>Benefit</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getImplementation <em>Implementation</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Issue#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getIssue()
@@ -217,5 +218,20 @@ public interface Issue extends ModelElement {
 	 * @generated
 	 */
 	void setImplementation(Activity value);
+
+	/**
+	 * Returns the value of the '<em><b>Required Capabilities</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.rigel.Capability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Capabilities required to close this issue.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Required Capabilities</em>' reference list.
+	 * @see org.nasdanika.rigel.RigelPackage#getIssue_RequiredCapabilities()
+	 * @model
+	 * @generated
+	 */
+	EList<Capability> getRequiredCapabilities();
 
 } // Issue
