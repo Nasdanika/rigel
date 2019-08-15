@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -29,7 +30,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getIssues <em>Issues</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getUsers <em>Users</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getRequiredBy <em>Required By</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ResourceImpl#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
@@ -113,8 +114,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Flow> getUsers() {
-		return (EList<Flow>)eDynamicGet(RigelPackage.RESOURCE__USERS, RigelPackage.Literals.RESOURCE__USERS, true, true);
+	public EList<Requirement> getRequiredBy() {
+		return (EList<Requirement>)eDynamicGet(RigelPackage.RESOURCE__REQUIRED_BY, RigelPackage.Literals.CAPABILITY__REQUIRED_BY, true, true);
 	}
 
 	/**
@@ -153,8 +154,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 				if (owner != null)
 					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
 				return basicSetOwner((Engineer)otherEnd, msgs);
-			case RigelPackage.RESOURCE__USERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getUsers()).basicAdd(otherEnd, msgs);
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredBy()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -171,8 +172,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 				return basicSetOwner(null, msgs);
 			case RigelPackage.RESOURCE__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
-			case RigelPackage.RESOURCE__USERS:
-				return ((InternalEList<?>)getUsers()).basicRemove(otherEnd, msgs);
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				return ((InternalEList<?>)getRequiredBy()).basicRemove(otherEnd, msgs);
 			case RigelPackage.RESOURCE__CHILDREN:
 				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
 			case RigelPackage.RESOURCE__ARTIFACTS:
@@ -194,8 +195,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 				return basicGetOwner();
 			case RigelPackage.RESOURCE__ISSUES:
 				return getIssues();
-			case RigelPackage.RESOURCE__USERS:
-				return getUsers();
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				return getRequiredBy();
 			case RigelPackage.RESOURCE__CHILDREN:
 				return getChildren();
 			case RigelPackage.RESOURCE__ARTIFACTS:
@@ -220,9 +221,9 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 				getIssues().clear();
 				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
-			case RigelPackage.RESOURCE__USERS:
-				getUsers().clear();
-				getUsers().addAll((Collection<? extends Flow>)newValue);
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				getRequiredBy().clear();
+				getRequiredBy().addAll((Collection<? extends Requirement>)newValue);
 				return;
 			case RigelPackage.RESOURCE__CHILDREN:
 				getChildren().clear();
@@ -250,8 +251,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 			case RigelPackage.RESOURCE__ISSUES:
 				getIssues().clear();
 				return;
-			case RigelPackage.RESOURCE__USERS:
-				getUsers().clear();
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				getRequiredBy().clear();
 				return;
 			case RigelPackage.RESOURCE__CHILDREN:
 				getChildren().clear();
@@ -275,14 +276,46 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 				return basicGetOwner() != null;
 			case RigelPackage.RESOURCE__ISSUES:
 				return !getIssues().isEmpty();
-			case RigelPackage.RESOURCE__USERS:
-				return !getUsers().isEmpty();
+			case RigelPackage.RESOURCE__REQUIRED_BY:
+				return !getRequiredBy().isEmpty();
 			case RigelPackage.RESOURCE__CHILDREN:
 				return !getChildren().isEmpty();
 			case RigelPackage.RESOURCE__ARTIFACTS:
 				return !getArtifacts().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Capability.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.RESOURCE__REQUIRED_BY: return RigelPackage.CAPABILITY__REQUIRED_BY;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Capability.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.CAPABILITY__REQUIRED_BY: return RigelPackage.RESOURCE__REQUIRED_BY;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ResourceImpl

@@ -47,13 +47,13 @@ public class IssueItemProvider extends ModelElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredCapabilitiesPropertyDescriptor(object);
 			addImportancePropertyDescriptor(object);
 			addStatusPropertyDescriptor(object);
 			addAssignedToPropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 			addBenefitPropertyDescriptor(object);
 			addImplementationPropertyDescriptor(object);
-			addRequiredCapabilitiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -199,8 +199,8 @@ public class IssueItemProvider extends ModelElementItemProvider {
 	protected void addRequiredCapabilitiesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				 getResourceLocator(),
-				 getString("_UI_Issue_requiredCapabilities_feature"),
-				 RigelPackage.Literals.ISSUE__REQUIRED_CAPABILITIES,
+				 getString("_UI_Requirement_requiredCapabilities_feature"),
+				 RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES,
 				 true,
 				 false,
 				 true,
@@ -310,7 +310,7 @@ public class IssueItemProvider extends ModelElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		collectEReferenceChildDescriptors(newChildDescriptors, RigelPackage.Literals.ISSUE__REQUIRED_CAPABILITIES);
+		collectEReferenceChildDescriptors(newChildDescriptors, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES);
 		
 		newChildDescriptors.add
 			(createChildParameter

@@ -48,7 +48,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnerPropertyDescriptor(object);
-			addUsersPropertyDescriptor(object);
+			addRequiredByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -76,19 +76,19 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Users feature.
+	 * This adds a property descriptor for the Required By feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUsersPropertyDescriptor(Object object) {
+	protected void addRequiredByPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Resource_users_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_users_feature", "_UI_Resource_type"),
-				 RigelPackage.Literals.RESOURCE__USERS,
+				 getString("_UI_Capability_requiredBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Capability_requiredBy_feature", "_UI_Capability_type"),
+				 RigelPackage.Literals.CAPABILITY__REQUIRED_BY,
 				 true,
 				 false,
 				 true,

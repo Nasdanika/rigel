@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.Resource#getUsers <em>Users</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Resource#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Resource#getArtifacts <em>Artifacts</em>}</li>
  * </ul>
@@ -26,25 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="urn:org.nasdanika label_ru='\u0420\u0435\u0441\u0443\u0440\u0441' documentation_ru='\u0420\u0435\u0441\u0443\u0440\u0441 - \u043e\u0431\u044a\u0435\u043a\u0442, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0438\u0439 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044e \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043a\u0430\u043a\u043e\u0439 \u043b\u0438\u0431\u043e \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442'"
  * @generated
  */
-public interface Resource extends EngineeredElement {
-	/**
-	 * Returns the value of the '<em><b>Users</b></em>' reference list.
-	 * The list contents are of type {@link org.nasdanika.rigel.Flow}.
-	 * It is bidirectional and its opposite is '{@link org.nasdanika.rigel.Flow#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Activities using/leveraging this resource.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Users</em>' reference list.
-	 * @see org.nasdanika.rigel.RigelPackage#getResource_Users()
-	 * @see org.nasdanika.rigel.Flow#getResources
-	 * @model opposite="resources"
-	 *        annotation="urn:org.nasdanika label_ru='\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438' documentation_ru='\u0420\u0430\u0431\u043e\u0442\u044b \u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0449\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441.'"
-	 * @generated
-	 */
-	EList<Flow> getUsers();
-
+public interface Resource extends EngineeredElement, Capability {
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Resource}.

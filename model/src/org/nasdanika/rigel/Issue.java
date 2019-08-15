@@ -34,14 +34,13 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.rigel.Issue#getBenefit <em>Benefit</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getChildren <em>Children</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Issue#getImplementation <em>Implementation</em>}</li>
- *   <li>{@link org.nasdanika.rigel.Issue#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getIssue()
  * @model annotation="urn:org.nasdanika label_ru='\u0417\u0430\u0434\u0430\u0447\u0430' documentation_ru='\u0427\u0442\u043e-\u0442\u043e, \u0442\u0440\u0435\u0431\u0443\u044e\u0449\u0435\u0435 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043a\u0430\u043a\u043e\u0439-\u043b\u0438\u0431\u043e \u0440\u0430\u0431\u043e\u0442\u044b \u0432 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430-\u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0430 - \u043e\u0448\u0438\u0431\u043a\u0430, \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430, \u0438\u043d\u0446\u0435\u0434\u0435\u043d\u0442, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u0443\u0441\u043e\u0432\u0435\u0440\u0448\u0435\u043d\u0441\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u044f.'"
  * @generated
  */
-public interface Issue extends ModelElement {
+public interface Issue extends ModelElement, Requirement {
 	/**
 	 * Returns the value of the '<em><b>Importance</b></em>' attribute.
 	 * The default value is <code>"Medium"</code>.
@@ -218,20 +217,5 @@ public interface Issue extends ModelElement {
 	 * @generated
 	 */
 	void setImplementation(Activity value);
-
-	/**
-	 * Returns the value of the '<em><b>Required Capabilities</b></em>' reference list.
-	 * The list contents are of type {@link org.nasdanika.rigel.Capability}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Capabilities required to close this issue.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Required Capabilities</em>' reference list.
-	 * @see org.nasdanika.rigel.RigelPackage#getIssue_RequiredCapabilities()
-	 * @model
-	 * @generated
-	 */
-	EList<Capability> getRequiredCapabilities();
 
 } // Issue

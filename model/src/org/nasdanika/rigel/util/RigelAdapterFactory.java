@@ -25,6 +25,7 @@ import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Partition;
+import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -113,6 +114,14 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createActorAdapter();
 			}
 			@Override
+			public Adapter caseCapability(Capability object) {
+				return createCapabilityAdapter();
+			}
+			@Override
+			public Adapter caseRequirement(Requirement object) {
+				return createRequirementAdapter();
+			}
+			@Override
 			public Adapter caseFlow(Flow object) {
 				return createFlowAdapter();
 			}
@@ -171,10 +180,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIssue(Issue object) {
 				return createIssueAdapter();
-			}
-			@Override
-			public Adapter caseCapability(Capability object) {
-				return createCapabilityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -501,6 +506,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCapabilityAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Requirement <em>Requirement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Requirement
+	 * @generated
+	 */
+	public Adapter createRequirementAdapter() {
 		return null;
 	}
 

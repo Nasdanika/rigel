@@ -23,6 +23,7 @@ import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Partition;
+import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -133,10 +134,23 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RigelPackage.CAPABILITY: {
+				Capability capability = (Capability)theEObject;
+				T result = caseCapability(capability);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.REQUIREMENT: {
+				Requirement requirement = (Requirement)theEObject;
+				T result = caseRequirement(requirement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RigelPackage.FLOW: {
 				Flow flow = (Flow)theEObject;
 				T result = caseFlow(flow);
 				if (result == null) result = caseEngineeredElement(flow);
+				if (result == null) result = caseRequirement(flow);
 				if (result == null) result = casePackageElement(flow);
 				if (result == null) result = caseModelElement(flow);
 				if (result == null) result = defaultCase(theEObject);
@@ -189,6 +203,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseFlow(partition);
 				if (result == null) result = caseFlowElement(partition);
 				if (result == null) result = caseEngineeredElement(partition);
+				if (result == null) result = caseRequirement(partition);
 				if (result == null) result = casePackageElement(partition);
 				if (result == null) result = caseModelElement(partition);
 				if (result == null) result = defaultCase(theEObject);
@@ -201,6 +216,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseSource(activity);
 				if (result == null) result = caseTarget(activity);
 				if (result == null) result = caseEngineeredElement(activity);
+				if (result == null) result = caseRequirement(activity);
 				if (result == null) result = caseFlowElement(activity);
 				if (result == null) result = casePackageElement(activity);
 				if (result == null) result = caseModelElement(activity);
@@ -231,6 +247,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				Resource resource = (Resource)theEObject;
 				T result = caseResource(resource);
 				if (result == null) result = caseEngineeredElement(resource);
+				if (result == null) result = caseCapability(resource);
 				if (result == null) result = casePackageElement(resource);
 				if (result == null) result = caseModelElement(resource);
 				if (result == null) result = defaultCase(theEObject);
@@ -262,12 +279,7 @@ public class RigelSwitch<T> extends Switch<T> {
 				Issue issue = (Issue)theEObject;
 				T result = caseIssue(issue);
 				if (result == null) result = caseModelElement(issue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RigelPackage.CAPABILITY: {
-				Capability capability = (Capability)theEObject;
-				T result = caseCapability(capability);
+				if (result == null) result = caseRequirement(issue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -602,6 +614,21 @@ public class RigelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCapability(Capability object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Requirement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Requirement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequirement(Requirement object) {
 		return null;
 	}
 

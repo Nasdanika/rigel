@@ -48,8 +48,8 @@ public class FlowItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnerPropertyDescriptor(object);
+			addRequiredCapabilitiesPropertyDescriptor(object);
 			addParicipantsPropertyDescriptor(object);
-			addResourcesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,6 +77,27 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Required Capabilities feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	protected void addRequiredCapabilitiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor(
+				 getResourceLocator(),
+				 getString("_UI_Requirement_requiredCapabilities_feature"),
+				 RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Paricipants feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,27 +116,6 @@ public class FlowItemProvider extends PackageElementItemProvider {
 		   null,
 		   null,
 		   null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Resources feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addResourcesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-		(createItemPropertyDescriptor
-			(getResourceLocator(),
-			 getString("_UI_Flow_resources_feature"),
-			 RigelPackage.Literals.FLOW__RESOURCES,
-			 true,
-			 false,
-			 true,
-			 null,
-			 null,
-			 null,
-			 null));
 	}
 
 	/**
@@ -199,11 +199,13 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		collectEReferenceChildDescriptors(newChildDescriptors, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES);		
 
 		newChildDescriptors.add
 			(createChildParameter

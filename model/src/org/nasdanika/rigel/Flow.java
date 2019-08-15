@@ -19,14 +19,13 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.Flow#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Flow#getParicipants <em>Paricipants</em>}</li>
- *   <li>{@link org.nasdanika.rigel.Flow#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getFlow()
  * @model abstract="true"
  * @generated
  */
-public interface Flow extends EngineeredElement {
+public interface Flow extends EngineeredElement, Requirement {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.FlowElement}.
@@ -60,23 +59,5 @@ public interface Flow extends EngineeredElement {
 	 * @generated
 	 */
 	EList<Actor> getParicipants();
-
-	/**
-	 * Returns the value of the '<em><b>Resources</b></em>' reference list.
-	 * The list contents are of type {@link org.nasdanika.rigel.Resource}.
-	 * It is bidirectional and its opposite is '{@link org.nasdanika.rigel.Resource#getUsers <em>Users</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Participants may use resources such as tools to complete a flow.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Resources</em>' reference list.
-	 * @see org.nasdanika.rigel.RigelPackage#getFlow_Resources()
-	 * @see org.nasdanika.rigel.Resource#getUsers
-	 * @model opposite="users"
-	 *        annotation="urn:org.nasdanika label_ru='\u0420\u0435\u0441\u0443\u0440\u0441\u044b' documentation_ru='\u041e\u0431\u044a\u0435\u043a\u0442\u044b \u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0435 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b'"
-	 * @generated
-	 */
-	EList<Resource> getResources();
 
 } // Flow

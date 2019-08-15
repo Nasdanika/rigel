@@ -534,7 +534,221 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getFlow()
 	 * @generated
 	 */
-	int FLOW = 6;
+	int FLOW = 8;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.FlowElementImpl <em>Flow Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.FlowElementImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getFlowElement()
+	 * @generated
+	 */
+	int FLOW_ELEMENT = 9;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.SourceImpl <em>Source</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.SourceImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getSource()
+	 * @generated
+	 */
+	int SOURCE = 10;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.StartImpl <em>Start</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.StartImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getStart()
+	 * @generated
+	 */
+	int START = 11;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.TargetImpl <em>Target</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.TargetImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getTarget()
+	 * @generated
+	 */
+	int TARGET = 12;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.EndImpl <em>End</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.EndImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getEnd()
+	 * @generated
+	 */
+	int END = 13;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.PartitionImpl <em>Partition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.PartitionImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getPartition()
+	 * @generated
+	 */
+	int PARTITION = 14;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ActivityImpl <em>Activity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.ActivityImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivity()
+	 * @generated
+	 */
+	int ACTIVITY = 15;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.ActivityReferenceImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivityReference()
+	 * @generated
+	 */
+	int ACTIVITY_REFERENCE = 16;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.ArtifactImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getArtifact()
+	 * @generated
+	 */
+	int ARTIFACT = 17;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ResourceImpl <em>Resource</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.ResourceImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getResource()
+	 * @generated
+	 */
+	int RESOURCE = 18;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.TransitionImpl <em>Transition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.TransitionImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getTransition()
+	 * @generated
+	 */
+	int TRANSITION = 19;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.AssociationImpl <em>Association</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.AssociationImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getAssociation()
+	 * @generated
+	 */
+	int ASSOCIATION = 20;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.EngineerImpl <em>Engineer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.EngineerImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getEngineer()
+	 * @generated
+	 */
+	int ENGINEER = 21;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.IssueImpl <em>Issue</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.IssueImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssue()
+	 * @generated
+	 */
+	int ISSUE = 22;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.Capability
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getCapability()
+	 * @generated
+	 */
+	int CAPABILITY = 6;
+
+	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY__REQUIRED_BY = 0;
+
+	/**
+	 * The number of structural features of the '<em>Capability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Capability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CAPABILITY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.Requirement <em>Requirement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.Requirement
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getRequirement()
+	 * @generated
+	 */
+	int REQUIREMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT__REQUIRED_CAPABILITIES = 0;
+
+	/**
+	 * The number of structural features of the '<em>Requirement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Requirement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIREMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -600,13 +814,22 @@ public interface RigelPackage extends EPackage {
 	int FLOW__ISSUES = ENGINEERED_ELEMENT__ISSUES;
 
 	/**
+	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW__REQUIRED_CAPABILITIES = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__ELEMENTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int FLOW__ELEMENTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Paricipants</b></em>' reference list.
@@ -615,16 +838,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__PARICIPANTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW__RESOURCES = ENGINEERED_ELEMENT_FEATURE_COUNT + 2;
+	int FLOW__PARICIPANTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Flow</em>' class.
@@ -643,16 +857,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int FLOW_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.FlowElementImpl <em>Flow Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.FlowElementImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getFlowElement()
-	 * @generated
-	 */
-	int FLOW_ELEMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -707,16 +911,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int FLOW_ELEMENT_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.SourceImpl <em>Source</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.SourceImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getSource()
-	 * @generated
-	 */
-	int SOURCE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -791,16 +985,6 @@ public interface RigelPackage extends EPackage {
 	int SOURCE_OPERATION_COUNT = FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.StartImpl <em>Start</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.StartImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getStart()
-	 * @generated
-	 */
-	int START = 9;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -871,16 +1055,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int START_OPERATION_COUNT = SOURCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.TargetImpl <em>Target</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.TargetImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getTarget()
-	 * @generated
-	 */
-	int TARGET = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -955,16 +1129,6 @@ public interface RigelPackage extends EPackage {
 	int TARGET_OPERATION_COUNT = FLOW_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.EndImpl <em>End</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.EndImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getEnd()
-	 * @generated
-	 */
-	int END = 11;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1037,16 +1201,6 @@ public interface RigelPackage extends EPackage {
 	int END_OPERATION_COUNT = TARGET_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.PartitionImpl <em>Partition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.PartitionImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getPartition()
-	 * @generated
-	 */
-	int PARTITION = 12;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,6 +1264,15 @@ public interface RigelPackage extends EPackage {
 	int PARTITION__ISSUES = FLOW__ISSUES;
 
 	/**
+	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTITION__REQUIRED_CAPABILITIES = FLOW__REQUIRED_CAPABILITIES;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1128,15 +1291,6 @@ public interface RigelPackage extends EPackage {
 	int PARTITION__PARICIPANTS = FLOW__PARICIPANTS;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTITION__RESOURCES = FLOW__RESOURCES;
-
-	/**
 	 * The number of structural features of the '<em>Partition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1153,16 +1307,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTITION_OPERATION_COUNT = FLOW_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ActivityImpl <em>Activity</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.ActivityImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivity()
-	 * @generated
-	 */
-	int ACTIVITY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1228,6 +1372,15 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__ISSUES = FLOW__ISSUES;
 
 	/**
+	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__REQUIRED_CAPABILITIES = FLOW__REQUIRED_CAPABILITIES;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1244,15 +1397,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTIVITY__PARICIPANTS = FLOW__PARICIPANTS;
-
-	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__RESOURCES = FLOW__RESOURCES;
 
 	/**
 	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
@@ -1343,16 +1487,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTIVITY_OPERATION_COUNT = FLOW_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.ActivityReferenceImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getActivityReference()
-	 * @generated
-	 */
-	int ACTIVITY_REFERENCE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1463,16 +1597,6 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_REFERENCE_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ArtifactImpl <em>Artifact</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.ArtifactImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getArtifact()
-	 * @generated
-	 */
-	int ARTIFACT = 15;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1581,16 +1705,6 @@ public interface RigelPackage extends EPackage {
 	int ARTIFACT_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.ResourceImpl <em>Resource</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.ResourceImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getResource()
-	 * @generated
-	 */
-	int RESOURCE = 16;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1654,13 +1768,13 @@ public interface RigelPackage extends EPackage {
 	int RESOURCE__ISSUES = ENGINEERED_ELEMENT__ISSUES;
 
 	/**
-	 * The feature id for the '<em><b>Users</b></em>' reference list.
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__USERS = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE__REQUIRED_BY = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1697,16 +1811,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESOURCE_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.TransitionImpl <em>Transition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.TransitionImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getTransition()
-	 * @generated
-	 */
-	int TRANSITION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1790,16 +1894,6 @@ public interface RigelPackage extends EPackage {
 	int TRANSITION_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.AssociationImpl <em>Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.AssociationImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getAssociation()
-	 * @generated
-	 */
-	int ASSOCIATION = 18;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1861,17 +1955,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
-
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.EngineerImpl <em>Engineer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.EngineerImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getEngineer()
-	 * @generated
-	 */
-	int ENGINEER = 19;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1955,16 +2038,6 @@ public interface RigelPackage extends EPackage {
 	int ENGINEER_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.impl.IssueImpl <em>Issue</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.impl.IssueImpl
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssue()
-	 * @generated
-	 */
-	int ISSUE = 20;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2001,13 +2074,22 @@ public interface RigelPackage extends EPackage {
 	int ISSUE__CONFIGURATION = MODEL_ELEMENT__CONFIGURATION;
 
 	/**
+	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ISSUE__REQUIRED_CAPABILITIES = MODEL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Importance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__IMPORTANCE = MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int ISSUE__IMPORTANCE = MODEL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Status</b></em>' attribute.
@@ -2016,7 +2098,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__STATUS = MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int ISSUE__STATUS = MODEL_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Assigned To</b></em>' reference.
@@ -2025,7 +2107,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__ASSIGNED_TO = MODEL_ELEMENT_FEATURE_COUNT + 2;
+	int ISSUE__ASSIGNED_TO = MODEL_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
@@ -2034,7 +2116,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__SIZE = MODEL_ELEMENT_FEATURE_COUNT + 3;
+	int ISSUE__SIZE = MODEL_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Benefit</b></em>' attribute.
@@ -2043,7 +2125,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__BENEFIT = MODEL_ELEMENT_FEATURE_COUNT + 4;
+	int ISSUE__BENEFIT = MODEL_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -2052,7 +2134,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__CHILDREN = MODEL_ELEMENT_FEATURE_COUNT + 5;
+	int ISSUE__CHILDREN = MODEL_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' reference.
@@ -2061,16 +2143,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ISSUE__IMPLEMENTATION = MODEL_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ISSUE__REQUIRED_CAPABILITIES = MODEL_ELEMENT_FEATURE_COUNT + 7;
+	int ISSUE__IMPLEMENTATION = MODEL_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Issue</em>' class.
@@ -2091,34 +2164,6 @@ public interface RigelPackage extends EPackage {
 	int ISSUE_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.rigel.Capability
-	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getCapability()
-	 * @generated
-	 */
-	int CAPABILITY = 21;
-
-	/**
-	 * The number of structural features of the '<em>Capability</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPABILITY_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Capability</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CAPABILITY_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2126,7 +2171,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueStatus()
 	 * @generated
 	 */
-	int ISSUE_STATUS = 22;
+	int ISSUE_STATUS = 23;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IssueImportance <em>Issue Importance</em>}' enum.
@@ -2136,7 +2181,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueImportance()
 	 * @generated
 	 */
-	int ISSUE_IMPORTANCE = 23;
+	int ISSUE_IMPORTANCE = 24;
 
 
 	/**
@@ -2329,17 +2374,6 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFlow_Paricipants();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Flow#getResources <em>Resources</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Resources</em>'.
-	 * @see org.nasdanika.rigel.Flow#getResources()
-	 * @see #getFlow()
-	 * @generated
-	 */
-	EReference getFlow_Resources();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.FlowElement <em>Flow Element</em>}'.
@@ -2574,17 +2608,6 @@ public interface RigelPackage extends EPackage {
 	EClass getResource();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Resource#getUsers <em>Users</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Users</em>'.
-	 * @see org.nasdanika.rigel.Resource#getUsers()
-	 * @see #getResource()
-	 * @generated
-	 */
-	EReference getResource_Users();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Resource#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2790,17 +2813,6 @@ public interface RigelPackage extends EPackage {
 	EReference getIssue_Implementation();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Issue#getRequiredCapabilities <em>Required Capabilities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Required Capabilities</em>'.
-	 * @see org.nasdanika.rigel.Issue#getRequiredCapabilities()
-	 * @see #getIssue()
-	 * @generated
-	 */
-	EReference getIssue_RequiredCapabilities();
-
-	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2809,6 +2821,38 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCapability();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Capability#getRequiredBy <em>Required By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Required By</em>'.
+	 * @see org.nasdanika.rigel.Capability#getRequiredBy()
+	 * @see #getCapability()
+	 * @generated
+	 */
+	EReference getCapability_RequiredBy();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.rigel.Requirement <em>Requirement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Requirement</em>'.
+	 * @see org.nasdanika.rigel.Requirement
+	 * @generated
+	 */
+	EClass getRequirement();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Requirement#getRequiredCapabilities <em>Required Capabilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Required Capabilities</em>'.
+	 * @see org.nasdanika.rigel.Requirement#getRequiredCapabilities()
+	 * @see #getRequirement()
+	 * @generated
+	 */
+	EReference getRequirement_RequiredCapabilities();
 
 	/**
 	 * Returns the meta object for enum '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}'.
@@ -3012,14 +3056,6 @@ public interface RigelPackage extends EPackage {
 		EReference FLOW__PARICIPANTS = eINSTANCE.getFlow_Paricipants();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FLOW__RESOURCES = eINSTANCE.getFlow_Resources();
-
-		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.FlowElementImpl <em>Flow Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3216,14 +3252,6 @@ public interface RigelPackage extends EPackage {
 		EClass RESOURCE = eINSTANCE.getResource();
 
 		/**
-		 * The meta object literal for the '<em><b>Users</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RESOURCE__USERS = eINSTANCE.getResource_Users();
-
-		/**
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3384,14 +3412,6 @@ public interface RigelPackage extends EPackage {
 		EReference ISSUE__IMPLEMENTATION = eINSTANCE.getIssue_Implementation();
 
 		/**
-		 * The meta object literal for the '<em><b>Required Capabilities</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ISSUE__REQUIRED_CAPABILITIES = eINSTANCE.getIssue_RequiredCapabilities();
-
-		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3400,6 +3420,32 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CAPABILITY = eINSTANCE.getCapability();
+
+		/**
+		 * The meta object literal for the '<em><b>Required By</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CAPABILITY__REQUIRED_BY = eINSTANCE.getCapability_RequiredBy();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.rigel.Requirement <em>Requirement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.rigel.Requirement
+		 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getRequirement()
+		 * @generated
+		 */
+		EClass REQUIREMENT = eINSTANCE.getRequirement();
+
+		/**
+		 * The meta object literal for the '<em><b>Required Capabilities</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIREMENT__REQUIRED_CAPABILITIES = eINSTANCE.getRequirement_RequiredCapabilities();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}' enum.

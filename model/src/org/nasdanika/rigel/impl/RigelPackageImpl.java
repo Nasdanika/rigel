@@ -28,6 +28,7 @@ import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Partition;
+import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -196,6 +197,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass capabilityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requirementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -458,16 +466,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getFlow_Resources() {
-		return (EReference)flowEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getFlowElement() {
 		return flowElementEClass;
 	}
@@ -688,7 +686,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getResource_Users() {
+	public EReference getResource_Children() {
 		return (EReference)resourceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -698,18 +696,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getResource_Children() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getResource_Artifacts() {
-		return (EReference)resourceEClass.getEStructuralFeatures().get(2);
+		return (EReference)resourceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -888,8 +876,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getIssue_RequiredCapabilities() {
-		return (EReference)issueEClass.getEStructuralFeatures().get(7);
+	public EClass getCapability() {
+		return capabilityEClass;
 	}
 
 	/**
@@ -898,8 +886,28 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getCapability() {
-		return capabilityEClass;
+	public EReference getCapability_RequiredBy() {
+		return (EReference)capabilityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRequirement() {
+		return requirementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRequirement_RequiredCapabilities() {
+		return (EReference)requirementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -972,10 +980,15 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		actorEClass = createEClass(ACTOR);
 		createEReference(actorEClass, ACTOR__FLOWS);
 
+		capabilityEClass = createEClass(CAPABILITY);
+		createEReference(capabilityEClass, CAPABILITY__REQUIRED_BY);
+
+		requirementEClass = createEClass(REQUIREMENT);
+		createEReference(requirementEClass, REQUIREMENT__REQUIRED_CAPABILITIES);
+
 		flowEClass = createEClass(FLOW);
 		createEReference(flowEClass, FLOW__ELEMENTS);
 		createEReference(flowEClass, FLOW__PARICIPANTS);
-		createEReference(flowEClass, FLOW__RESOURCES);
 
 		flowElementEClass = createEClass(FLOW_ELEMENT);
 
@@ -1008,7 +1021,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(artifactEClass, ARTIFACT__CHILDREN);
 
 		resourceEClass = createEClass(RESOURCE);
-		createEReference(resourceEClass, RESOURCE__USERS);
 		createEReference(resourceEClass, RESOURCE__CHILDREN);
 		createEReference(resourceEClass, RESOURCE__ARTIFACTS);
 
@@ -1032,9 +1044,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEAttribute(issueEClass, ISSUE__BENEFIT);
 		createEReference(issueEClass, ISSUE__CHILDREN);
 		createEReference(issueEClass, ISSUE__IMPLEMENTATION);
-		createEReference(issueEClass, ISSUE__REQUIRED_CAPABILITIES);
-
-		capabilityEClass = createEClass(CAPABILITY);
 
 		// Create enums
 		issueStatusEEnum = createEEnum(ISSUE_STATUS);
@@ -1075,6 +1084,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		packageEClass.getESuperTypes().add(this.getIPackage());
 		actorEClass.getESuperTypes().add(this.getEngineeredElement());
 		flowEClass.getESuperTypes().add(this.getEngineeredElement());
+		flowEClass.getESuperTypes().add(this.getRequirement());
 		flowElementEClass.getESuperTypes().add(this.getModelElement());
 		sourceEClass.getESuperTypes().add(this.getFlowElement());
 		startEClass.getESuperTypes().add(this.getSource());
@@ -1090,10 +1100,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
 		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
 		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
+		resourceEClass.getESuperTypes().add(this.getCapability());
 		transitionEClass.getESuperTypes().add(this.getModelElement());
 		associationEClass.getESuperTypes().add(this.getModelElement());
 		engineerEClass.getESuperTypes().add(this.getPackageElement());
 		issueEClass.getESuperTypes().add(this.getModelElement());
+		issueEClass.getESuperTypes().add(this.getRequirement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1117,10 +1129,15 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActor_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCapability_RequiredBy(), this.getRequirement(), this.getRequirement_RequiredCapabilities(), "requiredBy", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(requirementEClass, Requirement.class, "Requirement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRequirement_RequiredCapabilities(), this.getCapability(), this.getCapability_RequiredBy(), "requiredCapabilities", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFlow_Paricipants(), this.getActor(), this.getActor_Flows(), "paricipants", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFlow_Resources(), this.getResource(), this.getResource_Users(), "resources", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowElementEClass, FlowElement.class, "FlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1153,7 +1170,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getArtifact_Children(), this.getArtifact(), null, "children", null, 0, -1, Artifact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getResource_Users(), this.getFlow(), this.getFlow_Resources(), "users", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Children(), this.getResource(), null, "children", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1177,9 +1193,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEAttribute(getIssue_Benefit(), ecorePackage.getEDouble(), "benefit", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Children(), this.getIssue(), null, "children", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Implementation(), this.getActivity(), null, "implementation", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIssue_RequiredCapabilities(), this.getCapability(), null, "requiredCapabilities", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(issueStatusEEnum, IssueStatus.class, "IssueStatus");
@@ -1302,6 +1315,30 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Activities in which this actor participates."
 		   });
 		addAnnotation
+		  (capabilityEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Capability is something required by an issue."
+		   });
+		addAnnotation
+		  (getCapability_RequiredBy(),
+		   source,
+		   new String[] {
+			   "documentation", "Activities using/leveraging this resource."
+		   });
+		addAnnotation
+		  (requirementEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Requirement of a zero or more capabilities."
+		   });
+		addAnnotation
+		  (getRequirement_RequiredCapabilities(),
+		   source,
+		   new String[] {
+			   "documentation", "Capabilities needed to satisfy the requirement."
+		   });
+		addAnnotation
 		  (flowEClass,
 		   source,
 		   new String[] {
@@ -1318,12 +1355,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "One or more actors participate in completion of a flow."
-		   });
-		addAnnotation
-		  (getFlow_Resources(),
-		   source,
-		   new String[] {
-			   "documentation", "Participants may use resources such as tools to complete a flow."
 		   });
 		addAnnotation
 		  (flowElementEClass,
@@ -1458,12 +1489,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Something leveraged by an actor to perform an activity. For example - a tool."
 		   });
 		addAnnotation
-		  (getResource_Users(),
-		   source,
-		   new String[] {
-			   "documentation", "Activities using/leveraging this resource."
-		   });
-		addAnnotation
 		  (getResource_Children(),
 		   source,
 		   new String[] {
@@ -1572,12 +1597,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Activity providing details about how to implement this issue.\n\n"
 		   });
 		addAnnotation
-		  (getIssue_RequiredCapabilities(),
-		   source,
-		   new String[] {
-			   "documentation", "Capabilities required to close this issue."
-		   });
-		addAnnotation
 		  (issueStatusEEnum,
 		   source,
 		   new String[] {
@@ -1630,12 +1649,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "High importance."
-		   });
-		addAnnotation
-		  (capabilityEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Capability is something required by an issue."
 		   });
 	}
 
@@ -1739,6 +1752,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c"
 		   });
 		addAnnotation
+		  (getCapability_RequiredBy(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438",
+			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u044b \u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0449\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441."
+		   });
+		addAnnotation
 		  (getFlow_Elements(),
 		   source,
 		   new String[] {
@@ -1751,13 +1771,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "label_ru", "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438",
 			   "documentation_ru", "\u041e\u0434\u0438\u043d \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u0439, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0432 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b."
-		   });
-		addAnnotation
-		  (getFlow_Resources(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0420\u0435\u0441\u0443\u0440\u0441\u044b",
-			   "documentation_ru", "\u041e\u0431\u044a\u0435\u043a\u0442\u044b \u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u044b\u0435 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430\u043c\u0438 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b"
 		   });
 		addAnnotation
 		  (flowElementEClass,
@@ -1905,13 +1918,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "label_ru", "\u0420\u0435\u0441\u0443\u0440\u0441",
 			   "documentation_ru", "\u0420\u0435\u0441\u0443\u0440\u0441 - \u043e\u0431\u044a\u0435\u043a\u0442, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0438\u0439 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044e \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043a\u0430\u043a\u043e\u0439 \u043b\u0438\u0431\u043e \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442"
-		   });
-		addAnnotation
-		  (getResource_Users(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438",
-			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u044b \u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0449\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441."
 		   });
 		addAnnotation
 		  (getResource_Children(),
