@@ -27,6 +27,7 @@ import org.nasdanika.rigel.IssueImportance;
 import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
@@ -78,6 +79,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass packageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass participantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -416,8 +424,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getActor() {
-		return actorEClass;
+	public EClass getParticipant() {
+		return participantEClass;
 	}
 
 	/**
@@ -426,8 +434,18 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getActor_Flows() {
-		return (EReference)actorEClass.getEStructuralFeatures().get(0);
+	public EReference getParticipant_Flows() {
+		return (EReference)participantEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getActor() {
+		return actorEClass;
 	}
 
 	/**
@@ -977,8 +995,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		packageEClass = createEClass(PACKAGE);
 
+		participantEClass = createEClass(PARTICIPANT);
+		createEReference(participantEClass, PARTICIPANT__FLOWS);
+
 		actorEClass = createEClass(ACTOR);
-		createEReference(actorEClass, ACTOR__FLOWS);
 
 		capabilityEClass = createEClass(CAPABILITY);
 		createEReference(capabilityEClass, CAPABILITY__REQUIRED_BY);
@@ -1083,6 +1103,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		packageEClass.getESuperTypes().add(this.getEngineeredElement());
 		packageEClass.getESuperTypes().add(this.getIPackage());
 		actorEClass.getESuperTypes().add(this.getEngineeredElement());
+		actorEClass.getESuperTypes().add(this.getParticipant());
 		flowEClass.getESuperTypes().add(this.getEngineeredElement());
 		flowEClass.getESuperTypes().add(this.getRequirement());
 		flowElementEClass.getESuperTypes().add(this.getModelElement());
@@ -1126,8 +1147,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		initEClass(packageEClass, org.nasdanika.rigel.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(participantEClass, Participant.class, "Participant", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParticipant_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActor_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCapability_RequiredBy(), this.getRequirement(), this.getRequirement_RequiredCapabilities(), "requiredBy", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1137,7 +1160,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFlow_Paricipants(), this.getActor(), this.getActor_Flows(), "paricipants", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFlow_Paricipants(), this.getParticipant(), this.getParticipant_Flows(), "paricipants", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowElementEClass, FlowElement.class, "FlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1303,16 +1326,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Container of package elements."
 		   });
 		addAnnotation
+		  (getParticipant_Flows(),
+		   source,
+		   new String[] {
+			   "documentation", "Activities in which this actor participates."
+		   });
+		addAnnotation
 		  (actorEClass,
 		   source,
 		   new String[] {
 			   "documentation", "Actors perform activities using resources consuming and producing artifacts."
-		   });
-		addAnnotation
-		  (getActor_Flows(),
-		   source,
-		   new String[] {
-			   "documentation", "Activities in which this actor participates."
 		   });
 		addAnnotation
 		  (capabilityEClass,
@@ -1738,18 +1761,18 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u041f\u0430\u043a\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043c\u043e\u0434\u0435\u043b\u0438."
 		   });
 		addAnnotation
+		  (getParticipant_Flows(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f",
+			   "documentation_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c"
+		   });
+		addAnnotation
 		  (actorEClass,
 		   source,
 		   new String[] {
 			   "label_ru", "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c",
 			   "documentation_ru", "\u041b\u0438\u0446\u043e, \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u044e\u0449\u0435\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b"
-		   });
-		addAnnotation
-		  (getActor_Flows(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f",
-			   "documentation_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c"
 		   });
 		addAnnotation
 		  (getCapability_RequiredBy(),

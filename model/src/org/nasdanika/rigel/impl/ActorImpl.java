@@ -16,6 +16,7 @@ import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
@@ -111,7 +112,7 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Flow> getFlows() {
-		return (EList<Flow>)eDynamicGet(RigelPackage.ACTOR__FLOWS, RigelPackage.Literals.ACTOR__FLOWS, true, true);
+		return (EList<Flow>)eDynamicGet(RigelPackage.ACTOR__FLOWS, RigelPackage.Literals.PARTICIPANT__FLOWS, true, true);
 	}
 
 	/**
@@ -232,6 +233,38 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 				return !getFlows().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == Participant.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.ACTOR__FLOWS: return RigelPackage.PARTICIPANT__FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == Participant.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.PARTICIPANT__FLOWS: return RigelPackage.ACTOR__FLOWS;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ActorImpl

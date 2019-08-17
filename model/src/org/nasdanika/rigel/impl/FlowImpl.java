@@ -12,13 +12,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -138,8 +137,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Actor> getParicipants() {
-		return (EList<Actor>)eDynamicGet(RigelPackage.FLOW__PARICIPANTS, RigelPackage.Literals.FLOW__PARICIPANTS, true, true);
+	public EList<Participant> getParicipants() {
+		return (EList<Participant>)eDynamicGet(RigelPackage.FLOW__PARICIPANTS, RigelPackage.Literals.FLOW__PARICIPANTS, true, true);
 	}
 
 	/**
@@ -235,7 +234,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 				return;
 			case RigelPackage.FLOW__PARICIPANTS:
 				getParicipants().clear();
-				getParicipants().addAll((Collection<? extends Actor>)newValue);
+				getParicipants().addAll((Collection<? extends Participant>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

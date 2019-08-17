@@ -36,9 +36,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//IPackage/elements"/>
     </genClasses>
     <genClasses ecoreClass="rigel.ecore#//Package"/>
-    <genClasses ecoreClass="rigel.ecore#//Actor">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Actor/flows"/>
+    <genClasses image="false" ecoreClass="rigel.ecore#//Participant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Participant/flows"/>
     </genClasses>
+    <genClasses ecoreClass="rigel.ecore#//Actor"/>
     <genClasses image="false" ecoreClass="rigel.ecore#//Capability">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Capability/requiredBy"/>
     </genClasses>

@@ -22,6 +22,7 @@ import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
@@ -125,10 +126,17 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case RigelPackage.PARTICIPANT: {
+				Participant participant = (Participant)theEObject;
+				T result = caseParticipant(participant);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case RigelPackage.ACTOR: {
 				Actor actor = (Actor)theEObject;
 				T result = caseActor(actor);
 				if (result == null) result = caseEngineeredElement(actor);
+				if (result == null) result = caseParticipant(actor);
 				if (result == null) result = casePackageElement(actor);
 				if (result == null) result = caseModelElement(actor);
 				if (result == null) result = defaultCase(theEObject);
@@ -359,6 +367,21 @@ public class RigelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePackage(org.nasdanika.rigel.Package object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Participant</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Participant</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParticipant(Participant object) {
 		return null;
 	}
 

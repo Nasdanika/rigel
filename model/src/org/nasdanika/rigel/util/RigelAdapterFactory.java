@@ -24,6 +24,7 @@ import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
+import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
@@ -108,6 +109,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter casePackage(org.nasdanika.rigel.Package object) {
 				return createPackageAdapter();
+			}
+			@Override
+			public Adapter caseParticipant(Participant object) {
+				return createParticipantAdapter();
 			}
 			@Override
 			public Adapter caseActor(Actor object) {
@@ -268,6 +273,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Participant <em>Participant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Participant
+	 * @generated
+	 */
+	public Adapter createParticipantAdapter() {
 		return null;
 	}
 
