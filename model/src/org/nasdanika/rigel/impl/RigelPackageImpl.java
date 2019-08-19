@@ -1099,11 +1099,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		// Add supertypes to classes
 		packageElementEClass.getESuperTypes().add(this.getModelElement());
-		engineeredElementEClass.getESuperTypes().add(this.getPackageElement());
+		packageEClass.getESuperTypes().add(this.getPackageElement());
 		packageEClass.getESuperTypes().add(this.getEngineeredElement());
 		packageEClass.getESuperTypes().add(this.getIPackage());
+		actorEClass.getESuperTypes().add(this.getPackageElement());
 		actorEClass.getESuperTypes().add(this.getEngineeredElement());
 		actorEClass.getESuperTypes().add(this.getParticipant());
+		flowEClass.getESuperTypes().add(this.getPackageElement());
 		flowEClass.getESuperTypes().add(this.getEngineeredElement());
 		flowEClass.getESuperTypes().add(this.getRequirement());
 		flowElementEClass.getESuperTypes().add(this.getModelElement());
@@ -1119,7 +1121,9 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityReferenceEClass.getESuperTypes().add(this.getPackageElement());
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
+		artifactEClass.getESuperTypes().add(this.getPackageElement());
 		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
+		resourceEClass.getESuperTypes().add(this.getPackageElement());
 		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
 		resourceEClass.getESuperTypes().add(this.getCapability());
 		transitionEClass.getESuperTypes().add(this.getModelElement());

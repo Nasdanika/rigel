@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Participant;
@@ -242,6 +243,13 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.ACTOR__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.ACTOR__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Participant.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.ACTOR__FLOWS: return RigelPackage.PARTICIPANT__FLOWS;
@@ -258,6 +266,13 @@ public class ActorImpl extends PackageElementImpl implements Actor {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.ACTOR__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.ACTOR__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Participant.class) {
 			switch (baseFeatureID) {
 				case RigelPackage.PARTICIPANT__FLOWS: return RigelPackage.ACTOR__FLOWS;

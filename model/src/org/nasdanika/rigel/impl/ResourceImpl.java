@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
@@ -293,6 +294,13 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.RESOURCE__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.RESOURCE__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Capability.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.RESOURCE__REQUIRED_BY: return RigelPackage.CAPABILITY__REQUIRED_BY;
@@ -309,6 +317,13 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.RESOURCE__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.RESOURCE__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Capability.class) {
 			switch (baseFeatureID) {
 				case RigelPackage.CAPABILITY__REQUIRED_BY: return RigelPackage.RESOURCE__REQUIRED_BY;

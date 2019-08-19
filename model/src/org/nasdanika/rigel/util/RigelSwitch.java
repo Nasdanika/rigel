@@ -105,8 +105,6 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.ENGINEERED_ELEMENT: {
 				EngineeredElement engineeredElement = (EngineeredElement)theEObject;
 				T result = caseEngineeredElement(engineeredElement);
-				if (result == null) result = casePackageElement(engineeredElement);
-				if (result == null) result = caseModelElement(engineeredElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,9 +117,9 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.PACKAGE: {
 				org.nasdanika.rigel.Package package_ = (org.nasdanika.rigel.Package)theEObject;
 				T result = casePackage(package_);
+				if (result == null) result = casePackageElement(package_);
 				if (result == null) result = caseEngineeredElement(package_);
 				if (result == null) result = caseIPackage(package_);
-				if (result == null) result = casePackageElement(package_);
 				if (result == null) result = caseModelElement(package_);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -135,9 +133,9 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.ACTOR: {
 				Actor actor = (Actor)theEObject;
 				T result = caseActor(actor);
+				if (result == null) result = casePackageElement(actor);
 				if (result == null) result = caseEngineeredElement(actor);
 				if (result == null) result = caseParticipant(actor);
-				if (result == null) result = casePackageElement(actor);
 				if (result == null) result = caseModelElement(actor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -157,9 +155,9 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.FLOW: {
 				Flow flow = (Flow)theEObject;
 				T result = caseFlow(flow);
+				if (result == null) result = casePackageElement(flow);
 				if (result == null) result = caseEngineeredElement(flow);
 				if (result == null) result = caseRequirement(flow);
-				if (result == null) result = casePackageElement(flow);
 				if (result == null) result = caseModelElement(flow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -210,9 +208,9 @@ public class RigelSwitch<T> extends Switch<T> {
 				T result = casePartition(partition);
 				if (result == null) result = caseFlow(partition);
 				if (result == null) result = caseFlowElement(partition);
+				if (result == null) result = casePackageElement(partition);
 				if (result == null) result = caseEngineeredElement(partition);
 				if (result == null) result = caseRequirement(partition);
-				if (result == null) result = casePackageElement(partition);
 				if (result == null) result = caseModelElement(partition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -223,10 +221,10 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseFlow(activity);
 				if (result == null) result = caseSource(activity);
 				if (result == null) result = caseTarget(activity);
+				if (result == null) result = casePackageElement(activity);
 				if (result == null) result = caseEngineeredElement(activity);
 				if (result == null) result = caseRequirement(activity);
 				if (result == null) result = caseFlowElement(activity);
-				if (result == null) result = casePackageElement(activity);
 				if (result == null) result = caseModelElement(activity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -245,8 +243,8 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.ARTIFACT: {
 				Artifact artifact = (Artifact)theEObject;
 				T result = caseArtifact(artifact);
-				if (result == null) result = caseEngineeredElement(artifact);
 				if (result == null) result = casePackageElement(artifact);
+				if (result == null) result = caseEngineeredElement(artifact);
 				if (result == null) result = caseModelElement(artifact);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -254,9 +252,9 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.RESOURCE: {
 				Resource resource = (Resource)theEObject;
 				T result = caseResource(resource);
+				if (result == null) result = casePackageElement(resource);
 				if (result == null) result = caseEngineeredElement(resource);
 				if (result == null) result = caseCapability(resource);
-				if (result == null) result = casePackageElement(resource);
 				if (result == null) result = caseModelElement(resource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

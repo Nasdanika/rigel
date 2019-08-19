@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model abstract="true"
  * @generated
  */
-public interface Flow extends EngineeredElement, Requirement {
+public interface Flow extends PackageElement, EngineeredElement, Requirement {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.FlowElement}.

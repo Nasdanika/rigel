@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.PackageElement;
@@ -239,6 +240,13 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.PACKAGE__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.PACKAGE__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == IPackage.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.PACKAGE__ELEMENTS: return RigelPackage.IPACKAGE__ELEMENTS;
@@ -255,6 +263,13 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.PACKAGE__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.PACKAGE__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == IPackage.class) {
 			switch (baseFeatureID) {
 				case RigelPackage.IPACKAGE__ELEMENTS: return RigelPackage.PACKAGE__ELEMENTS;

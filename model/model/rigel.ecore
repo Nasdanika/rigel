@@ -60,8 +60,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="associations" upperBound="-1"
         eType="#//Association" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EngineeredElement" abstract="true" interface="true"
-      eSuperTypes="#//PackageElement">
+  <eClassifiers xsi:type="ecore:EClass" name="EngineeredElement" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Base class for elements which have an owning engineer and may contain issues."/>
     </eAnnotations>
@@ -105,7 +104,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//EngineeredElement #//IPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement #//EngineeredElement #//IPackage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Container of package elements."/>
     </eAnnotations>
@@ -126,7 +125,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//EngineeredElement #//Participant">
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement #//EngineeredElement #//Participant">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Actors perform activities using resources consuming and producing artifacts."/>
     </eAnnotations>
@@ -161,7 +160,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//EngineeredElement #//Requirement">
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//PackageElement #//EngineeredElement #//Requirement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Flow is an abstract container of flow elements."/>
     </eAnnotations>
@@ -341,7 +340,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//EngineeredElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//PackageElement #//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. Artifacts are passed between activities over transitions."/>
     </eAnnotations>
@@ -380,7 +379,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//EngineeredElement #//Capability">
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement #//EngineeredElement #//Capability">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Something leveraged by an actor to perform an activity. For example - a tool."/>
     </eAnnotations>

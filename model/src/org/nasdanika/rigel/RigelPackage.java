@@ -209,58 +209,13 @@ public interface RigelPackage extends EPackage {
 	int ENGINEERED_ELEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENGINEERED_ELEMENT__NAME = PACKAGE_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Url</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENGINEERED_ELEMENT__URL = PACKAGE_ELEMENT__URL;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENGINEERED_ELEMENT__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENGINEERED_ELEMENT__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
-
-	/**
-	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENGINEERED_ELEMENT__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
-
-	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENGINEERED_ELEMENT__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
+	int ENGINEERED_ELEMENT__OWNER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -269,7 +224,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENGINEERED_ELEMENT__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
+	int ENGINEERED_ELEMENT__ISSUES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Engineered Element</em>' class.
@@ -278,7 +233,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENGINEERED_ELEMENT_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+	int ENGINEERED_ELEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Engineered Element</em>' class.
@@ -287,7 +242,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENGINEERED_ELEMENT_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
+	int ENGINEERED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IPackage <em>IPackage</em>}' class.
@@ -343,7 +298,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__NAME = ENGINEERED_ELEMENT__NAME;
+	int PACKAGE__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -352,7 +307,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__URL = ENGINEERED_ELEMENT__URL;
+	int PACKAGE__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -361,7 +316,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__DESCRIPTION = ENGINEERED_ELEMENT__DESCRIPTION;
+	int PACKAGE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -370,7 +325,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__CONFIGURATION = ENGINEERED_ELEMENT__CONFIGURATION;
+	int PACKAGE__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -379,7 +334,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ASSOCIATIONS = ENGINEERED_ELEMENT__ASSOCIATIONS;
+	int PACKAGE__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -388,7 +343,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__OWNER = ENGINEERED_ELEMENT__OWNER;
+	int PACKAGE__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -397,7 +352,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ISSUES = ENGINEERED_ELEMENT__ISSUES;
+	int PACKAGE__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -406,7 +361,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ELEMENTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int PACKAGE__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Package</em>' class.
@@ -415,7 +370,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
+	int PACKAGE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -424,7 +379,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
+	int PACKAGE_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.Participant <em>Participant</em>}' class.
@@ -480,7 +435,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__NAME = ENGINEERED_ELEMENT__NAME;
+	int ACTOR__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -489,7 +444,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__URL = ENGINEERED_ELEMENT__URL;
+	int ACTOR__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -498,7 +453,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__DESCRIPTION = ENGINEERED_ELEMENT__DESCRIPTION;
+	int ACTOR__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -507,7 +462,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__CONFIGURATION = ENGINEERED_ELEMENT__CONFIGURATION;
+	int ACTOR__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -516,7 +471,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__ASSOCIATIONS = ENGINEERED_ELEMENT__ASSOCIATIONS;
+	int ACTOR__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -525,7 +480,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__OWNER = ENGINEERED_ELEMENT__OWNER;
+	int ACTOR__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -534,7 +489,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__ISSUES = ENGINEERED_ELEMENT__ISSUES;
+	int ACTOR__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Flows</b></em>' reference list.
@@ -543,7 +498,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__FLOWS = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int ACTOR__FLOWS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Actor</em>' class.
@@ -552,7 +507,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR_FEATURE_COUNT = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
+	int ACTOR_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Actor</em>' class.
@@ -561,7 +516,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
+	int ACTOR_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.impl.FlowImpl <em>Flow</em>}' class.
@@ -794,7 +749,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__NAME = ENGINEERED_ELEMENT__NAME;
+	int FLOW__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -803,7 +758,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__URL = ENGINEERED_ELEMENT__URL;
+	int FLOW__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -812,7 +767,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__DESCRIPTION = ENGINEERED_ELEMENT__DESCRIPTION;
+	int FLOW__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -821,7 +776,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__CONFIGURATION = ENGINEERED_ELEMENT__CONFIGURATION;
+	int FLOW__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -830,7 +785,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__ASSOCIATIONS = ENGINEERED_ELEMENT__ASSOCIATIONS;
+	int FLOW__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -839,7 +794,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__OWNER = ENGINEERED_ELEMENT__OWNER;
+	int FLOW__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -848,7 +803,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__ISSUES = ENGINEERED_ELEMENT__ISSUES;
+	int FLOW__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Required Capabilities</b></em>' reference list.
@@ -857,7 +812,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__REQUIRED_CAPABILITIES = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int FLOW__REQUIRED_CAPABILITIES = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -866,7 +821,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__ELEMENTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
+	int FLOW__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Paricipants</b></em>' reference list.
@@ -875,7 +830,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__PARICIPANTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 2;
+	int FLOW__PARICIPANTS = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Flow</em>' class.
@@ -884,7 +839,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_FEATURE_COUNT = ENGINEERED_ELEMENT_FEATURE_COUNT + 3;
+	int FLOW_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Flow</em>' class.
@@ -893,7 +848,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
+	int FLOW_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1640,7 +1595,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__NAME = ENGINEERED_ELEMENT__NAME;
+	int ARTIFACT__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -1649,7 +1604,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__URL = ENGINEERED_ELEMENT__URL;
+	int ARTIFACT__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1658,7 +1613,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__DESCRIPTION = ENGINEERED_ELEMENT__DESCRIPTION;
+	int ARTIFACT__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -1667,7 +1622,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__CONFIGURATION = ENGINEERED_ELEMENT__CONFIGURATION;
+	int ARTIFACT__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -1676,7 +1631,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__ASSOCIATIONS = ENGINEERED_ELEMENT__ASSOCIATIONS;
+	int ARTIFACT__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1685,7 +1640,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__OWNER = ENGINEERED_ELEMENT__OWNER;
+	int ARTIFACT__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -1694,7 +1649,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__ISSUES = ENGINEERED_ELEMENT__ISSUES;
+	int ARTIFACT__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Consumers</b></em>' reference list.
@@ -1703,7 +1658,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__CONSUMERS = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int ARTIFACT__CONSUMERS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Producers</b></em>' reference list.
@@ -1712,7 +1667,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__PRODUCERS = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
+	int ARTIFACT__PRODUCERS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1721,7 +1676,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT__CHILDREN = ENGINEERED_ELEMENT_FEATURE_COUNT + 2;
+	int ARTIFACT__CHILDREN = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -1730,7 +1685,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_FEATURE_COUNT = ENGINEERED_ELEMENT_FEATURE_COUNT + 3;
+	int ARTIFACT_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Artifact</em>' class.
@@ -1739,7 +1694,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARTIFACT_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
+	int ARTIFACT_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1748,7 +1703,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__NAME = ENGINEERED_ELEMENT__NAME;
+	int RESOURCE__NAME = PACKAGE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -1757,7 +1712,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__URL = ENGINEERED_ELEMENT__URL;
+	int RESOURCE__URL = PACKAGE_ELEMENT__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1766,7 +1721,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__DESCRIPTION = ENGINEERED_ELEMENT__DESCRIPTION;
+	int RESOURCE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
 	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
@@ -1775,7 +1730,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CONFIGURATION = ENGINEERED_ELEMENT__CONFIGURATION;
+	int RESOURCE__CONFIGURATION = PACKAGE_ELEMENT__CONFIGURATION;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -1784,7 +1739,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ASSOCIATIONS = ENGINEERED_ELEMENT__ASSOCIATIONS;
+	int RESOURCE__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1793,7 +1748,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__OWNER = ENGINEERED_ELEMENT__OWNER;
+	int RESOURCE__OWNER = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
@@ -1802,7 +1757,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ISSUES = ENGINEERED_ELEMENT__ISSUES;
+	int RESOURCE__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Required By</b></em>' reference list.
@@ -1811,7 +1766,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__REQUIRED_BY = ENGINEERED_ELEMENT_FEATURE_COUNT + 0;
+	int RESOURCE__REQUIRED_BY = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1820,7 +1775,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CHILDREN = ENGINEERED_ELEMENT_FEATURE_COUNT + 1;
+	int RESOURCE__CHILDREN = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
@@ -1829,7 +1784,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ARTIFACTS = ENGINEERED_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE__ARTIFACTS = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -1838,7 +1793,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = ENGINEERED_ELEMENT_FEATURE_COUNT + 3;
+	int RESOURCE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -1847,7 +1802,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_OPERATION_COUNT = ENGINEERED_ELEMENT_OPERATION_COUNT + 0;
+	int RESOURCE_OPERATION_COUNT = PACKAGE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

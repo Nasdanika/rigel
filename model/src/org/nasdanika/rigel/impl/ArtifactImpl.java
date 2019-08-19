@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -286,6 +287,40 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 				return !getChildren().isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.ARTIFACT__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.ARTIFACT__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.ARTIFACT__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.ARTIFACT__ISSUES;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //ArtifactImpl

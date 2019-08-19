@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
+import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Issue;
@@ -296,6 +297,13 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.FLOW__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.FLOW__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Requirement.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.FLOW__REQUIRED_CAPABILITIES: return RigelPackage.REQUIREMENT__REQUIRED_CAPABILITIES;
@@ -312,6 +320,13 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == EngineeredElement.class) {
+			switch (baseFeatureID) {
+				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.FLOW__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;
+				default: return -1;
+			}
+		}
 		if (baseClass == Requirement.class) {
 			switch (baseFeatureID) {
 				case RigelPackage.REQUIREMENT__REQUIRED_CAPABILITIES: return RigelPackage.FLOW__REQUIRED_CAPABILITIES;

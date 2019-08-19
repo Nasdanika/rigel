@@ -53,19 +53,18 @@ public class EngineerItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Owns feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOwnsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Engineer_owns_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Engineer_owns_feature", "_UI_Engineer_type"),
 				 RigelPackage.Literals.ENGINEER__OWNS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
