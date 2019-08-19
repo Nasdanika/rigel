@@ -68,8 +68,8 @@
       <details key="label_ru" value="?Управляемый элемент"/>
       <details key="Documentation_ru" value="Базовый класс для элемента модели, владельцем которого является инженер. Может содержать проблеммы/задачи."/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Engineer"
-        eOpposite="#//Engineer/owns">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owners" upperBound="-1"
+        eType="#//Engineer" eOpposite="#//Engineer/owns">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Engineer responsible for this element."/>
       </eAnnotations>
@@ -471,7 +471,7 @@
       <details key="documentation_ru" value="Специалист, владеющий каким-либо ресурсом, процессом или элементом процесса и получающий задачи, связанные с этим процессом или ресуром."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owns" upperBound="-1" eType="#//EngineeredElement"
-        eOpposite="#//EngineeredElement/owner">
+        eOpposite="#//EngineeredElement/owners">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Elements which this engineer owns. Ownership is propagated down to child elements recursively, unless these elements have an explicitly assigned owner. Also issues associated with owned elements and not having an engineer explicitly assigned to them are implicitly assigned to the element owner."/>
       </eAnnotations>

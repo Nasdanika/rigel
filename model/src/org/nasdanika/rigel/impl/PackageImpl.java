@@ -28,7 +28,7 @@ import org.nasdanika.rigel.RigelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -60,38 +60,10 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Engineer getOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.PACKAGE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Engineer basicGetOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.PACKAGE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.PACKAGE__OWNER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOwner(Engineer newOwner) {
-		eDynamicSet(RigelPackage.PACKAGE__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>)eDynamicGet(RigelPackage.PACKAGE__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -121,14 +93,12 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				Engineer owner = basicGetOwner();
-				if (owner != null)
-					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
-				return basicSetOwner((Engineer)otherEnd, msgs);
+			case RigelPackage.PACKAGE__OWNERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -141,8 +111,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				return basicSetOwner(null, msgs);
+			case RigelPackage.PACKAGE__OWNERS:
+				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ELEMENTS:
@@ -159,9 +129,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				if (resolve) return getOwner();
-				return basicGetOwner();
+			case RigelPackage.PACKAGE__OWNERS:
+				return getOwners();
 			case RigelPackage.PACKAGE__ISSUES:
 				return getIssues();
 			case RigelPackage.PACKAGE__ELEMENTS:
@@ -179,8 +148,9 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				setOwner((Engineer)newValue);
+			case RigelPackage.PACKAGE__OWNERS:
+				getOwners().clear();
+				getOwners().addAll((Collection<? extends Engineer>)newValue);
 				return;
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
@@ -202,8 +172,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				setOwner((Engineer)null);
+			case RigelPackage.PACKAGE__OWNERS:
+				getOwners().clear();
 				return;
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
@@ -223,8 +193,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNER:
-				return basicGetOwner() != null;
+			case RigelPackage.PACKAGE__OWNERS:
+				return !getOwners().isEmpty();
 			case RigelPackage.PACKAGE__ISSUES:
 				return !getIssues().isEmpty();
 			case RigelPackage.PACKAGE__ELEMENTS:
@@ -242,7 +212,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.PACKAGE__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.PACKAGE__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
 				case RigelPackage.PACKAGE__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
@@ -265,7 +235,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.PACKAGE__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.PACKAGE__OWNERS;
 				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.PACKAGE__ISSUES;
 				default: return -1;
 			}

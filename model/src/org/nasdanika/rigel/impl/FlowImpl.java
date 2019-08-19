@@ -30,7 +30,7 @@ import org.nasdanika.rigel.RigelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getElements <em>Elements</em>}</li>
@@ -64,38 +64,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Engineer getOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Engineer basicGetOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.FLOW__OWNER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOwner(Engineer newOwner) {
-		eDynamicSet(RigelPackage.FLOW__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -151,11 +123,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				Engineer owner = basicGetOwner();
-				if (owner != null)
-					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
-				return basicSetOwner((Engineer)otherEnd, msgs);
+			case RigelPackage.FLOW__OWNERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
 			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredCapabilities()).basicAdd(otherEnd, msgs);
 			case RigelPackage.FLOW__PARICIPANTS:
@@ -172,8 +141,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				return basicSetOwner(null, msgs);
+			case RigelPackage.FLOW__OWNERS:
+				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.FLOW__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
@@ -194,9 +163,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				if (resolve) return getOwner();
-				return basicGetOwner();
+			case RigelPackage.FLOW__OWNERS:
+				return getOwners();
 			case RigelPackage.FLOW__ISSUES:
 				return getIssues();
 			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
@@ -218,8 +186,9 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				setOwner((Engineer)newValue);
+			case RigelPackage.FLOW__OWNERS:
+				getOwners().clear();
+				getOwners().addAll((Collection<? extends Engineer>)newValue);
 				return;
 			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
@@ -249,8 +218,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				setOwner((Engineer)null);
+			case RigelPackage.FLOW__OWNERS:
+				getOwners().clear();
 				return;
 			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
@@ -276,8 +245,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNER:
-				return basicGetOwner() != null;
+			case RigelPackage.FLOW__OWNERS:
+				return !getOwners().isEmpty();
 			case RigelPackage.FLOW__ISSUES:
 				return !getIssues().isEmpty();
 			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
@@ -299,7 +268,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.FLOW__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.FLOW__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
 				case RigelPackage.FLOW__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
@@ -322,7 +291,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.FLOW__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.FLOW__OWNERS;
 				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;
 				default: return -1;
 			}

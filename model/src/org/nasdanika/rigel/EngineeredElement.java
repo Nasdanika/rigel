@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.EngineeredElement#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.EngineeredElement#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.EngineeredElement#getIssues <em>Issues</em>}</li>
  * </ul>
  *
@@ -29,32 +29,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface EngineeredElement extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Owner</b></em>' reference.
+	 * Returns the value of the '<em><b>Owners</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.rigel.Engineer}.
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.rigel.Engineer#getOwns <em>Owns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Engineer responsible for this element.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Owner</em>' reference.
-	 * @see #setOwner(Engineer)
-	 * @see org.nasdanika.rigel.RigelPackage#getEngineeredElement_Owner()
+	 * @return the value of the '<em>Owners</em>' reference list.
+	 * @see org.nasdanika.rigel.RigelPackage#getEngineeredElement_Owners()
 	 * @see org.nasdanika.rigel.Engineer#getOwns
 	 * @model opposite="owns"
 	 *        annotation="urn:org.nasdanika label_ru='\u0418\u043d\u0436\u0435\u043d\u0435\u0440' Documentation_ru='\u0418\u043d\u0436\u0435\u043d\u0435\u0440, \u0432\u043b\u0430\u0434\u0435\u043b\u0435\u0446 \u044d\u0442\u043e\u0433\u043e \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430.'"
 	 * @generated
 	 */
-	Engineer getOwner();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.rigel.EngineeredElement#getOwner <em>Owner</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owner</em>' reference.
-	 * @see #getOwner()
-	 * @generated
-	 */
-	void setOwner(Engineer value);
+	EList<Engineer> getOwners();
 
 	/**
 	 * Returns the value of the '<em><b>Issues</b></em>' containment reference list.

@@ -29,7 +29,7 @@ import org.nasdanika.rigel.Target;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getOwner <em>Owner</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getConsumers <em>Consumers</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ArtifactImpl#getProducers <em>Producers</em>}</li>
@@ -63,38 +63,10 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Engineer getOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Engineer basicGetOwner() {
-		return (Engineer)eDynamicGet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, false, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetOwner(Engineer newOwner, NotificationChain msgs) {
-		msgs = eDynamicInverseAdd((InternalEObject)newOwner, RigelPackage.ARTIFACT__OWNER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOwner(Engineer newOwner) {
-		eDynamicSet(RigelPackage.ARTIFACT__OWNER, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER, newOwner);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>)eDynamicGet(RigelPackage.ARTIFACT__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -150,11 +122,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				Engineer owner = basicGetOwner();
-				if (owner != null)
-					msgs = ((InternalEObject)owner).eInverseRemove(this, RigelPackage.ENGINEER__OWNS, Engineer.class, msgs);
-				return basicSetOwner((Engineer)otherEnd, msgs);
+			case RigelPackage.ARTIFACT__OWNERS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConsumers()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__PRODUCERS:
@@ -171,8 +140,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				return basicSetOwner(null, msgs);
+			case RigelPackage.ARTIFACT__OWNERS:
+				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
@@ -193,9 +162,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				if (resolve) return getOwner();
-				return basicGetOwner();
+			case RigelPackage.ARTIFACT__OWNERS:
+				return getOwners();
 			case RigelPackage.ARTIFACT__ISSUES:
 				return getIssues();
 			case RigelPackage.ARTIFACT__CONSUMERS:
@@ -217,8 +185,9 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				setOwner((Engineer)newValue);
+			case RigelPackage.ARTIFACT__OWNERS:
+				getOwners().clear();
+				getOwners().addAll((Collection<? extends Engineer>)newValue);
 				return;
 			case RigelPackage.ARTIFACT__ISSUES:
 				getIssues().clear();
@@ -248,8 +217,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				setOwner((Engineer)null);
+			case RigelPackage.ARTIFACT__OWNERS:
+				getOwners().clear();
 				return;
 			case RigelPackage.ARTIFACT__ISSUES:
 				getIssues().clear();
@@ -275,8 +244,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNER:
-				return basicGetOwner() != null;
+			case RigelPackage.ARTIFACT__OWNERS:
+				return !getOwners().isEmpty();
 			case RigelPackage.ARTIFACT__ISSUES:
 				return !getIssues().isEmpty();
 			case RigelPackage.ARTIFACT__CONSUMERS:
@@ -298,7 +267,7 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.ARTIFACT__OWNER: return RigelPackage.ENGINEERED_ELEMENT__OWNER;
+				case RigelPackage.ARTIFACT__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
 				case RigelPackage.ARTIFACT__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
@@ -315,7 +284,7 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNER: return RigelPackage.ARTIFACT__OWNER;
+				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.ARTIFACT__OWNERS;
 				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.ARTIFACT__ISSUES;
 				default: return -1;
 			}

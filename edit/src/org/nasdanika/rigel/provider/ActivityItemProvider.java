@@ -67,7 +67,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 			(createItemPropertyDescriptor
 			  (getResourceLocator(),
 			   getString("_UI_EngineeredElement_owner_feature"),
-			   RigelPackage.Literals.ENGINEERED_ELEMENT__OWNER,
+			   RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
 			   true,
 			   false,
 			   true,

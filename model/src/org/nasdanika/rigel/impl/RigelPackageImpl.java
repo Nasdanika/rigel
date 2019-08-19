@@ -374,7 +374,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEngineeredElement_Owner() {
+	public EReference getEngineeredElement_Owners() {
 		return (EReference)engineeredElementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -987,7 +987,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(packageElementEClass, PACKAGE_ELEMENT__ASSOCIATIONS);
 
 		engineeredElementEClass = createEClass(ENGINEERED_ELEMENT);
-		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__OWNER);
+		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__OWNERS);
 		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__ISSUES);
 
 		iPackageEClass = createEClass(IPACKAGE);
@@ -1143,7 +1143,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getPackageElement_Associations(), this.getAssociation(), null, "associations", null, 0, -1, PackageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(engineeredElementEClass, EngineeredElement.class, "EngineeredElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEngineeredElement_Owner(), this.getEngineer(), this.getEngineer_Owns(), "owner", null, 0, 1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEngineeredElement_Owners(), this.getEngineer(), this.getEngineer_Owns(), "owners", null, 0, -1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEngineeredElement_Issues(), this.getIssue(), null, "issues", null, 0, -1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(iPackageEClass, IPackage.class, "IPackage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1209,7 +1209,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getAssociation_Target(), this.getPackageElement(), null, "target", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(engineerEClass, Engineer.class, "Engineer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEngineer_Owns(), this.getEngineeredElement(), this.getEngineeredElement_Owner(), "owns", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEngineer_Owns(), this.getEngineeredElement(), this.getEngineeredElement_Owners(), "owns", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEngineer_Assignments(), this.getIssue(), this.getIssue_AssignedTo(), "assignments", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(issueEClass, Issue.class, "Issue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1300,7 +1300,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Base class for elements which have an owning engineer and may contain issues."
 		   });
 		addAnnotation
-		  (getEngineeredElement_Owner(),
+		  (getEngineeredElement_Owners(),
 		   source,
 		   new String[] {
 			   "documentation", "Engineer responsible for this element."
@@ -1737,7 +1737,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "Documentation_ru", "\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u043c\u043e\u0434\u0435\u043b\u0438, \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0435\u043c \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0438\u043d\u0436\u0435\u043d\u0435\u0440. \u041c\u043e\u0436\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u043c\u044b/\u0437\u0430\u0434\u0430\u0447\u0438."
 		   });
 		addAnnotation
-		  (getEngineeredElement_Owner(),
+		  (getEngineeredElement_Owners(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0418\u043d\u0436\u0435\u043d\u0435\u0440",

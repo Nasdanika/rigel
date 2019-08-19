@@ -29,7 +29,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//PackageElement/associations"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rigel.ecore#//EngineeredElement">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//EngineeredElement/owner"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//EngineeredElement/owners"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//EngineeredElement/issues"/>
     </genClasses>
     <genClasses image="false" ecoreClass="rigel.ecore#//IPackage">
