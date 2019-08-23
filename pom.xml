@@ -172,6 +172,8 @@
 		<module>edit</module>
 		<module>editor</module>
 		<module>design</module>
+
+		<module>help</module>
 		
 		<module>html</module>
 
