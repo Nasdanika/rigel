@@ -108,6 +108,17 @@
           <styles xmi:type="notation:ShapeStyle" xmi:id="_BRgYcKykEemnp4xHxNwdXQ" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BRgYcaykEemnp4xHxNwdXQ" x="100" y="175" width="90" height="40"/>
         </children>
+        <children xmi:type="notation:Node" xmi:id="_VUqe9MiqEemutYHhIETJRg" type="2001" element="_VUhU_MiqEemutYHhIETJRg">
+          <children xmi:type="notation:Node" xmi:id="_VU0P4MiqEemutYHhIETJRg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_VU0P4ciqEemutYHhIETJRg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_VU0P4siqEemutYHhIETJRg" type="3003" element="_VUhU_ciqEemutYHhIETJRg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_VU0P48iqEemutYHhIETJRg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VU0P5MiqEemutYHhIETJRg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_VUqe9ciqEemutYHhIETJRg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VUqe9siqEemutYHhIETJRg" x="84" y="432" width="90" height="40"/>
+        </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_SZq-MqgNEemlU5nTB2J-fA"/>
         <edges xmi:type="notation:Edge" xmi:id="_mgHsFKguEemBNPZyAOrTqA" type="4001" element="_mf97EKguEemBNPZyAOrTqA" source="_gy01EKgNEemlU5nTB2J-fA" target="_gy5tkKgNEemlU5nTB2J-fA">
           <children xmi:type="notation:Node" xmi:id="_mgRdEKguEemBNPZyAOrTqA" type="6001">
@@ -243,6 +254,14 @@
       <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.5"/>
       <ownedStyle xmi:type="diagram:Square" uid="_BRUyQaykEemnp4xHxNwdXQ" showIcon="false" width="9" height="4" color="255,245,181">
         <customFeatures>labelPosition</customFeatures>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_VUhU_MiqEemutYHhIETJRg" name="Activity-7" width="9" height="4" resizeKind="NSEW">
+      <target xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.10"/>
+      <semanticElements xmi:type="org.nasdanika.rigel:Activity" href="models/basic.rigel#//@elements.10"/>
+      <ownedStyle xmi:type="diagram:Square" uid="_VUhU_ciqEemutYHhIETJRg" showIcon="false" labelPosition="node" width="9" height="4" color="255,245,181">
         <description xmi:type="style:SquareDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']"/>

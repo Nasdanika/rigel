@@ -2156,6 +2156,106 @@ public interface RigelPackage extends EPackage {
 	int ISSUE_OPERATION_COUNT = MODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.rigel.impl.MilestoneImpl <em>Milestone</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.rigel.impl.MilestoneImpl
+	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getMilestone()
+	 * @generated
+	 */
+	int MILESTONE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__NAME = START__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__URL = START__URL;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__DESCRIPTION = START__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Configuration</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__CONFIGURATION = START__CONFIGURATION;
+
+	/**
+	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__OUTBOUND_TRANSITIONS = START__OUTBOUND_TRANSITIONS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__OUTPUTS = START__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Inbound Transitions</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__INBOUND_TRANSITIONS = START_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__INPUTS = START_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Milestone</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE_FEATURE_COUNT = START_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Milestone</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE_OPERATION_COUNT = START_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IssueStatus <em>Issue Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2163,7 +2263,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueStatus()
 	 * @generated
 	 */
-	int ISSUE_STATUS = 24;
+	int ISSUE_STATUS = 25;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IssueImportance <em>Issue Importance</em>}' enum.
@@ -2173,7 +2273,7 @@ public interface RigelPackage extends EPackage {
 	 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getIssueImportance()
 	 * @generated
 	 */
-	int ISSUE_IMPORTANCE = 25;
+	int ISSUE_IMPORTANCE = 26;
 
 
 	/**
@@ -2815,6 +2915,16 @@ public interface RigelPackage extends EPackage {
 	EReference getIssue_Implementation();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.rigel.Milestone <em>Milestone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Milestone</em>'.
+	 * @see org.nasdanika.rigel.Milestone
+	 * @generated
+	 */
+	EClass getMilestone();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3422,6 +3532,16 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ISSUE__IMPLEMENTATION = eINSTANCE.getIssue_Implementation();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.MilestoneImpl <em>Milestone</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.rigel.impl.MilestoneImpl
+		 * @see org.nasdanika.rigel.impl.RigelPackageImpl#getMilestone()
+		 * @generated
+		 */
+		EClass MILESTONE = eINSTANCE.getMilestone();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.

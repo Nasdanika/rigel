@@ -584,4 +584,9 @@
       </eAnnotations>
     </eLiterals>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Milestone" eSuperTypes="#//Start #//End">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A milestone shows an important achievement in a flow. &#xA;The milestones represent a sequence of events that incrementally build up until flow completion."/>
+    </eAnnotations>
+  </eClassifiers>
 </ecore:EPackage>

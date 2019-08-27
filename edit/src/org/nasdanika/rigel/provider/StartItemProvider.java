@@ -49,11 +49,11 @@ public class StartItemProvider extends SourceItemProvider {
 	 * This returns Start.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Start"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Start.png"));
 	}
 
 	/**
@@ -70,14 +70,12 @@ public class StartItemProvider extends SourceItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((Start)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Start_type") :
-			getString("_UI_Start_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_Start_type") :	label;
 	}
 
 

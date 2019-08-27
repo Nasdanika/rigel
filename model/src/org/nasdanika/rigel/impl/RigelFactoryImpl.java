@@ -21,6 +21,7 @@ import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.IssueImportance;
 import org.nasdanika.rigel.IssueStatus;
+import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
@@ -85,6 +86,7 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.ASSOCIATION: return createAssociation();
 			case RigelPackage.ENGINEER: return createEngineer();
 			case RigelPackage.ISSUE: return createIssue();
+			case RigelPackage.MILESTONE: return createMilestone();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -265,6 +267,17 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 	public Issue createIssue() {
 		IssueImpl issue = new IssueImpl();
 		return issue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Milestone createMilestone() {
+		MilestoneImpl milestone = new MilestoneImpl();
+		return milestone;
 	}
 
 	/**

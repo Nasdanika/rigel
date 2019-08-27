@@ -25,6 +25,7 @@ import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.IssueImportance;
 import org.nasdanika.rigel.IssueStatus;
+import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Participant;
@@ -198,6 +199,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	private EClass issueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass milestoneEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -894,6 +902,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getMilestone() {
+		return milestoneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCapability() {
 		return capabilityEClass;
 	}
@@ -1065,6 +1083,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(issueEClass, ISSUE__CHILDREN);
 		createEReference(issueEClass, ISSUE__IMPLEMENTATION);
 
+		milestoneEClass = createEClass(MILESTONE);
+
 		// Create enums
 		issueStatusEEnum = createEEnum(ISSUE_STATUS);
 		issueImportanceEEnum = createEEnum(ISSUE_IMPORTANCE);
@@ -1131,6 +1151,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		engineerEClass.getESuperTypes().add(this.getPackageElement());
 		issueEClass.getESuperTypes().add(this.getModelElement());
 		issueEClass.getESuperTypes().add(this.getRequirement());
+		milestoneEClass.getESuperTypes().add(this.getStart());
+		milestoneEClass.getESuperTypes().add(this.getEnd());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1220,6 +1242,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEAttribute(getIssue_Benefit(), ecorePackage.getEDouble(), "benefit", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Children(), this.getIssue(), null, "children", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Implementation(), this.getActivity(), null, "implementation", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(issueStatusEEnum, IssueStatus.class, "IssueStatus");
@@ -1676,6 +1700,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "High importance."
+		   });
+		addAnnotation
+		  (milestoneEClass,
+		   source,
+		   new String[] {
+			   "documentation", "A milestone shows an important achievement in a flow. \nThe milestones represent a sequence of events that incrementally build up until flow completion."
 		   });
 	}
 

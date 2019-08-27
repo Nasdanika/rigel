@@ -139,6 +139,15 @@ public interface RigelFactory extends EFactory {
 	Issue createIssue();
 
 	/**
+	 * Returns a new object of class '<em>Milestone</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Milestone</em>'.
+	 * @generated
+	 */
+	Milestone createMilestone();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

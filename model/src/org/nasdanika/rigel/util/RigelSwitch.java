@@ -20,6 +20,7 @@ import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.Issue;
+import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Participant;
@@ -286,6 +287,18 @@ public class RigelSwitch<T> extends Switch<T> {
 				T result = caseIssue(issue);
 				if (result == null) result = caseModelElement(issue);
 				if (result == null) result = caseRequirement(issue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.MILESTONE: {
+				Milestone milestone = (Milestone)theEObject;
+				T result = caseMilestone(milestone);
+				if (result == null) result = caseStart(milestone);
+				if (result == null) result = caseEnd(milestone);
+				if (result == null) result = caseSource(milestone);
+				if (result == null) result = caseTarget(milestone);
+				if (result == null) result = caseFlowElement(milestone);
+				if (result == null) result = caseModelElement(milestone);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -620,6 +633,21 @@ public class RigelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIssue(Issue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Milestone</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Milestone</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMilestone(Milestone object) {
 		return null;
 	}
 

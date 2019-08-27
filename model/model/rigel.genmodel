@@ -101,5 +101,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/children"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference rigel.ecore#//Issue/implementation"/>
     </genClasses>
+    <genClasses ecoreClass="rigel.ecore#//Milestone"/>
   </genPackages>
 </genmodel:GenModel>
