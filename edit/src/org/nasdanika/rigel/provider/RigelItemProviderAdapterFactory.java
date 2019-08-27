@@ -504,6 +504,7 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (endItemProvider != null) endItemProvider.dispose();
 		if (partitionItemProvider != null) partitionItemProvider.dispose();
 		if (activityItemProvider != null) activityItemProvider.dispose();
+		if (milestoneItemProvider != null) milestoneItemProvider.dispose();
 		if (activityReferenceItemProvider != null) activityReferenceItemProvider.dispose();
 		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
@@ -511,7 +512,6 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (engineerItemProvider != null) engineerItemProvider.dispose();
 		if (issueItemProvider != null) issueItemProvider.dispose();
-		if (milestoneItemProvider != null) milestoneItemProvider.dispose();
 	}
 
 }

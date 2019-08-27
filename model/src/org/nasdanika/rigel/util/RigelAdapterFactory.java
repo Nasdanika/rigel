@@ -160,6 +160,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createActivityAdapter();
 			}
 			@Override
+			public Adapter caseMilestone(Milestone object) {
+				return createMilestoneAdapter();
+			}
+			@Override
 			public Adapter caseActivityReference(ActivityReference object) {
 				return createActivityReferenceAdapter();
 			}
@@ -186,10 +190,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseIssue(Issue object) {
 				return createIssueAdapter();
-			}
-			@Override
-			public Adapter caseMilestone(Milestone object) {
-				return createMilestoneAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

@@ -18,5 +18,5 @@ package org.nasdanika.rigel;
  * @model
  * @generated
  */
-public interface Milestone extends Start, End {
+public interface Milestone extends PackageElement, Source, Target {
 } // Milestone

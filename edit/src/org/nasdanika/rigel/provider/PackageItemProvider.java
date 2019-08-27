@@ -187,12 +187,27 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createStart()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createEnd()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createPartition()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createMilestone()));
 
 		newChildDescriptors.add
 			(createChildParameter

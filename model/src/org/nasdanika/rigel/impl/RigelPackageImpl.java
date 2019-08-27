@@ -1050,6 +1050,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEAttribute(activityEClass, ACTIVITY__TOTAL_SIZE);
 		createEAttribute(activityEClass, ACTIVITY__TOTAL_PROGRESS);
 
+		milestoneEClass = createEClass(MILESTONE);
+
 		activityReferenceEClass = createEClass(ACTIVITY_REFERENCE);
 		createEReference(activityReferenceEClass, ACTIVITY_REFERENCE__ACTIVITY);
 
@@ -1082,8 +1084,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEAttribute(issueEClass, ISSUE__BENEFIT);
 		createEReference(issueEClass, ISSUE__CHILDREN);
 		createEReference(issueEClass, ISSUE__IMPLEMENTATION);
-
-		milestoneEClass = createEClass(MILESTONE);
 
 		// Create enums
 		issueStatusEEnum = createEEnum(ISSUE_STATUS);
@@ -1130,14 +1130,19 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		flowEClass.getESuperTypes().add(this.getRequirement());
 		flowElementEClass.getESuperTypes().add(this.getModelElement());
 		sourceEClass.getESuperTypes().add(this.getFlowElement());
+		startEClass.getESuperTypes().add(this.getPackageElement());
 		startEClass.getESuperTypes().add(this.getSource());
 		targetEClass.getESuperTypes().add(this.getFlowElement());
+		endEClass.getESuperTypes().add(this.getPackageElement());
 		endEClass.getESuperTypes().add(this.getTarget());
 		partitionEClass.getESuperTypes().add(this.getFlow());
 		partitionEClass.getESuperTypes().add(this.getFlowElement());
 		activityEClass.getESuperTypes().add(this.getFlow());
 		activityEClass.getESuperTypes().add(this.getSource());
 		activityEClass.getESuperTypes().add(this.getTarget());
+		milestoneEClass.getESuperTypes().add(this.getPackageElement());
+		milestoneEClass.getESuperTypes().add(this.getSource());
+		milestoneEClass.getESuperTypes().add(this.getTarget());
 		activityReferenceEClass.getESuperTypes().add(this.getPackageElement());
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
@@ -1151,8 +1156,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		engineerEClass.getESuperTypes().add(this.getPackageElement());
 		issueEClass.getESuperTypes().add(this.getModelElement());
 		issueEClass.getESuperTypes().add(this.getRequirement());
-		milestoneEClass.getESuperTypes().add(this.getStart());
-		milestoneEClass.getESuperTypes().add(this.getEnd());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1210,6 +1213,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEAttribute(getActivity_TotalSize(), ecorePackage.getEDouble(), "totalSize", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_TotalProgress(), ecorePackage.getEInt(), "totalProgress", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
+		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(activityReferenceEClass, ActivityReference.class, "ActivityReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityReference_Activity(), this.getActivity(), null, "activity", null, 0, 1, ActivityReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1242,8 +1247,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEAttribute(getIssue_Benefit(), ecorePackage.getEDouble(), "benefit", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Children(), this.getIssue(), null, "children", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIssue_Implementation(), this.getActivity(), null, "implementation", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(issueStatusEEnum, IssueStatus.class, "IssueStatus");
@@ -1498,6 +1501,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Calculated total activity progress in percent. "
 		   });
 		addAnnotation
+		  (milestoneEClass,
+		   source,
+		   new String[] {
+			   "documentation", "A milestone shows an important achievement in a flow. \nThe milestones represent a sequence of events that incrementally build up until flow completion."
+		   });
+		addAnnotation
 		  (activityReferenceEClass,
 		   source,
 		   new String[] {
@@ -1700,12 +1709,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "High importance."
-		   });
-		addAnnotation
-		  (milestoneEClass,
-		   source,
-		   new String[] {
-			   "documentation", "A milestone shows an important achievement in a flow. \nThe milestones represent a sequence of events that incrementally build up until flow completion."
 		   });
 	}
 

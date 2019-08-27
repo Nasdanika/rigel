@@ -79,6 +79,7 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.END: return createEnd();
 			case RigelPackage.PARTITION: return createPartition();
 			case RigelPackage.ACTIVITY: return createActivity();
+			case RigelPackage.MILESTONE: return createMilestone();
 			case RigelPackage.ACTIVITY_REFERENCE: return createActivityReference();
 			case RigelPackage.ARTIFACT: return createArtifact();
 			case RigelPackage.RESOURCE: return createResource();
@@ -86,7 +87,6 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.ASSOCIATION: return createAssociation();
 			case RigelPackage.ENGINEER: return createEngineer();
 			case RigelPackage.ISSUE: return createIssue();
-			case RigelPackage.MILESTONE: return createMilestone();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

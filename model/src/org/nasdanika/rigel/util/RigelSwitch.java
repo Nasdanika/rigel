@@ -181,6 +181,7 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.START: {
 				Start start = (Start)theEObject;
 				T result = caseStart(start);
+				if (result == null) result = casePackageElement(start);
 				if (result == null) result = caseSource(start);
 				if (result == null) result = caseFlowElement(start);
 				if (result == null) result = caseModelElement(start);
@@ -198,6 +199,7 @@ public class RigelSwitch<T> extends Switch<T> {
 			case RigelPackage.END: {
 				End end = (End)theEObject;
 				T result = caseEnd(end);
+				if (result == null) result = casePackageElement(end);
 				if (result == null) result = caseTarget(end);
 				if (result == null) result = caseFlowElement(end);
 				if (result == null) result = caseModelElement(end);
@@ -227,6 +229,17 @@ public class RigelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseRequirement(activity);
 				if (result == null) result = caseFlowElement(activity);
 				if (result == null) result = caseModelElement(activity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case RigelPackage.MILESTONE: {
+				Milestone milestone = (Milestone)theEObject;
+				T result = caseMilestone(milestone);
+				if (result == null) result = casePackageElement(milestone);
+				if (result == null) result = caseSource(milestone);
+				if (result == null) result = caseTarget(milestone);
+				if (result == null) result = caseFlowElement(milestone);
+				if (result == null) result = caseModelElement(milestone);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -287,18 +300,6 @@ public class RigelSwitch<T> extends Switch<T> {
 				T result = caseIssue(issue);
 				if (result == null) result = caseModelElement(issue);
 				if (result == null) result = caseRequirement(issue);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RigelPackage.MILESTONE: {
-				Milestone milestone = (Milestone)theEObject;
-				T result = caseMilestone(milestone);
-				if (result == null) result = caseStart(milestone);
-				if (result == null) result = caseEnd(milestone);
-				if (result == null) result = caseSource(milestone);
-				if (result == null) result = caseTarget(milestone);
-				if (result == null) result = caseFlowElement(milestone);
-				if (result == null) result = caseModelElement(milestone);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
