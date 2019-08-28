@@ -3,6 +3,7 @@
 package org.nasdanika.rigel.impl;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,6 +37,8 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getProgress <em>Progress</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getTargetDate <em>Target Date</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#isMissed <em>Missed</em>}</li>
  * </ul>
  *
  * @generated
@@ -59,6 +62,26 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 	 * @ordered
 	 */
 	protected static final int PROGRESS_EDEFAULT = 0;
+
+	/**
+	 * The default value of the '{@link #getTargetDate() <em>Target Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date TARGET_DATE_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #isMissed() <em>Missed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isMissed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean MISSED_EDEFAULT = false;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +192,36 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Date getTargetDate() {
+		return (Date)eDynamicGet(RigelPackage.MILESTONE__TARGET_DATE, RigelPackage.Literals.MILESTONE__TARGET_DATE, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTargetDate(Date newTargetDate) {
+		eDynamicSet(RigelPackage.MILESTONE__TARGET_DATE, RigelPackage.Literals.MILESTONE__TARGET_DATE, newTargetDate);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public boolean isMissed() {
+    	return getTargetDate() != null && new Date().after(getTargetDate()) && getSize() > 0 && getProgress() < 100;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -223,6 +276,10 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				return getSize();
 			case RigelPackage.MILESTONE__PROGRESS:
 				return getProgress();
+			case RigelPackage.MILESTONE__TARGET_DATE:
+				return getTargetDate();
+			case RigelPackage.MILESTONE__MISSED:
+				return isMissed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,6 +309,9 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case RigelPackage.MILESTONE__TARGET_DATE:
+				setTargetDate((Date)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -275,6 +335,9 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				return;
 			case RigelPackage.MILESTONE__INPUTS:
 				getInputs().clear();
+				return;
+			case RigelPackage.MILESTONE__TARGET_DATE:
+				setTargetDate(TARGET_DATE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -300,6 +363,10 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				return getSize() != SIZE_EDEFAULT;
 			case RigelPackage.MILESTONE__PROGRESS:
 				return getProgress() != PROGRESS_EDEFAULT;
+			case RigelPackage.MILESTONE__TARGET_DATE:
+				return TARGET_DATE_EDEFAULT == null ? getTargetDate() != null : !TARGET_DATE_EDEFAULT.equals(getTargetDate());
+			case RigelPackage.MILESTONE__MISSED:
+				return isMissed() != MISSED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

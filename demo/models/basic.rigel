@@ -3,7 +3,7 @@
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 1" owners="//@elements.6">
     <outboundTransitions target="//@elements.1"/>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 2" owners="//@elements.6" inboundTransitions="//@elements.0/@outboundTransitions.0" progress="20">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 2" owners="//@elements.6" inboundTransitions="//@elements.0/@outboundTransitions.0" size="40.0" progress="20">
     <outboundTransitions target="//@elements.2"/>
     <outboundTransitions target="//@elements.4"/>
   </elements>
@@ -11,7 +11,7 @@
   <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity 3" description="# Details&#xD;&#xA;&#xD;&#xA;* Do A&#xD;&#xA;* Do B" owners="//@elements.6" size="1.0" progress="100">
     <outboundTransitions target="//@elements.2"/>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-5" inboundTransitions="//@elements.1/@outboundTransitions.1 //@elements.12/@outboundTransitions.0">
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-5" inboundTransitions="//@elements.1/@outboundTransitions.1 //@elements.12/@outboundTransitions.0" size="5.0" progress="100">
     <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-1">
       <outboundTransitions target="//@elements.4/@elements.1"/>
       <outboundTransitions target="//@elements.4/@elements.2"/>
@@ -49,9 +49,13 @@
   <elements xsi:type="org.nasdanika.rigel:Start" name="Start-2">
     <outboundTransitions target="//@elements.4"/>
   </elements>
-  <elements xsi:type="org.nasdanika.rigel:Milestone" name="Milestone-1" inboundTransitions="//@elements.4/@outboundTransitions.0">
+  <elements xsi:type="org.nasdanika.rigel:Milestone" name="Milestone-1" inboundTransitions="//@elements.4/@outboundTransitions.0" targetDate="2019-08-30T00:00:00.000-0400">
     <outboundTransitions target="//@elements.14"/>
+    <outboundTransitions target="//@elements.16"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:End" name="End-1" inboundTransitions="//@elements.13/@outboundTransitions.0"/>
-  <elements xsi:type="org.nasdanika.rigel:Milestone" name="Milestone-2"/>
+  <elements xsi:type="org.nasdanika.rigel:Milestone" name="Milestone-2" inboundTransitions="//@elements.16/@outboundTransitions.0"/>
+  <elements xsi:type="org.nasdanika.rigel:Activity" name="Activity-8" inboundTransitions="//@elements.13/@outboundTransitions.1" size="5.0" progress="10">
+    <outboundTransitions target="//@elements.15"/>
+  </elements>
 </org.nasdanika.rigel:Package>

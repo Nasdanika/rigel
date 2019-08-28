@@ -1644,13 +1644,31 @@ public interface RigelPackage extends EPackage {
 	int MILESTONE__PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Target Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__TARGET_DATE = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Missed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__MISSED = PACKAGE_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Milestone</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MILESTONE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
+	int MILESTONE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Milestone</em>' class.
@@ -3028,6 +3046,28 @@ public interface RigelPackage extends EPackage {
 	EAttribute getMilestone_Progress();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Milestone#getTargetDate <em>Target Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Target Date</em>'.
+	 * @see org.nasdanika.rigel.Milestone#getTargetDate()
+	 * @see #getMilestone()
+	 * @generated
+	 */
+	EAttribute getMilestone_TargetDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Milestone#isMissed <em>Missed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Missed</em>'.
+	 * @see org.nasdanika.rigel.Milestone#isMissed()
+	 * @see #getMilestone()
+	 * @generated
+	 */
+	EAttribute getMilestone_Missed();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3661,6 +3701,22 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MILESTONE__PROGRESS = eINSTANCE.getMilestone_Progress();
+
+		/**
+		 * The meta object literal for the '<em><b>Target Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MILESTONE__TARGET_DATE = eINSTANCE.getMilestone_TargetDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Missed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MILESTONE__MISSED = eINSTANCE.getMilestone_Missed();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.

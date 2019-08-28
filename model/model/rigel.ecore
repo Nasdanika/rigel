@@ -346,6 +346,17 @@
         <details key="documentation_ru" value="Суммарная оценка прогресса всей работы (с учетом размера и важности дочерних операций)"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="missed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="True if target date is set, the current date is after the target date and progress is less than 100%"/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Суммарный размер"/>
+        <details key="documentation_ru" value="Сумма размеров всех дочерних элементов работы"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityReference" eSuperTypes="#//PackageElement #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

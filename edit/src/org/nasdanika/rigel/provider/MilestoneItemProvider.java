@@ -50,6 +50,8 @@ public class MilestoneItemProvider extends PackageElementItemProvider {
 			addInputsPropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 			addProgressPropertyDescriptor(object);
+			addTargetDatePropertyDescriptor(object);
+			addMissedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +162,50 @@ public class MilestoneItemProvider extends PackageElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Milestone_targetDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Milestone_targetDate_feature", "_UI_Milestone_type"),
+				 RigelPackage.Literals.MILESTONE__TARGET_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Missed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMissedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Milestone_missed_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Milestone_missed_feature", "_UI_Milestone_type"),
+				 RigelPackage.Literals.MILESTONE__MISSED,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}

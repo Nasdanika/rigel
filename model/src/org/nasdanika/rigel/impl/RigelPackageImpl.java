@@ -932,6 +932,26 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMilestone_TargetDate() {
+		return (EAttribute)milestoneEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMilestone_Missed() {
+		return (EAttribute)milestoneEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCapability() {
 		return capabilityEClass;
 	}
@@ -1073,6 +1093,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		milestoneEClass = createEClass(MILESTONE);
 		createEAttribute(milestoneEClass, MILESTONE__SIZE);
 		createEAttribute(milestoneEClass, MILESTONE__PROGRESS);
+		createEAttribute(milestoneEClass, MILESTONE__TARGET_DATE);
+		createEAttribute(milestoneEClass, MILESTONE__MISSED);
 
 		activityReferenceEClass = createEClass(ACTIVITY_REFERENCE);
 		createEReference(activityReferenceEClass, ACTIVITY_REFERENCE__ACTIVITY);
@@ -1238,6 +1260,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMilestone_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMilestone_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMilestone_TargetDate(), ecorePackage.getEDate(), "targetDate", null, 0, 1, Milestone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMilestone_Missed(), ecorePackage.getEBoolean(), "missed", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityReferenceEClass, ActivityReference.class, "ActivityReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityReference_Activity(), this.getActivity(), null, "activity", null, 0, 1, ActivityReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1541,6 +1565,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Calculated total progress toward achiveing the milestone in percent. "
+		   });
+		addAnnotation
+		  (getMilestone_Missed(),
+		   source,
+		   new String[] {
+			   "documentation", "True if target date is set, the current date is after the target date and progress is less than 100%"
 		   });
 		addAnnotation
 		  (activityReferenceEClass,
@@ -1979,6 +2009,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
 			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430 \u0432\u0441\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u044b (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0438 \u0432\u0430\u0436\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439)"
+		   });
+		addAnnotation
+		  (getMilestone_Missed(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
+			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
 		   });
 		addAnnotation
 		  (activityReferenceEClass,

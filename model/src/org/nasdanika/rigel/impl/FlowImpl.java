@@ -340,7 +340,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public double getTotalSize() {
 		double flowsSize = getElements().stream().filter(e -> e instanceof Flow).mapToDouble(e -> ((Flow) e).getTotalSize()).sum();
-		double activityReferencesSize = getElements().stream().filter(e -> e instanceof ActivityReference).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize()).sum();
+		double activityReferencesSize = getElements().stream().filter(e -> e instanceof ActivityReference && ((ActivityReference) e).getActivity() != null).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize()).sum();
 		return flowsSize + activityReferencesSize;
 	}
 
@@ -358,7 +358,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 		
 		// Worked = size * progress
 		double totalFlowWorked = getElements().stream().filter(e -> e instanceof Flow).mapToDouble(e -> ((Flow) e).getTotalSize() * ((Flow) e).getTotalProgress()).sum();
-		double totalActivityReferenceWorked = getElements().stream().filter(e -> e instanceof ActivityReference).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize() * ((ActivityReference) e).getActivity().getTotalProgress()).sum();
+		double totalActivityReferenceWorked = getElements().stream().filter(e -> e instanceof ActivityReference && ((ActivityReference) e).getActivity() != null).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize() * ((ActivityReference) e).getActivity().getTotalProgress()).sum();
 		double totalSize = getTotalSize();		
 		return totalSize == 0 ? 0 : (int) Math.round((totalFlowWorked + totalActivityReferenceWorked)/totalSize);
 	}

@@ -2,6 +2,8 @@
  */
 package org.nasdanika.rigel;
 
+import java.util.Date;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +21,8 @@ package org.nasdanika.rigel;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.Milestone#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.Milestone#getProgress <em>Progress</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Milestone#getTargetDate <em>Target Date</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.Milestone#isMissed <em>Missed</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getMilestone()
@@ -56,4 +60,41 @@ public interface Milestone extends PackageElement, Source, Target {
 	 * @generated
 	 */
 	int getProgress();
+
+	/**
+	 * Returns the value of the '<em><b>Target Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Target Date</em>' attribute.
+	 * @see #setTargetDate(Date)
+	 * @see org.nasdanika.rigel.RigelPackage#getMilestone_TargetDate()
+	 * @model
+	 * @generated
+	 */
+	Date getTargetDate();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.rigel.Milestone#getTargetDate <em>Target Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target Date</em>' attribute.
+	 * @see #getTargetDate()
+	 * @generated
+	 */
+	void setTargetDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Missed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * True if target date is set, the current date is after the target date and progress is less than 100%
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Missed</em>' attribute.
+	 * @see org.nasdanika.rigel.RigelPackage#getMilestone_Missed()
+	 * @model transient="true" changeable="false" derived="true"
+	 *        annotation="urn:org.nasdanika label_ru='\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440' documentation_ru='\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b'"
+	 * @generated
+	 */
+	boolean isMissed();
 } // Milestone
