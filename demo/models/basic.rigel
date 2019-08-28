@@ -53,4 +53,5 @@
     <outboundTransitions target="//@elements.14"/>
   </elements>
   <elements xsi:type="org.nasdanika.rigel:End" name="End-1" inboundTransitions="//@elements.13/@outboundTransitions.0"/>
+  <elements xsi:type="org.nasdanika.rigel:Milestone" name="Milestone-2"/>
 </org.nasdanika.rigel:Package>

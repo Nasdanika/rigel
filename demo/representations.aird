@@ -145,12 +145,12 @@
           <children xmi:type="notation:Node" xmi:id="_y_OYY8isEem6BYabfj3Bgg" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_y_OYZMisEem6BYabfj3Bgg" x="33" y="6"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_y_PmgMisEem6BYabfj3Bgg" type="3005" element="_y_Jf4MisEem6BYabfj3Bgg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_y_PmgcisEem6BYabfj3Bgg" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_PmgsisEem6BYabfj3Bgg"/>
+          <children xmi:type="notation:Node" xmi:id="__YLRcMkBEemfkPgiPMzxag" type="3017" element="__XkNcckBEemfkPgiPMzxag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__YLRcckBEemfkPgiPMzxag" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YLRcskBEemfkPgiPMzxag"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_y_OYYcisEem6BYabfj3Bgg" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OYYsisEem6BYabfj3Bgg" x="720" y="219" width="32" height="32"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OYYsisEem6BYabfj3Bgg" x="720" y="219" width="30" height="30"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_zVcgAMisEem6BYabfj3Bgg" type="2001" element="_zVXAcMisEem6BYabfj3Bgg">
           <children xmi:type="notation:Node" xmi:id="_zVcgA8isEem6BYabfj3Bgg" type="5002">
@@ -162,6 +162,17 @@
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_zVcgAcisEem6BYabfj3Bgg" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zVcgAsisEem6BYabfj3Bgg" x="828" y="324" width="32" height="32"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_BuUpcMkCEemfkPgiPMzxag" type="2001" element="_BuCVkMkCEemfkPgiPMzxag">
+          <children xmi:type="notation:Node" xmi:id="_BuY64MkCEemfkPgiPMzxag" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_BuY64ckCEemfkPgiPMzxag" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Bub-MMkCEemfkPgiPMzxag" type="3017" element="_BuC8oMkCEemfkPgiPMzxag">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Bub-MckCEemfkPgiPMzxag" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Bub-MskCEemfkPgiPMzxag"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BuUpcckCEemfkPgiPMzxag" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BuUpcskCEemfkPgiPMzxag" x="48" y="312" width="30" height="30"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_SZq-MqgNEemlU5nTB2J-fA"/>
         <edges xmi:type="notation:Edge" xmi:id="_mgHsFKguEemBNPZyAOrTqA" type="4001" element="_mf97EKguEemBNPZyAOrTqA" source="_gy01EKgNEemlU5nTB2J-fA" target="_gy5tkKgNEemlU5nTB2J-fA">
@@ -450,11 +461,19 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='StartNode']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_y_I40MisEem6BYabfj3Bgg" name="Milestone-1" outgoingEdges="_G0B_tsitEem6BYabfj3Bgg" incomingEdges="_F4PF0MitEem6BYabfj3Bgg" width="-1" height="-1" resizeKind="NSEW">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_y_I40MisEem6BYabfj3Bgg" name="Milestone-1" outgoingEdges="_G0B_tsitEem6BYabfj3Bgg" incomingEdges="_F4PF0MitEem6BYabfj3Bgg" width="3" height="3">
       <target xmi:type="org.nasdanika.rigel:Milestone" href="models/basic.rigel#//@elements.13"/>
       <semanticElements xmi:type="org.nasdanika.rigel:Milestone" href="models/basic.rigel#//@elements.13"/>
-      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_y_Jf4MisEem6BYabfj3Bgg" showIcon="false" workspacePath="/org.nasdanika.rigel.design/icons/Milestone.png">
-        <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']/@style"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="__XkNcckBEemfkPgiPMzxag" showIcon="false" color="209,209,209">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_BuCVkMkCEemfkPgiPMzxag" name="Milestone-2" width="3" height="3">
+      <target xmi:type="org.nasdanika.rigel:Milestone" href="models/basic.rigel#//@elements.15"/>
+      <semanticElements xmi:type="org.nasdanika.rigel:Milestone" href="models/basic.rigel#//@elements.15"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_BuC8oMkCEemfkPgiPMzxag" showIcon="false" color="209,209,209">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']"/>
     </ownedDiagramElements>

@@ -26,9 +26,10 @@
           </style>
         </nodeMappings>
         <nodeMappings name="MilestoneNode" label="Milestone" semanticCandidatesExpression="feature:elements" domainClass="rigel::Milestone">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.nasdanika.rigel.design/icons/Milestone.png">
+          <style xsi:type="style:LozengeNodeDescription" showIcon="false">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
         <nodeMappings name="EndNode" label="End" semanticCandidatesExpression="feature:elements" domainClass="rigel::End">
@@ -177,6 +178,21 @@
             </featureCustomizations>
           </vsmElementCustomizations>
           <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.oclAsType(rigel::Activity).totalProgress = 100">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.oclAsType(rigel::Milestone).progress > 0">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.oclAsType(rigel::Milestone).progress = 100">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']/@style" referenceName="color">
+              <value href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="aql:self.oclAsType(rigel::Milestone)->isOverdue()">
             <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='ActivityNode']/@style" referenceName="color">
               <value href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
             </featureCustomizations>
