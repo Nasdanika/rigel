@@ -833,13 +833,31 @@ public interface RigelPackage extends EPackage {
 	int FLOW__PARICIPANTS = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW__TOTAL_SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW__TOTAL_PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
+	int FLOW_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Flow</em>' class.
@@ -1301,6 +1319,24 @@ public interface RigelPackage extends EPackage {
 	int PARTITION__PARICIPANTS = FLOW__PARICIPANTS;
 
 	/**
+	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTITION__TOTAL_SIZE = FLOW__TOTAL_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTITION__TOTAL_PROGRESS = FLOW__TOTAL_PROGRESS;
+
+	/**
 	 * The number of structural features of the '<em>Partition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1409,6 +1445,24 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__PARICIPANTS = FLOW__PARICIPANTS;
 
 	/**
+	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__TOTAL_SIZE = FLOW__TOTAL_SIZE;
+
+	/**
+	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__TOTAL_PROGRESS = FLOW__TOTAL_PROGRESS;
+
+	/**
 	 * The feature id for the '<em><b>Outbound Transitions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1463,31 +1517,13 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__TOTAL_SIZE = FLOW_FEATURE_COUNT + 6;
-
-	/**
-	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__TOTAL_PROGRESS = FLOW_FEATURE_COUNT + 7;
-
-	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 8;
+	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Activity</em>' class.
@@ -1590,13 +1626,31 @@ public interface RigelPackage extends EPackage {
 	int MILESTONE__INPUTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Progress</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Milestone</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MILESTONE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
+	int MILESTONE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Milestone</em>' class.
@@ -2505,6 +2559,28 @@ public interface RigelPackage extends EPackage {
 	EReference getFlow_Paricipants();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Flow#getTotalSize <em>Total Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Size</em>'.
+	 * @see org.nasdanika.rigel.Flow#getTotalSize()
+	 * @see #getFlow()
+	 * @generated
+	 */
+	EAttribute getFlow_TotalSize();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Flow#getTotalProgress <em>Total Progress</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Progress</em>'.
+	 * @see org.nasdanika.rigel.Flow#getTotalProgress()
+	 * @see #getFlow()
+	 * @generated
+	 */
+	EAttribute getFlow_TotalProgress();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.FlowElement <em>Flow Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2639,28 +2715,6 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActivity_Progress();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getTotalSize <em>Total Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Total Size</em>'.
-	 * @see org.nasdanika.rigel.Activity#getTotalSize()
-	 * @see #getActivity()
-	 * @generated
-	 */
-	EAttribute getActivity_TotalSize();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Activity#getTotalProgress <em>Total Progress</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Total Progress</em>'.
-	 * @see org.nasdanika.rigel.Activity#getTotalProgress()
-	 * @see #getActivity()
-	 * @generated
-	 */
-	EAttribute getActivity_TotalProgress();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.ActivityReference <em>Activity Reference</em>}'.
@@ -2952,6 +3006,28 @@ public interface RigelPackage extends EPackage {
 	EClass getMilestone();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Milestone#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see org.nasdanika.rigel.Milestone#getSize()
+	 * @see #getMilestone()
+	 * @generated
+	 */
+	EAttribute getMilestone_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.rigel.Milestone#getProgress <em>Progress</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Progress</em>'.
+	 * @see org.nasdanika.rigel.Milestone#getProgress()
+	 * @see #getMilestone()
+	 * @generated
+	 */
+	EAttribute getMilestone_Progress();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3205,6 +3281,22 @@ public interface RigelPackage extends EPackage {
 		EReference FLOW__PARICIPANTS = eINSTANCE.getFlow_Paricipants();
 
 		/**
+		 * The meta object literal for the '<em><b>Total Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLOW__TOTAL_SIZE = eINSTANCE.getFlow_TotalSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Total Progress</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLOW__TOTAL_PROGRESS = eINSTANCE.getFlow_TotalProgress();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.FlowElementImpl <em>Flow Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3321,22 +3413,6 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTIVITY__PROGRESS = eINSTANCE.getActivity_Progress();
-
-		/**
-		 * The meta object literal for the '<em><b>Total Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTIVITY__TOTAL_SIZE = eINSTANCE.getActivity_TotalSize();
-
-		/**
-		 * The meta object literal for the '<em><b>Total Progress</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ACTIVITY__TOTAL_PROGRESS = eINSTANCE.getActivity_TotalProgress();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
@@ -3569,6 +3645,22 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MILESTONE = eINSTANCE.getMilestone();
+
+		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MILESTONE__SIZE = eINSTANCE.getMilestone_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Progress</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MILESTONE__PROGRESS = eINSTANCE.getMilestone_Progress();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.Capability <em>Capability</em>}' class.

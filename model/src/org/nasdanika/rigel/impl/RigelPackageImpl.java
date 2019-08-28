@@ -492,6 +492,26 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getFlow_TotalSize() {
+		return (EAttribute)flowEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFlow_TotalProgress() {
+		return (EAttribute)flowEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFlowElement() {
 		return flowElementEClass;
 	}
@@ -614,26 +634,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	@Override
 	public EAttribute getActivity_Progress() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getActivity_TotalSize() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getActivity_TotalProgress() {
-		return (EAttribute)activityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -912,6 +912,26 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMilestone_Size() {
+		return (EAttribute)milestoneEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMilestone_Progress() {
+		return (EAttribute)milestoneEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCapability() {
 		return capabilityEClass;
 	}
@@ -1027,6 +1047,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		flowEClass = createEClass(FLOW);
 		createEReference(flowEClass, FLOW__ELEMENTS);
 		createEReference(flowEClass, FLOW__PARICIPANTS);
+		createEAttribute(flowEClass, FLOW__TOTAL_SIZE);
+		createEAttribute(flowEClass, FLOW__TOTAL_PROGRESS);
 
 		flowElementEClass = createEClass(FLOW_ELEMENT);
 
@@ -1047,10 +1069,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityEClass = createEClass(ACTIVITY);
 		createEAttribute(activityEClass, ACTIVITY__SIZE);
 		createEAttribute(activityEClass, ACTIVITY__PROGRESS);
-		createEAttribute(activityEClass, ACTIVITY__TOTAL_SIZE);
-		createEAttribute(activityEClass, ACTIVITY__TOTAL_PROGRESS);
 
 		milestoneEClass = createEClass(MILESTONE);
+		createEAttribute(milestoneEClass, MILESTONE__SIZE);
+		createEAttribute(milestoneEClass, MILESTONE__PROGRESS);
 
 		activityReferenceEClass = createEClass(ACTIVITY_REFERENCE);
 		createEReference(activityReferenceEClass, ACTIVITY_REFERENCE__ACTIVITY);
@@ -1190,6 +1212,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFlow_Paricipants(), this.getParticipant(), this.getParticipant_Flows(), "paricipants", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFlow_TotalSize(), ecorePackage.getEDouble(), "totalSize", null, 0, 1, Flow.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFlow_TotalProgress(), ecorePackage.getEInt(), "totalProgress", null, 0, 1, Flow.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowElementEClass, FlowElement.class, "FlowElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1210,10 +1234,10 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivity_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_TotalSize(), ecorePackage.getEDouble(), "totalSize", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEAttribute(getActivity_TotalProgress(), ecorePackage.getEInt(), "totalProgress", null, 0, 1, Activity.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMilestone_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMilestone_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(activityReferenceEClass, ActivityReference.class, "ActivityReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getActivityReference_Activity(), this.getActivity(), null, "activity", null, 0, 1, ActivityReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1411,6 +1435,18 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "One or more actors participate in completion of a flow."
 		   });
 		addAnnotation
+		  (getFlow_TotalSize(),
+		   source,
+		   new String[] {
+			   "documentation", "The sum of total sizes of this flow children plus the size of self if instance of activity."
+		   });
+		addAnnotation
+		  (getFlow_TotalProgress(),
+		   source,
+		   new String[] {
+			   "documentation", "Calculated total flow progress in percent. "
+		   });
+		addAnnotation
 		  (flowElementEClass,
 		   source,
 		   new String[] {
@@ -1489,22 +1525,22 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation", "Activity progress in percent. Value between 0 and 100. Progress can be used in \"instance\" models which are used to model and track execution of an actual effort as opposed to \"template\" models which explain steps to complete an effort."
 		   });
 		addAnnotation
-		  (getActivity_TotalSize(),
-		   source,
-		   new String[] {
-			   "documentation", "The sum of sizes of this activity and its children."
-		   });
-		addAnnotation
-		  (getActivity_TotalProgress(),
-		   source,
-		   new String[] {
-			   "documentation", "Calculated total activity progress in percent. "
-		   });
-		addAnnotation
 		  (milestoneEClass,
 		   source,
 		   new String[] {
 			   "documentation", "A milestone shows an important achievement in a flow. \nThe milestones represent a sequence of events that incrementally build up until flow completion."
+		   });
+		addAnnotation
+		  (getMilestone_Size(),
+		   source,
+		   new String[] {
+			   "documentation", "The sum of size of all activities which need to be completed to reach this milestone from the start of the previous milestone(s)."
+		   });
+		addAnnotation
+		  (getMilestone_Progress(),
+		   source,
+		   new String[] {
+			   "documentation", "Calculated total progress toward achiveing the milestone in percent. "
 		   });
 		addAnnotation
 		  (activityReferenceEClass,
@@ -1833,6 +1869,20 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u041e\u0434\u0438\u043d \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u0439, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0432 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b."
 		   });
 		addAnnotation
+		  (getFlow_TotalSize(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
+			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
+		   });
+		addAnnotation
+		  (getFlow_TotalProgress(),
+		   source,
+		   new String[] {
+			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
+			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430 \u0432\u0441\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u044b (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0438 \u0432\u0430\u0436\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439)"
+		   });
+		addAnnotation
 		  (flowElementEClass,
 		   source,
 		   new String[] {
@@ -1917,14 +1967,14 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u041e\u0446\u0435\u043d\u043a\u0430 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b/ \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445. \u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043c\u0435\u0436\u0434\u0443 0 \u0438 100. \n\n\n\u041f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d \u0434\u043b\u044f \u043e\u0446\u0435\u043d\u043a\u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430. \n\n\u0414\u043b\u044f \u044d\u0442\u043e\u0433\u043e \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0441\u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0448\u0430\u0431\u043b\u043e\u043d\u0430, \u043e\u043f\u0438\u0441\u044b\u0432\u0430\u044e\u0449\u0435\u0433\u043e \u044d\u0442\u0430\u043f\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \"\u0414\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u044d\u043a\u0437\u0435\u043c\u043f\u043b\u044f\u0440\" \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430, \u0432 \u043a\u043e\u0442\u043e\u0440\u043e\u043c \u043e\u0446\u0435\u043d\u0438\u0432\u0430\u044e\u0442\u0441\u044f \u0444\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0437\u0430\u0442\u0440\u0430\u0442\u044b \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u043e\u0432, \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u0432, \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0438 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f. \n\n"
 		   });
 		addAnnotation
-		  (getActivity_TotalSize(),
+		  (getMilestone_Size(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
 			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
 		   });
 		addAnnotation
-		  (getActivity_TotalProgress(),
+		  (getMilestone_Progress(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",

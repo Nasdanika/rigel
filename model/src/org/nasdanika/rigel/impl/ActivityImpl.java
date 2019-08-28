@@ -5,17 +5,14 @@ package org.nasdanika.rigel.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.nasdanika.rigel.Activity;
-import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Flow;
+import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
 import org.nasdanika.rigel.Target;
@@ -35,8 +32,6 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getProgress <em>Progress</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getTotalSize <em>Total Size</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getTotalProgress <em>Total Progress</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,25 +55,6 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	 * @ordered
 	 */
 	protected static final int PROGRESS_EDEFAULT = 0;
-	/**
-	 * The default value of the '{@link #getTotalSize() <em>Total Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalSize()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double TOTAL_SIZE_EDEFAULT = 0.0;
-	/**
-	 * The default value of the '{@link #getTotalProgress() <em>Total Progress</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTotalProgress()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int TOTAL_PROGRESS_EDEFAULT = 0;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -189,7 +165,7 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	 */
 	@Override
 	public double getTotalSize() {
-		return getSize() + getElements().stream().filter(e -> e instanceof Activity).mapToDouble(e -> ((Activity) e).getTotalSize()).sum();
+		return super.getTotalSize() + getSize();
 	}
 
 	/**
@@ -199,13 +175,13 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	 */
 	@Override
 	public int getTotalProgress() {
-		boolean hasChildActivities = getElements().stream().filter(e -> e instanceof Activity).count() > 0;
-		if (!hasChildActivities) {
+		boolean hasChildFlows = getElements().stream().filter(e -> e instanceof Flow).count() > 0;
+		if (!hasChildFlows) {
 			return getProgress();
 		}
 		
 		// Worked = size * progress
-		double totalWorked = getSize()*getProgress() + getElements().stream().filter(e -> e instanceof Activity).mapToDouble(e -> ((Activity) e).getTotalSize() * ((Activity) e).getTotalProgress()).sum();
+		double totalWorked = getSize()*getProgress() + super.getTotalSize() * super.getTotalProgress();
 		double totalSize = getTotalSize();		
 		return totalSize == 0 ? 0 : (int) Math.round(totalWorked/totalSize);
 	}
@@ -269,10 +245,6 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getSize();
 			case RigelPackage.ACTIVITY__PROGRESS:
 				return getProgress();
-			case RigelPackage.ACTIVITY__TOTAL_SIZE:
-				return getTotalSize();
-			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
-				return getTotalProgress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,10 +334,6 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getSize() != SIZE_EDEFAULT;
 			case RigelPackage.ACTIVITY__PROGRESS:
 				return getProgress() != PROGRESS_EDEFAULT;
-			case RigelPackage.ACTIVITY__TOTAL_SIZE:
-				return getTotalSize() != TOTAL_SIZE_EDEFAULT;
-			case RigelPackage.ACTIVITY__TOTAL_PROGRESS:
-				return getTotalProgress() != TOTAL_PROGRESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

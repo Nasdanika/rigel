@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.nasdanika.rigel.Flow;
@@ -50,6 +51,8 @@ public class FlowItemProvider extends PackageElementItemProvider {
 			addOwnersPropertyDescriptor(object);
 			addRequiredCapabilitiesPropertyDescriptor(object);
 			addParicipantsPropertyDescriptor(object);
+			addTotalSizePropertyDescriptor(object);
+			addTotalProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,6 +119,50 @@ public class FlowItemProvider extends PackageElementItemProvider {
 		   null,
 		   null,
 		   null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Flow_totalSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Flow_totalSize_feature", "_UI_Flow_type"),
+				 RigelPackage.Literals.FLOW__TOTAL_SIZE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Total Progress feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTotalProgressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Flow_totalProgress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Flow_totalProgress_feature", "_UI_Flow_type"),
+				 RigelPackage.Literals.FLOW__TOTAL_PROGRESS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -186,6 +233,10 @@ public class FlowItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Flow.class)) {
+			case RigelPackage.FLOW__TOTAL_SIZE:
+			case RigelPackage.FLOW__TOTAL_PROGRESS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case RigelPackage.FLOW__ISSUES:
 			case RigelPackage.FLOW__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

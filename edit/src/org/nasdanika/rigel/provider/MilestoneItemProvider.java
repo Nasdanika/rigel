@@ -12,6 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -47,6 +48,8 @@ public class MilestoneItemProvider extends PackageElementItemProvider {
 			addOutputsPropertyDescriptor(object);
 			addInboundTransitionsPropertyDescriptor(object);
 			addInputsPropertyDescriptor(object);
+			addSizePropertyDescriptor(object);
+			addProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -113,6 +116,50 @@ public class MilestoneItemProvider extends PackageElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Milestone_size_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Milestone_size_feature", "_UI_Milestone_type"),
+				 RigelPackage.Literals.MILESTONE__SIZE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Progress feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addProgressPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Milestone_progress_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Milestone_progress_feature", "_UI_Milestone_type"),
+				 RigelPackage.Literals.MILESTONE__PROGRESS,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}

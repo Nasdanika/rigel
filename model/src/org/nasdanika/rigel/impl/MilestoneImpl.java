@@ -3,17 +3,18 @@
 package org.nasdanika.rigel.impl;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Artifact;
+import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.RigelPackage;
@@ -33,11 +34,32 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getInboundTransitions <em>Inbound Transitions</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.MilestoneImpl#getProgress <em>Progress</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MilestoneImpl extends PackageElementImpl implements Milestone {
+	/**
+	 * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SIZE_EDEFAULT = 0.0;
+	/**
+	 * The default value of the '{@link #getProgress() <em>Progress</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProgress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PROGRESS_EDEFAULT = 0;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,6 +122,47 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 	public EList<Artifact> getInputs() {
 		return (EList<Artifact>)eDynamicGet(RigelPackage.MILESTONE__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
 	}
+	
+	/**
+	 * Traverses 
+	 * @param target
+	 * @param flows
+	 */
+	protected Set<Flow> collectIboundFlows(Target target, Set<Flow> flows) {
+		for (Transition it: target.getInboundTransitions()) {
+			EObject source = it.eContainer();
+			if (source instanceof Flow && flows.add((Flow) source) && source instanceof Target) {
+				collectIboundFlows((Target) source, flows);
+			}
+			if (source instanceof ActivityReference && flows.add(((ActivityReference) source).getActivity())) {
+				collectIboundFlows((ActivityReference) source, flows);
+			}
+		}
+		return flows;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public double getSize() {
+		return collectIboundFlows(this, new HashSet<Flow>()).stream().mapToDouble(Flow::getTotalSize).sum();
+	}
+		
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int getProgress() {
+		Set<Flow> inboundFlows = collectIboundFlows(this, new HashSet<Flow>());
+		double size = inboundFlows.stream().mapToDouble(Flow::getTotalSize).sum();
+		double worked = inboundFlows.stream().mapToDouble(e -> e.getTotalSize() * e.getTotalProgress()).sum();
+		return size == 0 ? 0 : (int) Math.round(worked/size);
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,6 +219,10 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				return getInboundTransitions();
 			case RigelPackage.MILESTONE__INPUTS:
 				return getInputs();
+			case RigelPackage.MILESTONE__SIZE:
+				return getSize();
+			case RigelPackage.MILESTONE__PROGRESS:
+				return getProgress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +296,10 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 				return !getInboundTransitions().isEmpty();
 			case RigelPackage.MILESTONE__INPUTS:
 				return !getInputs().isEmpty();
+			case RigelPackage.MILESTONE__SIZE:
+				return getSize() != SIZE_EDEFAULT;
+			case RigelPackage.MILESTONE__PROGRESS:
+				return getProgress() != PROGRESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

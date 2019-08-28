@@ -184,6 +184,26 @@
         <details key="documentation_ru" value="Один или более исполнителей, участвующих в выполнении работы."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The sum of total sizes of this flow children plus the size of self if instance of activity."/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Суммарный размер"/>
+        <details key="documentation_ru" value="Сумма размеров всех дочерних элементов работы"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalProgress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Calculated total flow progress in percent. "/>
+      </eAnnotations>
+      <eAnnotations source="urn:org.nasdanika">
+        <details key="label_ru" value="Суммарный прогресс"/>
+        <details key="documentation_ru" value="Суммарная оценка прогресса всей работы (с учетом размера и важности дочерних операций)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" eSuperTypes="#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -301,31 +321,31 @@
         <details key="documentation_ru" value="Оценка степени выполнения работы/ операции в процентах. Значение между 0 и 100. &#xA;&#xA;&#xA;Прогресс может быть использован для оценки практического выполнения рабочего потока. &#xA;&#xA;Для этого на основании смоделированного шаблона, описывающего этапы выполнения работы создается &quot;Действующий экземпляр&quot; рабочего потока, в котором оцениваются фактические затраты артефактов, материалов, ресурсов и прогресс выполнения. &#xA;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Milestone" eSuperTypes="#//PackageElement #//Source #//Target">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A milestone shows an important achievement in a flow. &#xA;The milestones represent a sequence of events that incrementally build up until flow completion."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The sum of sizes of this activity and its children."/>
+        <details key="documentation" value="The sum of size of all activities which need to be completed to reach this milestone from the start of the previous milestone(s)."/>
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
         <details key="label_ru" value="Суммарный размер"/>
         <details key="documentation_ru" value="Сумма размеров всех дочерних элементов работы"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalProgress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="progress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Calculated total activity progress in percent. "/>
+        <details key="documentation" value="Calculated total progress toward achiveing the milestone in percent. "/>
       </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
         <details key="label_ru" value="Суммарный прогресс"/>
         <details key="documentation_ru" value="Суммарная оценка прогресса всей работы (с учетом размера и важности дочерних операций)"/>
       </eAnnotations>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Milestone" eSuperTypes="#//PackageElement #//Source #//Target">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A milestone shows an important achievement in a flow. &#xA;The milestones represent a sequence of events that incrementally build up until flow completion."/>
-    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityReference" eSuperTypes="#//PackageElement #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -5,13 +5,11 @@ package org.nasdanika.rigel.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.Engineer;
 import org.nasdanika.rigel.EngineeredElement;
@@ -35,11 +33,32 @@ import org.nasdanika.rigel.RigelPackage;
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getParicipants <em>Paricipants</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getTotalSize <em>Total Size</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getTotalProgress <em>Total Progress</em>}</li>
  * </ul>
  *
  * @generated
  */
 public abstract class FlowImpl extends PackageElementImpl implements Flow {
+	/**
+	 * The default value of the '{@link #getTotalSize() <em>Total Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double TOTAL_SIZE_EDEFAULT = 0.0;
+	/**
+	 * The default value of the '{@link #getTotalProgress() <em>Total Progress</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalProgress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TOTAL_PROGRESS_EDEFAULT = 0;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -173,6 +192,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 				return getElements();
 			case RigelPackage.FLOW__PARICIPANTS:
 				return getParicipants();
+			case RigelPackage.FLOW__TOTAL_SIZE:
+				return getTotalSize();
+			case RigelPackage.FLOW__TOTAL_PROGRESS:
+				return getTotalProgress();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,6 +278,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 				return !getElements().isEmpty();
 			case RigelPackage.FLOW__PARICIPANTS:
 				return !getParicipants().isEmpty();
+			case RigelPackage.FLOW__TOTAL_SIZE:
+				return getTotalSize() != TOTAL_SIZE_EDEFAULT;
+			case RigelPackage.FLOW__TOTAL_PROGRESS:
+				return getTotalProgress() != TOTAL_PROGRESS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -304,5 +331,37 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public double getTotalSize() {
+		double flowsSize = getElements().stream().filter(e -> e instanceof Flow).mapToDouble(e -> ((Flow) e).getTotalSize()).sum();
+		double activityReferencesSize = getElements().stream().filter(e -> e instanceof ActivityReference).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize()).sum();
+		return flowsSize + activityReferencesSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public int getTotalProgress() {
+		boolean hasChildFlows = getElements().stream().filter(e -> e instanceof Flow).count() > 0;
+		if (!hasChildFlows) {
+			return 0;
+		}
+		
+		// Worked = size * progress
+		double totalFlowWorked = getElements().stream().filter(e -> e instanceof Flow).mapToDouble(e -> ((Flow) e).getTotalSize() * ((Flow) e).getTotalProgress()).sum();
+		double totalActivityReferenceWorked = getElements().stream().filter(e -> e instanceof ActivityReference).mapToDouble(e -> ((ActivityReference) e).getActivity().getTotalSize() * ((ActivityReference) e).getActivity().getTotalProgress()).sum();
+		double totalSize = getTotalSize();		
+		return totalSize == 0 ? 0 : (int) Math.round((totalFlowWorked + totalActivityReferenceWorked)/totalSize);
+	}
+	
 
 } //FlowImpl
