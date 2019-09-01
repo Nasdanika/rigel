@@ -1,25 +1,15 @@
 package org.nasdanika.rigel.tests;
 
 import java.io.File;
-import java.io.InputStream;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.sirius.business.api.query.DViewQuery;
-import org.eclipse.sirius.business.api.session.Session;
-import org.eclipse.sirius.business.api.session.factory.SessionFactory;
-import org.eclipse.sirius.common.tools.api.resource.ImageFileFormat;
-import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
-import org.eclipse.sirius.ui.business.api.dialect.ExportFormat;
-import org.eclipse.sirius.ui.business.api.dialect.ExportFormat.ExportDocumentFormat;
-import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.junit.Test;
 import org.nasdanika.common.PrintStreamProgressMonitor;
 import org.nasdanika.common.ProgressEntry;
 import org.nasdanika.common.ProgressMonitor;
 import org.nasdanika.common.ResourceLocator;
+import org.nasdanika.common.resources.BinaryEntityContainer;
 import org.nasdanika.common.resources.Container;
 import org.nasdanika.common.resources.FileSystemContainer;
 import org.nasdanika.emf.EModelElementAnnotationResourceLocator;
@@ -42,21 +32,18 @@ public class GenerateModelDocumentation extends TestsBase {
 	public void testEcoreDocumentation() throws Exception {		
 		EcoreDocumentationGenerator generator = new EcoreDocumentationGenerator("Nasdanika Rigel Model", null, null, false);
 		generator.loadGenModel(MODEL_URI);
-		Container<InputStream> fsc = new FileSystemContainer(new File("target/model-doc"));
-		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
-		ProgressEntry pe = new ProgressEntry("Generating Rigel Model Documentation", 0);
-		Container<Object> container = fsc.adapt(null, encoder, null);
-		generator.generate(container, progressMonitor.compose(pe));
-		org.nasdanika.common.resources.Entity<Object> progressFile = container.getEntity("progress-report.json");
-		if (progressFile == null) {
-			System.out.println(pe);
-		} else {
-			progressFile.setState(pe.toString(), progressMonitor);
+		BinaryEntityContainer fsc = new FileSystemContainer(new File("target/model-doc"));
+		try (ProgressMonitor progressMonitor = new PrintStreamProgressMonitor()) {
+			ProgressEntry pe = new ProgressEntry("Generating Rigel Model Documentation", 0);
+			Container<Object> container = fsc.stateAdapter().adapt(null, encoder);
+			generator.generate(container, progressMonitor.compose(pe));
+			container.put("progress-report.json", pe.toString(), progressMonitor.split("Writing progress-report.json", 1));
+			
+			// HTML report
+			ProgressReportGenerator prg = new ProgressReportGenerator("Documentation generation", pe);
+			Container<Object> progressReportContainer = container.getContainer("progress-report", progressMonitor.split("Getting progress report container", 1));
+			prg.generate(progressReportContainer, progressMonitor.split("Writing progress report", 1));
 		}
-		
-		// HTML report
-		ProgressReportGenerator prg = new ProgressReportGenerator("Documentation generation", pe);
-		prg.generate(container.getContainer("progress-report"), progressMonitor);		
 	}
 
 	/**
@@ -87,9 +74,9 @@ public class GenerateModelDocumentation extends TestsBase {
 			
 		};
 		generator.loadGenModel(MODEL_URI);
-		Container<InputStream> fsc = new FileSystemContainer(new File("target/ru/model-doc"));
+		BinaryEntityContainer fsc = new FileSystemContainer(new File("target/ru/model-doc"));
 		ProgressMonitor progressMonitor = new PrintStreamProgressMonitor();
-		generator.generate(fsc.adapt(null, encoder, null), progressMonitor);		
+		generator.generate(fsc.stateAdapter().adapt(null, encoder), progressMonitor);		
 	}	
 	
 	@Test
