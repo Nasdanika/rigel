@@ -43,6 +43,11 @@
           <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
         </computedStyleDescriptions>
+        <computedStyleDescriptions xmi:type="style:LozengeNodeDescription" xmi:id="_fzjfsMzIEemoCpUtIma7OA" showIcon="false">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+        </computedStyleDescriptions>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_SZq-MKgNEemlU5nTB2J-fA" source="GMF_DIAGRAMS">
@@ -150,9 +155,9 @@
           <children xmi:type="notation:Node" xmi:id="_y_OYY8isEem6BYabfj3Bgg" type="5002">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_y_OYZMisEem6BYabfj3Bgg" x="33" y="6"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_lyZeBsmIEem507wuY_ESlg" type="3017" element="_lyZd0MmIEem507wuY_ESlg">
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_lyZeB8mIEem507wuY_ESlg" fontName="Segoe UI"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyZeCMmIEem507wuY_ESlg"/>
+          <children xmi:type="notation:Node" xmi:id="_f0ALoMzIEemoCpUtIma7OA" type="3017" element="_fzjfsszIEemoCpUtIma7OA">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_f0ALoczIEemoCpUtIma7OA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f0ALoszIEemoCpUtIma7OA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_y_OYYcisEem6BYabfj3Bgg" fontName="Segoe UI" fontHeight="8"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_y_OYYsisEem6BYabfj3Bgg" x="840" y="371" width="30" height="30"/>
@@ -518,7 +523,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Lozenge" uid="_lyZd0MmIEem507wuY_ESlg" showIcon="false" description="_7gZ3wMmHEem507wuY_ESlg"/>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_fzjfsszIEemoCpUtIma7OA" showIcon="false" description="_fzjfsMzIEemoCpUtIma7OA" color="239,41,41"/>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.nasdanika.rigel.design/description/rigel.odesign#//@ownedViewpoints[name='RigelViewpoint']/@ownedRepresentations[name='PackageDiagram']/@defaultLayer/@nodeMappings[name='MilestoneNode']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNode" uid="_BuCVkMkCEemfkPgiPMzxag" name="Milestone-2" incomingEdges="_EfboRsmIEem507wuY_ESlg" width="3" height="3">
