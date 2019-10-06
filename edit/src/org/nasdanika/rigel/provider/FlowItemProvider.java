@@ -256,7 +256,7 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		collectEReferenceChildDescriptors(newChildDescriptors, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES);		
+		collectEReferenceChildDescriptors(object, newChildDescriptors, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES);		
 
 		newChildDescriptors.add
 			(createChildParameter
