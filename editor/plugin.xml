@@ -30,7 +30,15 @@
             icon="icons/full/obj16/RigelModelFile.png"
             extensions="rigel"
             class="org.nasdanika.rigel.presentation.RigelEditor"
-            contributorClass="org.nasdanika.rigel.presentation.RigelActionBarContributor">
+            contributorClass="org.nasdanika.emf.presentation.NasdanikaActionBarContributor">
+      </editor>
+      <editor
+            id="org.nasdanika.rigel.presentation.RigelSiriusEditorID"
+            name="%_UI_RigelSiriusEditor_label"
+            icon="icons/full/obj16/RigelModelFile.png"
+            extensions="rigel"
+            class="org.nasdanika.emf.presentation.NasdanikaSiriusEditor"
+            contributorClass="org.nasdanika.emf.presentation.NasdanikaActionBarContributor">
       </editor>
    </extension>
 
