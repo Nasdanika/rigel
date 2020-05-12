@@ -9,15 +9,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.ActivityReference;
-import org.nasdanika.rigel.Capability;
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.FlowElement;
-import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Participant;
-import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
@@ -30,7 +26,6 @@ import org.nasdanika.rigel.RigelPackage;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getIssues <em>Issues</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getRequiredCapabilities <em>Required Capabilities</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getParicipants <em>Paricipants</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.FlowImpl#getTotalSize <em>Total Size</em>}</li>
@@ -85,8 +80,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+	public EList<org.nasdanika.engineering.Engineer> getOwners() {
+		return (EList<org.nasdanika.engineering.Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -96,19 +91,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Capability> getRequiredCapabilities() {
-		return (EList<Capability>)eDynamicGet(RigelPackage.FLOW__REQUIRED_CAPABILITIES, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES, true, true);
+	public EList<org.nasdanika.engineering.Issue> getIssues() {
+		return (EList<org.nasdanika.engineering.Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -142,10 +126,6 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredCapabilities()).basicAdd(otherEnd, msgs);
 			case RigelPackage.FLOW__PARICIPANTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getParicipants()).basicAdd(otherEnd, msgs);
 		}
@@ -160,12 +140,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.FLOW__OWNERS:
-				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.FLOW__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				return ((InternalEList<?>)getRequiredCapabilities()).basicRemove(otherEnd, msgs);
 			case RigelPackage.FLOW__ELEMENTS:
 				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
 			case RigelPackage.FLOW__PARICIPANTS:
@@ -186,8 +162,6 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 				return getOwners();
 			case RigelPackage.FLOW__ISSUES:
 				return getIssues();
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				return getRequiredCapabilities();
 			case RigelPackage.FLOW__ELEMENTS:
 				return getElements();
 			case RigelPackage.FLOW__PARICIPANTS:
@@ -211,15 +185,11 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 		switch (featureID) {
 			case RigelPackage.FLOW__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends Engineer>)newValue);
+				getOwners().addAll((Collection<? extends org.nasdanika.engineering.Engineer>)newValue);
 				return;
 			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
-				getIssues().addAll((Collection<? extends Issue>)newValue);
-				return;
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				getRequiredCapabilities().clear();
-				getRequiredCapabilities().addAll((Collection<? extends Capability>)newValue);
+				getIssues().addAll((Collection<? extends org.nasdanika.engineering.Issue>)newValue);
 				return;
 			case RigelPackage.FLOW__ELEMENTS:
 				getElements().clear();
@@ -247,9 +217,6 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
 				return;
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				getRequiredCapabilities().clear();
-				return;
 			case RigelPackage.FLOW__ELEMENTS:
 				getElements().clear();
 				return;
@@ -272,8 +239,6 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 				return !getOwners().isEmpty();
 			case RigelPackage.FLOW__ISSUES:
 				return !getIssues().isEmpty();
-			case RigelPackage.FLOW__REQUIRED_CAPABILITIES:
-				return !getRequiredCapabilities().isEmpty();
 			case RigelPackage.FLOW__ELEMENTS:
 				return !getElements().isEmpty();
 			case RigelPackage.FLOW__PARICIPANTS:
@@ -293,16 +258,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.FLOW__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
-				case RigelPackage.FLOW__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
-				default: return -1;
-			}
-		}
-		if (baseClass == Requirement.class) {
-			switch (derivedFeatureID) {
-				case RigelPackage.FLOW__REQUIRED_CAPABILITIES: return RigelPackage.REQUIREMENT__REQUIRED_CAPABILITIES;
+				case RigelPackage.FLOW__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
+				case RigelPackage.FLOW__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
 		}
@@ -316,16 +275,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.FLOW__OWNERS;
-				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;
-				default: return -1;
-			}
-		}
-		if (baseClass == Requirement.class) {
-			switch (baseFeatureID) {
-				case RigelPackage.REQUIREMENT__REQUIRED_CAPABILITIES: return RigelPackage.FLOW__REQUIRED_CAPABILITIES;
+				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.FLOW__OWNERS;
+				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;
 				default: return -1;
 			}
 		}

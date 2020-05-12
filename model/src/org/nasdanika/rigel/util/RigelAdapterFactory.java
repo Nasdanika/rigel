@@ -9,6 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.nasdanika.ncore.NamedElement;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.IPackage;
@@ -16,18 +17,12 @@ import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
-import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.End;
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
-import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.Milestone;
-import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
-import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -92,16 +87,8 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	protected RigelSwitch<Adapter> modelSwitch =
 		new RigelSwitch<Adapter>() {
 			@Override
-			public Adapter caseModelElement(ModelElement object) {
-				return createModelElementAdapter();
-			}
-			@Override
 			public Adapter casePackageElement(PackageElement object) {
 				return createPackageElementAdapter();
-			}
-			@Override
-			public Adapter caseEngineeredElement(EngineeredElement object) {
-				return createEngineeredElementAdapter();
 			}
 			@Override
 			public Adapter caseIPackage(IPackage object) {
@@ -118,14 +105,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseActor(Actor object) {
 				return createActorAdapter();
-			}
-			@Override
-			public Adapter caseCapability(Capability object) {
-				return createCapabilityAdapter();
-			}
-			@Override
-			public Adapter caseRequirement(Requirement object) {
-				return createRequirementAdapter();
 			}
 			@Override
 			public Adapter caseFlow(Flow object) {
@@ -184,12 +163,16 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationAdapter();
 			}
 			@Override
-			public Adapter caseEngineer(Engineer object) {
-				return createEngineerAdapter();
+			public Adapter caseModelElement(org.nasdanika.ncore.ModelElement object) {
+				return createModelElementAdapter();
 			}
 			@Override
-			public Adapter caseIssue(Issue object) {
-				return createIssueAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseEngineeredElement(org.nasdanika.engineering.EngineeredElement object) {
+				return createEngineeredElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -212,16 +195,30 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.ModelElement <em>Model Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.ModelElement <em>Model Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.ModelElement
+	 * @see org.nasdanika.ncore.ModelElement
 	 * @generated
 	 */
 	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -240,13 +237,13 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.EngineeredElement <em>Engineered Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.engineering.EngineeredElement <em>Engineered Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.EngineeredElement
+	 * @see org.nasdanika.engineering.EngineeredElement
 	 * @generated
 	 */
 	public Adapter createEngineeredElementAdapter() {
@@ -492,34 +489,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Engineer <em>Engineer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.Engineer
-	 * @generated
-	 */
-	public Adapter createEngineerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Issue <em>Issue</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.Issue
-	 * @generated
-	 */
-	public Adapter createIssueAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Milestone <em>Milestone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -530,34 +499,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMilestoneAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Capability <em>Capability</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.Capability
-	 * @generated
-	 */
-	public Adapter createCapabilityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Requirement <em>Requirement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.rigel.Requirement
-	 * @generated
-	 */
-	public Adapter createRequirementAdapter() {
 		return null;
 	}
 

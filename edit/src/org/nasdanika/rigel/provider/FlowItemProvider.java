@@ -8,14 +8,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
+import org.nasdanika.engineering.EngineeringFactory;
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -49,7 +48,6 @@ public class FlowItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnersPropertyDescriptor(object);
-			addRequiredCapabilitiesPropertyDescriptor(object);
 			addParicipantsPropertyDescriptor(object);
 			addTotalSizePropertyDescriptor(object);
 			addTotalProgressPropertyDescriptor(object);
@@ -70,31 +68,10 @@ public class FlowItemProvider extends PackageElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EngineeredElement_owners_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owners_feature", "_UI_EngineeredElement_type"),
-				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
+				 EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
 				 true,
 				 false,
 				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Required Capabilities feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addRequiredCapabilitiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor(
-				 getResourceLocator(),
-				 getString("_UI_Requirement_requiredCapabilities_feature"),
-				 RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null,
 				 null));
@@ -177,7 +154,7 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
+			childrenFeatures.add(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.FLOW__ELEMENTS);
 		}
 		return childrenFeatures;
@@ -256,12 +233,10 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		collectEReferenceChildDescriptors(object, newChildDescriptors, RigelPackage.Literals.REQUIREMENT__REQUIRED_CAPABILITIES);		
-
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
-				 RigelFactory.eINSTANCE.createIssue()));
+				(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 EngineeringFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -3,7 +3,6 @@
 package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -17,10 +16,6 @@ import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.Issue;
-import org.nasdanika.rigel.IssueImportance;
-import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.Partition;
 import org.nasdanika.rigel.Resource;
@@ -85,44 +80,8 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.RESOURCE: return createResource();
 			case RigelPackage.TRANSITION: return createTransition();
 			case RigelPackage.ASSOCIATION: return createAssociation();
-			case RigelPackage.ENGINEER: return createEngineer();
-			case RigelPackage.ISSUE: return createIssue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case RigelPackage.ISSUE_STATUS:
-				return createIssueStatusFromString(eDataType, initialValue);
-			case RigelPackage.ISSUE_IMPORTANCE:
-				return createIssueImportanceFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case RigelPackage.ISSUE_STATUS:
-				return convertIssueStatusToString(eDataType, instanceValue);
-			case RigelPackage.ISSUE_IMPORTANCE:
-				return convertIssueImportanceToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -253,71 +212,9 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 	 * @generated
 	 */
 	@Override
-	public Engineer createEngineer() {
-		EngineerImpl engineer = new EngineerImpl();
-		return engineer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Issue createIssue() {
-		IssueImpl issue = new IssueImpl();
-		return issue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Milestone createMilestone() {
 		MilestoneImpl milestone = new MilestoneImpl();
 		return milestone;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IssueStatus createIssueStatusFromString(EDataType eDataType, String initialValue) {
-		IssueStatus result = IssueStatus.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIssueStatusToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IssueImportance createIssueImportanceFromString(EDataType eDataType, String initialValue) {
-		IssueImportance result = IssueImportance.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertIssueImportanceToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

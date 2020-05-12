@@ -15,6 +15,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.engineering.EngineeringFactory;
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -48,7 +50,6 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addOwnersPropertyDescriptor(object);
-			addRequiredByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -66,29 +67,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_EngineeredElement_owners_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owners_feature", "_UI_EngineeredElement_type"),
-				 RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Required By feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRequiredByPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Capability_requiredBy_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Capability_requiredBy_feature", "_UI_Capability_type"),
-				 RigelPackage.Literals.CAPABILITY__REQUIRED_BY,
+				 EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
 				 true,
 				 false,
 				 true,
@@ -109,7 +88,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
+			childrenFeatures.add(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__CHILDREN);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__ARTIFACTS);
 		}
@@ -197,8 +176,8 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
-				 RigelFactory.eINSTANCE.createIssue()));
+				(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				 EngineeringFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -41,7 +41,6 @@ public interface Milestone extends PackageElement, Source, Target {
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see org.nasdanika.rigel.RigelPackage#getMilestone_Size()
 	 * @model transient="true" changeable="false" derived="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440' documentation_ru='\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b'"
 	 * @generated
 	 */
 	double getSize();
@@ -56,7 +55,6 @@ public interface Milestone extends PackageElement, Source, Target {
 	 * @return the value of the '<em>Progress</em>' attribute.
 	 * @see org.nasdanika.rigel.RigelPackage#getMilestone_Progress()
 	 * @model transient="true" changeable="false" derived="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441' documentation_ru='\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430 \u0432\u0441\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u044b (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0438 \u0432\u0430\u0436\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439)'"
 	 * @generated
 	 */
 	int getProgress();
@@ -93,7 +91,6 @@ public interface Milestone extends PackageElement, Source, Target {
 	 * @return the value of the '<em>Missed</em>' attribute.
 	 * @see org.nasdanika.rigel.RigelPackage#getMilestone_Missed()
 	 * @model transient="true" changeable="false" derived="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440' documentation_ru='\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b'"
 	 * @generated
 	 */
 	boolean isMissed();

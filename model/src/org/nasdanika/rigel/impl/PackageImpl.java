@@ -13,10 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.EngineeredElement;
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.IPackage;
-import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -62,8 +60,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.PACKAGE__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+	public EList<org.nasdanika.engineering.Engineer> getOwners() {
+		return (EList<org.nasdanika.engineering.Engineer>)eDynamicGet(RigelPackage.PACKAGE__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -73,8 +71,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.PACKAGE__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+	public EList<org.nasdanika.engineering.Issue> getIssues() {
+		return (EList<org.nasdanika.engineering.Issue>)eDynamicGet(RigelPackage.PACKAGE__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -93,26 +91,9 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.PACKAGE__OWNERS:
-				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ELEMENTS:
@@ -150,11 +131,11 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 		switch (featureID) {
 			case RigelPackage.PACKAGE__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends Engineer>)newValue);
+				getOwners().addAll((Collection<? extends org.nasdanika.engineering.Engineer>)newValue);
 				return;
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
-				getIssues().addAll((Collection<? extends Issue>)newValue);
+				getIssues().addAll((Collection<? extends org.nasdanika.engineering.Issue>)newValue);
 				return;
 			case RigelPackage.PACKAGE__ELEMENTS:
 				getElements().clear();
@@ -210,10 +191,10 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.PACKAGE__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
-				case RigelPackage.PACKAGE__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				case RigelPackage.PACKAGE__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
+				case RigelPackage.PACKAGE__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
 		}
@@ -233,10 +214,10 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.PACKAGE__OWNERS;
-				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.PACKAGE__ISSUES;
+				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.PACKAGE__OWNERS;
+				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.PACKAGE__ISSUES;
 				default: return -1;
 			}
 		}

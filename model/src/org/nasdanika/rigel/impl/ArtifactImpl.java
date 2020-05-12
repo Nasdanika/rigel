@@ -13,10 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.Artifact;
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.EngineeredElement;
-import org.nasdanika.rigel.Issue;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
 import org.nasdanika.rigel.Target;
@@ -65,8 +63,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.ARTIFACT__OWNERS, RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+	public EList<org.nasdanika.engineering.Engineer> getOwners() {
+		return (EList<org.nasdanika.engineering.Engineer>)eDynamicGet(RigelPackage.ARTIFACT__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -76,8 +74,8 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.ARTIFACT__ISSUES, RigelPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+	public EList<org.nasdanika.engineering.Issue> getIssues() {
+		return (EList<org.nasdanika.engineering.Issue>)eDynamicGet(RigelPackage.ARTIFACT__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -122,8 +120,6 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwners()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConsumers()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__PRODUCERS:
@@ -140,8 +136,6 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.ARTIFACT__OWNERS:
-				return ((InternalEList<?>)getOwners()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ARTIFACT__CONSUMERS:
@@ -187,11 +181,11 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 		switch (featureID) {
 			case RigelPackage.ARTIFACT__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends Engineer>)newValue);
+				getOwners().addAll((Collection<? extends org.nasdanika.engineering.Engineer>)newValue);
 				return;
 			case RigelPackage.ARTIFACT__ISSUES:
 				getIssues().clear();
-				getIssues().addAll((Collection<? extends Issue>)newValue);
+				getIssues().addAll((Collection<? extends org.nasdanika.engineering.Issue>)newValue);
 				return;
 			case RigelPackage.ARTIFACT__CONSUMERS:
 				getConsumers().clear();
@@ -265,10 +259,10 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.ARTIFACT__OWNERS: return RigelPackage.ENGINEERED_ELEMENT__OWNERS;
-				case RigelPackage.ARTIFACT__ISSUES: return RigelPackage.ENGINEERED_ELEMENT__ISSUES;
+				case RigelPackage.ARTIFACT__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
+				case RigelPackage.ARTIFACT__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
 				default: return -1;
 			}
 		}
@@ -282,10 +276,10 @@ public class ArtifactImpl extends PackageElementImpl implements Artifact {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
 			switch (baseFeatureID) {
-				case RigelPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.ARTIFACT__OWNERS;
-				case RigelPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.ARTIFACT__ISSUES;
+				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.ARTIFACT__OWNERS;
+				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.ARTIFACT__ISSUES;
 				default: return -1;
 			}
 		}

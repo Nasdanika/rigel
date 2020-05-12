@@ -50,13 +50,15 @@ import org.nasdanika.html.app.impl.ViewGeneratorImpl;
 import org.nasdanika.html.app.viewparts.ContentPanelViewPart;
 import org.nasdanika.html.app.viewparts.JsTreeNavigationPanelViewPart;
 import org.nasdanika.html.bootstrap.BootstrapFactory;
+import org.nasdanika.html.bootstrap.Breakpoint;
 import org.nasdanika.html.bootstrap.Container;
+import org.nasdanika.html.bootstrap.Size;
 import org.nasdanika.html.bootstrap.Table;
 import org.nasdanika.html.bootstrap.Table.TableBody;
 //import org.nasdanika.html.bootstrap.Table.TableHeader;
 import org.nasdanika.html.bootstrap.Text.Alignment;
 import org.nasdanika.html.bootstrap.Theme;
-import org.nasdanika.html.emf.EObjectAdaptable;
+import org.nasdanika.emf.EObjectAdaptable;
 import org.nasdanika.html.emf.ViewAction;
 import org.nasdanika.html.fontawesome.FontAwesomeFactory;
 import org.nasdanika.html.jstree.JsTreeFactory;
@@ -93,19 +95,19 @@ public class RigelDocumentationGenerator {
 
 		@Override
 		public void notifyChanged(Notification notification) {
-			// TODO Auto-generated method stub
+			// TODO AUTO-generated method stub
 			
 		}
 
 		@Override
 		public Notifier getTarget() {
-			// TODO Auto-generated method stub
+			// TODO AUTO-generated method stub
 			return null;
 		}
 
 		@Override
 		public void setTarget(Notifier newTarget) {
-			// TODO Auto-generated method stub
+			// TODO AUTO-generated method stub
 			
 		}
 
@@ -133,7 +135,7 @@ public class RigelDocumentationGenerator {
 		rootAction.setActivator(new NavigationActionActivator() {
 			
 			@Override
-			public String getUrl() {
+			public String getUrl(String base) {
 				return "#content/doc-summary";
 			}
 			
@@ -186,7 +188,7 @@ public class RigelDocumentationGenerator {
 				
 				@Override
 				protected ViewPart getNavigationPanelViewPart() {
-					return new JsTreeNavigationPanelViewPart(getNavigationPanelActions(), getActiveAction()) {
+					return new JsTreeNavigationPanelViewPart(getNavigationPanelActions(), getActiveAction(), true) {
 						@Override
 						protected void configureJsTree(JSONObject jsTree) {
 							// TODO State and search plug-ins.
@@ -256,10 +258,10 @@ public class RigelDocumentationGenerator {
 		BootstrapFactory bootstrapFactory = viewGenerator.get(BootstrapFactory.class);		
 		Container contentContainer = bootstrapFactory.fluidContainer();
 		contentContainer.text().alignment(Alignment.LEFT);
-		contentContainer.row().col("<H2>"+rootAction.getText()+"</H2>");
+		contentContainer.row().col("<H2>"+rootAction.getText()+"</H2>").width(Breakpoint.DEFAULT, Size.NONE);
 		String description = rootAction.getDescription();
 		if (!Util.isBlank(description)) {
-			contentContainer.row().col(description);
+			contentContainer.row().col(description).width(Breakpoint.DEFAULT, Size.NONE);
 		}
 				
 		Table table = bootstrapFactory.table().bordered();
@@ -272,7 +274,7 @@ public class RigelDocumentationGenerator {
 //				resourceLocator == null ? summary : resourceLocator.getString(PropertyKeys.UI_SUMMARY, summary));
 		TableBody body = table.body();
 		principalAction.getChildren().forEach(child -> body.row(viewGenerator.link(child), child.getTooltip()));
-		contentContainer.row().col(table);				
+		contentContainer.row().col(table).width(Breakpoint.DEFAULT, Size.NONE);				
 		
 		contentBuilder.append(contentContainer.produce(4));
 		return contentBuilder;
@@ -281,7 +283,7 @@ public class RigelDocumentationGenerator {
 	protected void generateActionContent(Action action, Context context, ProgressMonitor progressMonitor) {
 		try (ProgressMonitor am = progressMonitor.split("Generating action content for "+action.getText(), 100)) {
 			StringBuilder contentBuilder = new StringBuilder();
-			ViewPart contentPanelViewPart = new ContentPanelViewPart(action, false); // Use adapter?
+			ViewPart contentPanelViewPart = new ContentPanelViewPart(action); // Use adapter?
 			ViewGenerator viewGenerator = new ViewGeneratorImpl(context, contentBuilder::append, contentBuilder::append);
 			contentBuilder.append(contentPanelViewPart.generate(viewGenerator, progressMonitor));
 			@SuppressWarnings("unchecked")

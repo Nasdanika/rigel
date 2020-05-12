@@ -5,6 +5,9 @@ package org.nasdanika.rigel.provider;
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.nasdanika.engineering.provider.EngineeringEditPlugin;
+import org.nasdanika.ncore.provider.NcoreEditPlugin;
+import org.nasdanika.party.provider.PartyEditPlugin;
 
 /**
  * This is the central singleton for the Rigel edit plugin.
@@ -38,6 +41,9 @@ public final class RigelEditPlugin extends EMFPlugin {
 	public RigelEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     EngineeringEditPlugin.INSTANCE,
+		     NcoreEditPlugin.INSTANCE,
+		     PartyEditPlugin.INSTANCE,
 		   });
 	}
 

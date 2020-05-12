@@ -11,6 +11,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.nasdanika.ncore.impl.NamedElementImpl;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Target;
@@ -31,7 +32,7 @@ import org.nasdanika.rigel.Transition;
  *
  * @generated
  */
-public class TransitionImpl extends ModelElementImpl implements Transition {
+public class TransitionImpl extends NamedElementImpl implements Transition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

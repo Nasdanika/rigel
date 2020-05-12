@@ -4,54 +4,12 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="A model of value stream where something (value) is created via a series of activities performed by participants using inputs and resources (e.g. tools) and producing outputs. &#xA;Activities are owned by engineers who identify activity improvement opportunities as issues and resolve them to make the value stream more efficient. &#xA;&#xA;For example, a development activity would have requirements as input, source code as output and IDE as a resource. &#xA;The activity engineer may identify an improvement opportunity &quot;Create a code generator&quot;, which would reduce duration of the activity.&#xA;"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Base class for other model elements."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Element name. "/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Наименование"/>
-        <details key="Documentation_ru" value="Наименование элемента модели"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Optional element URL. Resolved relative to the containing element URL. "/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Element description in [markdown](https://en.wikipedia.org/wiki/Markdown)."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Описание"/>
-        <details key="Documentation_ru" value="Описание элемента модели с использованием синтаксиса [markdown](https://en.wikipedia.org/wiki/Markdown)."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Element configuration in [YAML](https://en.wikipedia.org/wiki/YAML). Configuration is element-specific and it can be used for, say, analysis or runtime configuration. "/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Конфигурация"/>
-        <details key="Documentation_ru" value="*Конфигурация* элемента в [YAML] (https://en.wikipedia.org/wiki/YAML). Конфигурация зависит от элемента и может использоваться, например, для анализа или конфигурации во время выполнения."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Model element which can be contained by a package."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associations" upperBound="-1"
         eType="#//Association" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EngineeredElement" abstract="true" interface="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Base class for elements which have an owning engineer and may contain issues."/>
-    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IPackage" abstract="true" interface="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -9,11 +9,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.ncore.provider.NamedElementItemProvider;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -24,7 +26,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PackageElementItemProvider extends ModelElementItemProvider {
+public class PackageElementItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -139,6 +141,17 @@ public class PackageElementItemProvider extends ModelElementItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.PACKAGE_ELEMENT__ASSOCIATIONS,
 				 RigelFactory.eINSTANCE.createAssociation()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return RigelEditPlugin.INSTANCE;
 	}
 
 }

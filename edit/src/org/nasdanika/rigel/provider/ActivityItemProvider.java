@@ -55,27 +55,6 @@ public class ActivityItemProvider extends FlowItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Owner feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addOwnerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-			  (getResourceLocator(),
-			   getString("_UI_EngineeredElement_owner_feature"),
-			   RigelPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
-			   true,
-			   false,
-			   true,
-			   null,
-			   null,
-			   null,
-			   null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Outputs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

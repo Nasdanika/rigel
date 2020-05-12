@@ -8,8 +8,10 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.nasdanika.ncore.provider.NamedElementItemProvider;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -20,7 +22,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssociationItemProvider extends ModelElementItemProvider {
+public class AssociationItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -127,6 +129,7 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**
@@ -139,6 +142,17 @@ public class AssociationItemProvider extends ModelElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return RigelEditPlugin.INSTANCE;
 	}
 
 }

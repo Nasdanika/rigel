@@ -4,12 +4,14 @@ package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.nasdanika.engineering.EngineeringPackage;
+import org.nasdanika.ncore.NcorePackage;
+import org.nasdanika.party.PartyPackage;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.IPackage;
@@ -17,20 +19,12 @@ import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Association;
-import org.nasdanika.rigel.Capability;
 import org.nasdanika.rigel.End;
-import org.nasdanika.rigel.Engineer;
-import org.nasdanika.rigel.EngineeredElement;
 import org.nasdanika.rigel.Flow;
-import org.nasdanika.rigel.Issue;
-import org.nasdanika.rigel.IssueImportance;
-import org.nasdanika.rigel.IssueStatus;
 import org.nasdanika.rigel.Milestone;
-import org.nasdanika.rigel.ModelElement;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
-import org.nasdanika.rigel.Requirement;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -51,21 +45,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass packageElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass engineeredElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,49 +171,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass engineerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass issueEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass milestoneEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass capabilityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass requirementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum issueStatusEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum issueImportanceEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -282,6 +220,11 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EngineeringPackage.eINSTANCE.eClass();
+		NcorePackage.eINSTANCE.eClass();
+		PartyPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theRigelPackage.createPackageContents();
 
@@ -302,56 +245,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelElement() {
-		return modelElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getModelElement_Name() {
-		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getModelElement_Url() {
-		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getModelElement_Description() {
-		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getModelElement_Configuration() {
-		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPackageElement() {
 		return packageElementEClass;
 	}
@@ -364,36 +257,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	@Override
 	public EReference getPackageElement_Associations() {
 		return (EReference)packageElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEngineeredElement() {
-		return engineeredElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEngineeredElement_Owners() {
-		return (EReference)engineeredElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEngineeredElement_Issues() {
-		return (EReference)engineeredElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -792,116 +655,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getEngineer() {
-		return engineerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEngineer_Owns() {
-		return (EReference)engineerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEngineer_Assignments() {
-		return (EReference)engineerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getIssue() {
-		return issueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIssue_Importance() {
-		return (EAttribute)issueEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIssue_Status() {
-		return (EAttribute)issueEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIssue_AssignedTo() {
-		return (EReference)issueEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIssue_Size() {
-		return (EAttribute)issueEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getIssue_Benefit() {
-		return (EAttribute)issueEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIssue_Children() {
-		return (EReference)issueEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIssue_Implementation() {
-		return (EReference)issueEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getMilestone() {
 		return milestoneEClass;
 	}
@@ -952,66 +705,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getCapability() {
-		return capabilityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCapability_RequiredBy() {
-		return (EReference)capabilityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRequirement() {
-		return requirementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRequirement_RequiredCapabilities() {
-		return (EReference)requirementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getIssueStatus() {
-		return issueStatusEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getIssueImportance() {
-		return issueImportanceEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public RigelFactory getRigelFactory() {
 		return (RigelFactory)getEFactoryInstance();
 	}
@@ -1035,18 +728,8 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		modelElementEClass = createEClass(MODEL_ELEMENT);
-		createEAttribute(modelElementEClass, MODEL_ELEMENT__NAME);
-		createEAttribute(modelElementEClass, MODEL_ELEMENT__URL);
-		createEAttribute(modelElementEClass, MODEL_ELEMENT__DESCRIPTION);
-		createEAttribute(modelElementEClass, MODEL_ELEMENT__CONFIGURATION);
-
 		packageElementEClass = createEClass(PACKAGE_ELEMENT);
 		createEReference(packageElementEClass, PACKAGE_ELEMENT__ASSOCIATIONS);
-
-		engineeredElementEClass = createEClass(ENGINEERED_ELEMENT);
-		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__OWNERS);
-		createEReference(engineeredElementEClass, ENGINEERED_ELEMENT__ISSUES);
 
 		iPackageEClass = createEClass(IPACKAGE);
 		createEReference(iPackageEClass, IPACKAGE__ELEMENTS);
@@ -1057,12 +740,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(participantEClass, PARTICIPANT__FLOWS);
 
 		actorEClass = createEClass(ACTOR);
-
-		capabilityEClass = createEClass(CAPABILITY);
-		createEReference(capabilityEClass, CAPABILITY__REQUIRED_BY);
-
-		requirementEClass = createEClass(REQUIREMENT);
-		createEReference(requirementEClass, REQUIREMENT__REQUIRED_CAPABILITIES);
 
 		flowEClass = createEClass(FLOW);
 		createEReference(flowEClass, FLOW__ELEMENTS);
@@ -1115,23 +792,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 
 		associationEClass = createEClass(ASSOCIATION);
 		createEReference(associationEClass, ASSOCIATION__TARGET);
-
-		engineerEClass = createEClass(ENGINEER);
-		createEReference(engineerEClass, ENGINEER__OWNS);
-		createEReference(engineerEClass, ENGINEER__ASSIGNMENTS);
-
-		issueEClass = createEClass(ISSUE);
-		createEAttribute(issueEClass, ISSUE__IMPORTANCE);
-		createEAttribute(issueEClass, ISSUE__STATUS);
-		createEReference(issueEClass, ISSUE__ASSIGNED_TO);
-		createEAttribute(issueEClass, ISSUE__SIZE);
-		createEAttribute(issueEClass, ISSUE__BENEFIT);
-		createEReference(issueEClass, ISSUE__CHILDREN);
-		createEReference(issueEClass, ISSUE__IMPLEMENTATION);
-
-		// Create enums
-		issueStatusEEnum = createEEnum(ISSUE_STATUS);
-		issueImportanceEEnum = createEEnum(ISSUE_IMPORTANCE);
 	}
 
 	/**
@@ -1157,22 +817,25 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
+		EngineeringPackage theEngineeringPackage = (EngineeringPackage)EPackage.Registry.INSTANCE.getEPackage(EngineeringPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		packageElementEClass.getESuperTypes().add(this.getModelElement());
+		packageElementEClass.getESuperTypes().add(theNcorePackage.getNamedElement());
 		packageEClass.getESuperTypes().add(this.getPackageElement());
-		packageEClass.getESuperTypes().add(this.getEngineeredElement());
+		packageEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
 		packageEClass.getESuperTypes().add(this.getIPackage());
 		actorEClass.getESuperTypes().add(this.getPackageElement());
-		actorEClass.getESuperTypes().add(this.getEngineeredElement());
+		actorEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
 		actorEClass.getESuperTypes().add(this.getParticipant());
 		flowEClass.getESuperTypes().add(this.getPackageElement());
-		flowEClass.getESuperTypes().add(this.getEngineeredElement());
-		flowEClass.getESuperTypes().add(this.getRequirement());
-		flowElementEClass.getESuperTypes().add(this.getModelElement());
+		flowEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		flowElementEClass.getESuperTypes().add(theNcorePackage.getNamedElement());
 		sourceEClass.getESuperTypes().add(this.getFlowElement());
 		startEClass.getESuperTypes().add(this.getPackageElement());
 		startEClass.getESuperTypes().add(this.getSource());
@@ -1191,29 +854,15 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
 		artifactEClass.getESuperTypes().add(this.getPackageElement());
-		artifactEClass.getESuperTypes().add(this.getEngineeredElement());
+		artifactEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
 		resourceEClass.getESuperTypes().add(this.getPackageElement());
-		resourceEClass.getESuperTypes().add(this.getEngineeredElement());
-		resourceEClass.getESuperTypes().add(this.getCapability());
-		transitionEClass.getESuperTypes().add(this.getModelElement());
-		associationEClass.getESuperTypes().add(this.getModelElement());
-		engineerEClass.getESuperTypes().add(this.getPackageElement());
-		issueEClass.getESuperTypes().add(this.getModelElement());
-		issueEClass.getESuperTypes().add(this.getRequirement());
+		resourceEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		transitionEClass.getESuperTypes().add(theNcorePackage.getNamedElement());
+		associationEClass.getESuperTypes().add(theNcorePackage.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElement_Url(), ecorePackage.getEString(), "url", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelElement_Configuration(), ecorePackage.getEString(), "configuration", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(packageElementEClass, PackageElement.class, "PackageElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPackageElement_Associations(), this.getAssociation(), null, "associations", null, 0, -1, PackageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(engineeredElementEClass, EngineeredElement.class, "EngineeredElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEngineeredElement_Owners(), this.getEngineer(), this.getEngineer_Owns(), "owners", null, 0, -1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEngineeredElement_Issues(), this.getIssue(), null, "issues", null, 0, -1, EngineeredElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(iPackageEClass, IPackage.class, "IPackage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIPackage_Elements(), this.getPackageElement(), null, "elements", null, 0, -1, IPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1224,12 +873,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getParticipant_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(capabilityEClass, Capability.class, "Capability", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCapability_RequiredBy(), this.getRequirement(), this.getRequirement_RequiredCapabilities(), "requiredBy", null, 0, -1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(requirementEClass, Requirement.class, "Requirement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRequirement_RequiredCapabilities(), this.getCapability(), this.getCapability_RequiredBy(), "requiredCapabilities", null, 0, -1, Requirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1283,31 +926,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssociation_Target(), this.getPackageElement(), null, "target", null, 1, 1, Association.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(engineerEClass, Engineer.class, "Engineer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEngineer_Owns(), this.getEngineeredElement(), this.getEngineeredElement_Owners(), "owns", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEngineer_Assignments(), this.getIssue(), this.getIssue_AssignedTo(), "assignments", null, 0, -1, Engineer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(issueEClass, Issue.class, "Issue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIssue_Importance(), this.getIssueImportance(), "importance", "Medium", 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIssue_Status(), this.getIssueStatus(), "status", "Open", 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIssue_AssignedTo(), this.getEngineer(), this.getEngineer_Assignments(), "assignedTo", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIssue_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIssue_Benefit(), ecorePackage.getEDouble(), "benefit", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIssue_Children(), this.getIssue(), null, "children", null, 0, -1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIssue_Implementation(), this.getActivity(), null, "implementation", null, 0, 1, Issue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(issueStatusEEnum, IssueStatus.class, "IssueStatus");
-		addEEnumLiteral(issueStatusEEnum, IssueStatus.OPEN);
-		addEEnumLiteral(issueStatusEEnum, IssueStatus.IN_PROGRESS);
-		addEEnumLiteral(issueStatusEEnum, IssueStatus.DONE);
-		addEEnumLiteral(issueStatusEEnum, IssueStatus.CANCELLED);
-
-		initEEnum(issueImportanceEEnum, IssueImportance.class, "IssueImportance");
-		addEEnumLiteral(issueImportanceEEnum, IssueImportance.LOW);
-		addEEnumLiteral(issueImportanceEEnum, IssueImportance.MEDIUM);
-		addEEnumLiteral(issueImportanceEEnum, IssueImportance.HIGH);
-
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1330,61 +948,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		  (this,
 		   source,
 		   new String[] {
-			   "documentation", "Workflow model."
-		   });
-		addAnnotation
-		  (modelElementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Base class for other model elements."
-		   });
-		addAnnotation
-		  (getModelElement_Name(),
-		   source,
-		   new String[] {
-			   "documentation", "Element name. "
-		   });
-		addAnnotation
-		  (getModelElement_Url(),
-		   source,
-		   new String[] {
-			   "documentation", "Optional element URL. Resolved relative to the containing element URL. "
-		   });
-		addAnnotation
-		  (getModelElement_Description(),
-		   source,
-		   new String[] {
-			   "documentation", "Element description in [markdown](https://en.wikipedia.org/wiki/Markdown)."
-		   });
-		addAnnotation
-		  (getModelElement_Configuration(),
-		   source,
-		   new String[] {
-			   "documentation", "Element configuration in [YAML](https://en.wikipedia.org/wiki/YAML). Configuration is element-specific and it can be used for, say, analysis or runtime configuration. "
+			   "documentation", "A model of value stream where something (value) is created via a series of activities performed by participants using inputs and resources (e.g. tools) and producing outputs. \nActivities are owned by engineers who identify activity improvement opportunities as issues and resolve them to make the value stream more efficient. \n\nFor example, a development activity would have requirements as input, source code as output and IDE as a resource. \nThe activity engineer may identify an improvement opportunity \"Create a code generator\", which would reduce duration of the activity.\n"
 		   });
 		addAnnotation
 		  (packageElementEClass,
 		   source,
 		   new String[] {
 			   "documentation", "Model element which can be contained by a package."
-		   });
-		addAnnotation
-		  (engineeredElementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Base class for elements which have an owning engineer and may contain issues."
-		   });
-		addAnnotation
-		  (getEngineeredElement_Owners(),
-		   source,
-		   new String[] {
-			   "documentation", "Engineer responsible for this element."
-		   });
-		addAnnotation
-		  (getEngineeredElement_Issues(),
-		   source,
-		   new String[] {
-			   "documentation", "Issues associated with the element - problems/pain points, improvement opportunities/enhancements."
 		   });
 		addAnnotation
 		  (iPackageEClass,
@@ -1402,7 +972,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		  (packageEClass,
 		   source,
 		   new String[] {
-			   "documentation", "Container of package elements."
+			   "documentation", "Container of package elements. Packages are used to organize model elements into a hierarchy."
 		   });
 		addAnnotation
 		  (getParticipant_Flows(),
@@ -1415,30 +985,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Actors perform activities using resources consuming and producing artifacts."
-		   });
-		addAnnotation
-		  (capabilityEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Capability is something required by an issue."
-		   });
-		addAnnotation
-		  (getCapability_RequiredBy(),
-		   source,
-		   new String[] {
-			   "documentation", "Activities using/leveraging this resource."
-		   });
-		addAnnotation
-		  (requirementEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Requirement of a zero or more capabilities."
-		   });
-		addAnnotation
-		  (getRequirement_RequiredCapabilities(),
-		   source,
-		   new String[] {
-			   "documentation", "Capabilities needed to satisfy the requirement."
 		   });
 		addAnnotation
 		  (flowEClass,
@@ -1656,126 +1202,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "documentation", "A generic relationship between model elements."
 		   });
-		addAnnotation
-		  (engineerEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Engineers own engineered elements and are assigned issues associated with these elements."
-		   });
-		addAnnotation
-		  (getEngineer_Owns(),
-		   source,
-		   new String[] {
-			   "documentation", "Elements which this engineer owns. Ownership is propagated down to child elements recursively, unless these elements have an explicitly assigned owner. Also issues associated with owned elements and not having an engineer explicitly assigned to them are implicitly assigned to the element owner."
-		   });
-		addAnnotation
-		  (getEngineer_Assignments(),
-		   source,
-		   new String[] {
-			   "documentation", "Engineer\'s assigned issues."
-		   });
-		addAnnotation
-		  (issueEClass,
-		   source,
-		   new String[] {
-			   "documentation", "Something to possibly act on regarding the owning element - a problem/pain point, an improvement opportunity/enhancement.\n\nExample:\n\n* Containing activity - \"Initial setup of a software project\", \n* Size - 4.0 (hours) - copy an existing project and modify its sources.\n* Issue - \"Create a code generator\" (enhancement),\n    * Size - 40.0 (hours).\n    * Benefit - 3.5 (hours).\n    * Implementation - an activity providing a detailed explanation how code generator shall be implemented."
-		   });
-		addAnnotation
-		  (getIssue_Importance(),
-		   source,
-		   new String[] {
-			   "documentation", "Issue importance."
-		   });
-		addAnnotation
-		  (getIssue_Status(),
-		   source,
-		   new String[] {
-			   "documentation", "Issue status."
-		   });
-		addAnnotation
-		  (getIssue_AssignedTo(),
-		   source,
-		   new String[] {
-			   "documentation", "Engineer this issue is assigned to. If this attribute is null the issue is assumed to be assigned to the owner of the containing element."
-		   });
-		addAnnotation
-		  (getIssue_Size(),
-		   source,
-		   new String[] {
-			   "documentation", "An estimation of effort required to complete this issue in some units used consistently throughout the model - points, person hours, dollars."
-		   });
-		addAnnotation
-		  (getIssue_Benefit(),
-		   source,
-		   new String[] {
-			   "documentation", "An estimation of reduction of the containing activity effort caused by completion of this issue. It can be used for cost/benefit analysis in order to prioritize issues."
-		   });
-		addAnnotation
-		  (getIssue_Children(),
-		   source,
-		   new String[] {
-			   "documentation", "Issues may be organized into a hierarchy."
-		   });
-		addAnnotation
-		  (getIssue_Implementation(),
-		   source,
-		   new String[] {
-			   "documentation", "Activity providing details about how to implement this issue.\n\n"
-		   });
-		addAnnotation
-		  (issueStatusEEnum,
-		   source,
-		   new String[] {
-			   "documentation", "Issue status."
-		   });
-		addAnnotation
-		  (issueStatusEEnum.getELiterals().get(0),
-		   source,
-		   new String[] {
-			   "documentation", "An issue which hasn\'t been worked on."
-		   });
-		addAnnotation
-		  (issueStatusEEnum.getELiterals().get(1),
-		   source,
-		   new String[] {
-			   "documentation", "Work in progress."
-		   });
-		addAnnotation
-		  (issueStatusEEnum.getELiterals().get(2),
-		   source,
-		   new String[] {
-			   "documentation", "Work completed."
-		   });
-		addAnnotation
-		  (issueStatusEEnum.getELiterals().get(3),
-		   source,
-		   new String[] {
-			   "documentation", "The issue is not going to be worked on for some reason."
-		   });
-		addAnnotation
-		  (issueImportanceEEnum,
-		   source,
-		   new String[] {
-			   "documentation", "Importance of the issue."
-		   });
-		addAnnotation
-		  (issueImportanceEEnum.getELiterals().get(0),
-		   source,
-		   new String[] {
-			   "documentation", "Low importance."
-		   });
-		addAnnotation
-		  (issueImportanceEEnum.getELiterals().get(1),
-		   source,
-		   new String[] {
-			   "documentation", "Medium importance."
-		   });
-		addAnnotation
-		  (issueImportanceEEnum.getELiterals().get(2),
-		   source,
-		   new String[] {
-			   "documentation", "High importance."
-		   });
 	}
 
 	/**
@@ -1787,81 +1213,11 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	protected void createUrnorgAnnotations() {
 		String source = "urn:org.nasdanika";
 		addAnnotation
-		  (this,
-		   source,
-		   new String[] {
-			   "label_ru", "Nasdanika.\u0420\u0438\u0433\u0435\u043b\u044c",
-			   "Documentation_ru", "Nasdanika Rigel -  \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f, \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u044f \u0438 \u043a\u043e\u043d\u0442\u0440\u0430\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u043f\u043e\u0442\u043e\u043a\u043e\u0432 \u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0432. "
-		   });
-		addAnnotation
-		  (modelElementEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u042d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438",
-			   "Documentation_ru", "\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u0434\u0440\u0443\u0433\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u043c\u043e\u0434\u0435\u043b\u0438"
-		   });
-		addAnnotation
-		  (getModelElement_Name(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435",
-			   "Documentation_ru", "\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u043c\u043e\u0434\u0435\u043b\u0438"
-		   });
-		addAnnotation
-		  (getModelElement_Description(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435",
-			   "Documentation_ru", "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u043c\u043e\u0434\u0435\u043b\u0438 \u0441 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435\u043c \u0441\u0438\u043d\u0442\u0430\u043a\u0441\u0438\u0441\u0430 [markdown](https://en.wikipedia.org/wiki/Markdown)."
-		   });
-		addAnnotation
-		  (getModelElement_Configuration(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f",
-			   "Documentation_ru", "*\u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f* \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0432 [YAML] (https://en.wikipedia.org/wiki/YAML). \u041a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044f \u0437\u0430\u0432\u0438\u0441\u0438\u0442 \u043e\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u0438 \u043c\u043e\u0436\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c\u0441\u044f, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0434\u043b\u044f \u0430\u043d\u0430\u043b\u0438\u0437\u0430 \u0438\u043b\u0438 \u043a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438 \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f."
-		   });
-		addAnnotation
-		  (packageElementEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0423\u043f\u0430\u043a\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442",
-			   "Documentation_ru", "\u042d\u043b\u0435\u043c\u0435\u043d\u0442 \u043c\u043e\u0434\u0435\u043b\u0438, \u043a\u043e\u0442\u0440\u044b\u0439 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0432\u043a\u043b\u044e\u0447\u0435\u043d \u0432 \u043f\u0430\u043a\u0435\u0442"
-		   });
-		addAnnotation
-		  (engineeredElementEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "?\u0423\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442",
-			   "Documentation_ru", "\u0411\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430 \u043c\u043e\u0434\u0435\u043b\u0438, \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0435\u043c \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0438\u043d\u0436\u0435\u043d\u0435\u0440. \u041c\u043e\u0436\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u043c\u044b/\u0437\u0430\u0434\u0430\u0447\u0438."
-		   });
-		addAnnotation
-		  (getEngineeredElement_Owners(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0418\u043d\u0436\u0435\u043d\u0435\u0440",
-			   "Documentation_ru", "\u0418\u043d\u0436\u0435\u043d\u0435\u0440, \u0432\u043b\u0430\u0434\u0435\u043b\u0435\u0446 \u044d\u0442\u043e\u0433\u043e \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430."
-		   });
-		addAnnotation
-		  (getEngineeredElement_Issues(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u044b",
-			   "Documentation_ru", "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u044b, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u043c - \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b / \u0431\u043e\u043b\u0435\u0432\u044b\u0435 \u0442\u043e\u0447\u043a\u0438, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u0438 \u0443\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u044f / \u0443\u043b\u0443\u0447\u0448\u0435\u043d\u0438\u044f."
-		   });
-		addAnnotation
 		  (getIPackage_Elements(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u042d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430",
 			   "documentation_ru", "\u042d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430"
-		   });
-		addAnnotation
-		  (packageEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u0430\u043a\u0435\u0442",
-			   "documentation_ru", "\u041f\u0430\u043a\u0435\u0442 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043c\u043e\u0434\u0435\u043b\u0438."
 		   });
 		addAnnotation
 		  (getParticipant_Flows(),
@@ -1871,60 +1227,11 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u0435\u0442 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c"
 		   });
 		addAnnotation
-		  (actorEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c",
-			   "documentation_ru", "\u041b\u0438\u0446\u043e, \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u044e\u0449\u0435\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b"
-		   });
-		addAnnotation
-		  (getCapability_RequiredBy(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0438",
-			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u044b \u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0449\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441."
-		   });
-		addAnnotation
-		  (getFlow_Elements(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f",
-			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u0430 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0430 \u043d\u0430 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0449\u0438\u0435 \u0435\u0451 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438."
-		   });
-		addAnnotation
 		  (getFlow_Paricipants(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438",
 			   "documentation_ru", "\u041e\u0434\u0438\u043d \u0438\u043b\u0438 \u0431\u043e\u043b\u0435\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0435\u0439, \u0443\u0447\u0430\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0445 \u0432 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b."
-		   });
-		addAnnotation
-		  (getFlow_TotalSize(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
-			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
-		   });
-		addAnnotation
-		  (getFlow_TotalProgress(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
-			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430 \u0432\u0441\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u044b (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0438 \u0432\u0430\u0436\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439)"
-		   });
-		addAnnotation
-		  (flowElementEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f",
-			   "documentation_ru", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f - \u044d\u0442\u043e \u044d\u043b\u0435\u043c\u0435\u043d\u0442 \u0441\u043b\u043e\u0436\u043d\u043e\u0433\u043e (\u0441\u043e\u0441\u0442\u0430\u0432\u043d\u043e\u0433\u043e) \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f"
-		   });
-		addAnnotation
-		  (sourceEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a",
-			   "documentation_ru", "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a (\u0447\u0435\u0433\u043e?) \u0422\u043e\u0447\u043a\u0430 \u0432\u0445\u043e\u0434\u0430?"
 		   });
 		addAnnotation
 		  (getSource_OutboundTransitions(),
@@ -1941,20 +1248,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u043c\u044b\u0435 \u044d\u0442\u0438\u043c \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u043c"
 		   });
 		addAnnotation
-		  (startEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0442\u0430\u0440\u0442",
-			   "documentation_ru", "\u0421\u0442\u0430\u0440\u0442 \u043f\u0441\u0435\u0432\u0434\u043e- \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438"
-		   });
-		addAnnotation
-		  (targetEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0426\u0435\u043b\u044c",
-			   "documentation_ru", "\u0426\u0435\u043b\u044c \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u043f\u043e\u0442\u043e\u043a\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438  \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u043e\u0432"
-		   });
-		addAnnotation
 		  (getTarget_InboundTransitions(),
 		   source,
 		   new String[] {
@@ -1969,74 +1262,11 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u044b\u0435 \u0434\u043b\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0446\u0435\u043b\u0435\u0432\u043e\u0433\u043e \u044d\u0442\u0430\u043f\u0430 \u0440\u0430\u0431\u043e\u0442\u044b"
 		   });
 		addAnnotation
-		  (endEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u041a\u043e\u043d\u0435\u0446 \u0440\u0430\u0431\u043e\u0442\u044b",
-			   "documentation_ru", "\u042d\u043b\u0435\u043c\u0435\u043d\u0442 \u0437\u0430\u0432\u0435\u0440\u0448\u0430\u044e\u0449\u0438\u0439 \u043f\u0441\u0435\u0432\u0434\u043e-\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c"
-		   });
-		addAnnotation
-		  (activityEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0420\u0430\u0431\u043e\u0442\u0430",
-			   "documentation_ru", "\u0420\u0430\u0431\u043e\u0442\u0430 - \u044d\u0442\u043e \u0442\u043e, \u0447\u0442\u043e \u043d\u0435\u043e\u0431\u0445\u043e\u0434\u0438\u043c\u043e \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0436\u0435\u043b\u0430\u0435\u043c\u043e\u0433\u043e \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430. \n\n\u0412\u044b\u043f\u043e\u043b\u043d\u044f\u044f \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u0440\u0435\u0441\u0443\u0440\u0441\u044b \u0438 \u0441\u043e\u0437\u0434\u0430\u0451\u0442 \u0438\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b, \u044f\u0432\u043b\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u0447\u043d\u044b\u043c\u0438 \u0438\u043b\u0438 \u043a\u043e\u043d\u0435\u0447\u043d\u044b\u043c\u0438 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0430\u043c\u0438 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430.\n\n\u0412\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u043f\u0435\u0440\u0435\u0432\u043e\u0434\u0430:\n\n\n* \u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0435 / \u042d\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u0440\u043d\u043e\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435\n* \u041f\u0440\u043e\u0446\u0435\u0441\u0441/\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f\n* \u0420\u0430\u0431\u043e\u0442\u0430 / \u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f "
-		   });
-		addAnnotation
-		  (getActivity_Size(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0420\u0430\u0437\u043c\u0435\u0440",
-			   "documentation_ru", "\u041e\u0446\u0435\u043d\u043a\u0430 \u0440\u0430\u0431\u043e\u0442\u044b / \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0432 \u043a\u0430\u043a\u0438\u0445-\u043b\u0438\u0431\u043e \u0435\u0434\u0438\u043d\u0438\u0446\u0430\u0445: \u0442\u0440\u0443\u0434\u043e-\u0447\u0430\u0441\u0430\u0445, \u043f\u0440\u0438\u0441\u0435\u0441\u0442\u0430\u0445, \u0434\u0435\u043d\u044c\u0433\u0430\u0445."
-		   });
-		addAnnotation
-		  (getActivity_Progress(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
-			   "documentation_ru", "\u041e\u0446\u0435\u043d\u043a\u0430 \u0441\u0442\u0435\u043f\u0435\u043d\u0438 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b/ \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445. \u0417\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043c\u0435\u0436\u0434\u0443 0 \u0438 100. \n\n\n\u041f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d \u0434\u043b\u044f \u043e\u0446\u0435\u043d\u043a\u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430. \n\n\u0414\u043b\u044f \u044d\u0442\u043e\u0433\u043e \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0441\u043c\u043e\u0434\u0435\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0448\u0430\u0431\u043b\u043e\u043d\u0430, \u043e\u043f\u0438\u0441\u044b\u0432\u0430\u044e\u0449\u0435\u0433\u043e \u044d\u0442\u0430\u043f\u044b \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \"\u0414\u0435\u0439\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u044d\u043a\u0437\u0435\u043c\u043f\u043b\u044f\u0440\" \u0440\u0430\u0431\u043e\u0447\u0435\u0433\u043e \u043f\u043e\u0442\u043e\u043a\u0430, \u0432 \u043a\u043e\u0442\u043e\u0440\u043e\u043c \u043e\u0446\u0435\u043d\u0438\u0432\u0430\u044e\u0442\u0441\u044f \u0444\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0437\u0430\u0442\u0440\u0430\u0442\u044b \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u043e\u0432, \u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b\u043e\u0432, \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0438 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f. \n\n"
-		   });
-		addAnnotation
-		  (getMilestone_Size(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
-			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
-		   });
-		addAnnotation
-		  (getMilestone_Progress(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
-			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u0430\u044f \u043e\u0446\u0435\u043d\u043a\u0430 \u043f\u0440\u043e\u0433\u0440\u0435\u0441\u0441\u0430 \u0432\u0441\u0435\u0439 \u0440\u0430\u0431\u043e\u0442\u044b (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0430 \u0438 \u0432\u0430\u0436\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439)"
-		   });
-		addAnnotation
-		  (getMilestone_Missed(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440",
-			   "documentation_ru", "\u0421\u0443\u043c\u043c\u0430 \u0440\u0430\u0437\u043c\u0435\u0440\u043e\u0432 \u0432\u0441\u0435\u0445 \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442\u044b"
-		   });
-		addAnnotation
-		  (activityReferenceEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0440\u0430\u0431\u043e\u0442\u0443",
-			   "documentation_ru", "???\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u043e\u0431\u0449\u0438\u0439 \u0432\u0438\u0434 \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438, \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0439 \u0432 \u0434\u0440\u0443\u0433\u043e\u043c \u043c\u0435\u0441\u0442\u0435."
-		   });
-		addAnnotation
 		  (getActivityReference_Activity(),
 		   source,
 		   new String[] {
 			   "label_ru", "\u0420\u0430\u0431\u043e\u0442\u0430",
 			   "documentation_ru", "\u0412\u044b\u043f\u043e\u043b\u043d\u044f\u044f \u0440\u0430\u0431\u043e\u0442\u0443 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u044f\u0442 \u0438\u0441\u0445\u043e\u0434\u044f\u0449\u0438\u0435 (\u0446\u0435\u043b\u0435\u0432\u044b\u0435) \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u0438 \u0440\u0435\u0441\u0443\u0440\u0441\u044b."
-		   });
-		addAnnotation
-		  (artifactEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442",
-			   "documentation_ru", "\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442 - \u044d\u0442\u043e \u0447\u0442\u043e-\u0442\u043e, \u0447\u0442\u043e \u0432\u044b\u0432\u043e\u0434\u0438\u0442\u0441\u044f / \u0433\u0435\u043d\u0435\u0440\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u043c \u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0446\u0435\u043b\u044c\u044e \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0432\u0445\u043e\u0434\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445. \n\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 - \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434, \u0440\u0443\u043a\u043e\u0432\u043e\u0434\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f, \u0434\u0432\u043e\u0438\u0447\u043d\u044b\u0439 \u043a\u043e\u0434. \n\n*\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442 - \u044d\u0442\u043e \u043f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u0447\u043d\u044b\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442, \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043f\u0435\u0440\u0435\u0434\u0430\u0435\u0442\u0441\u044f \u043e\u0442 \u043f\u0440\u0435\u0434\u0448\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0435\u0439 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 (\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430) \u043a \u043f\u043e\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0439 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 (\u0446\u0435\u043b\u0438).*\n\n\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043f\u0435\u0440\u0435\u0434\u0430\u044e\u0442\u0441\u044f \u043c\u0435\u0436\u0434\u0443 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f\u043c\u0438 \u0447\u0435\u0440\u0435\u0437 \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u044b."
 		   });
 		addAnnotation
 		  (getArtifact_Consumers(),
@@ -2060,13 +1290,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 			   "documentation_ru", "\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0432\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u043c\u0438 \u0434\u0440\u0443\u0433 \u0432 \u0434\u0440\u0443\u0433\u0430. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440: zip, \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0439 \u043f\u0430\u043f\u043a\u0438, \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0435 \u0444\u0430\u0439\u043b\u044b."
 		   });
 		addAnnotation
-		  (resourceEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0420\u0435\u0441\u0443\u0440\u0441",
-			   "documentation_ru", "\u0420\u0435\u0441\u0443\u0440\u0441 - \u043e\u0431\u044a\u0435\u043a\u0442, \u043f\u043e\u0437\u0432\u043e\u043b\u044f\u044e\u0449\u0438\u0439 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044e \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0442\u044c \u0440\u0430\u0431\u043e\u0442\u0443. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043a\u0430\u043a\u043e\u0439 \u043b\u0438\u0431\u043e \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442"
-		   });
-		addAnnotation
 		  (getResource_Children(),
 		   source,
 		   new String[] {
@@ -2079,13 +1302,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   new String[] {
 			   "label_ru", "\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442",
 			   "documentation_ru", "\u0420\u0435\u0441\u0443\u0440\u0441\u044b \u043c\u043e\u0433\u0443\u0442 \u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c \u0432 \u0441\u0435\u0431\u044f \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b"
-		   });
-		addAnnotation
-		  (transitionEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u041f\u0435\u0440\u0435\u0445\u043e\u0434 (\u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0430)",
-			   "documentation_ru", "\u041f\u0435\u0440\u0435\u0445\u043e\u0434 (\u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0430) \u043f\u0440\u043e\u043c\u0435\u0436\u0443\u0442\u043e\u0447\u043d\u044b\u0445 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u043e\u0432 \u0440\u0430\u0431\u043e\u0442/\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u043e\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430-\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430 \u043a \u0446\u0435\u043b\u0435\u0432\u043e\u043c\u0443 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0443. \u0410\u0440\u0442\u0438\u0444\u0430\u043a\u0442\u044b \u043c\u043e\u0433\u0443\u0442 \u043f\u0435\u0440\u0435\u0434\u0430\u0432\u0430\u0442\u044c\u0441\u044f \u0432 \u043e\u0431\u043e\u0438\u0445 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f\u0445. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043f\u0435\u0440\u0435\u0445\u043e\u0434 \u043a \u00ab\u0424\u0438\u043a\u0441\u0438\u0440\u0443\u044e\u0449\u0435\u043c\u0443 \u043a\u043e\u0434\u0443\u00bb \u043c\u043e\u0436\u0435\u0442 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0442\u044c \u00ab\u0418\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u043a\u043e\u0434\u00bb \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0432\u0432\u043e\u0434\u0430 \u0438 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0442\u044c \u00ab\u0424\u0438\u043a\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 \u043a\u043e\u0434\u00bb \u0432 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0435.\n "
 		   });
 		addAnnotation
 		  (getTransition_Target(),
@@ -2120,34 +1336,6 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "label_ru", "\u0426\u0435\u043b\u044c"
-		   });
-		addAnnotation
-		  (engineerEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0418\u043d\u0436\u0435\u043d\u0435\u0440",
-			   "documentation_ru", "\u0421\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442, \u0432\u043b\u0430\u0434\u0435\u044e\u0449\u0438\u0439 \u043a\u0430\u043a\u0438\u043c-\u043b\u0438\u0431\u043e \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u043c, \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u043c \u0438\u043b\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u043c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 \u0438 \u043f\u043e\u043b\u0443\u0447\u0430\u044e\u0449\u0438\u0439 \u0437\u0430\u0434\u0430\u0447\u0438, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u044d\u0442\u0438\u043c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u043c \u0438\u043b\u0438 \u0440\u0435\u0441\u0443\u0440\u043e\u043c."
-		   });
-		addAnnotation
-		  (getEngineer_Owns(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0425\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u043e",
-			   "documentation_ru", "\u0421\u043e\u0432\u043e\u043a\u0443\u043f\u043d\u043e\u0441\u0442\u044c \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432, \u043a\u043e\u0442\u043e\u0440\u044b\u043c\u0438 \u0432\u043b\u0430\u0434\u0435\u0435\u0442 \u0438\u043d\u0436\u0435\u043d\u0435\u0440. \n\u0412\u043b\u0430\u0434\u0435\u043d\u0438\u0435 \u0440\u0430\u0441\u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u044f\u0435\u0442\u0441\u044f \u0434\u043e \u0434\u043e\u0447\u0435\u0440\u043d\u0438\u0445 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u0440\u0435\u043a\u0443\u0440\u0441\u0438\u0432\u043d\u043e, \u0435\u0441\u043b\u0438 \u0442\u043e\u043b\u044c\u043a\u043e \u044d\u0442\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043d\u0435 \u0438\u043c\u0435\u044e\u0442 \u044f\u0432\u043d\u043e \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u043d\u043e\u0433\u043e \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0430. \u0422\u0430\u043a\u0436\u0435 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b, \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u0435 \u0441 \u0441\u043e\u0431\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u043c\u0438 \u0438 \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435\u043c \u044f\u0432\u043d\u043e \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u043d\u043e\u0433\u043e \u0438\u043c \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0430, \u043d\u0435\u044f\u0432\u043d\u043e \u043d\u0430\u0437\u043d\u0430\u0447\u0430\u044e\u0442\u0441\u044f \u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0443 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430."
-		   });
-		addAnnotation
-		  (getEngineer_Assignments(),
-		   source,
-		   new String[] {
-			   "label_ru", "\u0417\u0430\u0434\u0430\u0447\u0430",
-			   "documentation_ru", "\u0417\u0430\u0434\u0430\u0447\u0438, \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0435 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u0443 \u043d\u0430 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435"
-		   });
-		addAnnotation
-		  (issueEClass,
-		   source,
-		   new String[] {
-			   "label_ru", "\u0417\u0430\u0434\u0430\u0447\u0430",
-			   "documentation_ru", "\u0427\u0442\u043e-\u0442\u043e, \u0442\u0440\u0435\u0431\u0443\u044e\u0449\u0435\u0435 \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043a\u0430\u043a\u043e\u0439-\u043b\u0438\u0431\u043e \u0440\u0430\u0431\u043e\u0442\u044b \u0432 \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0438 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430-\u0432\u043b\u0430\u0434\u0435\u043b\u044c\u0446\u0430 - \u043e\u0448\u0438\u0431\u043a\u0430, \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u0430, \u0438\u043d\u0446\u0435\u0434\u0435\u043d\u0442, \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u0443\u0441\u043e\u0432\u0435\u0440\u0448\u0435\u043d\u0441\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u044f."
 		   });
 	}
 

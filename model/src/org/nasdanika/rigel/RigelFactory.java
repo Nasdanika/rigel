@@ -121,24 +121,6 @@ public interface RigelFactory extends EFactory {
 	Association createAssociation();
 
 	/**
-	 * Returns a new object of class '<em>Engineer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Engineer</em>'.
-	 * @generated
-	 */
-	Engineer createEngineer();
-
-	/**
-	 * Returns a new object of class '<em>Issue</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Issue</em>'.
-	 * @generated
-	 */
-	Issue createIssue();
-
-	/**
 	 * Returns a new object of class '<em>Milestone</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
