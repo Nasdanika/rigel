@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="A model of value stream where something (value) is created via a series of activities performed by participants using inputs and resources (e.g. tools) and producing outputs. &#xA;Activities are owned by engineers who identify activity improvement opportunities as issues and resolve them to make the value stream more efficient. &#xA;&#xA;For example, a development activity would have requirements as input, source code as output and IDE as a resource. &#xA;The activity engineer may identify an improvement opportunity &quot;Create a code generator&quot;, which would reduce duration of the activity.&#xA;"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Model element which can be contained by a package."/>
     </eAnnotations>
@@ -20,10 +20,6 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Container elements."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Элементы пакета"/>
-        <details key="documentation_ru" value="Элементы пакета"/>
-      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement #//IPackage">
@@ -36,10 +32,6 @@
         eType="#//Flow" eOpposite="#//Flow/paricipants">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Activities in which this actor participates."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Действия"/>
-        <details key="documentation_ru" value="Действия в которых участвует исполнитель"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -63,10 +55,6 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="One or more actors participate in completion of a flow."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Участники"/>
-        <details key="documentation_ru" value="Один или более исполнителей, участвующих в выполнении работы."/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
         changeable="false" transient="true" derived="true">
@@ -81,7 +69,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="FlowElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Element of a (composite) activity."/>
     </eAnnotations>
@@ -95,19 +83,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Outbound transitions."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Исходящие"/>
-        <details key="documentation_ru" value="Исходящие (что?) Точки выхода?"/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
-        eType="#//Artifact" eOpposite="#//Artifact/producers">
+        eType="#//Artifact">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Artifacts output/produced by this source."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Артефакт"/>
-        <details key="documentation_ru" value="Артефакты производимые этим источником"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -125,19 +105,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Inbound transitions."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Вход в работу/операцию"/>
-        <details key="documentation_ru" value="???Inbound transitions."/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
-        eType="#//Artifact" eOpposite="#//Artifact/consumers">
+        eType="#//Artifact">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Input artifacts consumed by this target."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Входящие артефакты"/>
-        <details key="documentation_ru" value="Входящие артефакты необходимые для выполнения целевого этапа работы"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -204,41 +176,6 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. Artifacts are passed between activities over transitions."/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="consumers" upperBound="-1"
-        eType="#//Target" eOpposite="#//Target/inputs">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Targets consuming this artifact as their input."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Потребители"/>
-        <details key="documentation_ru" value="Работы или операции для которых данный аритефакт является входящим."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="producers" upperBound="-1"
-        eType="#//Source" eOpposite="#//Source/outputs">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Sources emitting this artifact as their output."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Производители"/>
-        <details key="documentation_ru" value="Работа или операция результатом которой является данный артефакт"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-        eType="#//Artifact" containment="true">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="Artifacts can be nested. E.g. a zip archive contains directories which contain files."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Вложенные артефакты"/>
-        <details key="documentation_ru" value="Артефакты могут быть вложенными друг в друга. Например: zip, содержащий папки, содержащие файлы."/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Something leveraged by an actor to perform an activity. For example - a tool."/>
@@ -248,23 +185,20 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Resource can be nested. E.g. a virtual machine may host a web server."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Вложенные ресурсы"/>
-        <details key="documentation_ru" value="Ресурсы могут быть вложенными, многокомпонентными. Например, виртуальная машина может включать в себя веб-сервер."/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
         eType="#//Artifact" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Resources may host artifacts."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Артефакт"/>
-        <details key="documentation_ru" value="Ресурсы могут включать в себя артефакты"/>
-      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact" eSuperTypes="#//Resource">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Artifact is something output/produced by a source and consumed by a target as input. For example - source code, user guide, binary code. &#xA;Artifacts are passed between activities over transitions.&#xA;Artifacts can be stored in artifact repositories and be used as resources. E.g. an executable jar file or Eclipse product can be produced as an artifact by a build activity and then be used as a tool.&#xA;Another example is documentation."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Transition from its containing source element to a target element. May pass artifacts in both directions. E.g. a transition to &quot;Commit code&quot; may take &quot;Source code&quot; as input and return &quot;Commit ID&quot; as a result."/>
     </eAnnotations>
@@ -273,19 +207,11 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Transition target."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Целевой элемент"/>
-        <details key="documentation_ru" value="Работа/операция, являющаяся целью передачи артефакта, выполнение которой невозможно до выполнения работы-источника артефакта."/>
-      </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
         eType="#//Artifact">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Artifacts passed by the source to the transition and delivered to the target."/>
-      </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Входящие артефакты"/>
-        <details key="documentation_ru" value="Артефакты предаваемые от элемента-источника к целевому элементу через переход."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="results" upperBound="-1"
@@ -293,24 +219,31 @@
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Artifacts returned by the target to be delivered to the source."/>
       </eAnnotations>
-      <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Результат передачи"/>
-        <details key="documentation_ru" value="Артефакты возвращаемые целевым элементом элементу источнику."/>
-      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//ModelElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A generic relationship between model elements."/>
     </eAnnotations>
-    <eAnnotations source="urn:org.nasdanika">
-      <details key="label_ru" value="Ассоциация"/>
-      <details key="documentation_ru" value="Отношения наследования между элементами модели"/>
-    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//PackageElement">
+        eType="#//PackageElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//PackageElement #//Source #//Target ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Repository stores artifacts. It may initiate activities when artifacts are stored to it or updated - hooks or polling."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryReference" eSuperTypes="#//PackageElement #//Source #//Target">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="References a shared repository defined elsewhere."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//Repository">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
+      </eAnnotations>
       <eAnnotations source="urn:org.nasdanika">
-        <details key="label_ru" value="Цель"/>
+        <details key="label_ru" value="Работа"/>
+        <details key="documentation_ru" value="Выполняя работу исполнители производят исходящие (целевые) артефакты, используя входящие артефакты и ресурсы."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

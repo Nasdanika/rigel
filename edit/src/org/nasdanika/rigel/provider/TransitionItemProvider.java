@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.nasdanika.ncore.provider.NamedElementItemProvider;
+import org.nasdanika.ncore.provider.ModelElementItemProvider;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Target;
 import org.nasdanika.rigel.Transition;
@@ -24,7 +24,7 @@ import org.nasdanika.rigel.Transition;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TransitionItemProvider extends NamedElementItemProvider {
+public class TransitionItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -149,13 +149,13 @@ public class TransitionItemProvider extends NamedElementItemProvider {
 	@Override
 	public String getText(Object object) {
 		StringBuilder label = new StringBuilder();
-		String name = ((Transition) object).getName();
+		String name = ((Transition) object).getTitle();
 		if (name != null) {
 			label.append(name);
 		}
 		Target t = ((Transition) object).getTarget();
 		if (t != null) {
-			String tName = t.getName();
+			String tName = t.getTitle();
 			if (tName != null && tName.length() > 0) {
 				if (name != null) {
 					label.append(" ");

@@ -137,7 +137,7 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Resource)object).getName();
+		String label = ((Resource)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Resource_type") : label;
 	}
 
@@ -186,8 +186,36 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(RigelPackage.Literals.RESOURCE__CHILDREN,
+				 RigelFactory.eINSTANCE.createArtifact()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(RigelPackage.Literals.RESOURCE__ARTIFACTS,
 				 RigelFactory.eINSTANCE.createArtifact()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == RigelPackage.Literals.RESOURCE__CHILDREN ||
+			childFeature == RigelPackage.Literals.RESOURCE__ARTIFACTS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

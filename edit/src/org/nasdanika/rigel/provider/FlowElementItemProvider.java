@@ -12,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.nasdanika.ncore.provider.NamedElementItemProvider;
+import org.nasdanika.ncore.provider.ModelElementItemProvider;
 import org.nasdanika.rigel.FlowElement;
 
 /**
@@ -21,7 +21,7 @@ import org.nasdanika.rigel.FlowElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FlowElementItemProvider extends NamedElementItemProvider {
+public class FlowElementItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class FlowElementItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FlowElement)object).getName();
+		String label = ((FlowElement)object).getTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_FlowElement_type") :
 			getString("_UI_FlowElement_type") + " " + label;

@@ -111,7 +111,7 @@ public class TargetItemProvider extends FlowElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Target)object).getName();
+		String label = ((Target)object).getTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Target_type") :
 			getString("_UI_Target_type") + " " + label;

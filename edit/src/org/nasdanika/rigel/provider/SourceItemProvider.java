@@ -122,7 +122,7 @@ public class SourceItemProvider extends FlowElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Source)object).getName();
+		String label = ((Source)object).getTitle();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Source_type") :
 			getString("_UI_Source_type") + " " + label;

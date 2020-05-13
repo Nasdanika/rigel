@@ -122,7 +122,7 @@ public class EndItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((End)object).getName();
+		String label = ((End)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_End_type") : label;
 	}
 

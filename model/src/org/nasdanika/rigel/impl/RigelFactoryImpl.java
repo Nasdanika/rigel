@@ -18,6 +18,8 @@ import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.End;
 import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.Partition;
+import org.nasdanika.rigel.Repository;
+import org.nasdanika.rigel.RepositoryReference;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -76,10 +78,12 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 			case RigelPackage.ACTIVITY: return createActivity();
 			case RigelPackage.MILESTONE: return createMilestone();
 			case RigelPackage.ACTIVITY_REFERENCE: return createActivityReference();
-			case RigelPackage.ARTIFACT: return createArtifact();
 			case RigelPackage.RESOURCE: return createResource();
+			case RigelPackage.ARTIFACT: return createArtifact();
 			case RigelPackage.TRANSITION: return createTransition();
 			case RigelPackage.ASSOCIATION: return createAssociation();
+			case RigelPackage.REPOSITORY: return createRepository();
+			case RigelPackage.REPOSITORY_REFERENCE: return createRepositoryReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,6 +208,28 @@ public class RigelFactoryImpl extends EFactoryImpl implements RigelFactory {
 	public Association createAssociation() {
 		AssociationImpl association = new AssociationImpl();
 		return association;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Repository createRepository() {
+		RepositoryImpl repository = new RepositoryImpl();
+		return repository;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RepositoryReference createRepositoryReference() {
+		RepositoryReferenceImpl repositoryReference = new RepositoryReferenceImpl();
+		return repositoryReference;
 	}
 
 	/**

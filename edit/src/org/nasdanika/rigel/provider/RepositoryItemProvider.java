@@ -10,29 +10,32 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
 import org.nasdanika.engineering.EngineeringFactory;
 import org.nasdanika.engineering.EngineeringPackage;
-import org.nasdanika.rigel.Actor;
+
+import org.nasdanika.rigel.Repository;
+import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
 
 /**
- * This is the item provider adapter for a {@link org.nasdanika.rigel.Actor} object.
+ * This is the item provider adapter for a {@link org.nasdanika.rigel.Repository} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ActorItemProvider extends PackageElementItemProvider {
+public class RepositoryItemProvider extends PackageElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ActorItemProvider(AdapterFactory adapterFactory) {
+	public RepositoryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -47,10 +50,78 @@ public class ActorItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOutputsPropertyDescriptor(object);
+			addInboundTransitionsPropertyDescriptor(object);
+			addInputsPropertyDescriptor(object);
 			addOwnersPropertyDescriptor(object);
-			addFlowsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Outputs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOutputsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Source_outputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Source_outputs_feature", "_UI_Source_type"),
+				 RigelPackage.Literals.SOURCE__OUTPUTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Inbound Transitions feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInboundTransitionsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Target_inboundTransitions_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inboundTransitions_feature", "_UI_Target_type"),
+				 RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Inputs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInputsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Target_inputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inputs_feature", "_UI_Target_type"),
+				 RigelPackage.Literals.TARGET__INPUTS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -76,27 +147,6 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Flows feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addFlowsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(getResourceLocator(),
-				 getString("_UI_Participant_flows_feature"),
-				 RigelPackage.Literals.PARTICIPANT__FLOWS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null, 
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -108,6 +158,7 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
 			childrenFeatures.add(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
 		}
 		return childrenFeatures;
@@ -127,14 +178,14 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	}
 
 	/**
-	 * This returns Actor.gif.
+	 * This returns Repository.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Actor.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Repository.png"));
 	}
 
 	/**
@@ -155,8 +206,8 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Actor)object).getTitle();
-		return label == null || label.length() == 0 ? getString("_UI_Actor_type") :	label;
+		String label = ((Repository)object).getTitle();
+		return label == null || label.length() == 0 ? getString("_UI_Repository_type") : label;
 	}
 
 
@@ -171,8 +222,9 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Actor.class)) {
-			case RigelPackage.ACTOR__ISSUES:
+		switch (notification.getFeatureID(Repository.class)) {
+			case RigelPackage.REPOSITORY__OUTBOUND_TRANSITIONS:
+			case RigelPackage.REPOSITORY__ISSUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -189,6 +241,11 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS,
+				 RigelFactory.eINSTANCE.createTransition()));
 
 		newChildDescriptors.add
 			(createChildParameter

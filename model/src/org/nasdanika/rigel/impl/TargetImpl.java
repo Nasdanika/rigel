@@ -82,8 +82,6 @@ public abstract class TargetImpl extends FlowElementImpl implements Target {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundTransitions()).basicAdd(otherEnd, msgs);
-			case RigelPackage.TARGET__INPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -98,8 +96,6 @@ public abstract class TargetImpl extends FlowElementImpl implements Target {
 		switch (featureID) {
 			case RigelPackage.TARGET__INBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.TARGET__INPUTS:
-				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

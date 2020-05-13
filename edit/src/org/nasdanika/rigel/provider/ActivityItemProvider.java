@@ -220,7 +220,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Activity)object).getName();
+		String label = ((Activity)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Activity_type") : label;
 	}
 

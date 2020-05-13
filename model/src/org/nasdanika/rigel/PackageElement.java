@@ -3,7 +3,7 @@
 package org.nasdanika.rigel;
 
 import org.eclipse.emf.common.util.EList;
-import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.ncore.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import org.nasdanika.ncore.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface PackageElement extends NamedElement {
+public interface PackageElement extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Associations</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Association}.

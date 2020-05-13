@@ -3,7 +3,7 @@
 package org.nasdanika.rigel;
 
 import org.eclipse.emf.common.util.EList;
-import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.ncore.ModelElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +27,7 @@ import org.nasdanika.ncore.NamedElement;
  * @model
  * @generated
  */
-public interface Transition extends NamedElement {
+public interface Transition extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.rigel.Target#getInboundTransitions <em>Inbound Transitions</em>}'.
@@ -41,7 +41,6 @@ public interface Transition extends NamedElement {
 	 * @see org.nasdanika.rigel.RigelPackage#getTransition_Target()
 	 * @see org.nasdanika.rigel.Target#getInboundTransitions
 	 * @model opposite="inboundTransitions" required="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0426\u0435\u043b\u0435\u0432\u043e\u0439 \u044d\u043b\u0435\u043c\u0435\u043d\u0442' documentation_ru='\u0420\u0430\u0431\u043e\u0442\u0430/\u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044f, \u044f\u0432\u043b\u044f\u044e\u0449\u0430\u044f\u0441\u044f \u0446\u0435\u043b\u044c\u044e \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u0430, \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043a\u043e\u0442\u043e\u0440\u043e\u0439 \u043d\u0435\u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u0434\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b-\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u0430.'"
 	 * @generated
 	 */
 	Target getTarget();
@@ -66,7 +65,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Inputs</em>' reference list.
 	 * @see org.nasdanika.rigel.RigelPackage#getTransition_Inputs()
-	 * @model annotation="urn:org.nasdanika label_ru='\u0412\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b' documentation_ru='\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u043f\u0440\u0435\u0434\u0430\u0432\u0430\u0435\u043c\u044b\u0435 \u043e\u0442 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430-\u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430 \u043a \u0446\u0435\u043b\u0435\u0432\u043e\u043c\u0443 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0443 \u0447\u0435\u0440\u0435\u0437 \u043f\u0435\u0440\u0435\u0445\u043e\u0434.'"
+	 * @model
 	 * @generated
 	 */
 	EList<Artifact> getInputs();
@@ -81,7 +80,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Results</em>' reference list.
 	 * @see org.nasdanika.rigel.RigelPackage#getTransition_Results()
-	 * @model annotation="urn:org.nasdanika label_ru='\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438' documentation_ru='\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u043c\u044b\u0435 \u0446\u0435\u043b\u0435\u0432\u044b\u043c \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u043c \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0443 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0443.'"
+	 * @model
 	 * @generated
 	 */
 	EList<Artifact> getResults();

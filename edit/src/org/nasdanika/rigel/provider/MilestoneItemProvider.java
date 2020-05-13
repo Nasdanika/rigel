@@ -269,7 +269,7 @@ public class MilestoneItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Milestone)object).getName();
+		String label = ((Milestone)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Milestone_type") : label;
 	}
 

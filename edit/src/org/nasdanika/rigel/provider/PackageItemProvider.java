@@ -135,7 +135,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((org.nasdanika.rigel.Package)object).getName();
+		String label = ((org.nasdanika.rigel.Package)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Package_type") : label;
 	}
 
@@ -219,12 +219,22 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createArtifact()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
-				 RigelFactory.eINSTANCE.createResource()));
+				 RigelFactory.eINSTANCE.createRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
+				 RigelFactory.eINSTANCE.createRepositoryReference()));
 	}
 
 }

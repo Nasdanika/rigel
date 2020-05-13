@@ -2,7 +2,7 @@
  */
 package org.nasdanika.rigel;
 
-import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.ncore.ModelElement;
 
 
 /**
@@ -22,10 +22,10 @@ import org.nasdanika.ncore.NamedElement;
  * </ul>
  *
  * @see org.nasdanika.rigel.RigelPackage#getAssociation()
- * @model annotation="urn:org.nasdanika label_ru='\u0410\u0441\u0441\u043e\u0446\u0438\u0430\u0446\u0438\u044f' documentation_ru='\u041e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044f \u043d\u0430\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u044f \u043c\u0435\u0436\u0434\u0443 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u0430\u043c\u0438 \u043c\u043e\u0434\u0435\u043b\u0438'"
+ * @model
  * @generated
  */
-public interface Association extends NamedElement {
+public interface Association extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -34,7 +34,6 @@ public interface Association extends NamedElement {
 	 * @see #setTarget(PackageElement)
 	 * @see org.nasdanika.rigel.RigelPackage#getAssociation_Target()
 	 * @model required="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0426\u0435\u043b\u044c'"
 	 * @generated
 	 */
 	PackageElement getTarget();

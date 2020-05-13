@@ -325,6 +325,52 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Repository} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RepositoryItemProvider repositoryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.Repository}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRepositoryAdapter() {
+		if (repositoryItemProvider == null) {
+			repositoryItemProvider = new RepositoryItemProvider(this);
+		}
+
+		return repositoryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.RepositoryReference} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RepositoryReferenceItemProvider repositoryReferenceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.rigel.RepositoryReference}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRepositoryReferenceAdapter() {
+		if (repositoryReferenceItemProvider == null) {
+			repositoryReferenceItemProvider = new RepositoryReferenceItemProvider(this);
+		}
+
+		return repositoryReferenceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.nasdanika.rigel.Milestone} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,10 +506,12 @@ public class RigelItemProviderAdapterFactory extends RigelAdapterFactory impleme
 		if (activityItemProvider != null) activityItemProvider.dispose();
 		if (milestoneItemProvider != null) milestoneItemProvider.dispose();
 		if (activityReferenceItemProvider != null) activityReferenceItemProvider.dispose();
-		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (resourceItemProvider != null) resourceItemProvider.dispose();
+		if (artifactItemProvider != null) artifactItemProvider.dispose();
 		if (transitionItemProvider != null) transitionItemProvider.dispose();
 		if (associationItemProvider != null) associationItemProvider.dispose();
+		if (repositoryItemProvider != null) repositoryItemProvider.dispose();
+		if (repositoryReferenceItemProvider != null) repositoryReferenceItemProvider.dispose();
 	}
 
 }

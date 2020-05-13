@@ -4,7 +4,7 @@ package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.nasdanika.ncore.impl.NamedElementImpl;
+import org.nasdanika.ncore.impl.ModelElementImpl;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -15,7 +15,7 @@ import org.nasdanika.rigel.RigelPackage;
  *
  * @generated
  */
-public abstract class FlowElementImpl extends NamedElementImpl implements FlowElement {
+public abstract class FlowElementImpl extends ModelElementImpl implements FlowElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

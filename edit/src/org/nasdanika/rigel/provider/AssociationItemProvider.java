@@ -11,7 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.nasdanika.ncore.provider.NamedElementItemProvider;
+import org.nasdanika.ncore.provider.ModelElementItemProvider;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -22,7 +22,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AssociationItemProvider extends NamedElementItemProvider {
+public class AssociationItemProvider extends ModelElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -101,13 +101,13 @@ public class AssociationItemProvider extends NamedElementItemProvider {
 	@Override
 	public String getText(Object object) {
 		StringBuilder label = new StringBuilder();
-		String name = ((Association) object).getName();
+		String name = ((Association) object).getTitle();
 		if (name != null) {
 			label.append(name);
 		}
 		PackageElement t = ((Association) object).getTarget();
 		if (t != null) {
-			String tName = t.getName();
+			String tName = t.getTitle();
 			if (tName != null && tName.length() > 0) {
 				if (name != null) {
 					label.append(" ");

@@ -226,12 +226,8 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.MILESTONE__OUTPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
 			case RigelPackage.MILESTONE__INBOUND_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundTransitions()).basicAdd(otherEnd, msgs);
-			case RigelPackage.MILESTONE__INPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -246,12 +242,8 @@ public class MilestoneImpl extends PackageElementImpl implements Milestone {
 		switch (featureID) {
 			case RigelPackage.MILESTONE__OUTBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getOutboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.MILESTONE__OUTPUTS:
-				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
 			case RigelPackage.MILESTONE__INBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.MILESTONE__INPUTS:
-				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

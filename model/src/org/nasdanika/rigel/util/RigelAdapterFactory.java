@@ -9,7 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.engineering.EngineeredElement;
+import org.nasdanika.ncore.ModelElement;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.IPackage;
@@ -23,6 +24,8 @@ import org.nasdanika.rigel.Milestone;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.Participant;
 import org.nasdanika.rigel.Partition;
+import org.nasdanika.rigel.Repository;
+import org.nasdanika.rigel.RepositoryReference;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
 import org.nasdanika.rigel.Source;
@@ -147,12 +150,12 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createActivityReferenceAdapter();
 			}
 			@Override
-			public Adapter caseArtifact(Artifact object) {
-				return createArtifactAdapter();
-			}
-			@Override
 			public Adapter caseResource(Resource object) {
 				return createResourceAdapter();
+			}
+			@Override
+			public Adapter caseArtifact(Artifact object) {
+				return createArtifactAdapter();
 			}
 			@Override
 			public Adapter caseTransition(Transition object) {
@@ -163,15 +166,19 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createAssociationAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(org.nasdanika.ncore.ModelElement object) {
+			public Adapter caseRepository(Repository object) {
+				return createRepositoryAdapter();
+			}
+			@Override
+			public Adapter caseRepositoryReference(RepositoryReference object) {
+				return createRepositoryReferenceAdapter();
+			}
+			@Override
+			public Adapter caseModelElement(ModelElement object) {
 				return createModelElementAdapter();
 			}
 			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
-			}
-			@Override
-			public Adapter caseEngineeredElement(org.nasdanika.engineering.EngineeredElement object) {
+			public Adapter caseEngineeredElement(EngineeredElement object) {
 				return createEngineeredElementAdapter();
 			}
 			@Override
@@ -205,20 +212,6 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.ncore.NamedElement
-	 * @generated
-	 */
-	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
@@ -485,6 +478,34 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.Repository <em>Repository</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.Repository
+	 * @generated
+	 */
+	public Adapter createRepositoryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.rigel.RepositoryReference <em>Repository Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.rigel.RepositoryReference
+	 * @generated
+	 */
+	public Adapter createRepositoryReferenceAdapter() {
 		return null;
 	}
 

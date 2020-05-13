@@ -74,7 +74,7 @@ public class PartitionItemProvider extends FlowItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Partition)object).getName();
+		String label = ((Partition)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Partition_type") :	label;
 	}
 

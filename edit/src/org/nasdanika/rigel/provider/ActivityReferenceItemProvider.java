@@ -202,9 +202,9 @@ public class ActivityReferenceItemProvider extends PackageElementItemProvider {
 	@Override
 	public String getText(Object object) {
 		ActivityReference activityReference = (ActivityReference)object;
-		String label = activityReference.getName();
+		String label = activityReference.getTitle();
 		if ((label == null || label.length() == 0) && activityReference.getActivity() != null) {
-			label = activityReference.getActivity().getName();
+			label = activityReference.getActivity().getTitle();
 		}
 		return label == null || label.length() == 0 ? getString("_UI_ActivityReference_type") :	label;
 	}

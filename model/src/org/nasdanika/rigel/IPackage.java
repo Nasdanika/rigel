@@ -38,7 +38,6 @@ public interface IPackage extends EObject {
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.nasdanika.rigel.RigelPackage#getIPackage_Elements()
 	 * @model containment="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u042d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430' documentation_ru='\u042d\u043b\u0435\u043c\u0435\u043d\u0442\u044b \u043f\u0430\u043a\u0435\u0442\u0430'"
 	 * @generated
 	 */
 	EList<PackageElement> getElements();

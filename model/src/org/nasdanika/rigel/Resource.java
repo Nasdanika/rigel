@@ -38,7 +38,6 @@ public interface Resource extends PackageElement, EngineeredElement {
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.nasdanika.rigel.RigelPackage#getResource_Children()
 	 * @model containment="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0412\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u044b' documentation_ru='\u0420\u0435\u0441\u0443\u0440\u0441\u044b \u043c\u043e\u0433\u0443\u0442 \u0431\u044b\u0442\u044c \u0432\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u043c\u0438, \u043c\u043d\u043e\u0433\u043e\u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u043d\u044b\u043c\u0438. \u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u043c\u0430\u0448\u0438\u043d\u0430 \u043c\u043e\u0436\u0435\u0442 \u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c \u0432 \u0441\u0435\u0431\u044f \u0432\u0435\u0431-\u0441\u0435\u0440\u0432\u0435\u0440.'"
 	 * @generated
 	 */
 	EList<Resource> getChildren();
@@ -54,7 +53,6 @@ public interface Resource extends PackageElement, EngineeredElement {
 	 * @return the value of the '<em>Artifacts</em>' containment reference list.
 	 * @see org.nasdanika.rigel.RigelPackage#getResource_Artifacts()
 	 * @model containment="true"
-	 *        annotation="urn:org.nasdanika label_ru='\u0410\u0440\u0442\u0435\u0444\u0430\u043a\u0442' documentation_ru='\u0420\u0435\u0441\u0443\u0440\u0441\u044b \u043c\u043e\u0433\u0443\u0442 \u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c \u0432 \u0441\u0435\u0431\u044f \u0430\u0440\u0442\u0435\u0444\u0430\u043a\u0442\u044b'"
 	 * @generated
 	 */
 	EList<Artifact> getArtifacts();

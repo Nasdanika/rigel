@@ -12,7 +12,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.engineering.Engineer;
+import org.nasdanika.engineering.EngineeredElement;
 import org.nasdanika.engineering.EngineeringPackage;
+import org.nasdanika.engineering.Issue;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelPackage;
@@ -60,8 +63,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<org.nasdanika.engineering.Engineer> getOwners() {
-		return (EList<org.nasdanika.engineering.Engineer>)eDynamicGet(RigelPackage.RESOURCE__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>)eDynamicGet(RigelPackage.RESOURCE__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -71,8 +74,8 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<org.nasdanika.engineering.Issue> getIssues() {
-		return (EList<org.nasdanika.engineering.Issue>)eDynamicGet(RigelPackage.RESOURCE__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+	public EList<Issue> getIssues() {
+		return (EList<Issue>)eDynamicGet(RigelPackage.RESOURCE__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -146,11 +149,11 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 		switch (featureID) {
 			case RigelPackage.RESOURCE__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends org.nasdanika.engineering.Engineer>)newValue);
+				getOwners().addAll((Collection<? extends Engineer>)newValue);
 				return;
 			case RigelPackage.RESOURCE__ISSUES:
 				getIssues().clear();
-				getIssues().addAll((Collection<? extends org.nasdanika.engineering.Issue>)newValue);
+				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
 			case RigelPackage.RESOURCE__CHILDREN:
 				getChildren().clear();
@@ -215,7 +218,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
+		if (baseClass == EngineeredElement.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.RESOURCE__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
 				case RigelPackage.RESOURCE__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
@@ -232,7 +235,7 @@ public class ResourceImpl extends PackageElementImpl implements Resource {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
+		if (baseClass == EngineeredElement.class) {
 			switch (baseFeatureID) {
 				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.RESOURCE__OWNERS;
 				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.RESOURCE__ISSUES;

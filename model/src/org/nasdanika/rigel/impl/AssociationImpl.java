@@ -4,7 +4,7 @@ package org.nasdanika.rigel.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.nasdanika.ncore.impl.NamedElementImpl;
+import org.nasdanika.ncore.impl.ModelElementImpl;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -22,7 +22,7 @@ import org.nasdanika.rigel.RigelPackage;
  *
  * @generated
  */
-public class AssociationImpl extends NamedElementImpl implements Association {
+public class AssociationImpl extends ModelElementImpl implements Association {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -141,12 +141,8 @@ public class ActivityReferenceImpl extends PackageElementImpl implements Activit
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RigelPackage.ACTIVITY_REFERENCE__OUTPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
 			case RigelPackage.ACTIVITY_REFERENCE__INBOUND_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInboundTransitions()).basicAdd(otherEnd, msgs);
-			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -161,12 +157,8 @@ public class ActivityReferenceImpl extends PackageElementImpl implements Activit
 		switch (featureID) {
 			case RigelPackage.ACTIVITY_REFERENCE__OUTBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getOutboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.ACTIVITY_REFERENCE__OUTPUTS:
-				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY_REFERENCE__INBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.ACTIVITY_REFERENCE__INPUTS:
-				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

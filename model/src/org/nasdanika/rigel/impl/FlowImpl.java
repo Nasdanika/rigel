@@ -9,7 +9,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.engineering.Engineer;
+import org.nasdanika.engineering.EngineeredElement;
 import org.nasdanika.engineering.EngineeringPackage;
+import org.nasdanika.engineering.Issue;
 import org.nasdanika.rigel.ActivityReference;
 import org.nasdanika.rigel.Flow;
 import org.nasdanika.rigel.FlowElement;
@@ -80,8 +83,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<org.nasdanika.engineering.Engineer> getOwners() {
-		return (EList<org.nasdanika.engineering.Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+	public EList<Engineer> getOwners() {
+		return (EList<Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
 	}
 
 	/**
@@ -91,8 +94,8 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<org.nasdanika.engineering.Issue> getIssues() {
-		return (EList<org.nasdanika.engineering.Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+	public EList<Issue> getIssues() {
+		return (EList<Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
 	}
 
 	/**
@@ -185,11 +188,11 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 		switch (featureID) {
 			case RigelPackage.FLOW__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends org.nasdanika.engineering.Engineer>)newValue);
+				getOwners().addAll((Collection<? extends Engineer>)newValue);
 				return;
 			case RigelPackage.FLOW__ISSUES:
 				getIssues().clear();
-				getIssues().addAll((Collection<? extends org.nasdanika.engineering.Issue>)newValue);
+				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
 			case RigelPackage.FLOW__ELEMENTS:
 				getElements().clear();
@@ -258,7 +261,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
+		if (baseClass == EngineeredElement.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.FLOW__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
 				case RigelPackage.FLOW__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
@@ -275,7 +278,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == org.nasdanika.engineering.EngineeredElement.class) {
+		if (baseClass == EngineeredElement.class) {
 			switch (baseFeatureID) {
 				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.FLOW__OWNERS;
 				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;

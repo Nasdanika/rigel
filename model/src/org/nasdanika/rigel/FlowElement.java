@@ -2,7 +2,7 @@
  */
 package org.nasdanika.rigel;
 
-import org.nasdanika.ncore.NamedElement;
+import org.nasdanika.ncore.ModelElement;
 
 
 /**
@@ -19,5 +19,5 @@ import org.nasdanika.ncore.NamedElement;
  * @model abstract="true"
  * @generated
  */
-public interface FlowElement extends NamedElement {
+public interface FlowElement extends ModelElement {
 } // ActivityElement

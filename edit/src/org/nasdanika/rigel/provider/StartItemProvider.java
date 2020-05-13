@@ -132,7 +132,7 @@ public class StartItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Start)object).getName();
+		String label = ((Start)object).getTitle();
 		return label == null || label.length() == 0 ? getString("_UI_Start_type") :	label;
 	}
 
