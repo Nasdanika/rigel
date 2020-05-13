@@ -262,6 +262,16 @@ public class FlowItemProvider extends PackageElementItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.FLOW__ELEMENTS,
 				 RigelFactory.eINSTANCE.createActivityReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.FLOW__ELEMENTS,
+				 RigelFactory.eINSTANCE.createRepository()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.FLOW__ELEMENTS,
+				 RigelFactory.eINSTANCE.createRepositoryReference()));
 	}
 
 }

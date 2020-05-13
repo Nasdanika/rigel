@@ -177,11 +177,11 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This returns RepositoryReference.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RepositoryReference"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RepositoryReference.png"));
 	}
 
 	/**
@@ -198,14 +198,12 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((RepositoryReference)object).getTitle();
-		return label == null || label.length() == 0 ?
-			getString("_UI_RepositoryReference_type") :
-			getString("_UI_RepositoryReference_type") + " " + label;
+		return label == null || label.length() == 0 ? getString("_UI_RepositoryReference_type") : label;
 	}
 
 
