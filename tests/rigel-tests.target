@@ -15,7 +15,6 @@
 			<unit id="org.yaml.snakeyaml" version="1.24.0"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<unit id="org.nasdanika.equinox.feature.feature.group" version="1.0.0.201906301725"/>
 			<repository location="https://www.nasdanika.org/home/products/third-party/repository"/>
 			<unit id="org.nasdanika.third-party.feature.feature.group" version="2.2019.4.201906301725"/>
 		</location>
