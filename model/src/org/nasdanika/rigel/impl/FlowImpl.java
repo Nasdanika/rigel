@@ -9,8 +9,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.engineering.AbstractComponent;
 import org.nasdanika.engineering.Engineer;
-import org.nasdanika.engineering.EngineeredElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
 import org.nasdanika.rigel.ActivityReference;
@@ -84,7 +84,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+		return (EList<Engineer>)eDynamicGet(RigelPackage.FLOW__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
 	}
 
 	/**
@@ -95,7 +95,7 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+		return (EList<Issue>)eDynamicGet(RigelPackage.FLOW__ISSUES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES, true, true);
 	}
 
 	/**
@@ -261,10 +261,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == AbstractComponent.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.FLOW__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
-				case RigelPackage.FLOW__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
+				case RigelPackage.FLOW__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
+				case RigelPackage.FLOW__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
 				default: return -1;
 			}
 		}
@@ -278,10 +278,10 @@ public abstract class FlowImpl extends PackageElementImpl implements Flow {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == AbstractComponent.class) {
 			switch (baseFeatureID) {
-				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.FLOW__OWNERS;
-				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.FLOW__ISSUES;
+				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.FLOW__OWNERS;
+				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.FLOW__ISSUES;
 				default: return -1;
 			}
 		}

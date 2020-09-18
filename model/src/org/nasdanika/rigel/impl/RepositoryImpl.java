@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.nasdanika.engineering.AbstractComponent;
 import org.nasdanika.engineering.Engineer;
-import org.nasdanika.engineering.EngineeredElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
 
@@ -116,7 +116,7 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.REPOSITORY__OWNERS, EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS, true, true);
+		return (EList<Engineer>)eDynamicGet(RigelPackage.REPOSITORY__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 	@SuppressWarnings("unchecked")
 	@Override
 	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.REPOSITORY__ISSUES, EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES, true, true);
+		return (EList<Issue>)eDynamicGet(RigelPackage.REPOSITORY__ISSUES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES, true, true);
 	}
 
 	/**
@@ -304,10 +304,10 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				default: return -1;
 			}
 		}
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == AbstractComponent.class) {
 			switch (derivedFeatureID) {
-				case RigelPackage.REPOSITORY__OWNERS: return EngineeringPackage.ENGINEERED_ELEMENT__OWNERS;
-				case RigelPackage.REPOSITORY__ISSUES: return EngineeringPackage.ENGINEERED_ELEMENT__ISSUES;
+				case RigelPackage.REPOSITORY__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
+				case RigelPackage.REPOSITORY__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
 				default: return -1;
 			}
 		}
@@ -340,10 +340,10 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				default: return -1;
 			}
 		}
-		if (baseClass == EngineeredElement.class) {
+		if (baseClass == AbstractComponent.class) {
 			switch (baseFeatureID) {
-				case EngineeringPackage.ENGINEERED_ELEMENT__OWNERS: return RigelPackage.REPOSITORY__OWNERS;
-				case EngineeringPackage.ENGINEERED_ELEMENT__ISSUES: return RigelPackage.REPOSITORY__ISSUES;
+				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.REPOSITORY__OWNERS;
+				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.REPOSITORY__ISSUES;
 				default: return -1;
 			}
 		}

@@ -846,13 +846,13 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		// Add supertypes to classes
 		packageElementEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		packageEClass.getESuperTypes().add(this.getPackageElement());
-		packageEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		packageEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		packageEClass.getESuperTypes().add(this.getIPackage());
 		actorEClass.getESuperTypes().add(this.getPackageElement());
-		actorEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		actorEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		actorEClass.getESuperTypes().add(this.getParticipant());
 		flowEClass.getESuperTypes().add(this.getPackageElement());
-		flowEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		flowEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		flowElementEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		sourceEClass.getESuperTypes().add(this.getFlowElement());
 		startEClass.getESuperTypes().add(this.getPackageElement());
@@ -872,14 +872,14 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
 		resourceEClass.getESuperTypes().add(this.getPackageElement());
-		resourceEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		resourceEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		artifactEClass.getESuperTypes().add(this.getResource());
 		transitionEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		associationEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		repositoryEClass.getESuperTypes().add(this.getPackageElement());
 		repositoryEClass.getESuperTypes().add(this.getSource());
 		repositoryEClass.getESuperTypes().add(this.getTarget());
-		repositoryEClass.getESuperTypes().add(theEngineeringPackage.getEngineeredElement());
+		repositoryEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		repositoryReferenceEClass.getESuperTypes().add(this.getPackageElement());
 		repositoryReferenceEClass.getESuperTypes().add(this.getSource());
 		repositoryReferenceEClass.getESuperTypes().add(this.getTarget());

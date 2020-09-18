@@ -3,7 +3,7 @@
 package org.nasdanika.rigel;
 
 import org.eclipse.emf.common.util.EList;
-import org.nasdanika.engineering.EngineeredElement;
+import org.nasdanika.engineering.AbstractComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +26,7 @@ import org.nasdanika.engineering.EngineeredElement;
  * @model
  * @generated
  */
-public interface Resource extends PackageElement, EngineeredElement {
+public interface Resource extends PackageElement, AbstractComponent {
 	/**
 	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.Resource}.

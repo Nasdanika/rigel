@@ -2,7 +2,7 @@
  */
 package org.nasdanika.rigel;
 
-import org.nasdanika.engineering.EngineeredElement;
+import org.nasdanika.engineering.AbstractComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +18,6 @@ import org.nasdanika.engineering.EngineeredElement;
  * @model
  * @generated
  */
-public interface Actor extends PackageElement, EngineeredElement, Participant {
+public interface Actor extends PackageElement, AbstractComponent, Participant {
 
 } // Actor

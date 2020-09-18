@@ -22,7 +22,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement #//IPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent #//IPackage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Container of package elements. Packages are used to organize model elements into a hierarchy."/>
     </eAnnotations>
@@ -35,12 +35,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement #//Participant">
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent #//Participant">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Actors perform activities using resources consuming and producing artifacts."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Flow is an abstract container of flow elements."/>
     </eAnnotations>
@@ -176,7 +176,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Something leveraged by an actor to perform an activity. For example - a tool."/>
     </eAnnotations>
@@ -228,7 +228,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//PackageElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//PackageElement #//Source #//Target ../../org.nasdanika.engineering/model/engineering.ecore#//EngineeredElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//PackageElement #//Source #//Target ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Repository stores artifacts. It may initiate activities when artifacts are stored to it or updated - hooks or polling."/>
     </eAnnotations>

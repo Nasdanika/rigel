@@ -2,7 +2,7 @@
 <feature
       id="org.nasdanika.rigel.tests.feature"
       label="Nasdanika Rigel Tests and model documentation generation"
-      version="0.1.0.qualifier">
+      version="2020.12.0.qualifier">
 
    <description>
       Tests and demos of Nasdanika Rigel functionality.

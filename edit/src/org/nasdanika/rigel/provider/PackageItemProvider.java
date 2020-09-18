@@ -64,9 +64,9 @@ public class PackageItemProvider extends PackageElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EngineeredElement_owners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EngineeredElement_owners_feature", "_UI_EngineeredElement_type"),
-				 EngineeringPackage.Literals.ENGINEERED_ELEMENT__OWNERS,
+				 getString("_UI_AbstractComponent_owners_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
+				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
 				 true,
 				 false,
 				 true,
@@ -87,7 +87,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES);
+			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.IPACKAGE__ELEMENTS);
 		}
 		return childrenFeatures;
@@ -173,7 +173,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(EngineeringPackage.Literals.ENGINEERED_ELEMENT__ISSUES,
+				(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES,
 				 EngineeringFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add

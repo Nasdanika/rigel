@@ -2,7 +2,7 @@
  */
 package org.nasdanika.rigel;
 
-import org.nasdanika.engineering.EngineeredElement;
+import org.nasdanika.engineering.AbstractComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,5 +18,5 @@ import org.nasdanika.engineering.EngineeredElement;
  * @model
  * @generated
  */
-public interface Repository extends PackageElement, Source, Target, EngineeredElement {
+public interface Repository extends PackageElement, Source, Target, AbstractComponent {
 } // Repository
