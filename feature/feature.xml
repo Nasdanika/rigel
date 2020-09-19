@@ -324,13 +324,6 @@ version(s), and exceptions or additional permissions here}.&quot;
          unpack="false"/>
 
    <plugin
-         id="org.nasdanika.rigel.html"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.nasdanika.rigel.design"
          download-size="0"
          install-size="0"
@@ -388,27 +381,6 @@ version(s), and exceptions or additional permissions here}.&quot;
 
    <plugin
          id="org.nasdanika.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.nasdanika.rigel.help"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.codehaus.janino"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.commons.commons-codec"
          download-size="0"
          install-size="0"
          version="0.0.0"
