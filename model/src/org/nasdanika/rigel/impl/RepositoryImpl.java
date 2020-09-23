@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.engineering.AbstractComponent;
-import org.nasdanika.engineering.Engineer;
+import org.nasdanika.engineering.AbstractEngineer;
+import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
 
@@ -115,8 +116,8 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.REPOSITORY__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
+	public EList<AbstractEngineer> getOwners() {
+		return (EList<AbstractEngineer>)eDynamicGet(RigelPackage.REPOSITORY__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
 	}
 
 	/**
@@ -214,7 +215,7 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				return;
 			case RigelPackage.REPOSITORY__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends Engineer>)newValue);
+				getOwners().addAll((Collection<? extends AbstractEngineer>)newValue);
 				return;
 			case RigelPackage.REPOSITORY__ISSUES:
 				getIssues().clear();
@@ -304,6 +305,11 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				default: return -1;
 			}
 		}
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == AbstractComponent.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.REPOSITORY__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
@@ -337,6 +343,11 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 			switch (baseFeatureID) {
 				case RigelPackage.TARGET__INBOUND_TRANSITIONS: return RigelPackage.REPOSITORY__INBOUND_TRANSITIONS;
 				case RigelPackage.TARGET__INPUTS: return RigelPackage.REPOSITORY__INPUTS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

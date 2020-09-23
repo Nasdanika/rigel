@@ -14,7 +14,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.nasdanika.engineering.AbstractComponent;
-import org.nasdanika.engineering.Engineer;
+import org.nasdanika.engineering.AbstractEngineer;
+import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
 import org.nasdanika.rigel.IPackage;
@@ -63,8 +64,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<Engineer> getOwners() {
-		return (EList<Engineer>)eDynamicGet(RigelPackage.PACKAGE__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
+	public EList<AbstractEngineer> getOwners() {
+		return (EList<AbstractEngineer>)eDynamicGet(RigelPackage.PACKAGE__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
 	}
 
 	/**
@@ -134,7 +135,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 		switch (featureID) {
 			case RigelPackage.PACKAGE__OWNERS:
 				getOwners().clear();
-				getOwners().addAll((Collection<? extends Engineer>)newValue);
+				getOwners().addAll((Collection<? extends AbstractEngineer>)newValue);
 				return;
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
@@ -194,6 +195,11 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == AbstractComponent.class) {
 			switch (derivedFeatureID) {
 				case RigelPackage.PACKAGE__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
@@ -217,6 +223,11 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
 		if (baseClass == AbstractComponent.class) {
 			switch (baseFeatureID) {
 				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.PACKAGE__OWNERS;
