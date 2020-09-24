@@ -245,7 +245,7 @@
   <extensions xsi:type="properties:ViewExtensionDescription" name="rigel_rules_properties">
     <metamodels href="urn:org.nasdanika.rigel#/"/>
     <categories name="Customized">
-      <pages name="rigel_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" groups="//@extensions.0/@categories.0/@groups.0"/>
+      <pages name="rigel_rules_defaultpage" labelExpression="aql:input.emfEditServices(self).getTabName()" semanticCandidateExpression="aql:input.getAllSemanticElements()" preconditionExpression="aql:self.isRigelResource()" groups="//@extensions.0/@categories.0/@groups.0"/>
       <groups name="rigel_rules_defaultgroup" labelExpression="Properties" semanticCandidateExpression="var:self" preconditionExpression="">
         <controls xsi:type="properties:DynamicMappingForDescription" name="sirius_default_rules_structural_features_for" iterator="eStructuralFeature" iterableExpression="aql:input.emfEditServices(self).getEStructuralFeatures()">
           <ifs name="sirius_default_rules_mono_string_if" predicateExpression="aql:input.emfEditServices(self).needsTextWidget(eStructuralFeature) and not input.emfEditServices(self).isMultiline(eStructuralFeature)">
