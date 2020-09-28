@@ -47,34 +47,11 @@ public class FlowItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOwnersPropertyDescriptor(object);
 			addParicipantsPropertyDescriptor(object);
 			addTotalSizePropertyDescriptor(object);
 			addTotalProgressPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Owners feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOwnersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_AbstractComponent_owners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
-				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -154,7 +131,6 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.FLOW__ELEMENTS);
 		}
 		return childrenFeatures;
@@ -191,7 +167,7 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Flow)object).getTitle();
+		String label = ((Flow)object).getId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Flow_type") :
 			getString("_UI_Flow_type") + " " + label;
@@ -214,7 +190,6 @@ public class FlowItemProvider extends PackageElementItemProvider {
 			case RigelPackage.FLOW__TOTAL_PROGRESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case RigelPackage.FLOW__ISSUES:
 			case RigelPackage.FLOW__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

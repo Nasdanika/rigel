@@ -3,7 +3,6 @@
 package org.nasdanika.rigel;
 
 import org.eclipse.emf.common.util.EList;
-import org.nasdanika.engineering.AbstractComponent;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +27,7 @@ import org.nasdanika.engineering.AbstractComponent;
  * @model abstract="true"
  * @generated
  */
-public interface Flow extends PackageElement, AbstractComponent {
+public interface Flow extends PackageElement {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.rigel.FlowElement}.

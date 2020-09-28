@@ -12,13 +12,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.nasdanika.engineering.AbstractComponent;
-import org.nasdanika.engineering.AbstractEngineer;
-import org.nasdanika.engineering.ComponentCategoryElement;
-import org.nasdanika.engineering.EngineeringPackage;
-import org.nasdanika.engineering.Issue;
-
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.FlowElement;
 import org.nasdanika.rigel.Repository;
@@ -39,8 +32,6 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.RepositoryImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.RepositoryImpl#getInboundTransitions <em>Inbound Transitions</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.RepositoryImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.RepositoryImpl#getOwners <em>Owners</em>}</li>
- *   <li>{@link org.nasdanika.rigel.impl.RepositoryImpl#getIssues <em>Issues</em>}</li>
  * </ul>
  *
  * @generated
@@ -116,28 +107,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public EList<AbstractEngineer> getOwners() {
-		return (EList<AbstractEngineer>)eDynamicGet(RigelPackage.REPOSITORY__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Issue> getIssues() {
-		return (EList<Issue>)eDynamicGet(RigelPackage.REPOSITORY__ISSUES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES, true, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RigelPackage.REPOSITORY__INBOUND_TRANSITIONS:
@@ -158,8 +127,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				return ((InternalEList<?>)getOutboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.REPOSITORY__INBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
-			case RigelPackage.REPOSITORY__ISSUES:
-				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,10 +147,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				return getInboundTransitions();
 			case RigelPackage.REPOSITORY__INPUTS:
 				return getInputs();
-			case RigelPackage.REPOSITORY__OWNERS:
-				return getOwners();
-			case RigelPackage.REPOSITORY__ISSUES:
-				return getIssues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -213,14 +176,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
-			case RigelPackage.REPOSITORY__OWNERS:
-				getOwners().clear();
-				getOwners().addAll((Collection<? extends AbstractEngineer>)newValue);
-				return;
-			case RigelPackage.REPOSITORY__ISSUES:
-				getIssues().clear();
-				getIssues().addAll((Collection<? extends Issue>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,12 +200,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 			case RigelPackage.REPOSITORY__INPUTS:
 				getInputs().clear();
 				return;
-			case RigelPackage.REPOSITORY__OWNERS:
-				getOwners().clear();
-				return;
-			case RigelPackage.REPOSITORY__ISSUES:
-				getIssues().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -271,10 +220,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				return !getInboundTransitions().isEmpty();
 			case RigelPackage.REPOSITORY__INPUTS:
 				return !getInputs().isEmpty();
-			case RigelPackage.REPOSITORY__OWNERS:
-				return !getOwners().isEmpty();
-			case RigelPackage.REPOSITORY__ISSUES:
-				return !getIssues().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -305,18 +250,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 				default: return -1;
 			}
 		}
-		if (baseClass == ComponentCategoryElement.class) {
-			switch (derivedFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == AbstractComponent.class) {
-			switch (derivedFeatureID) {
-				case RigelPackage.REPOSITORY__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
-				case RigelPackage.REPOSITORY__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
-				default: return -1;
-			}
-		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -343,18 +276,6 @@ public class RepositoryImpl extends PackageElementImpl implements Repository {
 			switch (baseFeatureID) {
 				case RigelPackage.TARGET__INBOUND_TRANSITIONS: return RigelPackage.REPOSITORY__INBOUND_TRANSITIONS;
 				case RigelPackage.TARGET__INPUTS: return RigelPackage.REPOSITORY__INPUTS;
-				default: return -1;
-			}
-		}
-		if (baseClass == ComponentCategoryElement.class) {
-			switch (baseFeatureID) {
-				default: return -1;
-			}
-		}
-		if (baseClass == AbstractComponent.class) {
-			switch (baseFeatureID) {
-				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.REPOSITORY__OWNERS;
-				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.REPOSITORY__ISSUES;
 				default: return -1;
 			}
 		}

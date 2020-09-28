@@ -14,9 +14,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import org.nasdanika.engineering.EngineeringFactory;
-import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.Resource;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -49,25 +46,25 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOwnersPropertyDescriptor(object);
+			addReleasePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Owners feature.
+	 * This adds a property descriptor for the Release feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwnersPropertyDescriptor(Object object) {
+	protected void addReleasePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AbstractComponent_owners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
-				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
+				 getString("_UI_Resource_release_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Resource_release_feature", "_UI_Resource_type"),
+				 RigelPackage.Literals.RESOURCE__RELEASE,
 				 true,
 				 false,
 				 true,
@@ -88,7 +85,6 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__CHILDREN);
 			childrenFeatures.add(RigelPackage.Literals.RESOURCE__ARTIFACTS);
 		}
@@ -154,7 +150,6 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Resource.class)) {
-			case RigelPackage.RESOURCE__ISSUES:
 			case RigelPackage.RESOURCE__CHILDREN:
 			case RigelPackage.RESOURCE__ARTIFACTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -173,11 +168,6 @@ public class ResourceItemProvider extends PackageElementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES,
-				 EngineeringFactory.eINSTANCE.createIssue()));
 
 		newChildDescriptors.add
 			(createChildParameter

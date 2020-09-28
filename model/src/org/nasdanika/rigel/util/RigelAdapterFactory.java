@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.engineering.AbstractComponent;
 import org.nasdanika.engineering.ComponentCategoryElement;
+import org.nasdanika.ncore.Entity;
 import org.nasdanika.ncore.ModelElement;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.FlowElement;
@@ -179,6 +180,10 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 				return createModelElementAdapter();
 			}
 			@Override
+			public Adapter caseEntity(Entity object) {
+				return createEntityAdapter();
+			}
+			@Override
 			public Adapter caseComponentCategoryElement(ComponentCategoryElement object) {
 				return createComponentCategoryElementAdapter();
 			}
@@ -217,6 +222,20 @@ public class RigelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ncore.Entity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ncore.Entity
+	 * @generated
+	 */
+	public Adapter createEntityAdapter() {
 		return null;
 	}
 

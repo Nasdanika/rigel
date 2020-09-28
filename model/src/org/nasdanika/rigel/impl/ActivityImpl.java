@@ -9,6 +9,11 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.nasdanika.engineering.AbstractComponent;
+import org.nasdanika.engineering.AbstractEngineer;
+import org.nasdanika.engineering.ComponentCategoryElement;
+import org.nasdanika.engineering.EngineeringPackage;
+import org.nasdanika.engineering.Issue;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Flow;
@@ -30,6 +35,8 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getInboundTransitions <em>Inbound Transitions</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getOwners <em>Owners</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getProgress <em>Progress</em>}</li>
  * </ul>
@@ -116,6 +123,28 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	@Override
 	public EList<Artifact> getInputs() {
 		return (EList<Artifact>)eDynamicGet(RigelPackage.ACTIVITY__INPUTS, RigelPackage.Literals.TARGET__INPUTS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<AbstractEngineer> getOwners() {
+		return (EList<AbstractEngineer>)eDynamicGet(RigelPackage.ACTIVITY__OWNERS, EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Issue> getIssues() {
+		return (EList<Issue>)eDynamicGet(RigelPackage.ACTIVITY__ISSUES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES, true, true);
 	}
 
 	/**
@@ -213,6 +242,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return ((InternalEList<?>)getOutboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__INBOUND_TRANSITIONS:
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
+			case RigelPackage.ACTIVITY__ISSUES:
+				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -233,6 +264,10 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getInboundTransitions();
 			case RigelPackage.ACTIVITY__INPUTS:
 				return getInputs();
+			case RigelPackage.ACTIVITY__OWNERS:
+				return getOwners();
+			case RigelPackage.ACTIVITY__ISSUES:
+				return getIssues();
 			case RigelPackage.ACTIVITY__SIZE:
 				return getSize();
 			case RigelPackage.ACTIVITY__PROGRESS:
@@ -266,6 +301,14 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Artifact>)newValue);
 				return;
+			case RigelPackage.ACTIVITY__OWNERS:
+				getOwners().clear();
+				getOwners().addAll((Collection<? extends AbstractEngineer>)newValue);
+				return;
+			case RigelPackage.ACTIVITY__ISSUES:
+				getIssues().clear();
+				getIssues().addAll((Collection<? extends Issue>)newValue);
+				return;
 			case RigelPackage.ACTIVITY__SIZE:
 				setSize((Double)newValue);
 				return;
@@ -296,6 +339,12 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			case RigelPackage.ACTIVITY__INPUTS:
 				getInputs().clear();
 				return;
+			case RigelPackage.ACTIVITY__OWNERS:
+				getOwners().clear();
+				return;
+			case RigelPackage.ACTIVITY__ISSUES:
+				getIssues().clear();
+				return;
 			case RigelPackage.ACTIVITY__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
@@ -322,6 +371,10 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return !getInboundTransitions().isEmpty();
 			case RigelPackage.ACTIVITY__INPUTS:
 				return !getInputs().isEmpty();
+			case RigelPackage.ACTIVITY__OWNERS:
+				return !getOwners().isEmpty();
+			case RigelPackage.ACTIVITY__ISSUES:
+				return !getIssues().isEmpty();
 			case RigelPackage.ACTIVITY__SIZE:
 				return getSize() != SIZE_EDEFAULT;
 			case RigelPackage.ACTIVITY__PROGRESS:
@@ -356,6 +409,18 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				default: return -1;
 			}
 		}
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == AbstractComponent.class) {
+			switch (derivedFeatureID) {
+				case RigelPackage.ACTIVITY__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
+				case RigelPackage.ACTIVITY__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -382,6 +447,18 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			switch (baseFeatureID) {
 				case RigelPackage.TARGET__INBOUND_TRANSITIONS: return RigelPackage.ACTIVITY__INBOUND_TRANSITIONS;
 				case RigelPackage.TARGET__INPUTS: return RigelPackage.ACTIVITY__INPUTS;
+				default: return -1;
+			}
+		}
+		if (baseClass == ComponentCategoryElement.class) {
+			switch (baseFeatureID) {
+				default: return -1;
+			}
+		}
+		if (baseClass == AbstractComponent.class) {
+			switch (baseFeatureID) {
+				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.ACTIVITY__OWNERS;
+				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.ACTIVITY__ISSUES;
 				default: return -1;
 			}
 		}

@@ -13,6 +13,8 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.nasdanika.engineering.EngineeringFactory;
+import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -48,6 +50,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 			addOutputsPropertyDescriptor(object);
 			addInboundTransitionsPropertyDescriptor(object);
 			addInputsPropertyDescriptor(object);
+			addOwnersPropertyDescriptor(object);
 			addSizePropertyDescriptor(object);
 			addProgressPropertyDescriptor(object);
 		}
@@ -118,6 +121,28 @@ public class ActivityItemProvider extends FlowItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Owners feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOwnersPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractComponent_owners_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
+				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This adds a property descriptor for the Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,6 +199,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
+			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
 		}
 		return childrenFeatures;
 	}
@@ -242,6 +268,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
+			case RigelPackage.ACTIVITY__ISSUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -263,6 +290,11 @@ public class ActivityItemProvider extends FlowItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS,
 				 RigelFactory.eINSTANCE.createTransition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES,
+				 EngineeringFactory.eINSTANCE.createIssue()));
 	}
 
 }

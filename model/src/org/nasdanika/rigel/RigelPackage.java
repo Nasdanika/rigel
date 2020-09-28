@@ -82,7 +82,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_ELEMENT__TITLE = NcorePackage.MODEL_ELEMENT__TITLE;
+	int PACKAGE_ELEMENT__TITLE = NcorePackage.ENTITY__TITLE;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -91,7 +91,16 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_ELEMENT__DESCRIPTION = NcorePackage.MODEL_ELEMENT__DESCRIPTION;
+	int PACKAGE_ELEMENT__DESCRIPTION = NcorePackage.ENTITY__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_ELEMENT__ID = NcorePackage.ENTITY__ID;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -100,7 +109,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_ELEMENT__ASSOCIATIONS = NcorePackage.MODEL_ELEMENT_FEATURE_COUNT + 0;
+	int PACKAGE_ELEMENT__ASSOCIATIONS = NcorePackage.ENTITY_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Package Element</em>' class.
@@ -109,7 +118,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_ELEMENT_FEATURE_COUNT = NcorePackage.MODEL_ELEMENT_FEATURE_COUNT + 1;
+	int PACKAGE_ELEMENT_FEATURE_COUNT = NcorePackage.ENTITY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Package Element</em>' class.
@@ -118,7 +127,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_ELEMENT_OPERATION_COUNT = NcorePackage.MODEL_ELEMENT_OPERATION_COUNT + 0;
+	int PACKAGE_ELEMENT_OPERATION_COUNT = NcorePackage.ENTITY_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.rigel.IPackage <em>IPackage</em>}' class.
@@ -184,6 +193,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PACKAGE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__ID = PACKAGE_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -305,6 +323,15 @@ public interface RigelPackage extends EPackage {
 	int ACTOR__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,31 +341,22 @@ public interface RigelPackage extends EPackage {
 	int ACTOR__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR__OWNERS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTOR__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Flows</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR__FLOWS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+	int ACTOR__FLOWS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTOR__ROLES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Actor</em>' class.
@@ -347,7 +365,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTOR_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+	int ACTOR_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Actor</em>' class.
@@ -507,6 +525,15 @@ public interface RigelPackage extends EPackage {
 	int FLOW__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOW__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,31 +543,13 @@ public interface RigelPackage extends EPackage {
 	int FLOW__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW__OWNERS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOW__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+	int FLOW__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Paricipants</b></em>' reference list.
@@ -549,7 +558,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__PARICIPANTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+	int FLOW__PARICIPANTS = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Total Size</b></em>' attribute.
@@ -558,7 +567,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__TOTAL_SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
+	int FLOW__TOTAL_SIZE = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Total Progress</b></em>' attribute.
@@ -567,7 +576,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW__TOTAL_PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
+	int FLOW__TOTAL_PROGRESS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Flow</em>' class.
@@ -576,7 +585,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
+	int FLOW_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Flow</em>' class.
@@ -696,6 +705,15 @@ public interface RigelPackage extends EPackage {
 	int START__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -813,6 +831,15 @@ public interface RigelPackage extends EPackage {
 	int END__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,6 +903,15 @@ public interface RigelPackage extends EPackage {
 	int PARTITION__DESCRIPTION = FLOW__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTITION__ID = FLOW__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -883,24 +919,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARTITION__ASSOCIATIONS = FLOW__ASSOCIATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTITION__OWNERS = FLOW__OWNERS;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARTITION__ISSUES = FLOW__ISSUES;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -975,6 +993,15 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__DESCRIPTION = FLOW__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__ID = FLOW__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -982,24 +1009,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ACTIVITY__ASSOCIATIONS = FLOW__ASSOCIATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__OWNERS = FLOW__OWNERS;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTIVITY__ISSUES = FLOW__ISSUES;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1074,13 +1083,31 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__INPUTS = FLOW_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Owners</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__OWNERS = FLOW_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__ISSUES = FLOW_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__SIZE = FLOW_FEATURE_COUNT + 4;
+	int ACTIVITY__SIZE = FLOW_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Progress</b></em>' attribute.
@@ -1089,7 +1116,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 5;
+	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
@@ -1098,7 +1125,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 6;
+	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Activity</em>' class.
@@ -1136,6 +1163,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int MILESTONE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MILESTONE__ID = PACKAGE_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -1255,6 +1291,15 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY_REFERENCE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY_REFERENCE__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1345,6 +1390,15 @@ public interface RigelPackage extends EPackage {
 	int RESOURCE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1354,31 +1408,13 @@ public interface RigelPackage extends EPackage {
 	int RESOURCE__ASSOCIATIONS = PACKAGE_ELEMENT__ASSOCIATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__OWNERS = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__CHILDREN = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+	int RESOURCE__CHILDREN = PACKAGE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Artifacts</b></em>' containment reference list.
@@ -1387,7 +1423,16 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE__ARTIFACTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+	int RESOURCE__ARTIFACTS = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Release</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE__RELEASE = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Resource</em>' class.
@@ -1396,7 +1441,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
+	int RESOURCE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Resource</em>' class.
@@ -1426,6 +1471,15 @@ public interface RigelPackage extends EPackage {
 	int ARTIFACT__DESCRIPTION = RESOURCE__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__ID = RESOURCE__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1433,24 +1487,6 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARTIFACT__ASSOCIATIONS = RESOURCE__ASSOCIATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACT__OWNERS = RESOURCE__OWNERS;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARTIFACT__ISSUES = RESOURCE__ISSUES;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -1469,6 +1505,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARTIFACT__ARTIFACTS = RESOURCE__ARTIFACTS;
+
+	/**
+	 * The feature id for the '<em><b>Release</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT__RELEASE = RESOURCE__RELEASE;
 
 	/**
 	 * The number of structural features of the '<em>Artifact</em>' class.
@@ -1625,6 +1670,15 @@ public interface RigelPackage extends EPackage {
 	int REPOSITORY__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY__ID = PACKAGE_ELEMENT__ID;
+
+	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1670,31 +1724,13 @@ public interface RigelPackage extends EPackage {
 	int REPOSITORY__INPUTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Owners</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__OWNERS = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Issues</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPOSITORY__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Repository</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPOSITORY_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 6;
+	int REPOSITORY_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Repository</em>' class.
@@ -1732,6 +1768,15 @@ public interface RigelPackage extends EPackage {
 	 * @ordered
 	 */
 	int REPOSITORY_REFERENCE__DESCRIPTION = PACKAGE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPOSITORY_REFERENCE__ID = PACKAGE_ELEMENT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Associations</b></em>' containment reference list.
@@ -1887,6 +1932,17 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getActor();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.rigel.Actor#getRoles <em>Roles</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Roles</em>'.
+	 * @see org.nasdanika.rigel.Actor#getRoles()
+	 * @see #getActor()
+	 * @generated
+	 */
+	EReference getActor_Roles();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Flow <em>Flow</em>}'.
@@ -2142,6 +2198,17 @@ public interface RigelPackage extends EPackage {
 	EReference getResource_Artifacts();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.nasdanika.rigel.Resource#getRelease <em>Release</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Release</em>'.
+	 * @see org.nasdanika.rigel.Resource#getRelease()
+	 * @see #getResource()
+	 * @generated
+	 */
+	EReference getResource_Release();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Transition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2388,6 +2455,14 @@ public interface RigelPackage extends EPackage {
 		EClass ACTOR = eINSTANCE.getActor();
 
 		/**
+		 * The meta object literal for the '<em><b>Roles</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTOR__ROLES = eINSTANCE.getActor_Roles();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.FlowImpl <em>Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2600,6 +2675,14 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESOURCE__ARTIFACTS = eINSTANCE.getResource_Artifacts();
+
+		/**
+		 * The meta object literal for the '<em><b>Release</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESOURCE__RELEASE = eINSTANCE.getResource_Release();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.TransitionImpl <em>Transition</em>}' class.

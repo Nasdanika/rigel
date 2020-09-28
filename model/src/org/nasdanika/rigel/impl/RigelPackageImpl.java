@@ -341,6 +341,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getActor_Roles() {
+		return (EReference)actorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFlow() {
 		return flowEClass;
 	}
@@ -581,6 +591,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getResource_Release() {
+		return (EReference)resourceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTransition() {
 		return transitionEClass;
 	}
@@ -756,6 +776,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(participantEClass, PARTICIPANT__FLOWS);
 
 		actorEClass = createEClass(ACTOR);
+		createEReference(actorEClass, ACTOR__ROLES);
 
 		flowEClass = createEClass(FLOW);
 		createEReference(flowEClass, FLOW__ELEMENTS);
@@ -795,6 +816,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		resourceEClass = createEClass(RESOURCE);
 		createEReference(resourceEClass, RESOURCE__CHILDREN);
 		createEReference(resourceEClass, RESOURCE__ARTIFACTS);
+		createEReference(resourceEClass, RESOURCE__RELEASE);
 
 		artifactEClass = createEClass(ARTIFACT);
 
@@ -838,21 +860,20 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		// Obtain other dependent packages
 		NcorePackage theNcorePackage = (NcorePackage)EPackage.Registry.INSTANCE.getEPackage(NcorePackage.eNS_URI);
 		EngineeringPackage theEngineeringPackage = (EngineeringPackage)EPackage.Registry.INSTANCE.getEPackage(EngineeringPackage.eNS_URI);
+		PartyPackage thePartyPackage = (PartyPackage)EPackage.Registry.INSTANCE.getEPackage(PartyPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		packageElementEClass.getESuperTypes().add(theNcorePackage.getModelElement());
+		packageElementEClass.getESuperTypes().add(theNcorePackage.getEntity());
 		packageEClass.getESuperTypes().add(this.getPackageElement());
 		packageEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		packageEClass.getESuperTypes().add(this.getIPackage());
 		actorEClass.getESuperTypes().add(this.getPackageElement());
-		actorEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		actorEClass.getESuperTypes().add(this.getParticipant());
 		flowEClass.getESuperTypes().add(this.getPackageElement());
-		flowEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		flowElementEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		sourceEClass.getESuperTypes().add(this.getFlowElement());
 		startEClass.getESuperTypes().add(this.getPackageElement());
@@ -865,6 +886,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityEClass.getESuperTypes().add(this.getFlow());
 		activityEClass.getESuperTypes().add(this.getSource());
 		activityEClass.getESuperTypes().add(this.getTarget());
+		activityEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		milestoneEClass.getESuperTypes().add(this.getPackageElement());
 		milestoneEClass.getESuperTypes().add(this.getSource());
 		milestoneEClass.getESuperTypes().add(this.getTarget());
@@ -872,14 +894,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityReferenceEClass.getESuperTypes().add(this.getSource());
 		activityReferenceEClass.getESuperTypes().add(this.getTarget());
 		resourceEClass.getESuperTypes().add(this.getPackageElement());
-		resourceEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		artifactEClass.getESuperTypes().add(this.getResource());
 		transitionEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		associationEClass.getESuperTypes().add(theNcorePackage.getModelElement());
 		repositoryEClass.getESuperTypes().add(this.getPackageElement());
 		repositoryEClass.getESuperTypes().add(this.getSource());
 		repositoryEClass.getESuperTypes().add(this.getTarget());
-		repositoryEClass.getESuperTypes().add(theEngineeringPackage.getAbstractComponent());
 		repositoryReferenceEClass.getESuperTypes().add(this.getPackageElement());
 		repositoryReferenceEClass.getESuperTypes().add(this.getSource());
 		repositoryReferenceEClass.getESuperTypes().add(this.getTarget());
@@ -897,6 +917,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getParticipant_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actorEClass, Actor.class, "Actor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActor_Roles(), thePartyPackage.getRole(), null, "roles", null, 0, -1, Actor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(flowEClass, Flow.class, "Flow", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlow_Elements(), this.getFlowElement(), null, "elements", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -936,6 +957,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResource_Children(), this.getResource(), null, "children", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getResource_Artifacts(), this.getArtifact(), null, "artifacts", null, 0, -1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getResource_Release(), theEngineeringPackage.getRelease(), null, "release", null, 0, 1, Resource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(artifactEClass, Artifact.class, "Artifact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1011,6 +1033,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Actors perform activities using resources consuming and producing artifacts."
+		   });
+		addAnnotation
+		  (getActor_Roles(),
+		   source,
+		   new String[] {
+			   "documentation", "Mapping or actors to roles in the organization model."
 		   });
 		addAnnotation
 		  (flowEClass,
@@ -1173,6 +1201,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Resources may host artifacts."
+		   });
+		addAnnotation
+		  (getResource_Release(),
+		   source,
+		   new String[] {
+			   "documentation", "Resource may be a release of a product. For example, resource IDE may reference release 2020-09 of product Eclipse."
 		   });
 		addAnnotation
 		  (artifactEClass,

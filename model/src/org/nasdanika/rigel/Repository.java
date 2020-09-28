@@ -2,8 +2,6 @@
  */
 package org.nasdanika.rigel;
 
-import org.nasdanika.engineering.AbstractComponent;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Repository</b></em>'.
@@ -18,5 +16,5 @@ import org.nasdanika.engineering.AbstractComponent;
  * @model
  * @generated
  */
-public interface Repository extends PackageElement, Source, Target, AbstractComponent {
+public interface Repository extends PackageElement, Source, Target {
 } // Repository

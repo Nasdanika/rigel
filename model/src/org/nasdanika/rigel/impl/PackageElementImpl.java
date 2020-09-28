@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nasdanika.ncore.impl.ModelElementImpl;
+import org.nasdanika.ncore.impl.EntityImpl;
 import org.nasdanika.rigel.Association;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -31,7 +31,7 @@ import org.nasdanika.rigel.RigelPackage;
  *
  * @generated
  */
-public abstract class PackageElementImpl extends ModelElementImpl implements PackageElement {
+public abstract class PackageElementImpl extends EntityImpl implements PackageElement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

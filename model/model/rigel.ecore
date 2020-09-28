@@ -4,7 +4,7 @@
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
     <details key="documentation" value="A model of value stream where something (value) is created via a series of activities performed by participants using inputs and resources (e.g. tools) and producing outputs. &#xA;Activities are owned by engineers who identify activity improvement opportunities as issues and resolve them to make the value stream more efficient. &#xA;&#xA;For example, a development activity would have requirements as input, source code as output and IDE as a resource. &#xA;The activity engineer may identify an improvement opportunity &quot;Create a code generator&quot;, which would reduce duration of the activity.&#xA;"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//ModelElement">
+  <eClassifiers xsi:type="ecore:EClass" name="PackageElement" abstract="true" eSuperTypes="../../org.nasdanika.ncore/model/ncore.ecore#//Entity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Model element which can be contained by a package."/>
     </eAnnotations>
@@ -35,12 +35,18 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent #//Participant">
+  <eClassifiers xsi:type="ecore:EClass" name="Actor" eSuperTypes="#//PackageElement #//Participant">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Actors perform activities using resources consuming and producing artifacts."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+        eType="ecore:EClass ../../org.nasdanika.party/model/party.ecore#//Role">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Mapping or actors to roles in the organization model."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Flow" abstract="true" eSuperTypes="#//PackageElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Flow is an abstract container of flow elements."/>
     </eAnnotations>
@@ -123,7 +129,7 @@
       <details key="documentation" value="Partition is a grouping of flow elements associating participants and resources with the contained elements. "/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Flow #//Source #//Target">
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//Flow #//Source #//Target ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="By performing an activity participants produce outputs from inputs using resources."/>
     </eAnnotations>
@@ -176,7 +182,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//PackageElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Something leveraged by an actor to perform an activity. For example - a tool."/>
     </eAnnotations>
@@ -190,6 +196,11 @@
         eType="#//Artifact" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Resources may host artifacts."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="release" eType="ecore:EClass ../../org.nasdanika.engineering/model/engineering.ecore#//Release">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Resource may be a release of a product. For example, resource IDE may reference release 2020-09 of product Eclipse."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -228,7 +239,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//PackageElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//PackageElement #//Source #//Target ../../org.nasdanika.engineering/model/engineering.ecore#//AbstractComponent">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository" eSuperTypes="#//PackageElement #//Source #//Target">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Repository stores artifacts. It may initiate activities when artifacts are stored to it or updated - hooks or polling."/>
     </eAnnotations>

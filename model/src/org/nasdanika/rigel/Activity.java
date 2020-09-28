@@ -2,6 +2,8 @@
  */
 package org.nasdanika.rigel;
 
+import org.nasdanika.engineering.AbstractComponent;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Activity</b></em>'.
@@ -23,7 +25,7 @@ package org.nasdanika.rigel;
  * @model
  * @generated
  */
-public interface Activity extends Flow, Source, Target {
+public interface Activity extends Flow, Source, Target, AbstractComponent {
 	/**
 	 * Returns the value of the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
