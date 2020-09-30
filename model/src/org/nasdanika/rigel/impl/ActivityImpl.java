@@ -14,6 +14,7 @@ import org.nasdanika.engineering.AbstractEngineer;
 import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
+import org.nasdanika.party.ResourceCategoryElement;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.Artifact;
 import org.nasdanika.rigel.Flow;
@@ -39,6 +40,7 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getProgress <em>Progress</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated
@@ -190,6 +192,17 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<ResourceCategoryElement> getResources() {
+		return (EList<ResourceCategoryElement>)eDynamicGet(RigelPackage.ACTIVITY__RESOURCES, RigelPackage.Literals.ACTIVITY__RESOURCES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
@@ -244,6 +257,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
+			case RigelPackage.ACTIVITY__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -272,6 +287,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getSize();
 			case RigelPackage.ACTIVITY__PROGRESS:
 				return getProgress();
+			case RigelPackage.ACTIVITY__RESOURCES:
+				return getResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -315,6 +332,10 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			case RigelPackage.ACTIVITY__PROGRESS:
 				setProgress((Integer)newValue);
 				return;
+			case RigelPackage.ACTIVITY__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends ResourceCategoryElement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -351,6 +372,9 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			case RigelPackage.ACTIVITY__PROGRESS:
 				setProgress(PROGRESS_EDEFAULT);
 				return;
+			case RigelPackage.ACTIVITY__RESOURCES:
+				getResources().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -379,6 +403,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getSize() != SIZE_EDEFAULT;
 			case RigelPackage.ACTIVITY__PROGRESS:
 				return getProgress() != PROGRESS_EDEFAULT;
+			case RigelPackage.ACTIVITY__RESOURCES:
+				return !getResources().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

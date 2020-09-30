@@ -15,6 +15,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.nasdanika.engineering.EngineeringFactory;
 import org.nasdanika.engineering.EngineeringPackage;
+import org.nasdanika.party.PartyFactory;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -200,6 +201,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
 			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
+			childrenFeatures.add(RigelPackage.Literals.ACTIVITY__RESOURCES);
 		}
 		return childrenFeatures;
 	}
@@ -269,6 +271,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 				return;
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
 			case RigelPackage.ACTIVITY__ISSUES:
+			case RigelPackage.ACTIVITY__RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -295,6 +298,36 @@ public class ActivityItemProvider extends FlowItemProvider {
 			(createChildParameter
 				(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES,
 				 EngineeringFactory.eINSTANCE.createIssue()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createResourceCategory()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createMarkdownText()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createMarkdownResource()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createResourceReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createHtmlText()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RigelPackage.Literals.ACTIVITY__RESOURCES,
+				 PartyFactory.eINSTANCE.createHtmlResource()));
 	}
 
 }

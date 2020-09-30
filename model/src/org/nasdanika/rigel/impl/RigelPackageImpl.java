@@ -311,6 +311,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getPackage_Resources() {
+		return (EReference)packageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getParticipant() {
 		return participantEClass;
 	}
@@ -523,6 +533,16 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 	@Override
 	public EAttribute getActivity_Progress() {
 		return (EAttribute)activityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getActivity_Resources() {
+		return (EReference)activityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -771,6 +791,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		createEReference(iPackageEClass, IPACKAGE__ELEMENTS);
 
 		packageEClass = createEClass(PACKAGE);
+		createEReference(packageEClass, PACKAGE__RESOURCES);
 
 		participantEClass = createEClass(PARTICIPANT);
 		createEReference(participantEClass, PARTICIPANT__FLOWS);
@@ -803,6 +824,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		activityEClass = createEClass(ACTIVITY);
 		createEAttribute(activityEClass, ACTIVITY__SIZE);
 		createEAttribute(activityEClass, ACTIVITY__PROGRESS);
+		createEReference(activityEClass, ACTIVITY__RESOURCES);
 
 		milestoneEClass = createEClass(MILESTONE);
 		createEAttribute(milestoneEClass, MILESTONE__SIZE);
@@ -912,6 +934,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEReference(getIPackage_Elements(), this.getPackageElement(), null, "elements", null, 0, -1, IPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(packageEClass, org.nasdanika.rigel.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPackage_Resources(), thePartyPackage.getResourceCategoryElement(), null, "resources", null, 0, -1, org.nasdanika.rigel.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(participantEClass, Participant.class, "Participant", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParticipant_Flows(), this.getFlow(), this.getFlow_Paricipants(), "flows", null, 0, -1, Participant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -944,6 +967,7 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getActivity_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getActivity_Progress(), ecorePackage.getEInt(), "progress", null, 0, 1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getActivity_Resources(), thePartyPackage.getResourceCategoryElement(), null, "resources", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(milestoneEClass, Milestone.class, "Milestone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMilestone_Size(), ecorePackage.getEDouble(), "size", null, 0, 1, Milestone.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -1021,6 +1045,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Container of package elements. Packages are used to organize model elements into a hierarchy."
+		   });
+		addAnnotation
+		  (getPackage_Resources(),
+		   source,
+		   new String[] {
+			   "documentation", "Resource/document library."
 		   });
 		addAnnotation
 		  (getParticipant_Flows(),
@@ -1147,6 +1177,12 @@ public class RigelPackageImpl extends EPackageImpl implements RigelPackage {
 		   source,
 		   new String[] {
 			   "documentation", "Activity progress in percent. Value between 0 and 100. Progress can be used in \"instance\" models which are used to model and track execution of an actual effort as opposed to \"template\" models which explain steps to complete an effort."
+		   });
+		addAnnotation
+		  (getActivity_Resources(),
+		   source,
+		   new String[] {
+			   "documentation", "Resource/document library."
 		   });
 		addAnnotation
 		  (milestoneEClass,

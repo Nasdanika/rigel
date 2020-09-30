@@ -18,6 +18,7 @@ import org.nasdanika.engineering.AbstractEngineer;
 import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
+import org.nasdanika.party.ResourceCategoryElement;
 import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.PackageElement;
 import org.nasdanika.rigel.RigelPackage;
@@ -33,6 +34,7 @@ import org.nasdanika.rigel.RigelPackage;
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getIssues <em>Issues</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getResources <em>Resources</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,6 +97,17 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<ResourceCategoryElement> getResources() {
+		return (EList<ResourceCategoryElement>)eDynamicGet(RigelPackage.PACKAGE__RESOURCES, RigelPackage.Literals.PACKAGE__RESOURCES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -102,6 +115,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+			case RigelPackage.PACKAGE__RESOURCES:
+				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -120,6 +135,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return getIssues();
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return getElements();
+			case RigelPackage.PACKAGE__RESOURCES:
+				return getResources();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,6 +162,10 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				getElements().clear();
 				getElements().addAll((Collection<? extends PackageElement>)newValue);
 				return;
+			case RigelPackage.PACKAGE__RESOURCES:
+				getResources().clear();
+				getResources().addAll((Collection<? extends ResourceCategoryElement>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +187,9 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 			case RigelPackage.PACKAGE__ELEMENTS:
 				getElements().clear();
 				return;
+			case RigelPackage.PACKAGE__RESOURCES:
+				getResources().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +208,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return !getIssues().isEmpty();
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return !getElements().isEmpty();
+			case RigelPackage.PACKAGE__RESOURCES:
+				return !getResources().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

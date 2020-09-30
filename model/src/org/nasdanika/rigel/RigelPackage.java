@@ -240,13 +240,22 @@ public interface RigelPackage extends EPackage {
 	int PACKAGE__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__RESOURCES = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Package</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+	int PACKAGE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -1119,13 +1128,22 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__RESOURCES = FLOW_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 8;
+	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of operations of the '<em>Activity</em>' class.
@@ -1903,6 +1921,17 @@ public interface RigelPackage extends EPackage {
 	EClass getPackage();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Package#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Resources</em>'.
+	 * @see org.nasdanika.rigel.Package#getResources()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_Resources();
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.Participant <em>Participant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2133,6 +2162,17 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getActivity_Progress();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.rigel.Activity#getResources <em>Resources</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Resources</em>'.
+	 * @see org.nasdanika.rigel.Activity#getResources()
+	 * @see #getActivity()
+	 * @generated
+	 */
+	EReference getActivity_Resources();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.rigel.ActivityReference <em>Activity Reference</em>}'.
@@ -2427,6 +2467,14 @@ public interface RigelPackage extends EPackage {
 		EClass PACKAGE = eINSTANCE.getPackage();
 
 		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__RESOURCES = eINSTANCE.getPackage_Resources();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.Participant <em>Participant</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2621,6 +2669,14 @@ public interface RigelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ACTIVITY__PROGRESS = eINSTANCE.getActivity_Progress();
+
+		/**
+		 * The meta object literal for the '<em><b>Resources</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTIVITY__RESOURCES = eINSTANCE.getActivity_Resources();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.rigel.impl.ActivityReferenceImpl <em>Activity Reference</em>}' class.
