@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.nasdanika.rigel.Actor;
 import org.nasdanika.rigel.RigelPackage;
@@ -72,19 +71,18 @@ public class ActorItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Roles feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addRolesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Actor_roles_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Actor_roles_feature", "_UI_Actor_type"),
 				 RigelPackage.Literals.ACTOR__ROLES,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));

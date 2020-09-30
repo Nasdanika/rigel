@@ -8,14 +8,13 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.nasdanika.engineering.EngineeringFactory;
 import org.nasdanika.engineering.EngineeringPackage;
-import org.nasdanika.party.PartyFactory;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -125,19 +124,18 @@ public class ActivityItemProvider extends FlowItemProvider {
 	 * This adds a property descriptor for the Owners feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOwnersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_AbstractComponent_owners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
 				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -147,20 +145,19 @@ public class ActivityItemProvider extends FlowItemProvider {
 	 * This adds a property descriptor for the Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Activity_size_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_size_feature", "_UI_Activity_type"),
 				 RigelPackage.Literals.ACTIVITY__SIZE,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}
@@ -169,20 +166,19 @@ public class ActivityItemProvider extends FlowItemProvider {
 	 * This adds a property descriptor for the Progress feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addProgressPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Activity_progress_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Activity_progress_feature", "_UI_Activity_type"),
 				 RigelPackage.Literals.ACTIVITY__PROGRESS,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}
@@ -283,11 +279,16 @@ public class ActivityItemProvider extends FlowItemProvider {
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+				
+		// --- Resources ---
+		for (EObject resource: org.nasdanika.party.util.Activator.RESOURCES_PALETTE.getElements()) {
+			newChildDescriptors.add(createChildParameter(RigelPackage.Literals.ACTIVITY__RESOURCES, resource));						
+		}		
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -298,36 +299,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 			(createChildParameter
 				(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES,
 				 EngineeringFactory.eINSTANCE.createIssue()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createResourceCategory()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createMarkdownText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createMarkdownResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createResourceReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createHtmlText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.ACTIVITY__RESOURCES,
-				 PartyFactory.eINSTANCE.createHtmlResource()));
+		
 	}
 
 }

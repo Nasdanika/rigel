@@ -8,13 +8,9 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.nasdanika.rigel.RepositoryReference;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
@@ -59,19 +55,18 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This adds a property descriptor for the Outputs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOutputsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Source_outputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Source_outputs_feature", "_UI_Source_type"),
 				 RigelPackage.Literals.SOURCE__OUTPUTS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -81,19 +76,18 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This adds a property descriptor for the Inbound Transitions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addInboundTransitionsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Target_inboundTransitions_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inboundTransitions_feature", "_UI_Target_type"),
 				 RigelPackage.Literals.TARGET__INBOUND_TRANSITIONS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -103,19 +97,18 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This adds a property descriptor for the Inputs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addInputsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Target_inputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Target_inputs_feature", "_UI_Target_type"),
 				 RigelPackage.Literals.TARGET__INPUTS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -125,19 +118,18 @@ public class RepositoryReferenceItemProvider extends PackageElementItemProvider 
 	 * This adds a property descriptor for the Repository feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addRepositoryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_RepositoryReference_repository_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RepositoryReference_repository_feature", "_UI_RepositoryReference_type"),
 				 RigelPackage.Literals.REPOSITORY_REFERENCE__REPOSITORY,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));

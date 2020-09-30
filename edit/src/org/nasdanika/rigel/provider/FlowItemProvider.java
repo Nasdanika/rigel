@@ -9,7 +9,6 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
@@ -79,20 +78,19 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Total Size feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTotalSizePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Flow_totalSize_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Flow_totalSize_feature", "_UI_Flow_type"),
 				 RigelPackage.Literals.FLOW__TOTAL_SIZE,
 				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}
@@ -101,20 +99,19 @@ public class FlowItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Total Progress feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTotalProgressPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_Flow_totalProgress_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Flow_totalProgress_feature", "_UI_Flow_type"),
 				 RigelPackage.Literals.FLOW__TOTAL_PROGRESS,
 				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
 				 null,
 				 null));
 	}

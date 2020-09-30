@@ -8,16 +8,12 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import org.nasdanika.engineering.EngineeringFactory;
 import org.nasdanika.engineering.EngineeringPackage;
-import org.nasdanika.party.PartyFactory;
 import org.nasdanika.rigel.RigelFactory;
 import org.nasdanika.rigel.RigelPackage;
 
@@ -58,19 +54,18 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 * This adds a property descriptor for the Owners feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addOwnersPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+			(createItemPropertyDescriptor(
 				 getResourceLocator(),
 				 getString("_UI_AbstractComponent_owners_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractComponent_owners_feature", "_UI_AbstractComponent_type"),
 				 EngineeringPackage.Literals.ABSTRACT_COMPONENT__OWNERS,
 				 true,
 				 false,
 				 true,
+				 null,
 				 null,
 				 null,
 				 null));
@@ -168,7 +163,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
@@ -238,36 +233,11 @@ public class PackageItemProvider extends PackageElementItemProvider {
 			(createChildParameter
 				(RigelPackage.Literals.IPACKAGE__ELEMENTS,
 				 RigelFactory.eINSTANCE.createRepositoryReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createResourceCategory()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createMarkdownText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createMarkdownResource()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createResourceReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createHtmlText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(RigelPackage.Literals.PACKAGE__RESOURCES,
-				 PartyFactory.eINSTANCE.createHtmlResource()));
+		
+		// --- Resources ---
+		for (EObject resource: org.nasdanika.party.util.Activator.RESOURCES_PALETTE.getElements()) {
+			newChildDescriptors.add(createChildParameter(RigelPackage.Literals.PACKAGE__RESOURCES, resource));						
+		}		
 	}
 
 }
