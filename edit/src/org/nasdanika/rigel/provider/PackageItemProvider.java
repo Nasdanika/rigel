@@ -84,6 +84,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
+			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__RELEASES);
 			childrenFeatures.add(RigelPackage.Literals.IPACKAGE__ELEMENTS);
 			childrenFeatures.add(RigelPackage.Literals.PACKAGE__RESOURCES);
 		}
@@ -150,6 +151,7 @@ public class PackageItemProvider extends PackageElementItemProvider {
 
 		switch (notification.getFeatureID(org.nasdanika.rigel.Package.class)) {
 			case RigelPackage.PACKAGE__ISSUES:
+			case RigelPackage.PACKAGE__RELEASES:
 			case RigelPackage.PACKAGE__ELEMENTS:
 			case RigelPackage.PACKAGE__RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

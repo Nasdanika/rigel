@@ -18,6 +18,7 @@ import org.nasdanika.engineering.AbstractEngineer;
 import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
+import org.nasdanika.engineering.Release;
 import org.nasdanika.party.ResourceCategoryElement;
 import org.nasdanika.rigel.IPackage;
 import org.nasdanika.rigel.PackageElement;
@@ -33,6 +34,7 @@ import org.nasdanika.rigel.RigelPackage;
  * <ul>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getIssues <em>Issues</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getElements <em>Elements</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.PackageImpl#getResources <em>Resources</em>}</li>
  * </ul>
@@ -88,6 +90,17 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
+	public EList<Release> getReleases() {
+		return (EList<Release>)eDynamicGet(RigelPackage.PACKAGE__RELEASES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__RELEASES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
 	public EList<PackageElement> getElements() {
 		return (EList<PackageElement>)eDynamicGet(RigelPackage.PACKAGE__ELEMENTS, RigelPackage.Literals.IPACKAGE__ELEMENTS, true, true);
 	}
@@ -113,6 +126,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 		switch (featureID) {
 			case RigelPackage.PACKAGE__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
+			case RigelPackage.PACKAGE__RELEASES:
+				return ((InternalEList<?>)getReleases()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
 			case RigelPackage.PACKAGE__RESOURCES:
@@ -133,6 +148,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return getOwners();
 			case RigelPackage.PACKAGE__ISSUES:
 				return getIssues();
+			case RigelPackage.PACKAGE__RELEASES:
+				return getReleases();
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return getElements();
 			case RigelPackage.PACKAGE__RESOURCES:
@@ -157,6 +174,10 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
 				getIssues().addAll((Collection<? extends Issue>)newValue);
+				return;
+			case RigelPackage.PACKAGE__RELEASES:
+				getReleases().clear();
+				getReleases().addAll((Collection<? extends Release>)newValue);
 				return;
 			case RigelPackage.PACKAGE__ELEMENTS:
 				getElements().clear();
@@ -184,6 +205,9 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 			case RigelPackage.PACKAGE__ISSUES:
 				getIssues().clear();
 				return;
+			case RigelPackage.PACKAGE__RELEASES:
+				getReleases().clear();
+				return;
 			case RigelPackage.PACKAGE__ELEMENTS:
 				getElements().clear();
 				return;
@@ -206,6 +230,8 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 				return !getOwners().isEmpty();
 			case RigelPackage.PACKAGE__ISSUES:
 				return !getIssues().isEmpty();
+			case RigelPackage.PACKAGE__RELEASES:
+				return !getReleases().isEmpty();
 			case RigelPackage.PACKAGE__ELEMENTS:
 				return !getElements().isEmpty();
 			case RigelPackage.PACKAGE__RESOURCES:
@@ -230,6 +256,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 			switch (derivedFeatureID) {
 				case RigelPackage.PACKAGE__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
 				case RigelPackage.PACKAGE__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
+				case RigelPackage.PACKAGE__RELEASES: return EngineeringPackage.ABSTRACT_COMPONENT__RELEASES;
 				default: return -1;
 			}
 		}
@@ -258,6 +285,7 @@ public class PackageImpl extends PackageElementImpl implements org.nasdanika.rig
 			switch (baseFeatureID) {
 				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.PACKAGE__OWNERS;
 				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.PACKAGE__ISSUES;
+				case EngineeringPackage.ABSTRACT_COMPONENT__RELEASES: return RigelPackage.PACKAGE__RELEASES;
 				default: return -1;
 			}
 		}

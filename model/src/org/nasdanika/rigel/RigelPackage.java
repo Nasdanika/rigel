@@ -231,13 +231,22 @@ public interface RigelPackage extends EPackage {
 	int PACKAGE__ISSUES = PACKAGE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Releases</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__RELEASES = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 2;
+	int PACKAGE__ELEMENTS = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -246,7 +255,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE__RESOURCES = PACKAGE_ELEMENT_FEATURE_COUNT + 3;
+	int PACKAGE__RESOURCES = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Package</em>' class.
@@ -255,7 +264,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PACKAGE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 4;
+	int PACKAGE_FEATURE_COUNT = PACKAGE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Package</em>' class.
@@ -1110,13 +1119,22 @@ public interface RigelPackage extends EPackage {
 	int ACTIVITY__ISSUES = FLOW_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Releases</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVITY__RELEASES = FLOW_FEATURE_COUNT + 6;
+
+	/**
 	 * The feature id for the '<em><b>Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__SIZE = FLOW_FEATURE_COUNT + 6;
+	int ACTIVITY__SIZE = FLOW_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Progress</b></em>' attribute.
@@ -1125,7 +1143,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 7;
+	int ACTIVITY__PROGRESS = FLOW_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Resources</b></em>' containment reference list.
@@ -1134,7 +1152,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY__RESOURCES = FLOW_FEATURE_COUNT + 8;
+	int ACTIVITY__RESOURCES = FLOW_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Activity</em>' class.
@@ -1143,7 +1161,7 @@ public interface RigelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 9;
+	int ACTIVITY_FEATURE_COUNT = FLOW_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Activity</em>' class.

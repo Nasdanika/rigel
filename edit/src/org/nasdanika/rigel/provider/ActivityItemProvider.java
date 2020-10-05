@@ -197,6 +197,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(RigelPackage.Literals.SOURCE__OUTBOUND_TRANSITIONS);
 			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__ISSUES);
+			childrenFeatures.add(EngineeringPackage.Literals.ABSTRACT_COMPONENT__RELEASES);
 			childrenFeatures.add(RigelPackage.Literals.ACTIVITY__RESOURCES);
 		}
 		return childrenFeatures;
@@ -267,6 +268,7 @@ public class ActivityItemProvider extends FlowItemProvider {
 				return;
 			case RigelPackage.ACTIVITY__OUTBOUND_TRANSITIONS:
 			case RigelPackage.ACTIVITY__ISSUES:
+			case RigelPackage.ACTIVITY__RELEASES:
 			case RigelPackage.ACTIVITY__RESOURCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

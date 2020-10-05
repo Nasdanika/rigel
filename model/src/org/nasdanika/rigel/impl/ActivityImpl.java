@@ -14,6 +14,7 @@ import org.nasdanika.engineering.AbstractEngineer;
 import org.nasdanika.engineering.ComponentCategoryElement;
 import org.nasdanika.engineering.EngineeringPackage;
 import org.nasdanika.engineering.Issue;
+import org.nasdanika.engineering.Release;
 import org.nasdanika.party.ResourceCategoryElement;
 import org.nasdanika.rigel.Activity;
 import org.nasdanika.rigel.Artifact;
@@ -38,6 +39,7 @@ import org.nasdanika.rigel.Transition;
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getOwners <em>Owners</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getIssues <em>Issues</em>}</li>
+ *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getReleases <em>Releases</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getSize <em>Size</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getProgress <em>Progress</em>}</li>
  *   <li>{@link org.nasdanika.rigel.impl.ActivityImpl#getResources <em>Resources</em>}</li>
@@ -154,6 +156,17 @@ public class ActivityImpl extends FlowImpl implements Activity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public EList<Release> getReleases() {
+		return (EList<Release>)eDynamicGet(RigelPackage.ACTIVITY__RELEASES, EngineeringPackage.Literals.ABSTRACT_COMPONENT__RELEASES, true, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public double getSize() {
 		return (Double)eDynamicGet(RigelPackage.ACTIVITY__SIZE, RigelPackage.Literals.ACTIVITY__SIZE, true, true);
@@ -257,6 +270,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return ((InternalEList<?>)getInboundTransitions()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__ISSUES:
 				return ((InternalEList<?>)getIssues()).basicRemove(otherEnd, msgs);
+			case RigelPackage.ACTIVITY__RELEASES:
+				return ((InternalEList<?>)getReleases()).basicRemove(otherEnd, msgs);
 			case RigelPackage.ACTIVITY__RESOURCES:
 				return ((InternalEList<?>)getResources()).basicRemove(otherEnd, msgs);
 		}
@@ -283,6 +298,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return getOwners();
 			case RigelPackage.ACTIVITY__ISSUES:
 				return getIssues();
+			case RigelPackage.ACTIVITY__RELEASES:
+				return getReleases();
 			case RigelPackage.ACTIVITY__SIZE:
 				return getSize();
 			case RigelPackage.ACTIVITY__PROGRESS:
@@ -326,6 +343,10 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				getIssues().clear();
 				getIssues().addAll((Collection<? extends Issue>)newValue);
 				return;
+			case RigelPackage.ACTIVITY__RELEASES:
+				getReleases().clear();
+				getReleases().addAll((Collection<? extends Release>)newValue);
+				return;
 			case RigelPackage.ACTIVITY__SIZE:
 				setSize((Double)newValue);
 				return;
@@ -366,6 +387,9 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			case RigelPackage.ACTIVITY__ISSUES:
 				getIssues().clear();
 				return;
+			case RigelPackage.ACTIVITY__RELEASES:
+				getReleases().clear();
+				return;
 			case RigelPackage.ACTIVITY__SIZE:
 				setSize(SIZE_EDEFAULT);
 				return;
@@ -399,6 +423,8 @@ public class ActivityImpl extends FlowImpl implements Activity {
 				return !getOwners().isEmpty();
 			case RigelPackage.ACTIVITY__ISSUES:
 				return !getIssues().isEmpty();
+			case RigelPackage.ACTIVITY__RELEASES:
+				return !getReleases().isEmpty();
 			case RigelPackage.ACTIVITY__SIZE:
 				return getSize() != SIZE_EDEFAULT;
 			case RigelPackage.ACTIVITY__PROGRESS:
@@ -444,6 +470,7 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			switch (derivedFeatureID) {
 				case RigelPackage.ACTIVITY__OWNERS: return EngineeringPackage.ABSTRACT_COMPONENT__OWNERS;
 				case RigelPackage.ACTIVITY__ISSUES: return EngineeringPackage.ABSTRACT_COMPONENT__ISSUES;
+				case RigelPackage.ACTIVITY__RELEASES: return EngineeringPackage.ABSTRACT_COMPONENT__RELEASES;
 				default: return -1;
 			}
 		}
@@ -485,6 +512,7 @@ public class ActivityImpl extends FlowImpl implements Activity {
 			switch (baseFeatureID) {
 				case EngineeringPackage.ABSTRACT_COMPONENT__OWNERS: return RigelPackage.ACTIVITY__OWNERS;
 				case EngineeringPackage.ABSTRACT_COMPONENT__ISSUES: return RigelPackage.ACTIVITY__ISSUES;
+				case EngineeringPackage.ABSTRACT_COMPONENT__RELEASES: return RigelPackage.ACTIVITY__RELEASES;
 				default: return -1;
 			}
 		}
